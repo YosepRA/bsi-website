@@ -8,4 +8,6 @@ Finished item will be marked as done. ✅
 
 ## Front-end
 
+- Dev branch first commit.
+
 ## Back-end
