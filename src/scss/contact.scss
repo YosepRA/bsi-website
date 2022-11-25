@@ -1,0 +1,35 @@
+@import 'config';
+
+.page-section{
+    padding-top: 135px;
+    padding-bottom: 120px;
+}
+h1.banneer-title{
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+}
+p.banner1{
+    color: white;
+}
+
+h1.partner{
+    color: white;
+    font-weight: 500;
+}
+h1.email{
+    color: white;
+    font-weight: 500;
+}
+
+.contact{
+    background: fixed url('/img/contact-background.png') center/cover no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 3rem;
+    position: relative;
+    background-repeat: no-repeat;
+}

@@ -1,10 +1,21 @@
 <%- include('partials/header.ejs') %>
-  <body>
+  <body class="homepage">
     <%- include('partials/navbar.ejs') %>
 
-    <h1 class="display-3">Home Page</h1>
+    <section class="hero page-section">
+      <div class="container-fluid">
+        <div class="row text_global">
+          <div class="col-md-7">
+            <h4 class="display-4">TEXT BSI</h4>
+            <h6 class="display-3">HERE</h6>
+            <p class="text_small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptas facilis excepturi molestiae harum inventore, animi, nihil quo deleniti repellendus consectetur laboriosam at eum reprehenderit veritatis quisquam accusantium. Expedita, ratione?</p>
+            <button type="button" class="primary-btn">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <%- include('partials/footer.ejs') %>
+    <!-- <%- include('partials/footer.ejs') %> -->
     <%- include('partials/js-libraries.ejs') %>
   </body>
 </html>

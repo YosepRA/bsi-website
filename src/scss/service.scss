@@ -1,0 +1,22 @@
+.service {
+    background: fixed url('/img/service-backg.png') center/cover no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 3rem;
+    position: relative;
+    background-repeat: no-repeat;
+  }
+
+.text_viaje{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+h1.title{
+    font-size: 3rem;
+    font-weight: 600;
+}
