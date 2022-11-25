@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+$primary-color: rgb(60, 60, 255);
+$body-color: #333;
+
+@mixin montserrat {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@mixin primary-button {
+  background-color: $primary-color;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@mixin media-breakpoint-sm {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-lg {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-xl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-xxl {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-xxxl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}

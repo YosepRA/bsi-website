@@ -1,0 +1,70 @@
+@import 'config';
+
+body {
+  @include montserrat();
+  color: $body-color;
+  font-weight: 600;
+}
+
+.navbar {
+  box-shadow: 1px 1px 3px #333;
+
+  .nav {
+    &-item {
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      text-align: center;
+    }
+
+    &-link {
+      color: $body-color;
+    }
+
+    &-wallet-btn {
+      @include primary-button();
+    }
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@include media-breakpoint-lg {
+  .navbar {
+    padding: 1.6rem 0;
+
+    &-collapse {
+      justify-content: flex-end;
+    }
+
+    .nav {
+      &-item {
+        margin: 0 0.3rem;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xl {
+  .navbar {
+    .nav {
+      &-item {
+        margin: 0 0.8rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    .nav {
+      &-item {
+        margin: 0 1.1rem;
+      }
+    }
+  }
+}

@@ -8,6 +8,6 @@ Finished item will be marked as done. ✅
 
 ## Front-end
 
-- Dev branch first commit.
+- Remove `collapse` and `show` from navbar.
 
 ## Back-end
