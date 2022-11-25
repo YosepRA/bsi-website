@@ -7,6 +7,7 @@ body {
 }
 
 .navbar {
+  background-color: white;
   box-shadow: 1px 1px 3px #333;
 
   .nav {
@@ -23,6 +24,21 @@ body {
     &-wallet-btn {
       @include primary-button();
     }
+  }
+}
+
+.main-container {
+  padding-top: 3rem;
+  padding-bottom: 10rem;
+}
+
+.page-section {
+  margin-bottom: 3rem;
+
+  &__title {
+    margin-bottom: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 }
 

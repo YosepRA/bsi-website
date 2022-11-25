@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="/">Bali Social Integrated</a>
+    <a class="navbar-brand" href="/<%= lang %>/home">Bali Social Integrated</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,11 +13,11 @@
             BSI
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/bsi">Company Profile</a></li>
-            <li><a class="dropdown-item" href="/bsi">Summary of The Token</a></li>
-            <li><a class="dropdown-item" href="/bsi">Introduction of The Token</a></li>
-            <li><a class="dropdown-item" href="/bsi">Roadmap</a></li>
-            <li><a class="dropdown-item" href="/bsi">Whitepaper</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Company Profile</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Summary of The Token</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Introduction of The Token</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Roadmap</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Whitepaper</a></li>
           </ul>
         </li>
 
@@ -26,9 +26,9 @@
             Service
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/service">Viaje Ecosystem</a></li>
-            <li><a class="dropdown-item" href="/service">Viaje Platform</a></li>
-            <li><a class="dropdown-item" href="/service">Meta Concert</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/service">Viaje Ecosystem</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/service">Viaje Platform</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/service">Meta Concert</a></li>
           </ul>
         </li>
 
@@ -37,13 +37,14 @@
             About Us
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/about">Group Company</a></li>
-            <li><a class="dropdown-item" href="/about">Partnership</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/about">Group Company</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/about">BSI Team</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/about">Partnership</a></li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="/<%= lang %>/contact">Contact</a>
         </li>
 
         <li class="nav-item dropdown">
@@ -51,10 +52,10 @@
             Exchange
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Digifinex</a></li>
-            <li><a class="dropdown-item" href="#">Hotbit</a></li>
-            <li><a class="dropdown-item" href="#">Coingecko</a></li>
-            <li><a class="dropdown-item" href="#">Coinsbit</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Digifinex</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Hotbit</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Coingecko</a></li>
+            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Coinsbit</a></li>
           </ul>
         </li>
 
@@ -64,12 +65,36 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            EN
+            <% 
+              let currentLangText = '';
+              let currentLangFlagName = '';
+              switch (lang) {
+                case 'en':
+                  currentLangText = 'EN';
+                  currentLangFlagName = 'en-lang-flag.png';
+                  break;
+                case 'id':
+                  currentLangText = 'ID';
+                  currentLangFlagName = 'id-lang-flag.png';
+                  break;
+                case 'kr':
+                  currentLangText = 'KR';
+                  currentLangFlagName = 'kr-lang-flag.png';
+                  break;
+              
+                default:
+                  currentLangText = 'EN';
+                  currentLangFlagName = 'en-lang-flag.png';
+                  break;
+              }
+            %>
+
+            <%= currentLangText %>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">English</a></li>
-            <li><a class="dropdown-item" href="#">Indonesian</a></li>
-            <li><a class="dropdown-item" href="#">Korean</a></li>
+            <li><a class="dropdown-item" href="/en/<%= currentPage %>">English</a></li>
+            <li><a class="dropdown-item" href="/id/<%= currentPage %>">Indonesian</a></li>
+            <li><a class="dropdown-item" href="/kr/<%= currentPage %>">Korean</a></li>
           </ul>
         </li>
     </div>

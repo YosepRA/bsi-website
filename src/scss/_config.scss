@@ -1,20 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-$primary-color: rgb(60, 60, 255);
+$primary-color: #3962f5;
+$primary-color-dark-1: #04213f;
+$light-color: #fff;
 $body-color: #333;
+$border-radius: 8px;
+$gradient-from: #0f4b81;
+$gradient-to: #1b6ebc;
 
 @mixin montserrat {
   font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@mixin primary-button {
-  background-color: $primary-color;
+@mixin button {
   padding: 0.5rem 1rem;
-  border-radius: 10px;
-  color: white;
+  border: none;
+  border-radius: $border-radius;
   font-weight: 600;
   letter-spacing: 1px;
 }
+
+@mixin primary-button {
+  @include button();
+  background-color: $primary-color;
+  color: white;
+}
+
+@mixin light-button {
+  @include button();
+  background-color: $light-color;
+  color: $body-color;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Temporary placeholder box. Delete when it's no longer needed.
+@mixin placeholder-box {
+  width: 200px;
+  height: 200px;
+  background-color: #aaa;
+  border-radius: $border-radius;
+}
+
+@mixin page-gradient {
+  background: rgba(57, 98, 245, 1);
+  background: linear-gradient(180deg, $gradient-from 0%, $gradient-to 100%);
+}
+
+/* ===============Breakpoints =============== */
 
 @mixin media-breakpoint-sm {
   @media screen and (min-width: 576px) {

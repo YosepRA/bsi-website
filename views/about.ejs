@@ -1,10 +1,99 @@
 <%- include('partials/header.ejs') %>
-  <body>
+  <body class="about">
     <%- include('partials/navbar.ejs') %>
 
-    <h1 class="display-3">About Us</h1>
+    <main class="main-container">
+      <section class="group-company page-section container">
+        <div class="row group-company__text-row">
+          <div class="col-12">
+            <h2 class="group-company__title page-section__title">Group Company</h2>
+          </div>
 
-    <%- include('partials/footer.ejs') %>
+          <div class="col-12">
+            <p class="group-company__excerpt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae qui mollitia, provident impedit doloremque recusandae inventore possimus dicta enim iure tempore eaque, ratione odio doloribus illo consequatur deleniti corporis aspernatur.</p>
+          </div>
+        </div>
+
+        <div class="row group-company__image-row">
+          <div class="col-12">
+            <img src="/img/viaje-foundation-logo-en.png" alt="Viaje Foundation" class="group-company__image" />
+          </div>
+        </div>
+      </section>
+
+      <section class="bsi-team page-section container">
+        <div class="row">
+          <div class="col">
+            <h2 class="bsi-team__title page-section__title">BSI Team</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="bsi-team__item bsi-team__item--one">
+              <div class="bsi-team__item-overlay"></div>
+
+              <div class="bsi-team__item-info">
+                <h4 class="bsi-team__item-name">Bradford Colten</h4>
+                <h5 class="bsi-team__item-position">CEO</h5>
+              </div>
+            </div>   
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="bsi-team__item bsi-team__item--two">
+              <div class="bsi-team__item-overlay"></div>
+
+              <div class="bsi-team__item-info">
+                <h4 class="bsi-team__item-name">Hylda Lilly</h4>
+                <h5 class="bsi-team__item-position">COO</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+             <div class="bsi-team__item bsi-team__item--three">
+              <div class="bsi-team__item-overlay"></div>
+
+              <div class="bsi-team__item-info">
+                <h4 class="bsi-team__item-name">John Goodwill</h4>
+                <h5 class="bsi-team__item-position">Lead Developer</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+             <div class="bsi-team__item bsi-team__item--four">
+              <div class="bsi-team__item-overlay"></div>
+
+              <div class="bsi-team__item-info">
+                <h4 class="bsi-team__item-name">Jane Clark</h4>
+                <h5 class="bsi-team__item-position">Marketing</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partnership page-section container">
+        <div class="row">
+          <div class="col">
+            <h2 class="partnership__title page-section__title">Partnership</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="partnership__images">
+              <img src="/img/MBI-logo.png" alt="MBI Logo" class="partnership__image partnership__image--mbi" />
+              <img src="/img/logo-partnership.png" alt="Partners Logo" class="partnership__image partnership__image--partners" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- <%- include('partials/footer.ejs') %> -->
     <%- include('partials/js-libraries.ejs') %>
   </body>
 </html>
