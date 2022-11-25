@@ -1,21 +1,22 @@
 const express = require('express');
 
 const controller = require('../controllers/index.js');
+const { lang } = require('../middlewares/index.js');
 
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 
 /* ======================= Routes ======================= */
 
-router.get('/', controller.index);
+router.get('/home', lang, controller.index);
 
-router.get('/bsi', controller.bsi);
+router.get('/bsi', lang, controller.bsi);
 
-router.get('/service', controller.service);
+router.get('/service', lang, controller.service);
 
-router.get('/about', controller.about);
+router.get('/about', lang, controller.about);
 
-router.get('/contact', controller.contact);
+router.get('/contact', lang, controller.contact);
 
-router.get('/exchange', controller.exchange);
+router.get('/exchange', lang, controller.exchange);
 
 module.exports = router;

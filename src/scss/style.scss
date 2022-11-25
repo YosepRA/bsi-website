@@ -1,13 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import 'config';
 
-:root {
-  --green: #57ba35;
-  --green-dark-1: #4ea730;
-  --green-dark-2: #46952a;
-  --primary: #0d6efd;
-  --dark: #21252f;
-  --body: #444;
-  --box-shadow: 0 8px 22px rgba(0, 0, 0, 0, 1);
+body {
+  @include montserrat();
+  color: $body-color;
+  font-weight: 600;
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 1px 1px 3px #333;
+
+  .nav {
+    &-item {
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      text-align: center;
+    }
+
+    &-link {
+      color: $body-color;
+    }
+
+    &-wallet-btn {
+      @include primary-button();
+    }
+  }
+}
+
+.main-container {
+  padding-top: 3rem;
+  padding-bottom: 10rem;
+}
+
+.page-section {
+  margin-bottom: 3rem;
+
+  &__title {
+    margin-bottom: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@include media-breakpoint-lg {
+  .navbar {
+    padding: 1.6rem 0;
+
+    &-collapse {
+      justify-content: flex-end;
+    }
+
+    .nav {
+      &-item {
+        margin: 0 0.3rem;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xl {
+  .navbar {
+    .nav {
+      &-item {
+        margin: 0 0.8rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    .nav {
+      &-item {
+        margin: 0 1.1rem;
+      }
+    }
+  }
 }
 
 body {
