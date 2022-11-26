@@ -1,0 +1,154 @@
+@import 'config';
+
+.bsi {
+  .main-container {
+    padding-top: 0;
+  }
+
+  .page-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background-color: $primary-color;
+    background: fixed url('/img/home-banner-1.png') no-repeat;
+    background-size: cover;
+    background-position: 80% 50%;
+    margin-bottom: 3rem;
+    color: white;
+
+    &__info {
+      &-title {
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    &__btn {
+      @include light-button();
+    }
+  }
+
+  .company-profile {
+    &__col:first-child {
+      text-align: center;
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-bottom: 1.8rem;
+    }
+
+    &__info {
+      &-title {
+        margin-bottom: 0.8rem;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .roadmap {
+    &__title {
+      color: $primary-color;
+    }
+
+    &__image {
+      @include placeholder-box();
+    }
+  }
+
+  .introduction {
+    &__col:first-child {
+      text-align: center;
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-bottom: 1.8rem;
+    }
+
+    &__info {
+      &-title {
+        margin-bottom: 0.8rem;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .summary {
+    &__title {
+      margin-bottom: 0.8rem;
+      color: $primary-color;
+    }
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@include media-breakpoint-md {
+  .bsi {
+    .company-profile {
+      &__row {
+        align-items: center;
+      }
+
+      &__col:nth-child(1) {
+        order: 2;
+      }
+
+      &__col:nth-child(2) {
+        order: 1;
+      }
+
+      &__info {
+        &-title {
+          text-align: left;
+        }
+      }
+
+      &__image {
+        margin-bottom: 0;
+      }
+    }
+
+    .introduction {
+      &__row {
+        align-items: center;
+      }
+
+      &__col:nth-child(2) {
+        text-align: right;
+      }
+
+      &__info {
+        &-title {
+          text-align: right;
+        }
+      }
+    }
+
+    .summary {
+      &__excerpt {
+        margin: 0 auto;
+        max-width: 760px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xl {
+  .bsi {
+    .page-banner {
+      margin-bottom: 5rem;
+    }
+  }
+}

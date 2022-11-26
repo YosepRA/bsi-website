@@ -1,3 +1,5 @@
+/* This file is for components that are used in multiple pages. */
+
 @import 'config';
 
 body {
@@ -25,6 +27,33 @@ body {
       @include primary-button();
     }
   }
+
+  &__lang {
+    &-item {
+      display: inline-block;
+
+      &:nth-child(1) {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-image {
+      width: 30px;
+      height: auto;
+    }
+  }
+
+  .dropdown-item {
+    &__flat {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+
+    &__image {
+      width: 30px;
+      height: auto;
+    }
+  }
 }
 
 .main-container {
@@ -33,16 +62,106 @@ body {
 }
 
 .page-section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 
   &__title {
     margin-bottom: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.page-footer {
+  background-color: $primary-color;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: white;
+
+  &__row:first-child {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid white;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+
+    &-title {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  &__navigation {
+    &-list {
+      list-style: none;
+      padding-left: 0;
+
+      &-item {
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    &-link {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &__download {
+    margin-bottom: 0;
+
+    &-list {
+      list-style: none;
+      padding-left: 0;
+
+      &-item {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    &-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    &-icon {
+      width: 160px;
+      height: auto;
+    }
+  }
+
+  &__social-media {
+    @include flex-center();
+
+    &-link {
+      display: inline-block;
+      margin: 0 0.3rem;
+      background-color: #333;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.1rem;
+
+      &:hover {
+        background-color: white;
+        color: $body-color;
+      }
+    }
   }
 }
 
 /* =============== Breakpoints =============== */
+
+@include media-breakpoint-md {
+  .page-footer {
+    &__social-media {
+      justify-content: flex-end;
+    }
+  }
+}
 
 @include media-breakpoint-lg {
   .navbar {
