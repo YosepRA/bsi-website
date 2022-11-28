@@ -5,8 +5,8 @@ $primary-color-dark-1: #04213f;
 $light-color: #fff;
 $body-color: #333;
 $border-radius: 8px;
-$gradient-from: #0f4b81;
-$gradient-to: #1b6ebc;
+$gradient-from: #08233f;
+$gradient-to: #246295;
 
 @mixin montserrat {
   font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -54,7 +54,7 @@ $gradient-to: #1b6ebc;
 }
 
 @mixin page-gradient {
-  background: rgba(57, 98, 245, 1);
+  background: $primary-color;
   background: linear-gradient(180deg, $gradient-from 0%, $gradient-to 100%);
 }
 

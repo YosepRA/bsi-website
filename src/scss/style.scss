@@ -28,6 +28,28 @@ body {
     }
   }
 
+  .dropdown {
+    &-menu {
+      @include page-gradient();
+    }
+
+    &-item {
+      color: white;
+      font-weight: 600;
+
+      &:hover {
+        color: $body-color;
+      }
+    }
+  }
+
+  &-brand {
+    &__image {
+      width: 140px;
+      height: auto;
+    }
+  }
+
   &__lang {
     &-item {
       display: inline-block;
@@ -62,7 +84,9 @@ body {
 }
 
 .page-section {
-  margin-bottom: 4rem;
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 
   &__title {
     margin-bottom: 1.4rem;
@@ -73,9 +97,9 @@ body {
 }
 
 .page-footer {
-  background-color: $primary-color;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  background-color: #060914;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   color: white;
 
   &__row:first-child {
@@ -92,6 +116,14 @@ body {
       font-size: 1.2rem;
       font-weight: 600;
       text-transform: uppercase;
+    }
+  }
+
+  &__profile {
+    &-brand {
+      width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
     }
   }
 
@@ -156,6 +188,14 @@ body {
 /* =============== Breakpoints =============== */
 
 @include media-breakpoint-md {
+  .navbar {
+    &-brand {
+      &__image {
+        width: 180px;
+      }
+    }
+  }
+
   .page-footer {
     &__social-media {
       justify-content: flex-end;
@@ -165,7 +205,11 @@ body {
 
 @include media-breakpoint-lg {
   .navbar {
-    padding: 1.6rem 0;
+    padding: 1rem 0;
+
+    &-nav {
+      align-items: center;
+    }
 
     &-collapse {
       justify-content: flex-end;

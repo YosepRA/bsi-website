@@ -1,6 +1,19 @@
+<% 
+  const { navbar: {
+    bsi,
+    service,
+    about,
+    contact,
+    exchange,
+    wallet
+  } } = data;
+%>
+
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="/<%= lang %>/home">Bali Social Integrated</a>
+    <a class="navbar-brand" href="/<%= lang %>/home">
+      <img src="/img/bsi-logo.png" alt="Bali Social Integrated" class="navbar-brand__image" />
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,36 +23,44 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            BSI
+            <%= bsi.name %>
           </a>
+
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Company Profile</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Summary of The Token</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Introduction of The Token</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Roadmap</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/bsi">Whitepaper</a></li>
+            <% for( let index = 0; index < bsi.subcategory.length; index++ ) { %>
+              <% const data = bsi.subcategory[index]  %>
+              <li>
+                <a class="dropdown-item" href="/<%= lang %>/bsi"><%= data %></a>
+              </li>
+            <% } %>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Service
+            <%= service.name %>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/<%= lang %>/service">Viaje Ecosystem</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/service">Viaje Platform</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/service">Meta Concert</a></li>
+            <% for( let index = 0; index < service.subcategory.length; index++ ) { %>
+              <% const data = service.subcategory[index]  %>
+              <li>
+                <a class="dropdown-item" href="/<%= lang %>/service"><%= data %></a>
+              </li>
+            <% } %>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            About Us
+            <%= about.name %>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/<%= lang %>/about">Group Company</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/about">BSI Team</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/about">Partnership</a></li>
+            <% for( let index = 0; index < about.subcategory.length; index++ ) { %>
+              <% const data = about.subcategory[index]  %>
+              <li>
+                <a class="dropdown-item" href="/<%= lang %>/about"><%= data %></a>
+              </li>
+            <% } %>
           </ul>
         </li>
 
@@ -49,18 +70,20 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Exchange
+            <%= exchange.name %>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Digifinex</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Hotbit</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Coingecko</a></li>
-            <li><a class="dropdown-item" href="/<%= lang %>/exchange">Coinsbit</a></li>
+            <% for( let index = 0; index < exchange.subcategory.length; index++ ) { %>
+              <% const data = exchange.subcategory[index]  %>
+              <li>
+                <a class="dropdown-item" href="/<%= lang %>/exchange"><%= data %></a>
+              </li>
+            <% } %>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a href="#" class="nav-wallet-btn btn">My Wallet</a>
+          <a href="https://wallet.bsin.io" target="_blank" rel="noreferrer" class="nav-wallet-btn btn"><%= wallet.name %></a>
         </li>
 
         <li class="nav-item dropdown">

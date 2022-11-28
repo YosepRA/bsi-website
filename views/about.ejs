@@ -1,21 +1,29 @@
+<% 
+  const { about: {
+    groupCompany,
+    bsiTeam,
+    partnership
+  } } = data;
+%>
+
 <%- include('partials/header.ejs') %>
   <body class="about">
     <%- include('partials/navbar.ejs') %>
 
     <main class="main-container">
-      <section class="group-company page-section container">
+      <section class="group-company page-section container-fluid">
         <div class="row group-company__text-row">
-          <div class="col-12">
-            <h2 class="group-company__title page-section__title">Group Company</h2>
+          <div class="col-12 group-company__col">
+            <h2 class="group-company__title page-section__title"><%= groupCompany.title %></h2>
           </div>
 
-          <div class="col-12">
-            <p class="group-company__excerpt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae qui mollitia, provident impedit doloremque recusandae inventore possimus dicta enim iure tempore eaque, ratione odio doloribus illo consequatur deleniti corporis aspernatur.</p>
+          <div class="col-12 group-company__col">
+            <p class="group-company__body"><%= groupCompany.body %></p>
           </div>
         </div>
 
         <div class="row group-company__image-row">
-          <div class="col-12">
+          <div class="col-12 group-company__col">
             <img src="/img/viaje-foundation-logo-en.png" alt="Viaje Foundation" class="group-company__image" />
           </div>
         </div>
@@ -24,7 +32,7 @@
       <section class="bsi-team page-section container">
         <div class="row">
           <div class="col">
-            <h2 class="bsi-team__title page-section__title">BSI Team</h2>
+            <h2 class="bsi-team__title page-section__title"><%= bsiTeam.title %></h2>
           </div>
         </div>
 
@@ -78,7 +86,7 @@
       <section class="partnership page-section container">
         <div class="row">
           <div class="col">
-            <h2 class="partnership__title page-section__title">Partnership</h2>
+            <h2 class="partnership__title page-section__title"><%= partnership.title %></h2>
           </div>
         </div>
 
@@ -93,7 +101,7 @@
       </section>
     </main>
 
-    <!-- <%- include('partials/footer.ejs') %> -->
+    <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
   </body>
 </html>
