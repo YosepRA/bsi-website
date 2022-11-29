@@ -1,45 +1,63 @@
+<% 
+  const { exchange: {
+    title,
+    subtitle,
+    exchangeList
+  } } = data;
+%>
+
 <%- include('partials/header.ejs') %>
   <body class="exchange">
     <%- include('partials/navbar.ejs') %>
 
     <main class="main-container">
       <header class="page-header">
-        <h1 class="page-header__title">Exchange</h1>
+        <h1 class="page-header__title"><%= title %></h1>
   
-        <h2 class="page-header__subtitle page-header__subtitle--one">You Can Buy Now</h2>
-        <h2 class="page-header__subtitle page-header__subtitle--two">We Are Listing On</h2>
+        <h2 class="page-header__subtitle page-header__subtitle--one"><%= subtitle[0] %></h2>
+        <h2 class="page-header__subtitle page-header__subtitle--two"><%= subtitle[1] %></h2>
       </header>
 
       <section class="exchange-list container">
         <div class="exchange-list__accordion accordion" id="exchangeAccordion">
-          <div class="exchange-list__accordion-item accordion-item">
-            <div class="exchange-list__accordion-header">
-              <div class="exchange-list__accordion-platform" id="exchangeOneHeading">
-                <h3>Digifinex</h3>
-              </div>
+          <% for( let i = 0; i < exchangeList.length; i++ ) { %>
+            <% const data = exchangeList[i] %>
 
-              <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#exchangeOne" aria-expanded="false" aria-controls="exchangeOne">
-                More Info
-              </button>
-            </div>
-
-            <div id="exchangeOne" class="exchange-list__accordion-collapse accordion-collapse collapse show" aria-labelledby="exchangeOneHeading" data-bs-parent="#exchangeAccordion">
-              <div class="exchange-list__accordion-body accordion-body">
-                <div class="exchange-list__accordion-text">
-                  <p>Digifinex</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quos unde fugit totam cum reprehenderit aspernatur sequi facere eligendi quaerat maiores ad possimus similique dicta saepe, quas consequuntur perferendis veritatis?</p>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, culpa? Aut nemo maiores voluptatem nostrum!</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto facere eum, nisi maiores dolores laboriosam reprehenderit. Similique commodi animi placeat?</p>
+            <div class="exchange-list__accordion-item accordion-item">
+              <div class="exchange-list__accordion-header">
+                <div class="exchange-list__accordion-platform" id="<%= `${data.id}Heading` %>">
+                  <img src="/img/<%= data.image.name %>" alt="<%= data.image.alt %>" class="exchange-list__accordion-platform-img" />
                 </div>
+  
+                <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#<%= data.id %>" aria-expanded="false" aria-controls="<%= data.id %>">
+                  More Info
+                </button>
+              </div>
+  
+              <div id="<%= data.id %>" class="exchange-list__accordion-collapse accordion-collapse collapse" aria-labelledby="<%= `${data.id}Heading` %>" data-bs-parent="#exchangeAccordion">
+                <div class="exchange-list__accordion-body accordion-body">
+                  <div class="exchange-list__accordion-text">
+                    <p><%= data.image.alt %></p>
 
-                <div class="exchange-list__accordion-control">
-                  <button type="button" class="exchange-list__accordion-buy btn">Buy BSI</button>
+                    <% for( let j = 0; j < data.body.length; j++ ) { %>
+                      <% const paragraph = data.body[j] %>
+
+                      <p><%= paragraph %></p>
+                    <% } %>
+                  </div>
+                  
+                  <% if (data.isExchange) { %>
+                    <div class="exchange-list__accordion-control">
+                      <a href="<%= data.exchangeUrl %>" target="_blank" rel="noreferrer" class="exchange-list__accordion-buy btn">Buy BSI</a>
+                    </div>
+                  <% } %>
                 </div>
               </div>
             </div>
-          </div>
+          <% } %>
 
-          <div class="exchange-list__accordion-item accordion-item">
+
+          <!-- <div class="exchange-list__accordion-item accordion-item">
             <div class="exchange-list__accordion-header">
               <div class="exchange-list__accordion-platform" id="exchangeTwoHeading">
                 <h3>Hotbit</h3>
@@ -133,14 +151,14 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto facere eum, nisi maiores dolores laboriosam reprehenderit. Similique commodi animi placeat?</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
     </main>
 
 
 
-    <!-- <%- include('partials/footer.ejs') %> -->
+    <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
   </body>
 </html>

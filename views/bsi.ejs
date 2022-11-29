@@ -1,9 +1,94 @@
-<%- include('partials/header.ejs') %>
-  <body>
-    <%- include('partials/navbar.ejs') %>
-      <h1>BSI</h1>
+<% 
+  const { bsi: {
+    banner,
+    companyProfile,
+    introduction,
+    summary,
+  } } = data;
+%>
 
-    <!-- <%- include('partials/footer.ejs') %> -->
+<%- include('partials/header.ejs') %>
+  <body class="bsi">
+    <%- include('partials/navbar.ejs') %>
+      <main class="main-container">
+        <section class="page-banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+                <div class="page-banner__info">
+                  <h1 class="page-banner__info-title"><%= banner.title %></h1>
+      
+                  <p class="page-banner__info-excerpt"><%= banner.excerpt %></p>
+      
+                  <button type="button" class="page-banner__btn btn"><%= banner.button %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="company-profile page-section container">
+          <div class="row company-profile__row">
+            <div class="col-12 col-md-4 company-profile__col">
+              <img src="/img/bsi-company-profile.png" alt="BSI company profile" class="company-profile__image" />
+            </div>
+
+            <div class="col-12 col-md-8 company-profile__col">
+              <div class="company-profile__info">
+                <h2 class="company-profile__info-title page-section__title"><%= companyProfile.title %></h2>
+
+                <p class="company-profile__info-body"><%= companyProfile.body %></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roadmap page-section container">
+          <div class="row">
+            <div class="col">
+              <h2 class="roadmap__title page-section__title">Roadmap</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="roadmap__image"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="introduction page-section container">
+          <div class="row introduction__row">
+            <div class="col-12 col-md-4 introduction__col">
+              <img src="/img/bsi-introduction-token.png" alt="BSI token introduction" class="introduction__image" />
+            </div>
+
+            <div class="col-12 col-md-8 introduction__col">
+              <div class="introduction__info">
+                <h2 class="introduction__info-title page-section__title"><%= introduction.title %></h2>
+
+                <p class="introduction__info-body"><%= introduction.body %></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="summary page-section container">
+          <div class="row">
+            <div class="col">
+              <h2 class="summary__title page-section__title"><%= summary.title %></h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p class="summary__body"><%= summary.body %></p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+    <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
   </body>
 </html>

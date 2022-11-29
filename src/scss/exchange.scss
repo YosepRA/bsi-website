@@ -37,7 +37,12 @@
       margin: 0 auto;
 
       &-item {
-        background-color: $primary-color;
+        background: rgb(6, 0, 103);
+        background: linear-gradient(
+          90deg,
+          $gradient-from 20%,
+          $gradient-to 100%
+        );
         margin-bottom: 2rem;
         border-radius: $border-radius;
         border: none;
@@ -45,10 +50,13 @@
       }
 
       &-header {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         background: $primary-color;
+        background: url('/img/sean-pollock-low-angle-building.jpg') no-repeat
+          center/cover;
         padding: 1rem 1.4rem;
         border-radius: $border-radius;
         color: white;
@@ -57,15 +65,40 @@
           margin-bottom: 0;
           text-align: center;
         }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            $gradient-from 0%,
+            $gradient-to 100%
+          );
+          border-radius: $border-radius;
+          opacity: 0.9;
+          content: '';
+        }
       }
 
       &-platform {
         flex: 1;
         margin-bottom: 1rem;
+        z-index: 2;
+
+        &-img {
+          width: 100%;
+          height: auto;
+        }
       }
 
       &-trigger {
         @include light-button();
+        z-index: 2;
         padding: 0.3rem 0.7rem;
         text-transform: uppercase;
       }
@@ -73,8 +106,8 @@
       &-body {
         background: rgb(6, 0, 103);
         background: linear-gradient(
-          105deg,
-          $gradient-from 19%,
+          90deg,
+          $gradient-from 20%,
           $gradient-to 100%
         );
         padding-bottom: 2rem;
@@ -121,6 +154,22 @@
     .exchange-list {
       &__accordion {
         width: 90%;
+
+        &-header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          height: 160px;
+        }
+
+        &-platform {
+          flex: 0 0 60%;
+          margin-bottom: 0;
+        }
+
+        &-trigger {
+          align-self: flex-end;
+        }
       }
     }
   }

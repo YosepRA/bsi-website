@@ -4,18 +4,45 @@
   @include page-gradient();
   color: white;
 
+  .main-container {
+    padding-top: 0;
+  }
+
   .group-company {
-    max-width: 740px;
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: transparent;
+    background: url('/img/sean-pollock-low-angle-building.jpg') center/cover
+      no-repeat;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($gradient-from, 0.85);
+      // background: $primary-color;
+      // background: linear-gradient(0deg, $gradient-from 10%, transparent 30%);
+      // opacity: 0.9;
+      content: '';
+    }
 
     &__text-row {
       margin-bottom: 2rem;
+    }
+
+    &__col {
+      z-index: 2;
     }
 
     &__title {
       text-align: center;
     }
 
-    &__excerpt {
+    &__body {
       text-align: center;
     }
 
