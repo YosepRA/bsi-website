@@ -1,3 +1,9 @@
+<% 
+  const { contact: {
+    banner
+  } } = data;
+%>
+
 <%- include('partials/header.ejs') %>
   <body class="contact <%= lang %>">
     <%- include('partials/navbar.ejs') %>
@@ -6,8 +12,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
-            <h1 class="banneer-title">CONTACT US</h1>
-            <p class="banner1">Have any questions? We'd love to hear from you. </p>
+            <h1 class="banneer-title"><%- banner.title %></h1>
+            <p class="banner1"><%- banner.body %></p>
           </div>
         </div>
       </div>
@@ -26,7 +32,8 @@
           </div>
       </div>
     </section>
-    <!-- <%- include('partials/footer.ejs') %> -->
+    
+    <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
   </body>
 </html>

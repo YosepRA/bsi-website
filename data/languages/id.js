@@ -87,15 +87,23 @@ module.exports = {
   service: {
     viajeEcosystem: {
       title: 'Viaje Ecosystem',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit adipisci recusandae maxime doloribus temporibus impedit doloremque laudantium minima tempore perferendis similique dolor ex, repellendus provident possimus minus, illo magnam iste perspiciatis? Fugit, corporis mollitia. Voluptate laudantium eum ratione repellat!',
+      body: [
+        '&apos;Ekosistem BSI&apos; mengacu pada pelanggan dan mitra yang menggunakan token BSI, platform VIAJE, dan layanan untuk menggerakkan ekosistem. Bali Social Integrated akan menciptakan lingkungan dimana setiap bagian dari ekosistem dapat bergerak dan berkembang untuk mencapai manfaat yang lebih besar.',
+      ],
     },
     viajePlatform: {
       title: 'Viaje Platform',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit adipisci recusandae maxime doloribus temporibus impedit doloremque laudantium minima tempore perferendis similique dolor ex, repellendus provident possimus minus, illo magnam iste perspiciatis? Fugit, corporis mollitia. Voluptate laudantium eum ratione repellat!',
+      body: [
+        'Carbon-Free VIAJE, lini bisnis dari Bali Social Integrated, melayani setiap kebutuhan pembayaran dengan mengintegrasikan dirinya secara mulus dengan token BSI dan mata uang fiat. Pengguna dapat menambahkan token BSI atau mata uang fiat (menggunakan kartu kredit dan jaringan pembayaran lainnya) dan menggunakannya melalui aplikasi VIAJE seperti VIAJEPAY di semua toko terafiliasi.',
+        'Pelancong dapat menikmati jaringan pembayaran yang disederhanakan dan memanfaatkan berbagai layanan seperti memesan penerbangan, kegiatan rekreasi/perjalanan, hotel, menyewa sepeda motor listrik atau membeli makanan & minuman, berbelanja, dll.',
+      ],
     },
     metaConcert: {
       title: 'Meta Concert',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit adipisci recusandae maxime doloribus temporibus impedit doloremque laudantium minima tempore perferendis similique dolor ex, repellendus provident possimus minus, illo magnam iste perspiciatis? Fugit, corporis mollitia. Voluptate laudantium eum ratione repellat!',
+      body: [
+        'BSI Foundation menandatangani perjanjian dengan META VIAJE (Dev Unlimit) untuk mengadakan Dream Concert, konser K-POP terbesar yang diselenggarakan bersama oleh Kementerian Kebudayaan, Olahraga, dan Pariwisata Korea dan Asosiasi Produsen Selebriti, di &apos;Ekosistem BSI&apos; yang dibuat oleh BSI Altar Metaverse Space Metaism.',
+        'Ini akan diperkenalkan melalui metaverse (berdasarkan motion-on-touch) dan bertujuan untuk mengundang 300.000 hingga 1 juta pengguna setiap konser. Dengan mempromosikan keunggulan K-POP dan teknologi IT Korea ke dunia, penggemar K-POP di Korea dan di seluruh dunia dapat menghadiri Dream Concert bersama melalui metaverse seolah-olah mereka sedang menikmati pemandangan konser sesungguhnya. Ada juga ruang untuk obrolan dan komunikasi waktu nyata dengan fungsi terjemahan otomatis.',
+      ],
     },
   },
   about: {
@@ -115,8 +123,7 @@ module.exports = {
   contact: {
     banner: {
       title: 'Contact Us',
-      excerpt:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae qui mollitia, provident impedit doloremque recusandae inventore possimus dicta enim iure tempore eaque, ratione odio doloribus illo consequatur deleniti corporis aspernatur.',
+      body: 'Apakah ada pertanyaan? Kami senang mendengarnya dari kamu ',
     },
   },
   exchange: {

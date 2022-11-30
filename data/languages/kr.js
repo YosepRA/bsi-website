@@ -87,15 +87,21 @@ module.exports = {
   service: {
     viajeEcosystem: {
       title: 'Viaje Ecosystem',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit adipisci recusandae maxime doloribus temporibus impedit doloremque laudantium minima tempore perferendis similique dolor ex, repellendus provident possimus minus, illo magnam iste perspiciatis? Fugit, corporis mollitia. Voluptate laudantium eum ratione repellat!',
+      body: [
+        '“BSI의 생태계”는 BSI 토큰, VIAJE 플랫폼 및 서비스를 사용하여 생태계를 강화하는 고객 및 파트너사를 의미합니다. Bali Social Integrated는 생태계의 모든 부분이 유동적으로 움직이고 확장할 수 있는 환경을 조성하여 더 큰 이익을 얻을 것입니다.',
+      ],
     },
     viajePlatform: {
       title: 'Viaje Platform',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit adipisci recusandae maxime doloribus temporibus impedit doloremque laudantium minima tempore perferendis similique dolor ex, repellendus provident possimus minus, illo magnam iste perspiciatis? Fugit, corporis mollitia. Voluptate laudantium eum ratione repellat!',
+      body: [
+        'Bali Social Integrated의 비즈니스 라인인 Carbon-Free VIAJE는 BSI 토큰 및 법정 통화와 원활하게 통합되어 모든 결제 요구를 충족시킵니다. 유저들은BSI 토큰이나 Fiat 통화 (신용카드 등 결제망 이용)을 추가해 모든 가맹점에서 VIAJE PAY 를 VIAJE 앱을 통해 이용할 수 있습니다. 관광객들은 간편 결제 시스템을 이용할 수 있으며 항공사 예약, 호텔, EV-모빌리티 대여 식음료 구매, 쇼핑 등 다양한 서비스를 이용할 수 있습니다.',
+      ],
     },
     metaConcert: {
       title: 'Meta Concert',
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sit adipisci recusandae maxime doloribus temporibus impedit doloremque laudantium minima tempore perferendis similique dolor ex, repellendus provident possimus minus, illo magnam iste perspiciatis? Fugit, corporis mollitia. Voluptate laudantium eum ratione repellat!',
+      body: [
+        'BSI재단은 한국연예제작협회와 공동 주관하는 최대 규모의 K-POP 콘서트인 드림콘서트를 메타버스 공간 메타니즘이 조성하는 “BSI 생태계’에서 제공하기로 METAVIAJE (데브 언리미티드)와 협약을 체결했습니다. 메타버스(모션 켭쳐 기술)를 통해 선보일 예정이며, 매 콘서트마다 30만 ~ 100만명의 이용자를 유치하는 것을 목표로 하고 있습니다. K-POP의 장점과 한국의 IT 기술을 전 세계에 홍보함으로써 한국과 전 세계의 K-POP 팬들이 실제 콘서트를 즐기듯 메타버스를 통해 함께 드림콘서트에 참석 할 수 있게 되었습니다. 자동번역 기능으로 실시간 채팅과 소통을 할 수 있는 공간 또한 마련 되어 있습니다.',
+      ],
     },
   },
   about: {
@@ -115,8 +121,7 @@ module.exports = {
   contact: {
     banner: {
       title: 'Contact Us',
-      excerpt:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae qui mollitia, provident impedit doloremque recusandae inventore possimus dicta enim iure tempore eaque, ratione odio doloribus illo consequatur deleniti corporis aspernatur.',
+      body: '저희 서비스에 대해 궁금한 점이 있다면 언제든지 연락주세요.',
     },
   },
   exchange: {
