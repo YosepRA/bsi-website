@@ -21,7 +21,7 @@
       <section class="exchange-list container">
         <div class="exchange-list__accordion accordion" id="exchangeAccordion">
           <% for( let i = 0; i < exchangeList.length; i++ ) { %>
-            <% const data = exchangeList[i] %>
+            <% const data = exchangeList[i]; %>
 
             <div class="exchange-list__accordion-item accordion-item">
               <div class="exchange-list__accordion-header">
@@ -29,18 +29,18 @@
                   <img src="/img/<%= data.image.name %>" alt="<%= data.image.alt %>" class="exchange-list__accordion-platform-img" />
                 </div>
   
-                <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#<%= data.id %>" aria-expanded="false" aria-controls="<%= data.id %>">
+                <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#<%= data.id %>" aria-expanded="<%= i === 0 ? 'true' : 'false' %>" aria-controls="<%= data.id %>">
                   More Info
                 </button>
               </div>
   
-              <div id="<%= data.id %>" class="exchange-list__accordion-collapse accordion-collapse collapse" aria-labelledby="<%= `${data.id}Heading` %>" data-bs-parent="#exchangeAccordion">
+              <div id="<%= data.id %>" class="exchange-list__accordion-collapse accordion-collapse collapse <%= i === 0 ? 'show' : '' %>" aria-labelledby="<%= `${data.id}Heading` %>" data-bs-parent="#exchangeAccordion">
                 <div class="exchange-list__accordion-body accordion-body">
                   <div class="exchange-list__accordion-text">
                     <p><%= data.image.alt %></p>
 
                     <% for( let j = 0; j < data.body.length; j++ ) { %>
-                      <% const paragraph = data.body[j] %>
+                      <% const paragraph = data.body[j]; %>
 
                       <p><%= paragraph %></p>
                     <% } %>
@@ -55,109 +55,10 @@
               </div>
             </div>
           <% } %>
-
-
-          <!-- <div class="exchange-list__accordion-item accordion-item">
-            <div class="exchange-list__accordion-header">
-              <div class="exchange-list__accordion-platform" id="exchangeTwoHeading">
-                <h3>Hotbit</h3>
-              </div>
-
-              <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#exchangeTwo" aria-expanded="false" aria-controls="exchangeTwo">
-                More Info
-              </button>
-            </div>
-
-            <div id="exchangeTwo" class="exchange-list__accordion-collapse accordion-collapse collapse" aria-labelledby="exchangeTwoHeading" data-bs-parent="#exchangeAccordion">
-              <div class="exchange-list__accordion-body accordion-body">
-                <div class="exchange-list__accordion-text">
-                  <p>Hotbit</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quos unde fugit totam cum reprehenderit aspernatur sequi facere eligendi quaerat maiores ad possimus similique dicta saepe, quas consequuntur perferendis veritatis?</p>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, culpa? Aut nemo maiores voluptatem nostrum!</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto facere eum, nisi maiores dolores laboriosam reprehenderit. Similique commodi animi placeat?</p>
-                </div>
-
-                <div class="exchange-list__accordion-control">
-                  <button type="button" class="exchange-list__accordion-buy btn">Buy BSI</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="exchange-list__accordion-item accordion-item">
-            <div class="exchange-list__accordion-header">
-              <div class="exchange-list__accordion-platform" id="exchangeThreeHeading">
-                <h3>Coinsbit</h3>
-              </div>
-
-              <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#exchangeThree" aria-expanded="false" aria-controls="exchangeThree">
-                More Info
-              </button>
-            </div>
-
-            <div id="exchangeThree" class="exchange-list__accordion-collapse accordion-collapse collapse" aria-labelledby="exchangeThreeHeading" data-bs-parent="#exchangeAccordion">
-              <div class="exchange-list__accordion-body accordion-body">
-                <div class="exchange-list__accordion-text">
-                  <p>Coinsbit</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quos unde fugit totam cum reprehenderit aspernatur sequi facere eligendi quaerat maiores ad possimus similique dicta saepe, quas consequuntur perferendis veritatis?</p>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, culpa? Aut nemo maiores voluptatem nostrum!</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto facere eum, nisi maiores dolores laboriosam reprehenderit. Similique commodi animi placeat?</p>
-                </div>
-
-                <div class="exchange-list__accordion-control">
-                  <button type="button" class="exchange-list__accordion-buy btn">Buy BSI</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="exchange-list__accordion-item accordion-item">
-            <div class="exchange-list__accordion-header">
-              <div class="exchange-list__accordion-platform" id="exchangeFourHeading">
-                <h3>CoinGecko</h3>
-              </div>
-
-              <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#exchangeFour" aria-expanded="false" aria-controls="exchangeFour">
-                More Info
-              </button>
-            </div>
-
-            <div id="exchangeFour" class="exchange-list__accordion-collapse accordion-collapse collapse" aria-labelledby="exchangeFourHeading" data-bs-parent="#exchangeAccordion">
-              <div class="exchange-list__accordion-body accordion-body">
-                <p>CoinGecko</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quos unde fugit totam cum reprehenderit aspernatur sequi facere eligendi quaerat maiores ad possimus similique dicta saepe, quas consequuntur perferendis veritatis?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, culpa? Aut nemo maiores voluptatem nostrum!</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto facere eum, nisi maiores dolores laboriosam reprehenderit. Similique commodi animi placeat?</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="exchange-list__accordion-item accordion-item">
-            <div class="exchange-list__accordion-header">
-              <div class="exchange-list__accordion-platform" id="exchangeFiveHeading">
-                <h3>CoinMarketCap</h3>
-              </div>
-
-              <button type="button" class="exchange-list__accordion-trigger btn" data-bs-toggle="collapse" data-bs-target="#exchangeFive" aria-expanded="false" aria-controls="exchangeFive">
-                More Info
-              </button>
-            </div>
-
-            <div id="exchangeFive" class="exchange-list__accordion-collapse accordion-collapse collapse" aria-labelledby="exchangeFiveHeading" data-bs-parent="#exchangeAccordion">
-              <div class="exchange-list__accordion-body accordion-body">
-                <p>CoinMarketCap</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quos unde fugit totam cum reprehenderit aspernatur sequi facere eligendi quaerat maiores ad possimus similique dicta saepe, quas consequuntur perferendis veritatis?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, culpa? Aut nemo maiores voluptatem nostrum!</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto facere eum, nisi maiores dolores laboriosam reprehenderit. Similique commodi animi placeat?</p>
-              </div>
-            </div>
-          </div> -->
         </div>
       </section>
     </main>
-
-
-
+    
     <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
   </body>

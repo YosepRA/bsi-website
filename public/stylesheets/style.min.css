@@ -1,1 +1,183 @@
-@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap";body{font-family:"Montserrat","Segoe UI",Tahoma,Geneva,Verdana,sans-serif;color:#333;font-weight:600}.navbar{background-color:#fff;box-shadow:1px 1px 3px #333}.navbar .nav-item{padding-top:.7rem;padding-bottom:.7rem;text-align:center}.navbar .nav-link{color:#333}.navbar .nav-wallet-btn{padding:.5rem 1rem;border:none;border-radius:8px;font-weight:600;letter-spacing:1px;background-color:#3962f5;color:#fff}.navbar .dropdown-menu{background:#3962f5;background:linear-gradient(180deg, #08233f 0%, #246295 100%)}.navbar .dropdown-item{color:#fff;font-weight:600}.navbar .dropdown-item:hover{color:#333}.navbar-brand__image{width:140px;height:auto}.navbar__lang-item{display:inline-block}.navbar__lang-item:nth-child(1){margin-right:.5rem}.navbar__lang-image{width:30px;height:auto}.navbar .dropdown-item__flat{display:inline-block;margin-right:.5rem}.navbar .dropdown-item__image{width:30px;height:auto}.main-container{padding-top:3rem;padding-bottom:10rem}.page-section:not(:last-child){margin-bottom:4rem}.page-section__title{margin-bottom:1.4rem;font-weight:600;text-transform:uppercase;text-align:center}.page-footer{background-color:#060914;padding-top:2rem;padding-bottom:2rem;color:#fff}.page-footer__row:first-child{padding-bottom:1rem;margin-bottom:1rem;border-bottom:1px solid #fff}.page-footer__section{margin-bottom:2rem}.page-footer__section-title{margin-bottom:1rem;font-size:1.2rem;font-weight:600;text-transform:uppercase}.page-footer__profile-brand{width:200px;height:auto;margin-bottom:1rem}.page-footer__navigation-list{list-style:none;padding-left:0}.page-footer__navigation-list-item{margin-bottom:.3rem}.page-footer__navigation-link{color:#fff;text-decoration:none}.page-footer__download{margin-bottom:0}.page-footer__download-list{list-style:none;padding-left:0}.page-footer__download-list-item{margin-bottom:.8rem}.page-footer__download-link{color:#fff;text-decoration:none}.page-footer__download-icon{width:160px;height:auto}.page-footer__social-media{display:flex;justify-content:center;align-items:center}.page-footer__social-media-link{display:inline-block;margin:0 .3rem;background-color:#333;border-radius:50%;color:#fff;font-size:1.1rem}.page-footer__social-media-link:hover{background-color:#fff;color:#333}@media screen and (min-width: 768px){.navbar-brand__image{width:180px}.page-footer__social-media{justify-content:flex-end}}@media screen and (min-width: 992px){.navbar{padding:1rem 0}.navbar-nav{align-items:center}.navbar-collapse{justify-content:flex-end}.navbar .nav-item{margin:0 .3rem;padding:0}}@media screen and (min-width: 1200px){.navbar .nav-item{margin:0 .8rem}}@media screen and (min-width: 1400px){body{font-size:1.1rem}.navbar .nav-item{margin:0 1.1rem}}/*# sourceMappingURL=style.min.css.map */
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap';
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  font-weight: 600;
+}
+.navbar {
+  background-color: #fff;
+  box-shadow: 1px 1px 3px #333;
+}
+.navbar .nav-item {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  text-align: center;
+}
+.navbar .nav-link {
+  color: #333;
+}
+.navbar .nav-wallet-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #3962f5;
+  color: #fff;
+}
+.navbar .dropdown-menu {
+  background: #3962f5;
+  background: linear-gradient(180deg, #08233f 0%, #246295 100%);
+}
+.navbar .dropdown-item {
+  color: #fff;
+  font-weight: 600;
+}
+.navbar .dropdown-item:hover {
+  color: #333;
+}
+.navbar-brand__image {
+  width: 140px;
+  height: auto;
+}
+.navbar__lang-item {
+  display: inline-block;
+}
+.navbar__lang-item:nth-child(1) {
+  margin-right: 0.5rem;
+}
+.navbar__lang-image {
+  width: 30px;
+  height: auto;
+}
+.navbar .dropdown-item__flat {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.navbar .dropdown-item__image {
+  width: 30px;
+  height: auto;
+}
+.main-container {
+  padding-top: 3rem;
+  padding-bottom: 10rem;
+}
+.page-section:not(:last-child) {
+  margin-bottom: 4rem;
+}
+.page-section__title {
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+.page-footer {
+  background-color: #060914;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: #fff;
+}
+.page-footer__row:first-child {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+}
+.page-footer__section {
+  margin-bottom: 2rem;
+}
+.page-footer__section-title {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.page-footer__profile-brand {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.page-footer__navigation-list {
+  list-style: none;
+  padding-left: 0;
+}
+.page-footer__navigation-list-item {
+  margin-bottom: 0.3rem;
+}
+.page-footer__navigation-link {
+  color: #fff;
+  text-decoration: none;
+}
+.page-footer__download {
+  margin-bottom: 0;
+}
+.page-footer__download-list {
+  list-style: none;
+  padding-left: 0;
+}
+.page-footer__download-list-item {
+  margin-bottom: 0.8rem;
+}
+.page-footer__download-link {
+  color: #fff;
+  text-decoration: none;
+}
+.page-footer__download-icon {
+  width: 160px;
+  height: auto;
+}
+.page-footer__social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-footer__social-media-link {
+  display: inline-block;
+  margin: 0 0.3rem;
+  background-color: #333;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+}
+.page-footer__social-media-link:hover {
+  background-color: #fff;
+  color: #333;
+}
+@media screen and (min-width: 768px) {
+  .navbar-brand__image {
+    width: 180px;
+  }
+  .page-footer__social-media {
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 992px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+  .navbar-nav {
+    align-items: center;
+  }
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+  .navbar .nav-item {
+    margin: 0 0.3rem;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navbar .nav-item {
+    margin: 0 0.8rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  body {
+    font-size: 1.1rem;
+  }
+  .navbar .nav-item {
+    margin: 0 1.1rem;
+  }
+} /*# sourceMappingURL=style.min.css.map */

@@ -3,11 +3,26 @@ module.exports = {
     bsi: {
       name: 'BSI',
       subcategory: [
-        'Company Profile',
-        'Summary of The Token',
-        'Introduction of The Token',
-        'Roadmap',
-        'Whitepaper',
+        {
+          id: 'companyProfile',
+          name: 'Company Profile',
+        },
+        {
+          id: 'tokenSummary',
+          name: 'Summary of The Token',
+        },
+        {
+          id: 'tokenIntroduction',
+          name: 'Introduction of The Token',
+        },
+        {
+          id: 'roadmap',
+          name: 'Roadmap',
+        },
+        {
+          id: 'whitepaper',
+          name: 'Whitepaper',
+        },
       ],
     },
     service: {
@@ -99,7 +114,7 @@ module.exports = {
       {
         id: 'digifinex',
         image: {
-          name: 'digifinex.svg',
+          name: 'digifinex-white.png',
           alt: 'Digifinex',
         },
         body: [
@@ -113,7 +128,7 @@ module.exports = {
       {
         id: 'hotbit',
         image: {
-          name: 'digifinex.svg',
+          name: 'hotbit-white.png',
           alt: 'Hotbit',
         },
         body: [
@@ -127,7 +142,7 @@ module.exports = {
       {
         id: 'coinsbit',
         image: {
-          name: 'digifinex.svg',
+          name: 'coinsbit-white.png',
           alt: 'Coinsbit',
         },
         body: [
@@ -141,7 +156,7 @@ module.exports = {
       {
         id: 'coingecko',
         image: {
-          name: 'digifinex.svg',
+          name: 'coingecko-white.png',
           alt: 'CoinGecko',
         },
         body: [
@@ -155,7 +170,7 @@ module.exports = {
       {
         id: 'coinmarketcap',
         image: {
-          name: 'digifinex.svg',
+          name: 'market-white.png',
           alt: 'CoinMarketCap',
         },
         body: [

@@ -54,10 +54,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: $primary-color;
-        background: url('/img/sean-pollock-low-angle-building.jpg') no-repeat
+        background-color: $gradient-from;
+        background: url('/img/platform-card-background.jpg') no-repeat
           center/cover;
-        padding: 1rem 1.4rem;
+        padding: 1.4rem;
         border-radius: $border-radius;
         color: white;
 
@@ -80,18 +80,19 @@
             $gradient-to 100%
           );
           border-radius: $border-radius;
-          opacity: 0.9;
+          opacity: 0.8;
           content: '';
         }
       }
 
       &-platform {
         flex: 1;
-        margin-bottom: 1rem;
+        margin-bottom: 1.4rem;
         z-index: 2;
+        text-align: center;
 
         &-img {
-          width: 100%;
+          width: 90%;
           height: auto;
         }
       }
