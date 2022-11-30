@@ -9,14 +9,19 @@ html {
 body {
   @include montserrat();
   color: $body-color;
-  font-weight: 600;
+  font-weight: 400;
+
+  &.kr {
+    font-weight: 400;
+  }
 }
 
 .navbar {
   background-color: white;
   box-shadow: 1px 1px 3px #333;
+  font-weight: 600;
 
-.nav {
+  .nav {
     &-item {
       padding-top: 0.7rem;
       padding-bottom: 0.7rem;
@@ -89,11 +94,11 @@ body {
 
 .page-section {
   &:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 
   &__title {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.8rem;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
@@ -105,6 +110,7 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem;
   color: white;
+  font-weight: 600;
 
   &__row:first-child {
     padding-bottom: 1rem;

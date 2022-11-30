@@ -2,7 +2,7 @@ module.exports = {
   index(req, res) {
     const { lang } = req.data;
 
-    res.render('bsi', { ...lang, currentPage: 'home' });
+    res.render('index-v2', { ...lang, currentPage: 'home' });
   },
   bsi(req, res) {
     const { lang } = req.data;

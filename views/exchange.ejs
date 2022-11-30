@@ -7,7 +7,7 @@
 %>
 
 <%- include('partials/header.ejs') %>
-  <body class="exchange">
+  <body class="exchange <%= lang %>">
     <%- include('partials/navbar.ejs') %>
 
     <main class="main-container">
@@ -37,8 +37,6 @@
               <div id="<%= data.id %>" class="exchange-list__accordion-collapse accordion-collapse collapse <%= i === 0 ? 'show' : '' %>" aria-labelledby="<%= `${data.id}Heading` %>" data-bs-parent="#exchangeAccordion">
                 <div class="exchange-list__accordion-body accordion-body">
                   <div class="exchange-list__accordion-text">
-                    <p><%= data.image.alt %></p>
-
                     <% for( let j = 0; j < data.body.length; j++ ) { %>
                       <% const paragraph = data.body[j]; %>
 
