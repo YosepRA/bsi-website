@@ -3,33 +3,99 @@
 .bsi {
   .main-container {
     padding-top: 0;
+    padding-bottom: 0;
   }
 
-  .page-banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    width: 100%;
-    height: calc(100vh - 56px);
-    background-color: $primary-color;
-    background: fixed url('/img/home-banner-1.png') no-repeat;
-    background-size: cover;
-    background-position: 80% 50%;
-    margin-bottom: 3rem;
-    color: white;
+  // .page-banner {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: start;
+  //   width: 100%;
+  //   height: calc(100vh - 56px);
+  //   background-color: $primary-color;
+  //   background: fixed url('/img/home-banner-1.png') no-repeat;
+  //   background-size: cover;
+  //   background-position: 80% 50%;
+  //   margin-bottom: 3rem;
+  //   color: white;
+
+  //   &__info {
+  //     &-title {
+  //       font-size: 2rem;
+  //       font-weight: 700;
+  //       text-transform: uppercase;
+  //       letter-spacing: 1px;
+  //     }
+  //   }
+
+  //   &__btn {
+  //     @include light-button();
+  //   }
+  // }
+
+  .banner {
+    position: relative;
+    margin-bottom: 4rem;
+
+    .carousel {
+      width: 100%;
+      height: calc(100vh - 56px);
+      z-index: 1;
+
+      &-inner {
+        width: 100%;
+        height: 100%;
+      }
+
+      &-item {
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 85% 50%;
+
+        &--01 {
+          background-image: url('/img/home-banner-01.png');
+        }
+
+        &--02 {
+          background-image: url('/img/home-banner-02.png');
+        }
+
+        &--03 {
+          background-image: url('/img/home-banner-03.png');
+        }
+      }
+    }
 
     &__info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: white;
+      z-index: 2;
+
+      .container {
+        height: 100%;
+      }
+
+      .row {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
       &-title {
         font-size: 2rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
       }
-    }
-
-    &__btn {
-      @include light-button();
     }
   }
 
@@ -84,9 +150,54 @@
   }
 
   .summary {
+    margin-bottom: 6rem;
+
     &__title {
       margin-bottom: 0.8rem;
       color: $primary-color;
+    }
+  }
+
+  .page-banners {
+    &__item {
+      padding: 5rem 0;
+      background-color: $primary-color;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+
+      &-title {
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      &-link {
+        @include light-button();
+      }
+
+      &--service {
+        background-image: url('/img/home-banner-service.png');
+        background-position: 80% center;
+      }
+
+      &--about {
+        background-image: url('/img/home-banner-about.png');
+        background-position: 85% center;
+      }
+
+      &--contact {
+        background-image: url('/img/home-banner-contact.png');
+        background-position: 88% center;
+      }
+
+      &--exchange {
+        background-image: url('/img/home-banner-exchange.png');
+        background-position: 88% center;
+      }
     }
   }
 }
@@ -95,6 +206,15 @@
 
 @include media-breakpoint-md {
   .bsi {
+    .banner {
+      &__info {
+        .row {
+          flex-direction: row;
+          justify-content: start;
+        }
+      }
+    }
+
     .company-profile {
       &__row {
         align-items: center;

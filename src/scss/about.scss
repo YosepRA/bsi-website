@@ -11,12 +11,12 @@
   .group-company {
     position: relative;
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    // padding-bottom: 3rem;
     background-color: transparent;
-    background: url('/img/sean-pollock-low-angle-building.jpg') center/cover
-      no-repeat;
+    // background: url('/img/building-background.jpg') center/cover no-repeat;
 
     &::before {
+      display: none;
       position: absolute;
       top: 0;
       left: 0;
@@ -28,10 +28,6 @@
       // background: linear-gradient(0deg, $gradient-from 10%, transparent 30%);
       // opacity: 0.9;
       content: '';
-    }
-
-    &__text-row {
-      margin-bottom: 2rem;
     }
 
     &__col {
@@ -63,43 +59,22 @@
       height: calc(340px + 14vw);
       margin-bottom: 1rem;
       padding: 1.8rem 1.4rem;
-      background: rgba(black, 0.8);
+      background-color: rgba(black, 0.8);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       border-radius: $border-radius;
       color: white;
 
-      &--one {
-        background: url('/img/bsi-team-bradford-colten.jpg') no-repeat
-          center/cover;
+      &--danniel {
+        background-image: url('/img/portrait-pak-danniel.png');
       }
 
-      &--two {
-        background: url('/img/bsi-team-hylda-lilly.jpg') no-repeat center/cover;
+      &--juleo {
+        background-image: url('/img/portrait-pak-juleo.png');
+        background-position: 50% 100%;
+        background-size: 130%;
       }
-
-      &--three {
-        background: url('/img/bsi-team-john-goodwill.jpg') no-repeat
-          center/cover;
-      }
-
-      &--four {
-        background: url('/img/bsi-team-jane-clark.jpg') no-repeat center/cover;
-      }
-
-      // &-image-container {
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 100%;
-      //   z-index: 0;
-      // }
-
-      // &-image {
-      //   width: 100%;
-      //   height: auto;
-      //   object-fit: cover;
-      //   object-position: center;
-      // }
 
       &-overlay {
         position: absolute;
@@ -108,7 +83,7 @@
         z-index: 1;
         width: 100%;
         height: 100%;
-        background-color: rgba(black, 0.4);
+        background-color: rgba(black, 0.2);
         border-radius: $border-radius;
       }
 
@@ -157,11 +132,56 @@
 
 /* =============== Breakpoints =============== */
 
+@include media-breakpoint-sm {
+  .about {
+    .bsi-team {
+      &__row {
+        &--images {
+          justify-content: center;
+        }
+      }
+
+      &__item {
+        &--juleo {
+          background-position: 50% 50%;
+          background-size: 160%;
+        }
+      }
+    }
+  }
+}
+
 @include media-breakpoint-md {
   .about {
+    .group-company {
+      &__text-row,
+      &__image-row {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
     .bsi-team {
       &__item {
         height: calc(340px + 2vw);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-lg {
+  .about {
+    .group-company {
+      &__text-row,
+      &__image-row {
+        max-width: 700px;
+      }
+    }
+
+    .partnership {
+      &__image {
+        width: 80%;
       }
     }
   }

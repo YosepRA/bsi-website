@@ -2,6 +2,10 @@
 
 @import 'config';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @include montserrat();
   color: $body-color;

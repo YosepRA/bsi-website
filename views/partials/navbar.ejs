@@ -28,9 +28,10 @@
 
           <ul class="dropdown-menu">
             <% for( let index = 0; index < bsi.subcategory.length; index++ ) { %>
-              <% const data = bsi.subcategory[index]  %>
+              <% const { id, name } = bsi.subcategory[index]  %>
+              
               <li>
-                <a class="dropdown-item" href="/<%= lang %>/bsi"><%= data %></a>
+                <a class="dropdown-item" href="/<%= lang %>/home#<%= id %>"><%= name %></a>
               </li>
             <% } %>
           </ul>
