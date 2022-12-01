@@ -27,10 +27,10 @@
           <% for( let i = 0; i < exchangeList.length; i++ ) { %>
             <% 
               const data = exchangeList[i]; 
-              const id = subcategory[i].id;
+              const navId = subcategory[i].id;
             %>
 
-            <div id="<%= id %>" class="exchange-list__accordion-item accordion-item">
+            <div id="<%= navId %>" class="exchange-list__accordion-item accordion-item">
               <div class="exchange-list__accordion-header">
                 <div class="exchange-list__accordion-platform" id="<%= `${data.id}Heading` %>">
                   <img src="/img/<%= data.image.name %>" alt="<%= data.image.alt %>" class="exchange-list__accordion-platform-img" />

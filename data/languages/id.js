@@ -218,7 +218,7 @@ module.exports = {
     subtitle: ['You Can Buy Now', 'We Are Listing On'],
     exchangeList: [
       {
-        id: 'digifinex',
+        id: 'digifinexPlatform',
         image: {
           name: 'digifinex-white.png',
           alt: 'Digifinex',
@@ -232,7 +232,7 @@ module.exports = {
         url: 'https://www.digifinex.com/en-ww/trade/kline/USDT/BSI',
       },
       {
-        id: 'hotbit',
+        id: 'hotbitPlatform',
         image: {
           name: 'hotbit-white.png',
           alt: 'Hotbit',
@@ -245,7 +245,7 @@ module.exports = {
         url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
       },
       {
-        id: 'coinsbit',
+        id: 'coinsbitPlatform',
         image: {
           name: 'coinsbit-white.png',
           alt: 'Coinsbit',
@@ -257,7 +257,7 @@ module.exports = {
         url: 'https://coinsbit.io/trade/BSI_USDT',
       },
       {
-        id: 'coingecko',
+        id: 'coingeckoPlatform',
         image: {
           name: 'coingecko-white.png',
           alt: 'CoinGecko',
@@ -271,7 +271,7 @@ module.exports = {
         url: 'https://www.coingecko.com/en/coins/bali-social-integrated',
       },
       {
-        id: 'coinmarketcap',
+        id: 'coinmarketcapPlatform',
         image: {
           name: 'market-white.png',
           alt: 'CoinMarketCap',
