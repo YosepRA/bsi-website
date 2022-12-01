@@ -110,6 +110,10 @@
       text-align: center;
     }
 
+    &__body {
+      margin-bottom: 2rem;
+    }
+
     &__images {
       text-align: center;
     }
@@ -165,6 +169,14 @@
     .bsi-team {
       &__item {
         height: calc(340px + 2vw);
+      }
+    }
+
+    .partnership {
+      &__body {
+        max-width: 740px;
+        margin: 0 auto 2rem;
+        text-align: center;
       }
     }
   }

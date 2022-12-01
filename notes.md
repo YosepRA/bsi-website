@@ -29,6 +29,7 @@ Finished item will be marked as done. ✅
   - Set `max-width` for ATF body and image. Also center-align it.
 - Button hover and active state.
 - Smaller language flag right margin.
+- A feature to display the full-version of an image assets. The images will be small in mobile, that's not ideal.
 
 ## Back-end
 

@@ -7,7 +7,7 @@
 %>
 
 <%- include('partials/header.ejs') %>
-  <body class="about">
+  <body class="about <%= lang %>">
     <%- include('partials/navbar.ejs') %>
 
     <main class="main-container">
@@ -37,7 +37,7 @@
         </div>
 
         <div class="row bsi-team__row bsi-team__row--images">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
             <div class="bsi-team__item bsi-team__item--danniel">
               <div class="bsi-team__item-overlay"></div>
 
@@ -48,7 +48,7 @@
             </div>   
           </div>
 
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
             <div class="bsi-team__item bsi-team__item--juleo">
               <div class="bsi-team__item-overlay"></div>
 
@@ -68,7 +68,13 @@
           </div>
 
           <div class="col-12">
-            <p class="partnership__body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo accusantium tempore inventore eveniet possimus? Perspiciatis ut veritatis id porro aliquid?</p>
+            <% for( let i = 0; i < partnership.body.length; i++ ) { %>
+              <% const text = partnership.body[i]; %>
+
+              <p class="partnership__body"><%- text %></p>  
+            <% } %>
+
+            <!-- <p class="partnership__body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo accusantium tempore inventore eveniet possimus? Perspiciatis ut veritatis id porro aliquid?</p> -->
           </div>
         </div>
 
