@@ -139,8 +139,15 @@
 @include media-breakpoint-md {
   .exchange {
     .page-header {
+      margin-bottom: 3rem;
+
+      &__title {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+
       &__subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
 
         &--one {
           letter-spacing: 3px;
@@ -170,6 +177,28 @@
 
         &-trigger {
           align-self: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-lg {
+  .exchange {
+    .page-header {
+      &__title {
+        font-size: 2.4rem;
+      }
+
+      &__subtitle {
+        font-size: 1.3rem;
+
+        &--one {
+          letter-spacing: 4px;
+        }
+
+        &--two {
+          letter-spacing: 8px;
         }
       }
     }

@@ -27,11 +27,37 @@ module.exports = {
     },
     service: {
       name: 'Service',
-      subcategory: ['Viaje Ecosystem', 'Viaje Platform', 'Meta Concert'],
+      subcategory: [
+        {
+          id: 'viajeEcosystem',
+          name: 'Viaje Ecosystem',
+        },
+        {
+          id: 'viajePlatform',
+          name: 'Viaje Platform',
+        },
+        {
+          id: 'metaConcert',
+          name: 'Meta Concert',
+        },
+      ],
     },
     about: {
       name: 'About Us',
-      subcategory: ['Group Company', 'BSI Team', 'Partnership'],
+      subcategory: [
+        {
+          id: 'groupCompany',
+          name: 'Group Company',
+        },
+        {
+          id: 'bsiTeam',
+          name: 'BSI Team',
+        },
+        {
+          id: 'partnership',
+          name: 'Partnership',
+        },
+      ],
     },
     contact: {
       name: 'Contact',
@@ -39,11 +65,26 @@ module.exports = {
     exchange: {
       name: 'Exchange',
       subcategory: [
-        'Digifinex',
-        'Hotbit',
-        'Coinsbit',
-        'CoinGecko',
-        'CoinMarketCap',
+        {
+          id: 'digifinex',
+          name: 'Digifinex',
+        },
+        {
+          id: 'hotbit',
+          name: 'Hotbit',
+        },
+        {
+          id: 'coinsbit',
+          name: 'Coinsbit',
+        },
+        {
+          id: 'coingecko',
+          name: 'CoinGecko',
+        },
+        {
+          id: 'coinmarketcap',
+          name: 'CoinMarketCap',
+        },
       ],
     },
     wallet: {
@@ -51,12 +92,58 @@ module.exports = {
     },
   },
   footer: {
-    profile:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda molestias numquam deserunt culpa esse quasi veritatis quibusdam neque consequatur quo. Et qui id nihil error libero quasi odit ipsam dolores.',
+    profile: [
+      'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung.',
+    ],
+  },
+  home: {
+    banner: {
+      title: 'Cara Pembayaran Baru dan Mudah untuk pergi Ke Bali',
+      body: [
+        'Dikembangkan dengan ide perjalanan mudah dan tanpa batas.',
+        'Bali Social Integrated adalah cara pembayaran baru untuk melihat dan mengalami dunia dengan memanfaatkan potensi besar teknologi blockchain. Dunia ini besar dan begitu juga visi kami.',
+      ],
+    },
+    introduction: {
+      title: 'Introduction',
+      body: [
+        'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung.',
+      ],
+    },
+    pageBanners: {
+      service: {
+        title: 'Service',
+        body: [
+          'Turis yang membeli dan menggunakan Token Bali Social Integrated akan mendapatkan service dari VIAJE ekosistem, VIAJE Platform dan Konser Meta.',
+        ],
+        button: 'Learn More',
+      },
+      about: {
+        title: 'About',
+        body: [
+          'Token Bali Social Integrated (BSI) digunakan sebagai metode pembayaran dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
+        ],
+        button: 'Learn More',
+      },
+      contact: {
+        title: 'Contact',
+        body: [
+          'Kami dengan senang berharap dapat mendengar feedback dari Anda mengenai pelayanan kami.',
+        ],
+        button: 'Learn More',
+      },
+      exchange: {
+        title: 'Exchange',
+        body: [
+          'Turis dapat membeli Bali Social Integrated di Digifinex, Hotbit, dan CoinsBit, serta bisa melihat informasi harga token Bali Social Integrated di CoinGecko dan CoinMarketCap.',
+        ],
+        button: 'Learn More',
+      },
+    },
   },
   bsi: {
     banner: {
-      title: 'Bali Social Integrated',
+      title: 'Cara Pembayaran Baru dan Mudah untuk pergi Ke Bali',
       body: [
         'Bali Social Integrated (BSI) adalah platform berbasis blockchain yang menghubungkan "Online Travel Agencies" (OTA) ternama dengan pelanggan global. Ekosistem dirancang pada blockchian untuk menjadi transparan, aman, dan terbebas dari permintaan insentif tambahan.',
         'Bali Social Integrated (BSI) menawarkan sistem tour dan pembayaran dengan penggunaan teknologi Blockchain. Sistem ini dapat digunakan untuk pemesanan dan pembayaran tiket, akomodasi, rental mobil, rental motor EV, restaurants, pembelanjaan dan kegiatan rekreasi dengan BSI token.',
@@ -142,7 +229,7 @@ module.exports = {
           'Saat ini, platform ini menawarkan 100+ pasangan perdagangan mata uang kripto utama dan sepuluh mata uang fiat; pedagang dapat aktif berdagang. Daftarnya termasuk- Bitcoin, Cardano, Aave, ChainLink, Ethereum, dan lainnya. Ini memiliki Token DigiFinex sendiri yang membantu dalam perdagangan koin.',
         ],
         isExchange: true,
-        exchangeUrl: 'https://www.google.com',
+        url: 'https://www.digifinex.com/en-ww/trade/kline/USDT/BSI',
       },
       {
         id: 'hotbit',
@@ -155,7 +242,7 @@ module.exports = {
           'Menurut CoinMarketCap, Hotbit telah mendaftarkan 2.000+ pasar perdagangan secara total dan menempati peringkat No. 1 di antara semua bursa mengenai jumlah jenis proyek cryptocurrency yang terdaftar. Hotbit telah mengumpulkan 7.000.000+ pengguna terdaftar dari lebih dari 210 negara dan wilayah di seluruh dunia. Hotbit mulai mendistribusikan bunga deposito saat ini untuk penggunanya, yang berarti bahwa Hotbit adalah pertukaran mata uang kripto pertama di dunia yang menawarkan bunga deposito harian saat ini kepada penggunanya tanpa perlu mengunci atau membekukan token.',
         ],
         isExchange: true,
-        exchangeUrl: 'https://www.google.com',
+        url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
       },
       {
         id: 'coinsbit',
@@ -167,7 +254,7 @@ module.exports = {
           'Coinsbit menjadi pertukaran cryptocurrency terbesar berarti keandalan. Kepercayaan diri Anda adalah hal terpenting bagi kami. Berkat kepercayaan para pedagang kami, kami memasuki bursa terbesar teratas dalam peringkat CoinMarketCap dan CoinGecko. Kami tahu bagaimana mencapai tujuan puncak dan kami tahu layanan apa yang dibutuhkan untuk ini. Jutaan pedagang kami menghargai kenyamanan dan keandalan platform kami - ini adalah pencapaian utama kami, dan alasan utama bagi Anda untuk mulai bekerja di platform kami. Sekarang juga.',
         ],
         isExchange: true,
-        exchangeUrl: 'https://www.google.com',
+        url: 'https://coinsbit.io/trade/BSI_USDT',
       },
       {
         id: 'coingecko',
@@ -181,7 +268,7 @@ module.exports = {
           'CoinGecko adalah sumber independen terbesar di dunia untuk data mata uang kripto andal dan sering dikutip di seluruh industri oleh berbagai publikasi.',
         ],
         isExchange: false,
-        exchangeUrl: 'https://www.google.com',
+        url: 'https://www.coingecko.com/en/coins/bali-social-integrated',
       },
       {
         id: 'coinmarketcap',
@@ -195,7 +282,7 @@ module.exports = {
           'CoinMarketCap akan terus menyajikan data paling akurat tentang mata uang kripto kepada masyarakat luas secara mandiri. Kami yakin bahwa visi umum kami untuk memajukan revolusi kripto dan mempromosikan transparansi di alam kripto akan diperkuat dengan akuisisi ini.',
         ],
         isExchange: false,
-        exchangeUrl: 'https://www.google.com',
+        url: 'https://coinmarketcap.com/currencies/bali-social-integrated',
       },
     ],
   },

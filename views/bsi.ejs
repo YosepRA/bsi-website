@@ -4,6 +4,15 @@
     companyProfile,
     introduction,
     summary,
+  }, navbar: {
+    bsi: {
+      subcategory: [
+        companyProfileMeta,
+        tokenSummaryMeta,
+        tokenIntroductionMeta,
+        roadmapMeta
+      ]
+    }
   } } = data;
 %>
 
@@ -11,22 +20,6 @@
   <body class="bsi <%= lang %>">
     <%- include('partials/navbar.ejs') %>
       <main class="main-container">
-        <!-- <section class="page-banner">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-9 col-lg-8 col-xl-7">
-                <div class="page-banner__info">
-                  <h1 class="page-banner__info-title"><%= banner.title %></h1>
-      
-                  <p class="page-banner__info-excerpt"><%= banner.excerpt %></p>
-      
-                  <button type="button" class="page-banner__btn btn"><%= banner.button %></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> -->
-
         <section class="banner">
           <div class="banner__carousel carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -53,7 +46,7 @@
           </div>
         </section>
 
-        <section class="company-profile page-section container">
+        <section id="<%- companyProfileMeta.id %>" class="company-profile page-section container">
           <div class="row company-profile__row">
             <div class="col-12 col-md-4 company-profile__col">
               <img src="/img/bsi-company-profile.png" alt="BSI company profile" class="company-profile__image" />
@@ -68,14 +61,12 @@
 
                   <p class="company-profile__info-body"><%- text %></p>  
                 <% } %>
-
-                <!-- <p class="company-profile__info-body"><%= companyProfile.body %></p> -->
               </div>
             </div>
           </div>
         </section>
 
-        <section class="roadmap page-section container">
+        <section id="<%- roadmapMeta.id %>" class="roadmap page-section container">
           <div class="row">
             <div class="col">
               <h2 class="roadmap__title page-section__title">Roadmap</h2>
@@ -91,7 +82,7 @@
           </div>
         </section>
 
-        <section class="introduction page-section container">
+        <section id="<%- tokenIntroductionMeta.id %>" class="introduction page-section container">
           <div class="row introduction__row">
             <div class="col-12 col-md-4 introduction__col">
               <img src="/img/bsi-introduction-token.png" alt="BSI token introduction" class="introduction__image" />
@@ -106,14 +97,12 @@
 
                   <p class="introduction__info-body"><%- text %></p>  
                 <% } %>
-
-                <!-- <p class="introduction__info-body"><%= introduction.body %></p> -->
               </div>
             </div>
           </div>
         </section>
 
-        <section class="summary page-section container">
+        <section id="<%- tokenSummaryMeta.id %>" class="summary page-section container">
           <div class="row">
             <div class="col">
               <h2 class="summary__title page-section__title"><%= summary.title %></h2>
@@ -130,64 +119,6 @@
             </div>
           </div>
         </section>
-
-        <!-- <section class="page-banners">
-          <div class="page-banners__item page-banners__item--service">
-            <div class="container">
-              <div class="row">
-                <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">Service</h2>
-    
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
-    
-                  <a href="/<%= lang %>/service" class="page-banners__item-link btn">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="page-banners__item page-banners__item--about">
-            <div class="container">
-              <div class="row">
-                <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">About</h2>
-    
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
-    
-                  <a href="/<%= lang %>/about" class="page-banners__item-link btn">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="page-banners__item page-banners__item--contact">
-            <div class="container">
-              <div class="row">
-                <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">Contact</h2>
-    
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
-    
-                  <a href="/<%= lang %>/contact" class="page-banners__item-link btn">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="page-banners__item page-banners__item--exchange">
-            <div class="container">
-              <div class="row">
-                <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">Exchange</h2>
-    
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
-    
-                  <a href="/<%= lang %>/exchange" class="page-banners__item-link btn">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> -->
       </main>
 
     <%- include('partials/footer.ejs') %>

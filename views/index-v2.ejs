@@ -1,3 +1,16 @@
+<% 
+  const { home: {
+    banner,
+    introduction,
+    pageBanners: {
+      service,
+      about,
+      contact,
+      exchange
+    }
+  } } = data;
+%>
+
 <%- include('partials/header.ejs') %>
   <body class="home <%= lang %>">
     <%- include('partials/navbar.ejs') %>
@@ -15,9 +28,13 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8 col-lg-6">
-                  <h1 class="banner__info-title">Banner Text</h1>
+                  <h1 class="banner__info-title"><%- banner.title %></h1>
 
-                  <p class="banner__info-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aliquid deleniti maiores ducimus aspernatur. Nihil provident debitis aliquid tempore ex!</p>
+                  <% for( let i = 0; i < banner.body.length; i++ ) { %>
+                    <% const text = banner.body[i]; %>
+
+                    <p class="banner__info-body"><%- text %></p>
+                  <% } %>
                 </div>
               </div>
             </div>
@@ -28,9 +45,13 @@
           <div class="container">
             <div class="row">
               <div class="col">
-                <h2 class="introduction__title page-section__title">Introduction</h2>
+                <h2 class="introduction__title page-section__title"><%- introduction.title %></h2>
       
-                <p class="introduction__body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vitae qui quasi suscipit vel sequi soluta unde ea fugiat temporibus dicta officia consequuntur, aut architecto facere nam alias distinctio libero!</p>
+                <% for( let i = 0; i < introduction.body.length; i++ ) { %>
+                  <% const text = introduction.body[i]; %>
+
+                  <p class="introduction__body"><%- text %></p>
+                <% } %>
               </div>
             </div>
           </div>
@@ -41,11 +62,15 @@
             <div class="container">
               <div class="row">
                 <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">Service</h2>
+                  <h2 class="page-banners__item-title"><%- service.title %></h2>
     
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
-    
-                  <a href="/<%= lang %>/service" class="page-banners__item-link btn">Learn More</a>
+                  <% for( let i = 0; i < service.body.length; i++ ) { %>
+                    <% const text = service.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
+
+                  <a href="/<%= lang %>/service" class="page-banners__item-link btn"><%- service.button %></a>
                 </div>
               </div>
             </div>
@@ -55,11 +80,15 @@
             <div class="container">
               <div class="row">
                 <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">About</h2>
+                  <h2 class="page-banners__item-title"><%- about.title %></h2>
     
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
-    
-                  <a href="/<%= lang %>/about" class="page-banners__item-link btn">Learn More</a>
+                  <% for( let i = 0; i < about.body.length; i++ ) { %>
+                    <% const text = about.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
+
+                  <a href="/<%= lang %>/about" class="page-banners__item-link btn"><%- about.button %></a>
                 </div>
               </div>
             </div>
@@ -69,11 +98,15 @@
             <div class="container">
               <div class="row">
                 <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">Contact</h2>
+                  <h2 class="page-banners__item-title"><%- contact.title %></h2>
     
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
+                  <% for( let i = 0; i < contact.body.length; i++ ) { %>
+                    <% const text = contact.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
     
-                  <a href="/<%= lang %>/contact" class="page-banners__item-link btn">Learn More</a>
+                  <a href="/<%= lang %>/contact" class="page-banners__item-link btn"><%- contact.button %></a>
                 </div>
               </div>
             </div>
@@ -83,11 +116,15 @@
             <div class="container">
               <div class="row">
                 <div class="col-12 col-md-8 col-lg-7">
-                  <h2 class="page-banners__item-title">Exchange</h2>
+                  <h2 class="page-banners__item-title"><%- exchange.title %></h2>
     
-                  <p class="page-banners__item-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium accusamus exercitationem velit fugiat nihil, labore suscipit! Impedit, dolore minima atque quod esse quasi, beatae dolorum tempore corrupti, maxime omnis?</p>
+                  <% for( let i = 0; i < contact.body.length; i++ ) { %>
+                    <% const text = contact.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
     
-                  <a href="/<%= lang %>/exchange" class="page-banners__item-link btn">Learn More</a>
+                  <a href="/<%= lang %>/exchange" class="page-banners__item-link btn"><%- exchange.button %></a>
                 </div>
               </div>
             </div>

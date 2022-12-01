@@ -44,7 +44,7 @@ body {
 
     &-item {
       color: white;
-      font-weight: 600;
+      font-weight: 400;
 
       &:hover {
         color: $body-color;
@@ -214,6 +214,10 @@ body {
 }
 
 @include media-breakpoint-lg {
+  .main-container {
+    padding-top: 4rem;
+  }
+
   .navbar {
     padding: 1rem 0;
 
@@ -235,16 +239,6 @@ body {
 }
 
 @include media-breakpoint-xl {
-  .navbar {
-    .nav {
-      &-item {
-        margin: 0 0.8rem;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-xxl {
   body {
     font-size: 1.1rem;
   }
@@ -252,8 +246,72 @@ body {
   .navbar {
     .nav {
       &-item {
+        margin: 0 0.8rem;
+      }
+
+      &-wallet-btn {
+        font-size: inherit;
+      }
+    }
+
+    .dropdown {
+      &-item {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  body {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    .nav {
+      &-item {
         margin: 0 1.1rem;
       }
+    }
+
+    .dropdown {
+      &-item {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .page-section {
+    &__title {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+@include media-breakpoint-xxxl {
+  body {
+    font-size: 1.5rem;
+  }
+
+  .main-container {
+    padding-top: 6rem;
+  }
+
+  .navbar {
+    .dropdown {
+      &-item {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .page-section {
+    &:not(:last-child) {
+      margin-bottom: 10rem;
+    }
+
+    &__title {
+      font-size: 2.7rem;
     }
   }
 }

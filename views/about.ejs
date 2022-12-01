@@ -3,6 +3,14 @@
     groupCompany,
     bsiTeam,
     partnership
+  }, navbar: {
+    about: {
+      subcategory: [
+        groupCompanyMeta,
+        bsiTeamMeta,
+        partnershipMeta,
+      ]
+    }
   } } = data;
 %>
 
@@ -11,15 +19,11 @@
     <%- include('partials/navbar.ejs') %>
 
     <main class="main-container">
-      <section class="group-company page-section container-fluid">
+      <section id="<%= groupCompanyMeta.id %>" class="group-company page-section container-fluid">
         <div class="row group-company__text-row">
           <div class="col-12 group-company__col">
             <h2 class="group-company__title page-section__title"><%= groupCompany.title %></h2>
           </div>
-
-          <!-- <div class="col-12 group-company__col">
-            <p class="group-company__body"><%= groupCompany.body %></p>
-          </div> -->
         </div>
 
         <div class="row group-company__image-row">
@@ -29,7 +33,7 @@
         </div>
       </section>
 
-      <section class="bsi-team page-section container">
+      <section id="<%= bsiTeamMeta.id %>" class="bsi-team page-section container">
         <div class="row bsi-team__row bsi-team__row--title">
           <div class="col">
             <h2 class="bsi-team__title page-section__title"><%= bsiTeam.title %></h2>
@@ -61,7 +65,7 @@
         </div>
       </section>
 
-      <section class="partnership page-section container">
+      <section id="<%= partnershipMeta.id %>" class="partnership page-section container">
         <div class="row">
           <div class="col-12">
             <h2 class="partnership__title page-section__title"><%= partnership.title %></h2>

@@ -3,6 +3,10 @@
     title,
     subtitle,
     exchangeList
+  }, navbar: {
+    exchange: {
+      subcategory
+    }
   } } = data;
 %>
 
@@ -21,9 +25,12 @@
       <section class="exchange-list container">
         <div class="exchange-list__accordion accordion" id="exchangeAccordion">
           <% for( let i = 0; i < exchangeList.length; i++ ) { %>
-            <% const data = exchangeList[i]; %>
+            <% 
+              const data = exchangeList[i]; 
+              const id = subcategory[i].id;
+            %>
 
-            <div class="exchange-list__accordion-item accordion-item">
+            <div id="<%= id %>" class="exchange-list__accordion-item accordion-item">
               <div class="exchange-list__accordion-header">
                 <div class="exchange-list__accordion-platform" id="<%= `${data.id}Heading` %>">
                   <img src="/img/<%= data.image.name %>" alt="<%= data.image.alt %>" class="exchange-list__accordion-platform-img" />
@@ -40,15 +47,13 @@
                     <% for( let j = 0; j < data.body.length; j++ ) { %>
                       <% const paragraph = data.body[j]; %>
 
-                      <p><%= paragraph %></p>
+                      <p><%- paragraph %></p>
                     <% } %>
                   </div>
-                  
-                  <% if (data.isExchange) { %>
-                    <div class="exchange-list__accordion-control">
-                      <a href="<%= data.exchangeUrl %>" target="_blank" rel="noreferrer" class="exchange-list__accordion-buy btn">Buy BSI</a>
-                    </div>
-                  <% } %>
+ 
+                  <div class="exchange-list__accordion-control">
+                    <a href="<%= data.url %>" target="_blank" rel="noreferrer" class="exchange-list__accordion-buy btn"><%- data.isExchange ? 'Buy BSI' : 'Details' %></a>
+                  </div>
                 </div>
               </div>
             </div>

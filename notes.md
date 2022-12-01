@@ -16,6 +16,7 @@ Finished item will be marked as done. ✅
 - Exchange page:
   - Accordion header and body border radius to transition from 10px to 0px when active.
   - URLs for exchange pages.
+  - Direct scroll and open accordion.
 - Navbar:
   - Use primary color as background. Adjust other colors such as text accordingly.
   - Change English language flag from UK to US.

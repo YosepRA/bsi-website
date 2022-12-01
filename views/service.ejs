@@ -3,6 +3,14 @@
     viajeEcosystem,
     viajePlatform,
     metaConcert,
+  }, navbar: {
+    service: {
+      subcategory: [
+        viajeEcosystemMeta,
+        viajePlatformMeta,
+        metaConcertMeta
+      ]
+    }
   } } = data;
 %>
 
@@ -10,7 +18,7 @@
   <body class="service <%= lang %>">
     <%- include('partials/navbar.ejs') %>
 
-    <section id="viaje-ecosystem" class="viaje_ecosystem">
+    <section id="<%= viajeEcosystemMeta.id %>" class="viaje_ecosystem">
       <div class="container">
         <div class="row align-items-center">
           <div class="col">
@@ -34,7 +42,7 @@
         </div>
     </section>
 
-    <section id="viaje-platform" class="viaje_platform">
+    <section id="<%= viajePlatformMeta.id %>" class="viaje_platform">
       <div class="container">
         <div class="row align-items-center">
           <div class="col">
@@ -58,7 +66,7 @@
     </section>
 
     
- <section class="meta_concert_illust">
+ <section id="<%= metaConcertMeta.id %>" class="meta_concert_illust">
   <div class="container">
     <div class="row meta_concert_prop">
       <div class="col-md-6 meta_img">

@@ -4,13 +4,8 @@
   @include page-gradient();
   color: white;
 
-  .main-container {
-    padding-top: 0;
-  }
-
   .group-company {
     position: relative;
-    padding-top: 3rem;
     // padding-bottom: 3rem;
     background-color: transparent;
     // background: url('/img/building-background.jpg') center/cover no-repeat;
@@ -98,9 +93,19 @@
         height: 100%;
       }
 
+      &-name,
+      &-position {
+        text-shadow: 0 0 1px black;
+      }
+
       &-name {
+        font-size: 1.5rem;
         font-weight: 600;
         text-transform: uppercase;
+      }
+
+      &-position {
+        font-size: 1.2rem;
       }
     }
   }
@@ -150,6 +155,14 @@
           background-position: 50% 50%;
           background-size: 160%;
         }
+
+        &-name {
+          font-size: 1.3rem;
+        }
+
+        &-position {
+          font-size: 1.1rem;
+        }
       }
     }
   }
@@ -169,6 +182,19 @@
     .bsi-team {
       &__item {
         height: calc(340px + 2vw);
+
+        &--juleo {
+          background-position: 50% bottom;
+          background-size: 125%;
+        }
+
+        &-name {
+          font-size: 1.2rem;
+        }
+
+        &-position {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -199,11 +225,46 @@
   }
 }
 
+@include media-breakpoint-xl {
+  .about {
+    .partnership {
+      &__body {
+        max-width: 940px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  .about {
+    .bsi-team {
+      &__item {
+        &-name {
+          font-size: 1.3rem;
+        }
+
+        &-position {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
 @include media-breakpoint-xxxl {
   .about {
     .bsi-team {
       &__item {
         height: calc(340px + 10vw);
+        padding: 2.4rem 1.8rem;
+
+        &-name {
+          font-size: 1.7rem;
+        }
+
+        &-position {
+          font-size: 1.4rem;
+        }
       }
     }
   }

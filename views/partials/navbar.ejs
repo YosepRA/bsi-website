@@ -31,7 +31,11 @@
               <% const { id, name } = bsi.subcategory[index]  %>
               
               <li>
-                <a class="dropdown-item" href="/<%= lang %>/bsi#<%= id %>"><%= name %></a>
+                <% if (id === 'whitepaper') { %>
+                  <a class="dropdown-item" href="/file/Whitepaper-Final-(English-Ver)-2022.11.pdf" target="_blank" rel="noreferrer"><%= name %></a>
+                <% } else { %>
+                  <a class="dropdown-item" href="/<%= lang %>/bsi#<%= id %>"><%= name %></a>
+                <% } %>
               </li>
             <% } %>
           </ul>
@@ -43,9 +47,10 @@
           </a>
           <ul class="dropdown-menu">
             <% for( let index = 0; index < service.subcategory.length; index++ ) { %>
-              <% const data = service.subcategory[index]  %>
+              <% const { id, name } = service.subcategory[index];  %>
+
               <li>
-                <a class="dropdown-item" href="/<%= lang %>/service"><%= data %></a>
+                <a class="dropdown-item" href="/<%= lang %>/service#<%= id %>"><%= name %></a>
               </li>
             <% } %>
           </ul>
@@ -57,9 +62,10 @@
           </a>
           <ul class="dropdown-menu">
             <% for( let index = 0; index < about.subcategory.length; index++ ) { %>
-              <% const data = about.subcategory[index]  %>
+              <% const { id, name } = about.subcategory[index]  %>
+
               <li>
-                <a class="dropdown-item" href="/<%= lang %>/about"><%= data %></a>
+                <a class="dropdown-item" href="/<%= lang %>/about#<%= id %>"><%= name %></a>
               </li>
             <% } %>
           </ul>
@@ -75,9 +81,10 @@
           </a>
           <ul class="dropdown-menu">
             <% for( let index = 0; index < exchange.subcategory.length; index++ ) { %>
-              <% const data = exchange.subcategory[index]  %>
+              <% const { id, name } = exchange.subcategory[index]  %>
+
               <li>
-                <a class="dropdown-item" href="/<%= lang %>/exchange"><%= data %></a>
+                <a class="dropdown-item" href="/<%= lang %>/exchange#<%= id %>"><%= name %></a>
               </li>
             <% } %>
           </ul>
