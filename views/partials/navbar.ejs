@@ -23,6 +23,21 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= about.name %>
+          </a>
+          <ul class="dropdown-menu">
+            <% for( let index = 0; index < about.subcategory.length; index++ ) { %>
+              <% const { id, name } = about.subcategory[index]  %>
+
+              <li>
+                <a class="dropdown-item" href="/<%= lang %>/about#<%= id %>"><%= name %></a>
+              </li>
+            <% } %>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= bsi.name %>
           </a>
 
@@ -54,44 +69,15 @@
               </li>
             <% } %>
           </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= about.name %>
-          </a>
-          <ul class="dropdown-menu">
-            <% for( let index = 0; index < about.subcategory.length; index++ ) { %>
-              <% const { id, name } = about.subcategory[index]  %>
-
-              <li>
-                <a class="dropdown-item" href="/<%= lang %>/about#<%= id %>"><%= name %></a>
-              </li>
-            <% } %>
-          </ul>
-        </li>
+        </li>    
 
         <li class="nav-item">
           <a class="nav-link" href="/<%= lang %>/contact">Contact</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= exchange.name %>
-          </a>
-          <ul class="dropdown-menu">
-            <% for( let index = 0; index < exchange.subcategory.length; index++ ) { %>
-              <% const { id, name } = exchange.subcategory[index]  %>
-
-              <li>
-                <a class="dropdown-item" href="/<%= lang %>/exchange#<%= id %>"><%= name %></a>
-              </li>
-            <% } %>
-          </ul>
-        </li>
-
         <li class="nav-item">
-          <a href="https://wallet.bsin.io" target="_blank" rel="noreferrer" class="nav-wallet-btn btn"><%= wallet.name %></a>
+          <a class="nav-primary-btn btn" href="/<%= lang %>/exchange">Exchange</a>
+          <a href="https://wallet.bsin.io" target="_blank" rel="noreferrer" class="nav-primary-btn btn"><%= wallet.name %></a>
         </li>
 
         <li class="nav-item dropdown">
@@ -132,15 +118,19 @@
                   <img src="/img/en-lang-flag.png" alt="England Flag" class="dropdown-item__image" />
                 </span>
                 English
-              </a>
+              </a>              
+            </li>
 
+            <li>
               <a class="dropdown-item" href="/id/<%= currentPage %>">
                 <span class="dropdown-item__flag">
                   <img src="/img/id-lang-flag.png" alt="Indonesia Flag" class="dropdown-item__image" />
                 </span>
                 Indonesian
               </a>
+            </li>
 
+            <li>
               <a class="dropdown-item" href="/kr/<%= currentPage %>">
                 <span class="dropdown-item__flag">
                   <img src="/img/kr-lang-flag.png" alt="England Flag" class="dropdown-item__image" />
@@ -148,6 +138,7 @@
                 Korean
               </a>
             </li>
+
           </ul>
         </li>
     </div>
