@@ -119,7 +119,7 @@ module.exports = {
         button: 'Learn More',
       },
       about: {
-        title: 'About',
+        title: 'About Us',
         body: [
           'Bali Social Integrated (BSI) token is used as a payment method in the Carbon-Free VIAJE ecosystem and is an ERC-20 standard token. Tourists can use the Bali Social integrated (BSI) token to book and pay for tickets, accommodations, EV-mobility rentals, restaurants, and recreational activities.',
         ],

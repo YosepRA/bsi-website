@@ -32,22 +32,35 @@ body {
       color: $body-color;
     }
 
-    &-wallet-btn {
+    &-primary-btn {
       @include primary-button();
+      font-size: inherit;
     }
   }
 
   .dropdown {
     &-menu {
       @include page-gradient();
+      font-size: inherit;
     }
 
     &-item {
       color: white;
+      font-size: inherit;
       font-weight: 400;
 
       &:hover {
         color: $body-color;
+      }
+
+      &__flag {
+        display: inline-block;
+        margin-right: 0.3rem;
+      }
+
+      &__image {
+        width: 30px;
+        height: auto;
       }
     }
   }
@@ -62,27 +75,12 @@ body {
   &__lang {
     &-item {
       display: inline-block;
-
-      &:nth-child(1) {
-        margin-right: 0.5rem;
-      }
     }
 
     &-image {
       width: 30px;
       height: auto;
-    }
-  }
-
-  .dropdown-item {
-    &__flat {
-      display: inline-block;
-      margin-right: 0.5rem;
-    }
-
-    &__image {
-      width: 30px;
-      height: auto;
+      margin-right: 0.3rem;
     }
   }
 }
@@ -110,7 +108,7 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem;
   color: white;
-  font-weight: 600;
+  font-weight: 400;
 
   &__row:first-child {
     padding-bottom: 1rem;
@@ -220,6 +218,7 @@ body {
 
   .navbar {
     padding: 1rem 0;
+    font-size: 0.9rem;
 
     &-nav {
       align-items: center;
@@ -248,16 +247,6 @@ body {
       &-item {
         margin: 0 0.8rem;
       }
-
-      &-wallet-btn {
-        font-size: inherit;
-      }
-    }
-
-    .dropdown {
-      &-item {
-        font-size: 1.1rem;
-      }
     }
   }
 }
@@ -268,15 +257,18 @@ body {
   }
 
   .navbar {
-    .nav {
-      &-item {
-        margin: 0 1.1rem;
+    font-size: 1rem;
+
+    &-brand {
+      &__image {
+        width: 210px;
+        height: auto;
       }
     }
 
-    .dropdown {
+    .nav {
       &-item {
-        font-size: 1.2rem;
+        margin: 0 1.1rem;
       }
     }
   }
@@ -298,9 +290,26 @@ body {
   }
 
   .navbar {
+    font-size: 1.3rem;
+
+    &-brand {
+      &__image {
+        width: 280px;
+        height: auto;
+      }
+    }
+
+    &__lang {
+      &-image {
+        width: 40px;
+      }
+    }
+
     .dropdown {
       &-item {
-        font-size: 1.5rem;
+        &__image {
+          width: 40px;
+        }
       }
     }
   }
