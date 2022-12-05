@@ -5,15 +5,15 @@ module.exports = {
       subcategory: [
         {
           id: 'companyProfile',
-          name: 'Company Profile',
+          name: 'Profil Perusahaan',
         },
         {
           id: 'tokenSummary',
-          name: 'Summary of The Token',
+          name: 'Ringkasan Token',
         },
         {
           id: 'tokenIntroduction',
-          name: 'Introduction of The Token',
+          name: 'Pengenalan Token',
         },
         {
           id: 'roadmap',
@@ -26,44 +26,44 @@ module.exports = {
       ],
     },
     service: {
-      name: 'Service',
+      name: 'Pelayanan',
       subcategory: [
         {
           id: 'viajeEcosystem',
-          name: 'Viaje Ecosystem',
+          name: 'Ekosistem Viaje',
         },
         {
           id: 'viajePlatform',
-          name: 'Viaje Platform',
+          name: 'Platform Viaje',
         },
         {
           id: 'metaConcert',
-          name: 'Meta Concert',
+          name: 'Konser Meta',
         },
       ],
     },
     about: {
-      name: 'About Us',
+      name: 'Profil',
       subcategory: [
         {
           id: 'groupCompany',
-          name: 'Group Company',
+          name: 'Grup Perusahaan',
         },
         {
           id: 'bsiTeam',
-          name: 'BSI Team',
+          name: 'Tim BSI',
         },
         {
           id: 'partnership',
-          name: 'Partnership',
+          name: 'Mitra Kerja',
         },
       ],
     },
     contact: {
-      name: 'Contact',
+      name: 'Kontak',
     },
     exchange: {
-      name: 'Exchange',
+      name: 'Perdagangan',
       subcategory: [
         {
           id: 'digifinex',
@@ -88,84 +88,99 @@ module.exports = {
       ],
     },
     wallet: {
-      name: 'My Wallet',
+      name: 'Dompetku',
     },
   },
   footer: {
     profile: [
       'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung.',
     ],
+    navigation: {
+      title: 'Hubungi Kami',
+      nav: {
+        contact: 'Kontak',
+        about: 'Profil',
+        service: 'Pelayanan',
+      },
+    },
+    download: {
+      title: 'Unduh Aplikasi BSI',
+    },
+    copyright:
+      '&copy; 2022 Bali Social Integrated Fondatation. Semua hak cipta dilindungi undang-undang.',
   },
   home: {
     banner: {
-      title: 'Cara Pembayaran Baru dan Mudah untuk pergi Ke Bali',
+      title: 'Cara Pembayaran Baru dan Mudah Travel di Bali',
       body: [
         'Dikembangkan dengan ide perjalanan mudah dan tanpa batas.',
-        'Bali Social Integrated adalah cara pembayaran baru untuk melihat dan mengalami dunia dengan memanfaatkan potensi besar teknologi blockchain. Dunia ini besar dan begitu juga visi kami.',
+        'Bali Social Integrated adalah cara pembayaran baru untuk melihat dan mengalami dunia dengan memanfaatkan potensi besar teknologi blockchain.',
+        '<b>Dunia ini besar dan begitu juga visi kami.</b>',
       ],
     },
     introduction: {
-      title: 'Introduction',
+      title: 'Bali Social Integrated',
       body: [
         'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung.',
       ],
+      button: 'Pelajari',
     },
     pageBanners: {
       service: {
-        title: 'Service',
+        title: 'Pelayanan',
         body: [
           'Turis yang membeli dan menggunakan Token Bali Social Integrated akan mendapatkan service dari VIAJE ekosistem, VIAJE Platform dan Konser Meta.',
         ],
-        button: 'Learn More',
+        button: 'Pelajari',
       },
       about: {
-        title: 'About',
+        title: 'Profil',
         body: [
           'Token Bali Social Integrated (BSI) digunakan sebagai metode pembayaran dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
         ],
-        button: 'Learn More',
+        button: 'Pelajari',
       },
       contact: {
-        title: 'Contact',
+        title: 'Kontak',
         body: [
           'Kami dengan senang berharap dapat mendengar feedback dari Anda mengenai pelayanan kami.',
         ],
-        button: 'Learn More',
+        button: 'Pelajari',
       },
       exchange: {
-        title: 'Exchange',
+        title: 'Perdagangan',
         body: [
           'Turis dapat membeli Bali Social Integrated di Digifinex, Hotbit, dan CoinsBit, serta bisa melihat informasi harga token Bali Social Integrated di CoinGecko dan CoinMarketCap.',
         ],
-        button: 'Learn More',
+        button: 'Pelajari',
       },
     },
   },
   bsi: {
     banner: {
-      title: 'Cara Pembayaran Baru dan Mudah untuk pergi Ke Bali',
+      title: 'Cara Pembayaran Baru dan Mudah Travel di Bali',
       body: [
         'Bali Social Integrated (BSI) adalah platform berbasis blockchain yang menghubungkan "Online Travel Agencies" (OTA) ternama dengan pelanggan global. Ekosistem dirancang pada blockchian untuk menjadi transparan, aman, dan terbebas dari permintaan insentif tambahan.',
         'Bali Social Integrated (BSI) menawarkan sistem tour dan pembayaran dengan penggunaan teknologi Blockchain. Sistem ini dapat digunakan untuk pemesanan dan pembayaran tiket, akomodasi, rental mobil, rental motor EV, restaurants, pembelanjaan dan kegiatan rekreasi dengan BSI token.',
       ],
-      button: 'Learn More',
+      button: 'Pelajari',
     },
     companyProfile: {
-      title: 'Company Profile',
+      title: 'Profil Perusahaan',
       body: [
         'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung. Bali Social Integreted bekerja sama dengan tim pengembang teknologi blockchain dan penggemar crypto, untuk memberikan pengalaman perjalanan yang mulus kepada para pengguna.',
         'Kami memanfaatkan teknologi blockchain untuk menghilangkan biaya perantara dan menawarkan pengalaman unik dan menyenangkan bagi pengguna dengan biaya transaksi dan operasional yang lebih baik.',
       ],
     },
     introduction: {
-      title: 'Introduction of Token',
+      title: 'Pengenalan Token',
       body: [
         'Token Bali Social Integrated (BSI) digunakan sebagai metode pembayaran dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
         'Carbon-Free VIAJE mengembangkan dan mengoperasikan berbagai layanan melalui pengelolaan LST yang ramah lingkungan dengan membawa pengguna dan pemasok ke dalam ekosistem VIAJE melalui operasi layanan berkelanjutan dan perluasan ekosistem. Kami mendorong perluasan dan penggunaan serta jumlah pengguna BSI.',
       ],
     },
     summary: {
-      title: 'Summary of The Token',
+      title: 'Ringkasan Token',
       body: [
         'Token Bali Social Integrated (BSI) menggunakan standar ERC-20, yang digunakan untuk transaksi dalam ekosistem Carbon-Free VIAJE, dan merupakan proyek blockchain pertama yang dikembangkan dengan tujuan mengoptimalkan industri pariwisata global. Untuk memberikan pengalaman perjalanan yang mulus kepada pengguna, Bali Social Integrated bekerja sama erat dengan tim pengembang teknologi blockchain dan penggemar kripto. Dengan demikian, wisatawan global dapat memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, belanja, dan aktivitas rekreasi lainnya langsung dari masing-masing penyedia layanan.',
       ],
@@ -173,20 +188,20 @@ module.exports = {
   },
   service: {
     viajeEcosystem: {
-      title: 'Viaje Ecosystem',
+      title: 'Ekosistem Viaje',
       body: [
         '&apos;Ekosistem BSI&apos; mengacu pada pelanggan dan mitra yang menggunakan token BSI, platform VIAJE, dan layanan untuk menggerakkan ekosistem. Bali Social Integrated akan menciptakan lingkungan dimana setiap bagian dari ekosistem dapat bergerak dan berkembang untuk mencapai manfaat yang lebih besar.',
       ],
     },
     viajePlatform: {
-      title: 'Viaje Platform',
+      title: 'Platform Viaje',
       body: [
         'Carbon-Free VIAJE, lini bisnis dari Bali Social Integrated, melayani setiap kebutuhan pembayaran dengan mengintegrasikan dirinya secara mulus dengan token BSI dan mata uang fiat. Pengguna dapat menambahkan token BSI atau mata uang fiat (menggunakan kartu kredit dan jaringan pembayaran lainnya) dan menggunakannya melalui aplikasi VIAJE seperti VIAJEPAY di semua toko terafiliasi.',
         'Pelancong dapat menikmati jaringan pembayaran yang disederhanakan dan memanfaatkan berbagai layanan seperti memesan penerbangan, kegiatan rekreasi/perjalanan, hotel, menyewa sepeda motor listrik atau membeli makanan & minuman, berbelanja, dll.',
       ],
     },
     metaConcert: {
-      title: 'Meta Concert',
+      title: 'Konser Meta',
       body: [
         'BSI Foundation menandatangani perjanjian dengan META VIAJE (Dev Unlimit) untuk mengadakan Dream Concert, konser K-POP terbesar yang diselenggarakan bersama oleh Kementerian Kebudayaan, Olahraga, dan Pariwisata Korea dan Asosiasi Produsen Selebriti, di &apos;Ekosistem BSI&apos; yang dibuat oleh BSI Altar Metaverse Space Metaism.',
         'Ini akan diperkenalkan melalui metaverse (berdasarkan motion-on-touch) dan bertujuan untuk mengundang 300.000 hingga 1 juta pengguna setiap konser. Dengan mempromosikan keunggulan K-POP dan teknologi IT Korea ke dunia, penggemar K-POP di Korea dan di seluruh dunia dapat menghadiri Dream Concert bersama melalui metaverse seolah-olah mereka sedang menikmati pemandangan konser sesungguhnya. Ada juga ruang untuk obrolan dan komunikasi waktu nyata dengan fungsi terjemahan otomatis.',
@@ -195,13 +210,13 @@ module.exports = {
   },
   about: {
     groupCompany: {
-      title: 'Group Company',
+      title: 'Grup Perusahaan',
     },
     bsiTeam: {
-      title: 'BSI Team',
+      title: 'Tim BSI',
     },
     partnership: {
-      title: 'Partnership',
+      title: 'Mitra Kerja',
       body: [
         'Kami senang dan bangga dapat bermitra dengan berbagai macam organisasi yang sangat mendukung perusahaan kami. Mitra kami telah membuat komitmen untuk berkontribusi lebih dari sekadar dukungan finansial dengan menyumbangkan ide dan sumber daya bersama mereka untuk membantu kami memperkuat dan memperluas bisnis kami sebagai sebuah keluarga.',
       ],
@@ -209,13 +224,13 @@ module.exports = {
   },
   contact: {
     banner: {
-      title: 'Contact Us',
+      title: 'Hubungi Kami',
       body: 'Apakah ada pertanyaan? Kami senang mendengarnya dari kamu ',
     },
   },
   exchange: {
-    title: 'Exchange',
-    subtitle: ['You Can Buy Now', 'We Are Listing On'],
+    title: 'Perdagangan',
+    subtitle: ['Kamu Bisa Beli Sekarang', 'Kami Tersedia di Platform'],
     exchangeList: [
       {
         id: 'digifinexPlatform',

@@ -95,6 +95,19 @@ module.exports = {
     profile: [
       'Bali Social Integrated (BSI)는 글로벌 관광사업 최적화를 목표로 개발된 최초의 블록체인 프로젝트입니다. 저희는 블록체인 기술의 크로스 체인 기능을 사용하여 글로벌 여행자를 해당 서비스 제공업체에 직접 연결합니다.',
     ],
+    navigation: {
+      title: 'Get In Touch',
+      nav: {
+        contact: 'Contact',
+        about: 'About Us',
+        service: 'Service',
+      },
+    },
+    download: {
+      title: 'Download BSI App',
+    },
+    copyright:
+      '&copy; 2022 Bali Social Integrated Foundation. All rights reserved.',
   },
   home: {
     banner: {
@@ -102,14 +115,15 @@ module.exports = {
       body: [
         '쉽고 제한 없는 여행이라는 아이디어로 개발되었습니다.',
         'Bali Social Integrated (BSI)는 블록체인 기술의 엄청난 잠재력을 활용해 세상을 보고 경험할 수 있는 새로운 결제 방식이다.',
-        '세상이 큰것과 같이 우리의 비전도 마찬가지이다.',
+        '<b>세상이 큰것과 같이 우리의 비전도 마찬가지이다.</b>',
       ],
     },
     introduction: {
-      title: 'Introduction',
+      title: 'Bali Social Integrated',
       body: [
         'Bali Social Integrated (BSI)은 글로벌 관광사업 최적화를 목표로 개발된 최초의 블록체인 프로젝트입니다. 저희는 블록체인 기술의 크로스 체인 기능을 사용하여 글로벌 여행자를 해당하는 서비스 제공업체로 직접 연결합니다.',
       ],
+      button: 'Learn More',
     },
     pageBanners: {
       service: {

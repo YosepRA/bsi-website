@@ -77,8 +77,20 @@
     }
 
     &__body {
-      margin: 0 auto;
+      margin: 0 auto 1.8rem;
       max-width: 760px;
+    }
+
+    &__link {
+      &-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      &-item {
+        @include primary-button();
+        text-decoration: none;
+      }
     }
   }
 

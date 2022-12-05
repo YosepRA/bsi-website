@@ -121,8 +121,8 @@ p {
   font-weight: 400;
 
   &__row:first-child {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    padding-bottom: 1.4rem;
+    margin-bottom: 1.4rem;
     border-bottom: 1px solid white;
   }
 
@@ -142,6 +142,10 @@ p {
       width: 200px;
       height: auto;
       margin-bottom: 1rem;
+    }
+
+    &-text {
+      margin-bottom: 0;
     }
   }
 
@@ -179,26 +183,34 @@ p {
     }
 
     &-icon {
-      width: 160px;
+      width: 100%;
+      max-width: 160px;
       height: auto;
     }
   }
 
-  &__social-media {
-    @include flex-center();
+  // &__social-media {
+  //   @include flex-center();
 
-    &-link {
-      display: inline-block;
-      margin: 0 0.3rem;
-      background-color: #333;
-      border-radius: 50%;
-      color: white;
-      font-size: 1.1rem;
+  //   &-link {
+  //     display: inline-block;
+  //     margin: 0 0.3rem;
+  //     background-color: #333;
+  //     border-radius: 50%;
+  //     color: white;
+  //     font-size: 1.1rem;
 
-      &:hover {
-        background-color: white;
-        color: $body-color;
-      }
+  //     &:hover {
+  //       background-color: white;
+  //       color: $body-color;
+  //     }
+  //   }
+  // }
+
+  &__copyright {
+    &-text {
+      font-size: 0.8rem;
+      text-align: center;
     }
   }
 }
@@ -219,8 +231,14 @@ p {
   }
 
   .page-footer {
-    &__social-media {
-      justify-content: flex-end;
+    &__section {
+      margin-bottom: 0;
+    }
+
+    &__profile {
+      &-brand {
+        width: 180px;
+      }
     }
   }
 }
@@ -249,6 +267,13 @@ p {
       }
     }
   }
+
+  .page-footer {
+    &__navigation {
+      width: 90%;
+      margin-left: auto;
+    }
+  }
 }
 
 @include media-breakpoint-xl {
@@ -260,6 +285,30 @@ p {
     .nav {
       &-item {
         margin: 0 0.8rem;
+      }
+    }
+  }
+
+  .page-footer {
+    &__section {
+      &-title {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__profile {
+      &-brand {
+        width: 240px;
+      }
+    }
+
+    &__navigation {
+      width: 85%;
+    }
+
+    &__download {
+      &-icon {
+        max-width: 180px;
       }
     }
   }
@@ -294,6 +343,26 @@ p {
   .page-section {
     &__title {
       font-size: 2.2rem;
+    }
+  }
+
+  .page-footer {
+    &__section {
+      &-title {
+        font-size: 1.35rem;
+      }
+    }
+
+    &__profile {
+      &-brand {
+        width: 260px;
+      }
+    }
+
+    &__download {
+      &-icon {
+        max-width: 190px;
+      }
     }
   }
 }
@@ -339,6 +408,26 @@ p {
 
     &__title {
       font-size: 2.7rem;
+    }
+  }
+
+  .page-footer {
+    &__section {
+      &-title {
+        font-size: 1.7rem;
+      }
+    }
+
+    &__profile {
+      &-brand {
+        width: 320px;
+      }
+    }
+
+    &__download {
+      &-icon {
+        max-width: 230px;
+      }
     }
   }
 }

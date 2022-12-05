@@ -21,6 +21,7 @@ Finished item will be marked as done. ✅
   - Create a fixed positioned navbar. ✅
 - Footer:
   - Ask for play store URLs.
+  - Blurry Google Play Store button on 1600px+ screens.
 - About us page:
   - Add Above The Fold (ATF) background image.
   - ATF background image to be transparent at the bottom. Use Photoshop if possible.
@@ -33,9 +34,15 @@ Finished item will be marked as done. ✅
 
 - Language data middleware to be included in its own object. Don't spread the object directly.
 - Migrate `index-v2.ejs` and all files related to it to be `index.ejs`.
+- Delete Exchange page subcategories from dictionaries.
+- Restructure nav items hierarchy on dictionaries according to navbar's orders.
 
 ---
 
 ## Questions
 
-- Exchange page CoinGecko and CoinMarketCap "Details" button clash against the trigger.
+Questions and concerns that should be asked in the next meeting.
+
+- Exchange page CoinGecko and CoinMarketCap "Details" vs "More Info"
+- About Us page image card text legibility.
+- Check Indonesian non-body texts, e.g. section titles and nav items.

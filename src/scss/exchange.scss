@@ -107,12 +107,23 @@
       }
 
       &-btn {
-        @include light-button();
-        font-size: inherit;
+        width: 120px;
         text-transform: uppercase;
+
+        &--trigger {
+          @include light-button();
+          justify-self: end;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          font-size: 0.8rem;
+        }
 
         &--buy {
           @include primary-button();
+          justify-self: start;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          font-size: 0.8rem;
         }
       }
 
@@ -203,13 +214,15 @@
         }
 
         &-controls {
-          width: auto;
-          flex: 1;
+          flex: 0 0 248px;
           align-self: flex-end;
+          margin: 0 0 0 auto;
         }
 
         &-btn {
+          width: 100%;
           padding: 0.5rem 0;
+          justify-self: stretch;
         }
 
         &-body {
@@ -252,8 +265,12 @@
         }
 
         &-controls {
-          flex: 0 0 35%;
+          flex: 0 0 300px;
           margin: 0 0 0 auto;
+        }
+
+        &-btn {
+          font-size: 0.9rem;
         }
 
         &-body {
@@ -290,6 +307,15 @@
       &__accordion {
         &-header {
           height: 240px;
+        }
+
+        &-controls {
+          flex: 0 0 360px;
+        }
+
+        &-btn {
+          padding: 0.7rem 1rem;
+          font-size: 1rem;
         }
       }
     }
@@ -328,6 +354,15 @@
         &-header {
           height: 280px;
           padding: 2rem 3.2rem;
+        }
+
+        &-controls {
+          flex: 0 0 440px;
+        }
+
+        &-btn {
+          padding: 0.9rem 1rem;
+          font-size: 1.3rem;
         }
 
         &-body {
