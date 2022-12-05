@@ -1,21 +1,20 @@
 .service {
-    background: fixed url('/img/service-backg.png') center/cover no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: relative;
-    width: 100vw;
-    height: 100vh;
-    // padding-top: 3rem;
-    position: relative;
-    background-repeat: no-repeat;
-  }
-
+  background: fixed url('/img/service-backg.png') center/cover no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: relative;
+  width: 100vw;
+  height: 100vh;
+  // padding-top: 3rem;
+  position: relative;
+  background-repeat: no-repeat;
+}
 
 // ========== Viaje Ecosystem =========//
 
-.service .viaje_ecosystem{
-    padding-bottom: 100px;
-  }
+.service .viaje_ecosystem {
+  padding-bottom: 100px;
+}
 
 // .service p.small{
 
@@ -25,21 +24,20 @@
 //     justify-content: center;
 //     font-size: 1.5rem;
 // }
-.service h4.big-title{
-    color: #ffffff;
-    font-size: 3rem;
-    font-weight: 600;
-    margin-top: 5rem;
-    
+.service h4.big-title {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 600;
+  // margin-top: 5rem;
 }
 
-.service .viaje_ecosystem_picture{
+.service .viaje_ecosystem_picture {
   margin-top: 100px;
 }
 
-.service img.viaje_ecosystem_icon{
-    width: 65%;
-    height: 0 auto;
+.service img.viaje_ecosystem_icon {
+  width: 65%;
+  height: 0 auto;
 }
 
 // ====VIAJE PLATFORM PAGE=========//
@@ -51,21 +49,21 @@
 //     margin-bottom: 3rem;
 //     font-size: 1.5rem;
 // }
-.service h4.big-title1{
-    padding-top: 3rem;
-    font-size: 3rem;
-    font-weight: 600;
-    color: #ffffff;
+.service h4.big-title1 {
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
 }
 
-.service .viaje_platform{
-padding-top: 100px;
-padding-bottom: 3rem;
+.service .viaje_platform {
+  padding-top: 100px;
+  padding-bottom: 3rem;
 }
-.service img.viaje_platform_picture{
-    // width: 400px;
-    width: 70%;
-    margin-top: 5rem;
+.service img.viaje_platform_picture {
+  // width: 400px;
+  width: 70%;
+  margin-top: 5rem;
 }
 // .service .viaje_platform_page{
 //     padding-top: 3rem;
@@ -74,82 +72,78 @@ padding-bottom: 3rem;
 
 // ====META CONCERT======//
 
-.service .meta_img{
-    width: 700px;
+.service .meta_img {
+  width: 700px;
 }
-.service img.meta-concert-img{
-    width: 100%;
-    height: 0 auto;
-    // margin-left: 3rem;
-    // margin-top: 1.8rem;       
-}
-
-.service .meta_concert_illust{
-    padding-top: 100px;
-    padding-bottom: 120px;
-}
-.service h4.big-title2{
-    padding-top: 3rem;
-    font-size: 3rem;
-    font-weight: 600;
-    color: #ffffff;
+.service img.meta-concert-img {
+  width: 100%;
+  height: 0 auto;
+  // margin-left: 3rem;
+  // margin-top: 1.8rem;
 }
 
+.service .meta_concert_illust {
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+.service h4.big-title2 {
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+}
 
 /* =============== Breakpoints =============== */
 
 @media screen and (max-width: 576px) {
-    
-    .service {
-        background-position: 80% center;
-      }
-    .service img.viaje_platform_picture{
-        // width: 400px;
-        width: 100%;
-        text-align: center;
-    }
-    .service img.viaje_ecosystem_icon{
-          width: 100%;
-          height: 0 auto;
-          text-align: center;
-        //   margin-left: 1.5rem;
-      }
-    .service img.meta-concert-img{
-      width: 318px;
-      height: 0 auto; 
-      justify-content: center;    
+  .service {
+    background-position: 80% center;
   }
-  .service p.small-1{
-    text-align: center;
-  }
-  .service h4.big-title{
-    text-align: center;
-  }
-  }
-  
-  
-@media screen and (max-width: 992px) {
-    .service {
-      background-position: 60% center;
-    }
-    .service img.viaje_ecosystem_icon{
-        width: 100%;
-        height: 0 auto;
-        text-align: center;
-    }
-    .service img.meta-concert-img{
+  .service img.viaje_platform_picture {
+    // width: 400px;
     width: 100%;
-    height: 0 auto;     
+    text-align: center;
+  }
+  .service img.viaje_ecosystem_icon {
+    width: 100%;
+    height: 0 auto;
+    text-align: center;
+    //   margin-left: 1.5rem;
+  }
+  .service img.meta-concert-img {
+    width: 318px;
+    height: 0 auto;
+    justify-content: center;
+  }
+  .service p.small-1 {
+    text-align: center;
+  }
+  .service h4.big-title {
+    text-align: center;
+  }
 }
-.service img.platform_art-img{
+
+@media screen and (max-width: 992px) {
+  .service {
+    background-position: 60% center;
+  }
+  .service img.viaje_ecosystem_icon {
+    width: 100%;
+    height: 0 auto;
+    text-align: center;
+  }
+  .service img.meta-concert-img {
+    width: 100%;
+    height: 0 auto;
+  }
+  .service img.platform_art-img {
     width: 80%;
     height: 0 auto;
+  }
 }
-    
-  }
 
-  @media screen and (max-width: 1920px) {
-    .service{
-        background-position: 60% center;
-    }
+@media screen and (max-width: 1920px) {
+  .service {
+    background-position: 60% center;
   }
+}

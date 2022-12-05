@@ -8,20 +8,17 @@ Finished item will be marked as done. ✅
 
 ## Front-end
 
-- Ming: Jadi di bagian group company gak perlu short desc, jadi langsung logo + keterangan tiap logo. sedangkan partnership / mitra itu minta ada short desc ya pak
-- Cek feedback file for 29-11-2022 in `docs` folder.
-
-- Remove `collapse` and `show` state from all navbar elements.
+- Remove `collapse` and `show` state from all navbar elements. ✅
 - Create a better box shadow for navbar.
 - Exchange page:
   - Accordion header and body border radius to transition from 10px to 0px when active.
-  - URLs for exchange pages.
+  - URLs for exchange pages. ✅
   - Direct scroll and open accordion.
 - Navbar:
   - Use primary color as background. Adjust other colors such as text accordingly.
-  - Change English language flag from UK to US.
+  - Change English language flag from UK to US. ✅
   - Active state.
-  - Once first release is finished, create a fixed positioned navbar.
+  - Create a fixed positioned navbar. ✅
 - Footer:
   - Ask for play store URLs.
 - About us page:
@@ -29,10 +26,16 @@ Finished item will be marked as done. ✅
   - ATF background image to be transparent at the bottom. Use Photoshop if possible.
   - Set `max-width` for ATF body and image. Also center-align it.
 - Button hover and active state.
-- Smaller language flag right margin.
+- Smaller language flag right margin. ✅
 - A feature to display the full-version of an image assets. The images will be small in mobile, that's not ideal.
 
 ## Back-end
 
 - Language data middleware to be included in its own object. Don't spread the object directly.
-- Change `/bsi` to `/home`. Basically change it to become the home page. Slowly migrate from old home page layout to the new one, don't delete the files related to it right away.
+- Migrate `index-v2.ejs` and all files related to it to be `index.ejs`.
+
+---
+
+## Questions
+
+- Exchange page CoinGecko and CoinMarketCap "Details" button clash against the trigger.

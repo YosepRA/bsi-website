@@ -2,7 +2,7 @@
 
 .bsi {
   .main-container {
-    padding-top: 0;
+    padding-top: 75px;
   }
 
   .banner {
@@ -140,6 +140,10 @@
 
 @include media-breakpoint-md {
   .bsi {
+    .main-container {
+      padding-top: 88px;
+    }
+
     .banner {
       &__info {
         .row {
@@ -193,7 +197,6 @@
       &__body {
         margin: 0 auto;
         max-width: 760px;
-        text-align: center;
       }
     }
   }
@@ -201,6 +204,10 @@
 
 @include media-breakpoint-lg {
   .bsi {
+    .main-container {
+      padding-top: 104px;
+    }
+
     .roadmap {
       &__image {
         &-container {
@@ -230,14 +237,26 @@
 
     .summary {
       &__body {
-        max-width: 940px;
+        max-width: 860px;
       }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  .bsi {
+    .main-container {
+      padding-top: 114px;
     }
   }
 }
 
 @include media-breakpoint-xxxl {
   .bsi {
+    .main-container {
+      padding-top: 138px;
+    }
+
     .banner {
       margin-bottom: 8rem;
 
@@ -267,6 +286,10 @@
     .summary {
       &__title {
         margin-bottom: 1rem;
+      }
+
+      &__body {
+        max-width: 1200px;
       }
     }
   }

@@ -2,7 +2,7 @@
 
 .home {
   .main-container {
-    padding-top: 0;
+    padding-top: 75px;
     padding-bottom: 0;
   }
 
@@ -79,7 +79,6 @@
     &__body {
       margin: 0 auto;
       max-width: 760px;
-      text-align: center;
     }
   }
 
@@ -132,6 +131,10 @@
 
 @include media-breakpoint-md {
   .home {
+    .main-container {
+      padding-top: 88px;
+    }
+
     .banner {
       &__info {
         .row {
@@ -139,6 +142,14 @@
           justify-content: start;
         }
       }
+    }
+  }
+}
+
+@include media-breakpoint-lg {
+  .home {
+    .main-container {
+      padding-top: 104px;
     }
   }
 }
@@ -156,7 +167,7 @@
 
     .introduction {
       &__body {
-        max-width: 940px;
+        max-width: 860px;
       }
     }
   }
@@ -164,6 +175,10 @@
 
 @include media-breakpoint-xxl {
   .home {
+    .main-container {
+      padding-top: 114px;
+    }
+
     .page-banners {
       &__item {
         &-title {
@@ -176,6 +191,10 @@
 
 @include media-breakpoint-xxxl {
   .home {
+    .main-container {
+      padding-top: 138px;
+    }
+
     .banner {
       margin-bottom: 10rem;
 
@@ -183,6 +202,12 @@
         &-title {
           font-size: 3.4rem;
         }
+      }
+    }
+
+    .introduction {
+      &__body {
+        max-width: 1200px;
       }
     }
 
