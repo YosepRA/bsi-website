@@ -95,20 +95,35 @@ module.exports = {
     profile: [
       'Bali Social Integrated is the first Blockchain project developed with an aim to optimize the global tourism industry. We use blockchain technology&apos;s cross-chain capabilities to connect global travelers to the respective service providers directly.',
     ],
+    navigation: {
+      title: 'Get In Touch',
+      nav: {
+        contact: 'Contact',
+        about: 'About Us',
+        service: 'Service',
+      },
+    },
+    download: {
+      title: 'Download BSI App',
+    },
+    copyright:
+      '&copy; 2022 Bali Social Integrated Foundation. All rights reserved.',
   },
   home: {
     banner: {
-      title: 'A New Payment Way and Easy to Travel on Bali',
+      title: 'A New and Easy Payment System to Travel in Bali',
       body: [
         'Developed with the idea of easy and borderless travel.',
-        'Bali Social Integrated is a new payment way to see and experience the world by utilizing the immense potential of blockchain technology. The world is big and so is our vision.',
+        'Bali Social Integrated is a new payment way to see and experience the world by utilizing the immense potential of blockchain technology.',
+        '<b>The world is big and so is our vision.</b>',
       ],
     },
     introduction: {
-      title: 'Introduction',
+      title: 'Bali Social Integrated',
       body: [
         'Bali Social Integrated is the first Blockchain project developed with an aim to optimize the global tourism industry. We use blockchain technology&apos;s cross-chain capabilities to connect global travelers to the respective service providers directly.',
       ],
+      button: 'Learn More',
     },
     pageBanners: {
       service: {
@@ -143,7 +158,7 @@ module.exports = {
   },
   bsi: {
     banner: {
-      title: 'A New Payment Way and Easy to Travel on Bali',
+      title: 'A New and Easy Payment System to Travel in Bali',
       body: [
         'Bali Social Integrated (BSI) is a Blockchain-based platform connecting reputed online travel agencies (OTA) with global customers. The ecosystem is designed on blockchain to become transparent, secure, tamper-resistant with several incentives.',
         'Bali Social Integrated offers a blockchain-powered tour and payment system. This system can be used to book and pay for tickets, accommodation, car rental, EV motorbike rental, restaurants, shopping, and recreational activities.',
