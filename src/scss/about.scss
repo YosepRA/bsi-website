@@ -29,14 +29,6 @@
       z-index: 2;
     }
 
-    &__title {
-      text-align: center;
-    }
-
-    &__body {
-      text-align: center;
-    }
-
     &__image {
       width: 100%;
       height: auto;
@@ -50,8 +42,8 @@
 
     &__item {
       position: relative;
-      width: 100%;
-      height: calc(340px + 14vw);
+      width: 320px;
+      height: 400px;
       margin-bottom: 1rem;
       padding: 1.8rem 1.4rem;
       background-color: rgba(black, 0.8);
@@ -67,7 +59,7 @@
 
       &--juleo {
         background-image: url('/img/portrait-pak-juleo.png');
-        background-position: 50% 100%;
+        background-position: 50% bottom;
         background-size: 130%;
       }
 
@@ -99,13 +91,13 @@
       }
 
       &-name {
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 1.4rem;
+        font-weight: 400;
         text-transform: uppercase;
       }
 
       &-position {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
     }
   }
@@ -202,7 +194,6 @@
       &__body {
         max-width: 740px;
         margin: 0 auto 2rem;
-        text-align: center;
       }
     }
   }
@@ -265,6 +256,12 @@
         &-position {
           font-size: 1.4rem;
         }
+      }
+    }
+
+    .partnership {
+      &__body {
+        max-width: 1200px;
       }
     }
   }

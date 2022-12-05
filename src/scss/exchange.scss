@@ -97,12 +97,29 @@
         }
       }
 
+      &-controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        width: 100%;
+        margin: 0 auto;
+        z-index: 2;
+      }
+
+      &-btn {
+        @include light-button();
+        font-size: inherit;
+        text-transform: uppercase;
+
+        &--buy {
+          @include primary-button();
+        }
+      }
+
       &-trigger {
         @include light-button();
         z-index: 2;
         padding: 0.3rem 0.7rem;
-        font-size: inherit;
-        text-transform: uppercase;
       }
 
       &-body {
@@ -122,21 +139,27 @@
         margin-bottom: 2rem;
       }
 
-      &-control {
-        @include flex-center();
-        justify-content: flex-end;
-      }
-
-      &-url {
-        @include light-button();
-        font-size: inherit;
-        text-transform: uppercase;
-      }
+      // &-control {
+      //   @include flex-center();
+      //   justify-content: flex-end;
+      // }
     }
   }
 }
 
 /* =============== Breakpoints =============== */
+
+@include media-breakpoint-sm {
+  .exchange {
+    .exchange-list {
+      &__accordion {
+        &-controls {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
 
 @include media-breakpoint-md {
   .exchange {
@@ -179,8 +202,14 @@
           text-align: left;
         }
 
-        &-trigger {
+        &-controls {
+          width: auto;
+          flex: 1;
           align-self: flex-end;
+        }
+
+        &-btn {
+          padding: 0.5rem 0;
         }
 
         &-body {
@@ -220,6 +249,11 @@
         &-header {
           height: 200px;
           padding: 1.4rem 2rem;
+        }
+
+        &-controls {
+          flex: 0 0 35%;
+          margin: 0 0 0 auto;
         }
 
         &-body {

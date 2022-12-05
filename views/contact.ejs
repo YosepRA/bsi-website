@@ -8,30 +8,32 @@
   <body class="contact <%= lang %>">
     <%- include('partials/navbar.ejs') %>
 
-    <section class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <h1 class="banneer-title"><%- banner.title %></h1>
-            <p class="banner1"><%- banner.body %></p>
+    <main class="main-container">
+      <section class="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <h1 class="banneer-title"><%- banner.title %></h1>
+              <p class="banner1"><%- banner.body %></p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="contact_us page-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <h1 class="email">E-MAIL</h1>
-            <p class="banner1">info@bsi.co.id </p>
-          </div>
-          <div class="col-lg-7 ">
-            <h1 class="partner">PARTNERSHIP E-MAIL</h1>
-            <p class="banner1">partner@bsi.co.id </p>
-          </div>
-      </div>
-    </section>
+      </section>
+  
+      <section class="contact_us page-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <h1 class="email">E-MAIL</h1>
+              <p class="banner1">info@bsi.co.id </p>
+            </div>
+            <div class="col-lg-7 ">
+              <h1 class="partner">PARTNERSHIP E-MAIL</h1>
+              <p class="banner1">partner@bsi.co.id </p>
+            </div>
+        </div>
+      </section>
+    </main>
     
     <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
