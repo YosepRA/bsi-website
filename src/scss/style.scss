@@ -189,24 +189,6 @@ p {
     }
   }
 
-  // &__social-media {
-  //   @include flex-center();
-
-  //   &-link {
-  //     display: inline-block;
-  //     margin: 0 0.3rem;
-  //     background-color: #333;
-  //     border-radius: 50%;
-  //     color: white;
-  //     font-size: 1.1rem;
-
-  //     &:hover {
-  //       background-color: white;
-  //       color: $body-color;
-  //     }
-  //   }
-  // }
-
   &__copyright {
     &-text {
       font-size: 0.8rem;
@@ -364,6 +346,12 @@ p {
         max-width: 190px;
       }
     }
+
+    &__copyright {
+      &-text {
+        font-size: 1rem;
+      }
+    }
   }
 }
 
@@ -427,6 +415,12 @@ p {
     &__download {
       &-icon {
         max-width: 230px;
+      }
+    }
+
+    &__copyright {
+      &-text {
+        font-size: 1.2rem;
       }
     }
   }

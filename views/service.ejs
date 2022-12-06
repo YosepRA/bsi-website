@@ -31,7 +31,7 @@
               <% for( let i = 0; i < viajeEcosystem.body.length; i++ ) { %>
                 <% const text = viajeEcosystem.body[i]; %>
   
-                <p class="text-white"><%- text %></p>
+                <p class="text-white small-1"><%- text %></p>
               <% } %>
             </div>
           </div>
@@ -56,7 +56,7 @@
               <% for( let i = 0; i < viajePlatform.body.length; i++ ) { %>
                 <% const text = viajePlatform.body[i]; %>
   
-                <p class="text-white"><%- text %></p>
+                <p class="text-white small-1"><%- text %></p>
               <% } %>
             </div>
           </div>
@@ -73,16 +73,16 @@
         <section id="<%= metaConcertMeta.id %>" class="meta_concert_illust">
           <div class="container">
             <div class="row meta_concert_prop">
-              <div class="col-md-6 meta_img">
+              <div class="col-md-4 meta_img">
                 <img class="meta-concert-img" src="/img/meta concert illust.png" alt="meta-concert-illust">
               </div>
-              <div class="col">
-                <h4 class="big-title"><%= metaConcert.title %></h4>
+              <div class="col-md-7 meta_concert_info">
+                <h4 class="big-title-1"><%= metaConcert.title %></h4>
         
                 <% for( let i = 0; i < metaConcert.body.length; i++ ) { %>
                   <% const text = metaConcert.body[i]; %>
         
-                  <p class="small-1 text-white"><%- text %></p>
+                  <p class=" text-white"><%- text %></p>
                 <% } %>    
               </div>
             </div>
