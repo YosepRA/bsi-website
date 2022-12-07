@@ -229,8 +229,8 @@
     .banner {
       &__info {
         &-title {
-          font-size: 3rem;
-          margin-bottom: 1.4rem;
+          font-size: 2.2rem;
+          margin-bottom: 1rem;
         }
       }
     }
@@ -254,7 +254,7 @@
 @include media-breakpoint-xxxl {
   .bsi {
     .main-container {
-      padding-top: 138px;
+      padding-top: 124px;
     }
 
     .banner {
@@ -262,7 +262,7 @@
 
       &__info {
         &-title {
-          font-size: 3.4rem;
+          font-size: 3rem;
         }
       }
     }
@@ -289,7 +289,7 @@
       }
 
       &__body {
-        max-width: 1200px;
+        max-width: 1100px;
       }
     }
   }

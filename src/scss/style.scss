@@ -16,10 +16,6 @@ body {
   }
 }
 
-p {
-  text-align: justify;
-}
-
 .navbar {
   position: fixed;
   top: 0;
@@ -106,7 +102,7 @@ p {
 
   &__title {
     margin-bottom: 1.8rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
@@ -131,7 +127,7 @@ p {
 
     &-title {
       margin-bottom: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
       text-transform: uppercase;
     }
@@ -199,6 +195,12 @@ p {
 
 /* =============== Breakpoints =============== */
 
+@include media-breakpoint-sm {
+  p {
+    text-align: justify;
+  }
+}
+
 @include media-breakpoint-md {
   .navbar {
     &-brand {
@@ -232,7 +234,7 @@ p {
 
   .navbar {
     padding: 1rem 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     &-nav {
       align-items: center;
@@ -259,14 +261,12 @@ p {
 }
 
 @include media-breakpoint-xl {
-  body {
-    font-size: 1.1rem;
-  }
-
   .navbar {
+    font-size: 0.9rem;
+
     .nav {
       &-item {
-        margin: 0 0.8rem;
+        margin: 0 0.6rem;
       }
     }
   }
@@ -274,13 +274,13 @@ p {
   .page-footer {
     &__section {
       &-title {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
       }
     }
 
     &__profile {
       &-brand {
-        width: 240px;
+        width: 200px;
       }
     }
 
@@ -298,7 +298,7 @@ p {
 
 @include media-breakpoint-xxl {
   body {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .navbar {
@@ -313,7 +313,7 @@ p {
 
     .nav {
       &-item {
-        margin: 0 1.1rem;
+        margin: 0 0.8rem;
       }
     }
   }
@@ -324,20 +324,20 @@ p {
 
   .page-section {
     &__title {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
   }
 
   .page-footer {
     &__section {
       &-title {
-        font-size: 1.35rem;
+        font-size: 1.2rem;
       }
     }
 
     &__profile {
       &-brand {
-        width: 260px;
+        width: 230px;
       }
     }
 
@@ -349,7 +349,7 @@ p {
 
     &__copyright {
       &-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
     }
   }
@@ -357,19 +357,19 @@ p {
 
 @include media-breakpoint-xxxl {
   body {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .main-container {
-    padding-top: calc(6rem + 138px);
+    padding-top: calc(6rem + 124px);
   }
 
   .navbar {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 
     &-brand {
       &__image {
-        width: 280px;
+        width: 240px;
         height: auto;
       }
     }
@@ -395,20 +395,20 @@ p {
     }
 
     &__title {
-      font-size: 2.7rem;
+      font-size: 2.2rem;
     }
   }
 
   .page-footer {
     &__section {
       &-title {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
       }
     }
 
     &__profile {
       &-brand {
-        width: 320px;
+        width: 260px;
       }
     }
 
@@ -420,7 +420,7 @@ p {
 
     &__copyright {
       &-text {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
     }
   }
