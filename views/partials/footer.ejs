@@ -1,3 +1,76 @@
-<footer>
-  <h3>Footer</h3>
+<% 
+  const { footer: {
+    profile,
+    navigation,
+    download,
+    copyright
+  } } = data;
+%>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row page-footer__row">
+      <div class="col-12 col-md-6">
+        <div class="page-footer__profile page-footer__section">
+          <img src="/img/bsi-logo.png" alt="Bali Social Integrated" class="page-footer__profile-brand" />
+
+          <div class="page-footer__profile-introduction">
+            <% for( let i = 0; i < profile.length; i++ ) { %>
+              <% const text = profile[i]; %>
+
+              <p class="page-footer__profile-text"><%- text %></p>
+            <% } %>  
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <nav class="page-footer__navigation page-footer__section">
+          <h3 class="page-footer__navigation-title page-footer__section-title"><%- navigation.title %></h3>
+
+          <ul class="page-footer__navigation-list">
+            <li class="page-footer__navigation-list-item">
+              <a href="/<%= lang %>/contact" class="page-footer__navigation-link"><%- navigation.nav.contact %></a>
+            </li>
+
+            <li class="page-footer__navigation-list-item">
+              <a href="/<%= lang %>/about" class="page-footer__navigation-link"><%- navigation.nav.about %></a>
+            </li>
+
+            <li class="page-footer__navigation-list-item">
+              <a href="/<%= lang %>/service" class="page-footer__navigation-link"><%- navigation.nav.service %></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="page-footer__download page-footer__section">
+          <h2 class="page-footer_-download-title page-footer__section-title"><%- download.title %></h2>
+
+          <ul class="page-footer__download-list">
+            <li class="page-footer__download-list-item">
+              <a href="https://www.google.com" class="page-footer__download-link">
+                <img src="/img/google-play-badge.png" alt="Google Play Store Download" class="page-footer__download-icon" />
+              </a>
+            </li>
+
+            <li class="page-footer__download-list-item">
+              <a href="https://www.google.com" class="page-footer__download-link">
+                <img src="/img/apple-store-badge.svg" alt="Apple Store Download" class="page-footer__download-icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row page-footer__row">
+      <div class="col">
+        <div class="page-footer__copyright">
+          <p class="page-footer__copyright-text"><%- copyright %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>

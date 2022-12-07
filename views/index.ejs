@@ -1,10 +1,32 @@
 <%- include('partials/header.ejs') %>
-  <body>
+  <body class="homepage">
     <%- include('partials/navbar.ejs') %>
 
-    <h1 class="display-3">Home Page</h1>
+    <section class="banner">
+      <div class="banner__carousel carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item carousel-item--01 active"></div>
+          <div class="carousel-item carousel-item--02"></div>
+          <div class="carousel-item carousel-item--03"></div> 
+        </div>
+      </div>
+  
+      <div class="banner__info">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-lg-6">
+              <h1 class="banner__info-headline">TEXT BSI HERE</h1>
+        
+              <p class="banner__info-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim quae accusantium aspernatur ullam voluptatum iusto? Porro fugiat harum, et, dicta cupiditate, autem sunt optio nihil libero beatae laboriosam itaque obcaecati!</p>
+              
+              <button class="btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <%- include('partials/footer.ejs') %>
+    <!-- <%- include('partials/footer.ejs') %> -->
     <%- include('partials/js-libraries.ejs') %>
   </body>
 </html>

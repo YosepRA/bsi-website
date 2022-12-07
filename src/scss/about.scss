@@ -1,0 +1,284 @@
+@import 'config';
+
+.about {
+  @include page-gradient();
+  color: white;
+
+  .group-company {
+    position: relative;
+    background-color: transparent;
+
+    &::before {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($gradient-from, 0.85);
+      content: '';
+    }
+
+    &__col {
+      z-index: 2;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .bsi-team {
+    &__title {
+      text-align: center;
+    }
+
+    &__item {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      max-width: 300px;
+      margin: 0 auto 1rem;
+      padding: 1.8rem 1.4rem;
+      background-color: rgba(black, 0.8);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      color: white;
+
+      &--danniel {
+        background-image: url('/img/portrait-pak-danniel.png');
+        background-position: center bottom;
+      }
+
+      &--juleo {
+        background-image: url('/img/portrait-pak-juleo.png');
+        background-position: 50% bottom;
+      }
+
+      &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.2);
+        border-radius: $border-radius;
+      }
+
+      &-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: start;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+      }
+
+      &-name,
+      &-position {
+        text-shadow: 0 0 1px black;
+      }
+
+      &-name {
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      &-position {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .partnership {
+    &__title {
+      text-align: center;
+    }
+
+    &__body {
+      margin-bottom: 2rem;
+    }
+
+    &__level {
+      &-row {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      &-col {
+        text-align: center;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@include media-breakpoint-sm {
+  .about {
+    .bsi-team {
+      &__row {
+        &--images {
+          justify-content: center;
+        }
+      }
+
+      &__item {
+        &-name {
+          font-size: 1.3rem;
+        }
+
+        &-position {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .partnership {
+      &__level {
+        &-row {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      &__level {
+        &-three {
+          width: 70%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-md {
+  .about {
+    .group-company {
+      &__text-row,
+      &__image-row {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .bsi-team {
+      &__item {
+        margin-bottom: 0;
+
+        &-name {
+          font-size: 1.2rem;
+        }
+
+        &-position {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .partnership {
+      &__body {
+        max-width: 740px;
+        margin: 0 auto 2rem;
+      }
+
+      &__images {
+        &-row {
+          width: 80%;
+          margin: auto;
+        }
+      }
+
+      &__image {
+        &--coco {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-lg {
+  .about {
+    .group-company {
+      &__text-row,
+      &__image-row {
+        max-width: 700px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xl {
+  .about {
+    .partnership {
+      &__body {
+        max-width: 940px;
+      }
+
+      &__images {
+        &-row {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  .about {
+    .bsi-team {
+      &__item {
+        max-width: 340px;
+        height: 420px;
+
+        &-name {
+          font-size: 1.3rem;
+        }
+
+        &-position {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxxl {
+  .about {
+    .bsi-team {
+      &__item {
+        max-width: 420px;
+        height: 520px;
+        padding: 2.4rem 2rem;
+
+        &-name {
+          font-size: 1.7rem;
+        }
+
+        &-position {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    .partnership {
+      &__body {
+        max-width: 1200px;
+      }
+    }
+  }
+}

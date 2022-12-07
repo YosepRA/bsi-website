@@ -1,0 +1,427 @@
+/* This file is for components that are used in multiple pages. */
+
+@import 'config';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include montserrat();
+  color: $body-color;
+  font-weight: 400;
+
+  &.kr {
+    font-weight: 400;
+  }
+}
+
+p {
+  text-align: justify;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+  box-shadow: 1px 1px 3px #333;
+  font-weight: 600;
+
+  .nav {
+    &-item {
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      text-align: center;
+    }
+
+    &-link {
+      color: $body-color;
+    }
+
+    &-primary-btn {
+      @include primary-button();
+      font-size: inherit;
+    }
+  }
+
+  .dropdown {
+    &-menu {
+      @include page-gradient();
+      font-size: inherit;
+    }
+
+    &-item {
+      color: white;
+      font-size: inherit;
+      font-weight: 400;
+
+      &:hover {
+        color: $body-color;
+      }
+
+      &__flag {
+        display: inline-block;
+        margin-right: 0.3rem;
+      }
+
+      &__image {
+        width: 30px;
+        height: auto;
+      }
+    }
+  }
+
+  &-brand {
+    &__image {
+      width: 140px;
+      height: auto;
+    }
+  }
+
+  &__lang {
+    &-item {
+      display: inline-block;
+    }
+
+    &-image {
+      width: 30px;
+      height: auto;
+      margin-right: 0.3rem;
+    }
+  }
+}
+
+.main-container {
+  padding-top: calc(3rem + 75px);
+  padding-bottom: 10rem;
+}
+
+.page-section {
+  &:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+
+  &__title {
+    margin-bottom: 1.8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.page-footer {
+  background-color: #060914;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+  font-weight: 400;
+
+  &__row:first-child {
+    padding-bottom: 1.4rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 1px solid white;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+
+    &-title {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  &__profile {
+    &-brand {
+      width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    &-text {
+      margin-bottom: 0;
+    }
+  }
+
+  &__navigation {
+    &-list {
+      list-style: none;
+      padding-left: 0;
+
+      &-item {
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    &-link {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &__download {
+    margin-bottom: 0;
+
+    &-list {
+      list-style: none;
+      padding-left: 0;
+
+      &-item {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    &-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    &-icon {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+    }
+  }
+
+  &__copyright {
+    &-text {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@include media-breakpoint-md {
+  .navbar {
+    &-brand {
+      &__image {
+        width: 180px;
+      }
+    }
+  }
+
+  .main-container {
+    padding-top: calc(3rem + 88px);
+  }
+
+  .page-footer {
+    &__section {
+      margin-bottom: 0;
+    }
+
+    &__profile {
+      &-brand {
+        width: 180px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-lg {
+  .main-container {
+    padding-top: calc(4rem + 104px);
+  }
+
+  .navbar {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+
+    &-nav {
+      align-items: center;
+    }
+
+    &-collapse {
+      justify-content: flex-end;
+    }
+
+    .nav {
+      &-item {
+        margin: 0 0.3rem;
+        padding: 0;
+      }
+    }
+  }
+
+  .page-footer {
+    &__navigation {
+      width: 90%;
+      margin-left: auto;
+    }
+  }
+}
+
+@include media-breakpoint-xl {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    .nav {
+      &-item {
+        margin: 0 0.8rem;
+      }
+    }
+  }
+
+  .page-footer {
+    &__section {
+      &-title {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__profile {
+      &-brand {
+        width: 240px;
+      }
+    }
+
+    &__navigation {
+      width: 85%;
+    }
+
+    &__download {
+      &-icon {
+        max-width: 180px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  body {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    font-size: 1rem;
+
+    &-brand {
+      &__image {
+        width: 210px;
+        height: auto;
+      }
+    }
+
+    .nav {
+      &-item {
+        margin: 0 1.1rem;
+      }
+    }
+  }
+
+  .main-container {
+    padding-top: calc(4rem + 114px);
+  }
+
+  .page-section {
+    &__title {
+      font-size: 2.2rem;
+    }
+  }
+
+  .page-footer {
+    &__section {
+      &-title {
+        font-size: 1.35rem;
+      }
+    }
+
+    &__profile {
+      &-brand {
+        width: 260px;
+      }
+    }
+
+    &__download {
+      &-icon {
+        max-width: 190px;
+      }
+    }
+
+    &__copyright {
+      &-text {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxxl {
+  body {
+    font-size: 1.5rem;
+  }
+
+  .main-container {
+    padding-top: calc(6rem + 138px);
+  }
+
+  .navbar {
+    font-size: 1.3rem;
+
+    &-brand {
+      &__image {
+        width: 280px;
+        height: auto;
+      }
+    }
+
+    &__lang {
+      &-image {
+        width: 40px;
+      }
+    }
+
+    .dropdown {
+      &-item {
+        &__image {
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .page-section {
+    &:not(:last-child) {
+      margin-bottom: 10rem;
+    }
+
+    &__title {
+      font-size: 2.7rem;
+    }
+  }
+
+  .page-footer {
+    &__section {
+      &-title {
+        font-size: 1.7rem;
+      }
+    }
+
+    &__profile {
+      &-brand {
+        width: 320px;
+      }
+    }
+
+    &__download {
+      &-icon {
+        max-width: 230px;
+      }
+    }
+
+    &__copyright {
+      &-text {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

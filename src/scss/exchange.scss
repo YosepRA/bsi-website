@@ -1,0 +1,374 @@
+@import 'config';
+
+.exchange {
+  @include page-gradient();
+
+  .page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+
+    h1,
+    h2 {
+      font-weight: 600;
+    }
+
+    &__title {
+      margin-bottom: 1.2rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+
+      &--one {
+        margin-bottom: 1.2rem;
+        letter-spacing: 2px;
+      }
+
+      &--two {
+        letter-spacing: 4px;
+      }
+    }
+  }
+
+  .exchange-list {
+    &__accordion {
+      margin: 0 auto;
+
+      &-item {
+        background: rgb(6, 0, 103);
+        background: linear-gradient(
+          90deg,
+          $gradient-from 20%,
+          $gradient-to 100%
+        );
+        margin-bottom: 2rem;
+        border-radius: $border-radius;
+        border: none;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.8);
+      }
+
+      &-header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $gradient-from;
+        background: url('/img/platform-card-background.jpg') no-repeat
+          center/cover;
+        padding: 1.4rem;
+        border-radius: $border-radius;
+        color: white;
+
+        h3 {
+          margin-bottom: 0;
+          text-align: center;
+        }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            $gradient-from 0%,
+            $gradient-to 100%
+          );
+          border-radius: $border-radius;
+          opacity: 0.8;
+          content: '';
+        }
+      }
+
+      &-platform {
+        flex: 1;
+        margin-bottom: 1.4rem;
+        z-index: 2;
+        text-align: center;
+
+        &-img {
+          width: 90%;
+          height: auto;
+        }
+      }
+
+      &-controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        width: 100%;
+        margin: 0 auto;
+        z-index: 2;
+      }
+
+      &-btn {
+        width: 120px;
+        text-transform: uppercase;
+
+        &--trigger {
+          @include light-button();
+          justify-self: end;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          font-size: 0.8rem;
+        }
+
+        &--buy {
+          @include primary-button();
+          justify-self: start;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      &-trigger {
+        @include light-button();
+        z-index: 2;
+        padding: 0.3rem 0.7rem;
+      }
+
+      &-body {
+        background: rgb(6, 0, 103);
+        background: linear-gradient(
+          90deg,
+          $gradient-from 20%,
+          $gradient-to 100%
+        );
+        padding-bottom: 2rem;
+        border: none;
+        border-radius: 0 0 $border-radius $border-radius;
+        color: white;
+      }
+
+      &-text {
+        margin-bottom: 2rem;
+      }
+
+      // &-control {
+      //   @include flex-center();
+      //   justify-content: flex-end;
+      // }
+    }
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@include media-breakpoint-sm {
+  .exchange {
+    .exchange-list {
+      &__accordion {
+        &-controls {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-md {
+  .exchange {
+    .page-header {
+      margin-bottom: 3rem;
+
+      &__title {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+
+      &__subtitle {
+        font-size: 1.2rem;
+
+        &--one {
+          letter-spacing: 3px;
+        }
+
+        &--two {
+          letter-spacing: 6px;
+        }
+      }
+    }
+
+    .exchange-list {
+      &__accordion {
+        width: 90%;
+
+        &-header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          height: 160px;
+          padding: 1.4rem 1.7rem;
+        }
+
+        &-platform {
+          flex: 0 0 60%;
+          margin-bottom: 0;
+          text-align: left;
+        }
+
+        &-controls {
+          flex: 0 0 248px;
+          align-self: flex-end;
+          margin: 0 0 0 auto;
+        }
+
+        &-btn {
+          width: 100%;
+          padding: 0.5rem 0;
+          justify-self: stretch;
+        }
+
+        &-body {
+          padding: 1.4rem 1.7rem 2rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-lg {
+  .exchange {
+    .page-header {
+      &__title {
+        font-size: 2.4rem;
+      }
+
+      &__subtitle {
+        font-size: 1.3rem;
+
+        &--one {
+          letter-spacing: 4px;
+        }
+
+        &--two {
+          letter-spacing: 8px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xl {
+  .exchange {
+    .exchange-list {
+      &__accordion {
+        &-header {
+          height: 200px;
+          padding: 1.4rem 2rem;
+        }
+
+        &-controls {
+          flex: 0 0 300px;
+          margin: 0 0 0 auto;
+        }
+
+        &-btn {
+          font-size: 0.9rem;
+        }
+
+        &-body {
+          padding: 1.4rem 2rem 2.8rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  .exchange {
+    .page-header {
+      margin-bottom: 4rem;
+
+      &__title {
+        font-size: 3.1rem;
+      }
+
+      &__subtitle {
+        font-size: 1.6rem;
+
+        &--one {
+          letter-spacing: 5px;
+        }
+
+        &--two {
+          letter-spacing: 9px;
+        }
+      }
+    }
+
+    .exchange-list {
+      &__accordion {
+        &-header {
+          height: 240px;
+        }
+
+        &-controls {
+          flex: 0 0 360px;
+        }
+
+        &-btn {
+          padding: 0.7rem 1rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxxl {
+  .exchange {
+    .page-header {
+      margin-bottom: 5rem;
+
+      &__title {
+        font-size: 4rem;
+        margin-bottom: 1.4rem;
+      }
+
+      &__subtitle {
+        font-size: 1.9rem;
+
+        &--one {
+          letter-spacing: 7px;
+        }
+
+        &--two {
+          letter-spacing: 11px;
+        }
+      }
+    }
+
+    .exchange-list {
+      &__accordion {
+        &-item {
+          margin-bottom: 4rem;
+        }
+
+        &-header {
+          height: 280px;
+          padding: 2rem 3.2rem;
+        }
+
+        &-controls {
+          flex: 0 0 440px;
+        }
+
+        &-btn {
+          padding: 0.9rem 1rem;
+          font-size: 1.3rem;
+        }
+
+        &-body {
+          padding: 2rem 3.2rem 4rem;
+        }
+      }
+    }
+  }
+}

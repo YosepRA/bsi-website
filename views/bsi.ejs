@@ -1,8 +1,125 @@
-<%- include('partials/header.ejs') %>
-  <body>
-    <%- include('partials/navbar.ejs') %>
+<% 
+  const { bsi: {
+    banner,
+    companyProfile,
+    introduction,
+    summary,
+  }, navbar: {
+    bsi: {
+      subcategory: [
+        companyProfileMeta,
+        tokenSummaryMeta,
+        tokenIntroductionMeta,
+        roadmapMeta
+      ]
+    }
+  } } = data;
+%>
 
-    <h1 class="display-3">BSI Profile</h1>
+<%- include('partials/header.ejs') %>
+  <body class="bsi <%= lang %>">
+    <%- include('partials/navbar.ejs') %>
+      <main class="main-container">
+        <section class="banner">
+          <div class="banner__carousel carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item carousel-item--01 active"></div>
+              <div class="carousel-item carousel-item--02"></div>
+              <div class="carousel-item carousel-item--03"></div>
+            </div>
+          </div>
+
+          <div class="banner__info">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-lg-6">
+                  <h1 class="banner__info-title"><%- banner.title %></h1>
+            
+                  <% for( let i = 0; i < banner.body.length; i++ ) { %>
+                    <% const text = banner.body[i]; %>
+
+                    <p class="banner__info-body"><%- text %></p>  
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="<%- companyProfileMeta.id %>" class="company-profile page-section container">
+          <div class="row company-profile__row">
+            <div class="col-12 col-md-4 company-profile__col">
+              <img src="/img/bsi-company-profile.png" alt="BSI company profile" class="company-profile__image" />
+            </div>
+
+            <div class="col-12 col-md-8 company-profile__col">
+              <div class="company-profile__info">
+                <h2 class="company-profile__info-title page-section__title"><%= companyProfile.title %></h2>
+
+                <% for( let i = 0; i < companyProfile.body.length; i++ ) { %>
+                  <% const text = companyProfile.body[i]; %>
+
+                  <p class="company-profile__info-body"><%- text %></p>  
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="<%- roadmapMeta.id %>" class="roadmap page-section container">
+          <div class="row">
+            <div class="col">
+              <h2 class="roadmap__title page-section__title">Roadmap</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="roadmap__image-container">
+                <img src="/img/roadmap.png" alt="Bali Social Integrated Project Roadmap" class="roadmap__image-item" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="<%- tokenIntroductionMeta.id %>" class="introduction page-section container">
+          <div class="row introduction__row">
+            <div class="col-12 col-md-4 introduction__col">
+              <img src="/img/bsi-introduction-token.png" alt="BSI token introduction" class="introduction__image" />
+            </div>
+
+            <div class="col-12 col-md-8 introduction__col">
+              <div class="introduction__info">
+                <h2 class="introduction__info-title page-section__title"><%= introduction.title %></h2>
+
+                <% for( let i = 0; i < introduction.body.length; i++ ) { %>
+                  <% const text = introduction.body[i]; %>
+
+                  <p class="introduction__info-body"><%- text %></p>  
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="<%- tokenSummaryMeta.id %>" class="summary page-section container">
+          <div class="row">
+            <div class="col">
+              <h2 class="summary__title page-section__title"><%= summary.title %></h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <% for( let i = 0; i < summary.body.length; i++ ) { %>
+                <% const text = summary.body[i]; %>
+
+                <p class="summary__body"><%- text %></p>  
+              <% } %>
+            </div>
+          </div>
+        </section>
+      </main>
 
     <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
