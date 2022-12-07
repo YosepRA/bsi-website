@@ -46,3 +46,4 @@ Questions and concerns that should be asked in the next meeting.
 - Exchange page CoinGecko and CoinMarketCap "Details" vs "More Info"
 - About Us page image card text legibility.
 - Check Indonesian non-body texts, e.g. section titles and nav items.
+- Remove download app button?
