@@ -29,6 +29,7 @@ Finished item will be marked as done. ✅
 - Button hover and active state.
 - Smaller language flag right margin. ✅
 - A feature to display the full-version of an image assets. The images will be small in mobile, that's not ideal.
+- More modular page banner SCSS for Home and BSI pages.
 
 ## Back-end
 

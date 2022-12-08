@@ -105,15 +105,14 @@
       color: white;
 
       &-title {
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: 1.7rem;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 1px;
       }
 
       &-link {
         @include light-button();
-        font-size: inherit;
       }
 
       &--service {
@@ -188,13 +187,13 @@
 @include media-breakpoint-xxl {
   .home {
     .main-container {
-      padding-top: 114px;
+      padding-top: 111px;
     }
 
     .page-banners {
       &__item {
         &-title {
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
       }
     }
@@ -203,16 +202,16 @@
 
 @include media-breakpoint-xxxl {
   .home {
-    .main-container {
-      padding-top: 138px;
-    }
+    // .main-container {
+    //   padding-top: 124px;
+    // }
 
     .banner {
-      margin-bottom: 10rem;
+      margin-bottom: 8rem;
 
       &__info {
         &-title {
-          font-size: 3rem;
+          font-size: 2.4rem;
         }
       }
     }
@@ -226,7 +225,7 @@
     .page-banners {
       &__item {
         &-title {
-          font-size: 2.7rem;
+          font-size: 2.1rem;
         }
       }
     }
