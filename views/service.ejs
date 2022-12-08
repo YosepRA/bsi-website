@@ -73,12 +73,11 @@
         <section id="<%= metaConcertMeta.id %>" class="meta_concert_illust">
           <div class="container">
             <div class="row meta_concert_prop">
-              <div class="col-md-4 meta_img">
+              <div class="col meta_img">
                 <img class="meta-concert-img" src="/img/meta concert illust.png" alt="meta-concert-illust">
               </div>
-              <div class="col-md-7 meta_concert_info">
+              <div class="col-md-8 meta_concert_info">
                 <h4 class="big-title-1"><%= metaConcert.title %></h4>
-        
                 <% for( let i = 0; i < metaConcert.body.length; i++ ) { %>
                   <% const text = metaConcert.body[i]; %>
         
