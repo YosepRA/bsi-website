@@ -306,7 +306,7 @@
     .exchange-list {
       &__accordion {
         &-header {
-          height: 240px;
+          height: 200px;
         }
 
         &-controls {
@@ -324,26 +324,26 @@
 
 @include media-breakpoint-xxxl {
   .exchange {
-    .page-header {
-      margin-bottom: 5rem;
+    // .page-header {
+    //   margin-bottom: 5rem;
 
-      &__title {
-        font-size: 4rem;
-        margin-bottom: 1.4rem;
-      }
+    //   &__title {
+    //     font-size: 4rem;
+    //     margin-bottom: 1.4rem;
+    //   }
 
-      &__subtitle {
-        font-size: 1.9rem;
+    //   &__subtitle {
+    //     font-size: 1.9rem;
 
-        &--one {
-          letter-spacing: 7px;
-        }
+    //     &--one {
+    //       letter-spacing: 7px;
+    //     }
 
-        &--two {
-          letter-spacing: 11px;
-        }
-      }
-    }
+    //     &--two {
+    //       letter-spacing: 11px;
+    //     }
+    //   }
+    // }
 
     .exchange-list {
       &__accordion {
@@ -352,17 +352,7 @@
         }
 
         &-header {
-          height: 280px;
           padding: 2rem 3.2rem;
-        }
-
-        &-controls {
-          flex: 0 0 440px;
-        }
-
-        &-btn {
-          padding: 0.9rem 1rem;
-          font-size: 1.3rem;
         }
 
         &-body {
