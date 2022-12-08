@@ -246,23 +246,23 @@
 @include media-breakpoint-xxl {
   .bsi {
     .main-container {
-      padding-top: 114px;
+      padding-top: 111px;
     }
   }
 }
 
 @include media-breakpoint-xxxl {
   .bsi {
-    .main-container {
-      padding-top: 124px;
-    }
+    // .main-container {
+    //   padding-top: 124px;
+    // }
 
     .banner {
       margin-bottom: 8rem;
 
       &__info {
         &-title {
-          font-size: 3rem;
+          font-size: 2.4rem;
         }
       }
     }

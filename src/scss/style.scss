@@ -10,10 +10,6 @@ body {
   @include montserrat();
   color: $body-color;
   font-weight: 400;
-
-  &.kr {
-    font-weight: 400;
-  }
 }
 
 .navbar {
@@ -302,11 +298,11 @@ body {
   }
 
   .navbar {
-    font-size: 1rem;
+    // font-size: 1rem;
 
     &-brand {
       &__image {
-        width: 210px;
+        width: 200px;
         height: auto;
       }
     }
@@ -319,7 +315,7 @@ body {
   }
 
   .main-container {
-    padding-top: calc(4rem + 114px);
+    padding-top: calc(4rem + 111px);
   }
 
   .page-section {
@@ -360,20 +356,11 @@ body {
     font-size: 1.3rem;
   }
 
-  .main-container {
-    padding-top: calc(6rem + 124px);
-  }
+  // .main-container {
+  //   padding-top: calc(6rem + 124px);
+  // }
 
   .navbar {
-    font-size: 1.1rem;
-
-    &-brand {
-      &__image {
-        width: 240px;
-        height: auto;
-      }
-    }
-
     &__lang {
       &-image {
         width: 40px;
@@ -395,7 +382,7 @@ body {
     }
 
     &__title {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
     }
   }
 
@@ -409,12 +396,6 @@ body {
     &__profile {
       &-brand {
         width: 260px;
-      }
-    }
-
-    &__download {
-      &-icon {
-        max-width: 230px;
       }
     }
 

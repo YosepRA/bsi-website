@@ -1,4 +1,7 @@
-.container {
-  width: 95%;
-  max-width: 1880px;
+@import 'config';
+
+@include media-breakpoint-xl {
+  .container {
+    max-width: 1104px;
+  }
 }
