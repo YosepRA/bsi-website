@@ -43,11 +43,11 @@
 
           <ul class="dropdown-menu">
             <% for( let index = 0; index < bsi.subcategory.length; index++ ) { %>
-              <% const { id, name } = bsi.subcategory[index]  %>
+              <% const { id, name, url } = bsi.subcategory[index]  %>
               
               <li>
                 <% if (id === 'whitepaper') { %>
-                  <a class="dropdown-item" href="/file/Whitepaper-Final-(English-Ver)-2022.11.pdf" target="_blank" rel="noreferrer"><%= name %></a>
+                  <a class="dropdown-item" href="<%= url %>" target="_blank" rel="noreferrer"><%= name %></a>
                 <% } else { %>
                   <a class="dropdown-item" href="/<%= lang %>/bsi#<%= id %>"><%= name %></a>
                 <% } %>
