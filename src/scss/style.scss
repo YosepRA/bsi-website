@@ -189,12 +189,44 @@ body {
   }
 }
 
+/* =============== Floating Buttons =============== */
+
+.fb {
+  position: fixed;
+  right: 25px;
+  bottom: 50px;
+  z-index: 10;
+  margin-top: 3rem;
+
+  &__button {
+    @include primary-button();
+    display: block;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+}
+
+.fb__button {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  box-shadow: 1px 0px 1px 2px #808089c2;
+}
+
+
 /* =============== Breakpoints =============== */
 
 @include media-breakpoint-sm {
   p {
     text-align: justify;
   }
+}
+.fb__button {
+  margin-bottom: 0.5rem;
+  box-shadow: 1px 0px 1px 0px #808089c2;
+  border: 1px solid white;
 }
 
 @include media-breakpoint-md {
@@ -403,6 +435,14 @@ body {
       &-text {
         font-size: 1rem;
       }
+    }
+  }
+
+  .fb {
+    right: 35px;
+
+    &__button {
+      font-size: 2rem;
     }
   }
 }
