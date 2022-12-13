@@ -1,1 +1,6 @@
-@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap";@media screen and (min-width: 1200px){.container{max-width:1104px}}/*# sourceMappingURL=bootstrap-overrides.min.css.map */
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap';
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1104px;
+  }
+} /*# sourceMappingURL=bootstrap-overrides.min.css.map */
