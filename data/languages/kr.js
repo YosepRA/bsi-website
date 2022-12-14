@@ -22,6 +22,7 @@ module.exports = {
         {
           id: 'whitepaper',
           name: 'Whitepaper',
+          url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-korean-version',
         },
       ],
     },

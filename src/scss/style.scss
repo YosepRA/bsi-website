@@ -18,9 +18,14 @@ body {
   left: 0;
   z-index: 10;
   width: 100%;
+  flex-wrap: wrap;
   background-color: white;
   box-shadow: 1px 1px 3px #333;
   font-weight: 600;
+
+  .container {
+    flex: 0 0 100%;
+  }
 
   .nav {
     &-item {
@@ -82,6 +87,14 @@ body {
       width: 30px;
       height: auto;
       margin-right: 0.3rem;
+    }
+  }
+
+  &__price {
+    flex: 0 0 100%;
+
+    p {
+      margin-bottom: 0;
     }
   }
 }
@@ -208,7 +221,6 @@ body {
       color: white;
     }
   }
-
 }
 // .txt__button {
 //   position: fixed;
