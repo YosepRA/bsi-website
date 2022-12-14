@@ -201,6 +201,8 @@ body {
   &__button {
     @include primary-button();
     display: block;
+    text-align: center;
+    text-decoration: none;
 
     &:hover {
       color: white;
@@ -208,6 +210,20 @@ body {
   }
 
 }
+// .txt__button {
+//   position: fixed;
+//   right: 100px;
+//   bottom: 50px;
+//   z-index: 10;
+ 
+
+// }
+// .txt__button_1 {
+//   position: fixed;
+//   right: 100px;
+//   bottom: 105px;
+//   z-index: 10;
+// }
 
 .fb__button {
   margin-bottom: 0.5rem;
@@ -215,18 +231,18 @@ body {
   box-shadow: 1px 0px 1px 2px #808089c2;
 }
 
-
 /* =============== Breakpoints =============== */
 
 @include media-breakpoint-sm {
   p {
     text-align: justify;
   }
-}
-.fb__button {
-  margin-bottom: 0.5rem;
-  box-shadow: 1px 0px 1px 0px #808089c2;
-  border: 1px solid white;
+
+  .fb__button {
+    margin-bottom: 0.5rem;
+    box-shadow: 1px 0px 1px 0px #808089c2;
+    border: 1px solid white;
+  }
 }
 
 @include media-breakpoint-md {
@@ -442,7 +458,8 @@ body {
     right: 35px;
 
     &__button {
-      font-size: 2rem;
+      padding: 1rem 1.4rem;
+      font-size: 1.5rem;
     }
   }
 }
