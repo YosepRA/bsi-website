@@ -90,6 +90,17 @@ body {
     }
   }
 
+  &__menu {
+    flex: 0 0 100%;
+    margin-bottom: 0.5rem;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
   &__price {
     flex: 0 0 100%;
 
@@ -222,20 +233,6 @@ body {
     }
   }
 }
-// .txt__button {
-//   position: fixed;
-//   right: 100px;
-//   bottom: 50px;
-//   z-index: 10;
- 
-
-// }
-// .txt__button_1 {
-//   position: fixed;
-//   right: 100px;
-//   bottom: 105px;
-//   z-index: 10;
-// }
 
 .fb__button {
   margin-bottom: 0.5rem;

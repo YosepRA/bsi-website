@@ -16,11 +16,16 @@ async function fetchLatestPrice() {
 
 async function updatePriceData() {
   const navbarPriceData = document.querySelector('.navbar__price-data');
+  const navbarPriceChange = document.querySelector('.navbar__price-change');
 
   const data = await fetchLatestPrice();
-  console.log('🚀 ~ file: global.js:21 ~ updatePriceData ~ data', data);
+  const priceText = data.price;
+  const changeText = `${data.change24Hr > 0 ? '+' : ''}${
+    Math.round(data.change24Hr * 100) / 100
+  }%`;
 
-  navbarPriceData.textContent = data.price;
+  navbarPriceData.textContent = priceText;
+  navbarPriceChange.textContent = changeText;
 }
 
 function fetchPriceOnInterval(delay) {
@@ -30,7 +35,7 @@ function fetchPriceOnInterval(delay) {
 async function globalInit() {
   await updatePriceData();
 
-  fetchPriceOnInterval(5000);
+  fetchPriceOnInterval(30000);
 }
 
-// ready(globalInit);
+ready(globalInit);
