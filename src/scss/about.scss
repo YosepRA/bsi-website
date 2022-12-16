@@ -228,12 +228,6 @@
       &__body {
         max-width: 940px;
       }
-
-      &__images {
-        &-row {
-          width: 75%;
-        }
-      }
     }
   }
 }
@@ -259,21 +253,21 @@
 
 @include media-breakpoint-xxxl {
   .about {
-    .bsi-team {
-      &__item {
-        max-width: 420px;
-        height: 520px;
-        padding: 2.4rem 2rem;
+    // .bsi-team {
+    //   &__item {
+    //     max-width: 420px;
+    //     height: 520px;
+    //     padding: 2.4rem 2rem;
 
-        &-name {
-          font-size: 1.7rem;
-        }
+    //     &-name {
+    //       font-size: 1.7rem;
+    //     }
 
-        &-position {
-          font-size: 1.4rem;
-        }
-      }
-    }
+    //     &-position {
+    //       font-size: 1.4rem;
+    //     }
+    //   }
+    // }
 
     .partnership {
       &__body {

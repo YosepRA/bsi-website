@@ -10,14 +10,6 @@ body {
   @include montserrat();
   color: $body-color;
   font-weight: 400;
-
-  &.kr {
-    font-weight: 400;
-  }
-}
-
-p {
-  text-align: justify;
 }
 
 .navbar {
@@ -26,9 +18,15 @@ p {
   left: 0;
   z-index: 10;
   width: 100%;
+  flex-wrap: wrap;
   background-color: white;
+  color: $body-color;
   box-shadow: 1px 1px 3px #333;
   font-weight: 600;
+
+  .container {
+    flex: 0 0 100%;
+  }
 
   .nav {
     &-item {
@@ -92,6 +90,25 @@ p {
       margin-right: 0.3rem;
     }
   }
+
+  &__menu {
+    flex: 0 0 100%;
+    // margin-bottom: 0.5rem;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__price {
+    flex: 0 0 100%;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .main-container {
@@ -106,7 +123,7 @@ p {
 
   &__title {
     margin-bottom: 1.8rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
@@ -131,7 +148,7 @@ p {
 
     &-title {
       margin-bottom: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
       text-transform: uppercase;
     }
@@ -197,7 +214,46 @@ p {
   }
 }
 
+/* =============== Floating Buttons =============== */
+
+.fb {
+  position: fixed;
+  right: 25px;
+  bottom: 50px;
+  z-index: 10;
+  margin-top: 3rem;
+
+  &__button {
+    @include primary-button();
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.fb__button {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  box-shadow: 1px 0px 1px 2px #808089c2;
+}
+
 /* =============== Breakpoints =============== */
+
+@include media-breakpoint-sm {
+  p {
+    text-align: justify;
+  }
+
+  .fb__button {
+    margin-bottom: 0.5rem;
+    box-shadow: 1px 0px 1px 0px #808089c2;
+    border: 1px solid white;
+  }
+}
 
 @include media-breakpoint-md {
   .navbar {
@@ -232,7 +288,7 @@ p {
 
   .navbar {
     padding: 1rem 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     &-nav {
       align-items: center;
@@ -259,14 +315,12 @@ p {
 }
 
 @include media-breakpoint-xl {
-  body {
-    font-size: 1.1rem;
-  }
-
   .navbar {
+    font-size: 0.9rem;
+
     .nav {
       &-item {
-        margin: 0 0.8rem;
+        margin: 0 0.6rem;
       }
     }
   }
@@ -274,13 +328,13 @@ p {
   .page-footer {
     &__section {
       &-title {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
       }
     }
 
     &__profile {
       &-brand {
-        width: 240px;
+        width: 200px;
       }
     }
 
@@ -298,46 +352,46 @@ p {
 
 @include media-breakpoint-xxl {
   body {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .navbar {
-    font-size: 1rem;
+    // font-size: 1rem;
 
     &-brand {
       &__image {
-        width: 210px;
+        width: 200px;
         height: auto;
       }
     }
 
     .nav {
       &-item {
-        margin: 0 1.1rem;
+        margin: 0 0.8rem;
       }
     }
   }
 
   .main-container {
-    padding-top: calc(4rem + 114px);
+    padding-top: calc(4rem + 111px);
   }
 
   .page-section {
     &__title {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
   }
 
   .page-footer {
     &__section {
       &-title {
-        font-size: 1.35rem;
+        font-size: 1.2rem;
       }
     }
 
     &__profile {
       &-brand {
-        width: 260px;
+        width: 230px;
       }
     }
 
@@ -349,7 +403,7 @@ p {
 
     &__copyright {
       &-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
     }
   }
@@ -357,23 +411,14 @@ p {
 
 @include media-breakpoint-xxxl {
   body {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
-  .main-container {
-    padding-top: calc(6rem + 138px);
-  }
+  // .main-container {
+  //   padding-top: calc(6rem + 124px);
+  // }
 
   .navbar {
-    font-size: 1.3rem;
-
-    &-brand {
-      &__image {
-        width: 280px;
-        height: auto;
-      }
-    }
-
     &__lang {
       &-image {
         width: 40px;
@@ -395,33 +440,36 @@ p {
     }
 
     &__title {
-      font-size: 2.7rem;
+      font-size: 2.1rem;
     }
   }
 
   .page-footer {
     &__section {
       &-title {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
       }
     }
 
     &__profile {
       &-brand {
-        width: 320px;
-      }
-    }
-
-    &__download {
-      &-icon {
-        max-width: 230px;
+        width: 260px;
       }
     }
 
     &__copyright {
       &-text {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
+    }
+  }
+
+  .fb {
+    right: 35px;
+
+    &__button {
+      padding: 1rem 1.4rem;
+      font-size: 1.5rem;
     }
   }
 }

@@ -13,10 +13,10 @@ $gradient-to: #246295;
 }
 
 @mixin button {
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1rem;
   border: none;
   border-radius: $border-radius;
-  font-size: inherit;
+  font-size: 0.9em;
   font-weight: 600;
   letter-spacing: 1px;
 }

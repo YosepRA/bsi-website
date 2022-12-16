@@ -29,6 +29,7 @@ Finished item will be marked as done. ✅
 - Button hover and active state.
 - Smaller language flag right margin. ✅
 - A feature to display the full-version of an image assets. The images will be small in mobile, that's not ideal.
+- More modular page banner SCSS for Home and BSI pages.
 
 ## Back-end
 
@@ -46,3 +47,4 @@ Questions and concerns that should be asked in the next meeting.
 - Exchange page CoinGecko and CoinMarketCap "Details" vs "More Info"
 - About Us page image card text legibility.
 - Check Indonesian non-body texts, e.g. section titles and nav items.
+- Remove download app button?

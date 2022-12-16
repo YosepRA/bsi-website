@@ -35,7 +35,7 @@
                 <div class="exchange-list__accordion-platform" id="<%= `${data.id}Heading` %>">
                   <img src="/img/<%= data.image.name %>" alt="<%= data.image.alt %>" class="exchange-list__accordion-platform-img" />
                 </div>
-                
+
                 <div class="exchange-list__accordion-controls">
                   <button type="button" class="exchange-list__accordion-btn exchange-list__accordion-btn--trigger btn" data-bs-toggle="collapse" data-bs-target="#<%= data.id %>" aria-expanded="<%= i === 0 ? 'true' : 'false' %>" aria-controls="<%= data.id %>">
                     More Info
@@ -43,7 +43,6 @@
 
                   <a href="<%= data.url %>" target="_blank" rel="noreferrer" class="exchange-list__accordion-btn exchange-list__accordion-btn--buy btn"><%- data.isExchange ? 'Buy BSI' : 'Details' %></a>
                 </div>
-
               </div>
   
               <div id="<%= data.id %>" class="exchange-list__accordion-collapse accordion-collapse collapse <%= i === 0 ? 'show' : '' %>" aria-labelledby="<%= `${data.id}Heading` %>" data-bs-parent="#exchangeAccordion">
@@ -63,7 +62,10 @@
       </section>
     </main>
     
+    <%- include('partials/floating-buttons.ejs') %>
     <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
+
+    <script src="/javascripts/global.js"></script>
   </body>
 </html>

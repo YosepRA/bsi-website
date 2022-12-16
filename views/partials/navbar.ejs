@@ -10,137 +10,152 @@
 %>
 
 <nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="/<%= lang %>/home">
-      <img src="/img/bsi-logo.png" alt="Bali Social Integrated" class="navbar-brand__image" />
-    </a>
+  <div class="navbar__menu">
+    <div class="container">
+      <a class="navbar-brand" href="/<%= lang %>/home">
+        <img src="/img/bsi-logo.png" alt="Bali Social Integrated" class="navbar-brand__image" />
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= about.name %>
+            </a>
+            <ul class="dropdown-menu">
+              <% for( let index = 0; index < about.subcategory.length; index++ ) { %>
+                <% const { id, name } = about.subcategory[index]  %>
+  
+                <li>
+                  <a class="dropdown-item" href="/<%= lang %>/about#<%= id %>"><%= name %></a>
+                </li>
+              <% } %>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= bsi.name %>
+            </a>
+  
+            <ul class="dropdown-menu">
+              <% for( let index = 0; index < bsi.subcategory.length; index++ ) { %>
+                <% const { id, name, url } = bsi.subcategory[index]  %>
+                
+                <li>
+                  <% if (id === 'whitepaper') { %>
+                    <a class="dropdown-item" href="<%= url %>" target="_blank" rel="noreferrer"><%= name %></a>
+                  <% } else { %>
+                    <a class="dropdown-item" href="/<%= lang %>/bsi#<%= id %>"><%= name %></a>
+                  <% } %>
+                </li>
+              <% } %>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= service.name %>
+            </a>
+            <ul class="dropdown-menu">
+              <% for( let index = 0; index < service.subcategory.length; index++ ) { %>
+                <% const { id, name } = service.subcategory[index];  %>
+  
+                <li>
+                  <a class="dropdown-item" href="/<%= lang %>/service#<%= id %>"><%= name %></a>
+                </li>
+              <% } %>
+            </ul>
+          </li>    
+  
+          <li class="nav-item">
+            <a class="nav-link" href="/<%= lang %>/contact"><%- contact.name %></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-primary-btn btn" href="/<%= lang %>/exchange"><%- exchange.name %></a>
+            <a href="https://wallet.bsin.io" target="_blank" rel="noreferrer" class="nav-primary-btn btn"><%= wallet.name %></a>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <% 
+                let currentLangText = '';
+                let currentLangFlagName = '';
+                switch (lang) {
+                  case 'en':
+                    currentLangText = 'EN';
+                    currentLangFlagName = 'en-lang-flag.png';
+                    break;
+                  case 'id':
+                    currentLangText = 'ID';
+                    currentLangFlagName = 'id-lang-flag.png';
+                    break;
+                  case 'kr':
+                    currentLangText = 'KR';
+                    currentLangFlagName = 'kr-lang-flag.png';
+                    break;
+                
+                  default:
+                    currentLangText = 'EN';
+                    currentLangFlagName = 'en-lang-flag.png';
+                    break;
+                }
+              %>
+  
+              <span class="navbar__lang-item navbar__lang-flag">
+                <img src="/img/<%= currentLangFlagName %>" alt="<%= `${currentLangText} Flag` %>" class="navbar__lang-image" />
+              </span>
+              <span class="navbar__lang-item navbar__lang-text"><%= currentLangText %></span>
+            </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= about.name %>
-          </a>
-          <ul class="dropdown-menu">
-            <% for( let index = 0; index < about.subcategory.length; index++ ) { %>
-              <% const { id, name } = about.subcategory[index]  %>
-
+            <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <a class="dropdown-item" href="/<%= lang %>/about#<%= id %>"><%= name %></a>
+                <a class="dropdown-item" href="/en/<%= currentPage %>">
+                  <span class="dropdown-item__flag">
+                    <img src="/img/en-lang-flag.png" alt="England Flag" class="dropdown-item__image" />
+                  </span>
+                  English
+                </a>              
               </li>
-            <% } %>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= bsi.name %>
-          </a>
-
-          <ul class="dropdown-menu">
-            <% for( let index = 0; index < bsi.subcategory.length; index++ ) { %>
-              <% const { id, name } = bsi.subcategory[index]  %>
-              
+  
               <li>
-                <% if (id === 'whitepaper') { %>
-                  <a class="dropdown-item" href="/file/Whitepaper-Final-(English-Ver)-2022.11.pdf" target="_blank" rel="noreferrer"><%= name %></a>
-                <% } else { %>
-                  <a class="dropdown-item" href="/<%= lang %>/bsi#<%= id %>"><%= name %></a>
-                <% } %>
+                <a class="dropdown-item" href="/id/<%= currentPage %>">
+                  <span class="dropdown-item__flag">
+                    <img src="/img/id-lang-flag.png" alt="Indonesia Flag" class="dropdown-item__image" />
+                  </span>
+                  Indonesian
+                </a>
               </li>
-            <% } %>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= service.name %>
-          </a>
-          <ul class="dropdown-menu">
-            <% for( let index = 0; index < service.subcategory.length; index++ ) { %>
-              <% const { id, name } = service.subcategory[index];  %>
-
+  
               <li>
-                <a class="dropdown-item" href="/<%= lang %>/service#<%= id %>"><%= name %></a>
+                <a class="dropdown-item" href="/kr/<%= currentPage %>">
+                  <span class="dropdown-item__flag">
+                    <img src="/img/kr-lang-flag.png" alt="England Flag" class="dropdown-item__image" />
+                  </span>
+                  Korean
+                </a>
               </li>
-            <% } %>
-          </ul>
-        </li>    
-
-        <li class="nav-item">
-          <a class="nav-link" href="/<%= lang %>/contact"><%- contact.name %></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-primary-btn btn" href="/<%= lang %>/exchange"><%- exchange.name %></a>
-          <a href="https://wallet.bsin.io" target="_blank" rel="noreferrer" class="nav-primary-btn btn"><%= wallet.name %></a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <% 
-              let currentLangText = '';
-              let currentLangFlagName = '';
-              switch (lang) {
-                case 'en':
-                  currentLangText = 'EN';
-                  currentLangFlagName = 'en-lang-flag.png';
-                  break;
-                case 'id':
-                  currentLangText = 'ID';
-                  currentLangFlagName = 'id-lang-flag.png';
-                  break;
-                case 'kr':
-                  currentLangText = 'KR';
-                  currentLangFlagName = 'kr-lang-flag.png';
-                  break;
-              
-                default:
-                  currentLangText = 'EN';
-                  currentLangFlagName = 'en-lang-flag.png';
-                  break;
-              }
-            %>
-
-            <span class="navbar__lang-item navbar__lang-flag">
-              <img src="/img/<%= currentLangFlagName %>" alt="<%= `${currentLangText} Flag` %>" class="navbar__lang-image" />
-            </span>
-            <span class="navbar__lang-item navbar__lang-text"><%= currentLangText %></span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li>
-              <a class="dropdown-item" href="/en/<%= currentPage %>">
-                <span class="dropdown-item__flag">
-                  <img src="/img/en-lang-flag.png" alt="England Flag" class="dropdown-item__image" />
-                </span>
-                English
-              </a>              
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="/id/<%= currentPage %>">
-                <span class="dropdown-item__flag">
-                  <img src="/img/id-lang-flag.png" alt="Indonesia Flag" class="dropdown-item__image" />
-                </span>
-                Indonesian
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="/kr/<%= currentPage %>">
-                <span class="dropdown-item__flag">
-                  <img src="/img/kr-lang-flag.png" alt="England Flag" class="dropdown-item__image" />
-                </span>
-                Korean
-              </a>
-            </li>
-
-          </ul>
-        </li>
+            </ul>
+          </li>
+        </ul>  
+      </div>
     </div>
   </div>
+
+  <!-- <div class="navbar__price">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>
+            Latest Price: $<span class="navbar__price-data">0</span> <span class="navbar__price-change"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> -->
 </nav>

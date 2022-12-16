@@ -28,6 +28,7 @@
   color: #ffffff;
   font-size: 3rem;
   font-weight: 600;
+  text-transform: uppercase;
   // margin-top: 5rem;
 }
 
@@ -66,7 +67,6 @@
   margin-top: 5rem;
 }
 
-
 // ====META CONCERT======//
 
 .service .meta_img {
@@ -77,12 +77,12 @@
   justify-content: center;
 }
 
-.service .meta_img  {
+.service .meta_img {
   text-align: center;
 }
 
 .service img.meta-concert-img {
-  width: 75%;
+  width: 50%;
   height: auto;
   // margin-left: 5rem;
   // margin-top: 1.8rem;
@@ -92,15 +92,13 @@
   padding-top: 100px;
   padding-bottom: 120px;
 }
-.service h4.big-title-1{
+.service h4.big-title-1 {
   text-transform: uppercase;
   font-size: 3rem;
   color: #ffffff;
   font-weight: 600;
   text-align: center;
-  
 }
-
 
 /* =============== Breakpoints =============== */
 
@@ -117,15 +115,17 @@
     width: 75%;
     height: 0 auto;
   }
- 
-  
+  .service img.meta-concert-img {
+    width: 40%;
+    height: auto;
+    margin-bottom: 3rem;
+  }
+
   .service p.small-1 {
-    
     margin: 0 50px;
   }
- 
-  .service h4.big-title-1{
-    
+
+  .service h4.big-title-1 {
     text-transform: uppercase;
     font-size: 3rem;
     color: #ffffff;
@@ -140,6 +140,12 @@
     justify-content: center;
     align-items: center;
   }
+  .service img.meta-concert-img {
+    width: 85%;
+    height: auto;
+    margin-top: 8rem;
+    // margin-top: 1.8rem;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -152,6 +158,13 @@
     text-align: center;
   }
 
+  .service img.meta-concert-img {
+    margin-top: 3rem;
+    width: 65%;
+    height: auto;
+    // margin-left: 5rem;
+    // margin-top: 1.8rem;
+  }
   .service img.platform_art-img {
     width: 70%;
     height: 0 auto;
@@ -159,32 +172,37 @@
   .service p.small-1 {
     margin: 0 150px;
   }
- 
-  .service h4.big-title-1{
+
+  .service h4.big-title-1 {
     text-align: center;
   }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1600px) {
   .service {
     background-position: 80% center;
   }
   .service img.viaje_ecosystem_icon {
-    width: 50%;
+    width: 60%;
     height: 0 auto;
     text-align: center;
   }
- 
+  .service img.meta-concert-img {
+    width: 100%;
+    height: auto;
+    // margin-left: 5rem;
+    // margin-top: 1.8rem;
+  }
+
   .service img.platform_art-img {
     width: 60%;
     height: 0 auto;
   }
   .service p.small-1 {
-    
-    margin: 0 200px ;
+    margin: 0 100px;
   }
- 
-  .service h4.big-title-1{
+
+  .service h4.big-title-1 {
     // margin-left: 12rem;
     text-transform: uppercase;
     font-size: 3rem;
