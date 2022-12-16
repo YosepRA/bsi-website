@@ -38,4 +38,4 @@ async function globalInit() {
   fetchPriceOnInterval(30000);
 }
 
-ready(globalInit);
+// ready(globalInit);
