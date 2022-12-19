@@ -8,16 +8,16 @@ module.exports = {
           name: 'Company Profile',
         },
         {
-          id: 'tokenSummary',
-          name: 'Summary of The Token',
+          id: 'roadmap',
+          name: 'Roadmap',
         },
         {
           id: 'tokenIntroduction',
           name: 'Introduction of The Token',
         },
         {
-          id: 'roadmap',
-          name: 'Roadmap',
+          id: 'tokenSummary',
+          name: 'Summary of The Token',
         },
         {
           id: 'whitepaper',

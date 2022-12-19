@@ -2,7 +2,11 @@
 
 .bsi {
   .main-container {
-    padding-top: 75px;
+    // With live price.
+    padding-top: 125px;
+
+    // Without live price.
+    // padding-top: 75px;
   }
 
   .banner {
@@ -11,7 +15,11 @@
 
     .carousel {
       width: 100%;
-      height: calc(100vh - 56px);
+      // With live price.
+      height: calc(100vh - 125px);
+
+      // Without live price.
+      // height: calc(100vh - 56px);
       z-index: 1;
 
       &-inner {
@@ -141,10 +149,22 @@
 @include media-breakpoint-md {
   .bsi {
     .main-container {
-      padding-top: 88px;
+      // With live price.
+      padding-top: 139px;
+
+      // Without live price.
+      // padding-top: 88px;
     }
 
     .banner {
+      .carousel {
+        // With live price.
+        height: calc(100vh - 139px);
+
+        // Without live price.
+        // height: calc(100vh - 56px);
+      }
+
       &__info {
         .row {
           flex-direction: row;
@@ -188,7 +208,7 @@
 
       &__info {
         &-title {
-          text-align: right;
+          text-align: left;
         }
       }
     }
@@ -205,7 +225,21 @@
 @include media-breakpoint-lg {
   .bsi {
     .main-container {
-      padding-top: 104px;
+      // With live price.
+      padding-top: 146px;
+
+      // Without live price.
+      // padding-top: 104px;
+    }
+
+    .banner {
+      .carousel {
+        // With live price.
+        height: calc(100vh - 146px);
+
+        // Without live price.
+        // height: calc(100vh - 56px);
+      }
     }
 
     .roadmap {
@@ -246,17 +280,27 @@
 @include media-breakpoint-xxl {
   .bsi {
     .main-container {
-      padding-top: 111px;
+      // With live price.
+      padding-top: 162px;
+
+      // Without live price.
+      // padding-top: 111px;
+    }
+
+    .banner {
+      .carousel {
+        // With live price.
+        height: calc(100vh - 162px);
+
+        // Without live price.
+        // height: calc(100vh - 56px);
+      }
     }
   }
 }
 
 @include media-breakpoint-xxxl {
   .bsi {
-    // .main-container {
-    //   padding-top: 124px;
-    // }
-
     .banner {
       margin-bottom: 8rem;
 
