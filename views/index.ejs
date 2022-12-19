@@ -1,32 +1,145 @@
-<%- include('partials/header.ejs') %>
-  <body class="homepage">
-    <%- include('partials/navbar.ejs') %>
+<% 
+  const { home: {
+    banner,
+    introduction,
+    pageBanners: {
+      service,
+      about,
+      contact,
+      exchange
+    }
+  } } = data;
+%>
 
-    <section class="banner">
-      <div class="banner__carousel carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item carousel-item--01 active"></div>
-          <div class="carousel-item carousel-item--02"></div>
-          <div class="carousel-item carousel-item--03"></div> 
-        </div>
-      </div>
-  
-      <div class="banner__info">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-lg-6">
-              <h1 class="banner__info-headline">TEXT BSI HERE</h1>
-        
-              <p class="banner__info-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim quae accusantium aspernatur ullam voluptatum iusto? Porro fugiat harum, et, dicta cupiditate, autem sunt optio nihil libero beatae laboriosam itaque obcaecati!</p>
-              
-              <button class="btn">Learn More</button>
+<%- include('partials/header.ejs') %>
+  <body class="home <%= lang %>">
+    <%- include('partials/navbar.ejs') %>
+      <main class="main-container">
+        <section class="banner">
+          <div class="banner__carousel carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item carousel-item--01 active"></div>
+              <div class="carousel-item carousel-item--02"></div>
+              <div class="carousel-item carousel-item--03"></div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- <%- include('partials/footer.ejs') %> -->
+          <div class="banner__info">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-lg-7">
+                  <h1 class="banner__info-title"><%- banner.title %></h1>
+
+                  <% for( let i = 0; i < banner.body.length; i++ ) { %>
+                    <% const text = banner.body[i]; %>
+
+                    <p class="banner__info-body"><%- text %></p>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="introduction page-section">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2 class="introduction__title page-section__title"><%- introduction.title %></h2>
+      
+                <% for( let i = 0; i < introduction.body.length; i++ ) { %>
+                  <% const text = introduction.body[i]; %>
+
+                  <p class="introduction__body"><%- text %></p>
+                <% } %>
+                
+                <div class="introduction__link-container">
+                  <a href="/<%= lang %>/bsi#companyProfile" class="introduction__link-item"><%- introduction.button %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-banners">
+          <div class="page-banners__item page-banners__item--service">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-7">
+                  <h2 class="page-banners__item-title"><%- service.title %></h2>
+    
+                  <% for( let i = 0; i < service.body.length; i++ ) { %>
+                    <% const text = service.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
+
+                  <a href="/<%= lang %>/service" class="page-banners__item-link btn"><%- service.button %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-banners__item page-banners__item--about">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-7">
+                  <h2 class="page-banners__item-title"><%- about.title %></h2>
+    
+                  <% for( let i = 0; i < about.body.length; i++ ) { %>
+                    <% const text = about.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
+
+                  <a href="/<%= lang %>/about" class="page-banners__item-link btn"><%- about.button %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-banners__item page-banners__item--contact">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-7">
+                  <h2 class="page-banners__item-title"><%- contact.title %></h2>
+    
+                  <% for( let i = 0; i < contact.body.length; i++ ) { %>
+                    <% const text = contact.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
+    
+                  <a href="/<%= lang %>/contact" class="page-banners__item-link btn"><%- contact.button %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-banners__item page-banners__item--exchange">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-7">
+                  <h2 class="page-banners__item-title"><%- exchange.title %></h2>
+    
+                  <% for( let i = 0; i < exchange.body.length; i++ ) { %>
+                    <% const text = exchange.body[i]; %>
+
+                    <p class="page-banners__item-body"><%- text %></p>
+                  <% } %>
+    
+                  <a href="/<%= lang %>/exchange" class="page-banners__item-link btn"><%- exchange.button %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    
+    <%- include('partials/floating-buttons.ejs') %>
+    <%- include('partials/footer.ejs') %>
     <%- include('partials/js-libraries.ejs') %>
+
+    <script src="/javascripts/global.js"></script>
   </body>
 </html>

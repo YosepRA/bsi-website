@@ -8,16 +8,16 @@ module.exports = {
           name: 'Profil Perusahaan',
         },
         {
-          id: 'tokenSummary',
-          name: 'Ringkasan Token',
+          id: 'roadmap',
+          name: 'Roadmap',
         },
         {
           id: 'tokenIntroduction',
           name: 'Pengenalan Token',
         },
         {
-          id: 'roadmap',
-          name: 'Roadmap',
+          id: 'tokenSummary',
+          name: 'Ringkasan Token',
         },
         {
           id: 'whitepaper',
@@ -94,7 +94,7 @@ module.exports = {
   },
   footer: {
     profile: [
-      'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung.',
+      'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk menghubungkan turis global ke masing-masing penyedia layanan secara langsung.',
     ],
     navigation: {
       title: 'Hubungi Kami',
@@ -108,7 +108,7 @@ module.exports = {
       title: 'Unduh Aplikasi BSI',
     },
     copyright:
-      '&copy; 2022 Bali Social Integrated Fondatation. Semua hak cipta dilindungi undang-undang.',
+      '&copy; 2022 Bali Social Integrated Foundation. Semua hak cipta dilindungi undang-undang.',
   },
   home: {
     banner: {
@@ -122,7 +122,7 @@ module.exports = {
     introduction: {
       title: 'Bali Social Integrated',
       body: [
-        'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung.',
+        'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan turis global ke masing-masing penyedia layanan secara langsung.',
       ],
       button: 'Pelajari',
     },
@@ -162,14 +162,14 @@ module.exports = {
       title: 'Cara Pembayaran Baru dan Mudah Travel di Bali',
       body: [
         'Bali Social Integrated (BSI) adalah platform berbasis blockchain yang menghubungkan "Online Travel Agencies" (OTA) ternama dengan pelanggan global. Ekosistem dirancang pada blockchian untuk menjadi transparan, aman, dan terbebas dari permintaan insentif tambahan.',
-        'Bali Social Integrated (BSI) menawarkan sistem tour dan pembayaran dengan penggunaan teknologi Blockchain. Sistem ini dapat digunakan untuk pemesanan dan pembayaran tiket, akomodasi, rental mobil, rental motor EV, restaurants, pembelanjaan dan kegiatan rekreasi dengan BSI token.',
+        'Bali Social Integrated (BSI) menawarkan sistem tour dan pembayaran dengan penggunaan teknologi Blockchain. Sistem ini dapat digunakan untuk pemesanan dan pembayaran tiket, akomodasi, rental mobil, rental motor EV, restoran, pembelanjaan dan kegiatan rekreasi dengan BSI token.',
       ],
       button: 'Pelajari',
     },
     companyProfile: {
       title: 'Profil Perusahaan',
       body: [
-        'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan touris global ke masing-masing penyedia layanan secara langsung. Bali Social Integreted bekerja sama dengan tim pengembang teknologi blockchain dan penggemar crypto, untuk memberikan pengalaman perjalanan yang mulus kepada para pengguna.',
+        'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk menghubungkan turis global ke masing-masing penyedia layanan secara langsung. Bali Social Integrated bekerja sama dengan tim pengembang teknologi blockchain dan penggemar kripto, untuk memberikan pengalaman perjalanan yang lebih mudah kepada para pengguna.',
         'Kami memanfaatkan teknologi blockchain untuk menghilangkan biaya perantara dan menawarkan pengalaman unik dan menyenangkan bagi pengguna dengan biaya transaksi dan operasional yang lebih baik.',
       ],
     },
@@ -177,7 +177,7 @@ module.exports = {
       title: 'Pengenalan Token',
       body: [
         'Token Bali Social Integrated (BSI) digunakan sebagai metode pembayaran dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
-        'Carbon-Free VIAJE mengembangkan dan mengoperasikan berbagai layanan melalui pengelolaan LST yang ramah lingkungan dengan membawa pengguna dan pemasok ke dalam ekosistem VIAJE melalui operasi layanan berkelanjutan dan perluasan ekosistem. Kami mendorong perluasan dan penggunaan serta jumlah pengguna BSI.',
+        'Carbon-Free VIAJE mengembangkan dan mengoperasikan berbagai layanan melalui pengelolaan Lingkungan, Sosial, dan Tata kelola (LST) yang ramah lingkungan dengan membawa pengguna dan pemasok ke dalam ekosistem VIAJE melalui operasi layanan berkelanjutan dan perluasan ekosistem. Kami mendorong perluasan, penggunaan, dan jumlah pengguna BSI.',
       ],
     },
     summary: {
@@ -197,8 +197,8 @@ module.exports = {
     viajePlatform: {
       title: 'Platform Viaje',
       body: [
-        'Carbon-Free VIAJE, lini bisnis dari Bali Social Integrated, melayani setiap kebutuhan pembayaran dengan mengintegrasikan dirinya secara mulus dengan token BSI dan mata uang fiat. Pengguna dapat menambahkan token BSI atau mata uang fiat (menggunakan kartu kredit dan jaringan pembayaran lainnya) dan menggunakannya melalui aplikasi VIAJE seperti VIAJEPAY di semua toko terafiliasi.',
-        'Pelancong dapat menikmati jaringan pembayaran yang disederhanakan dan memanfaatkan berbagai layanan seperti memesan penerbangan, kegiatan rekreasi/perjalanan, hotel, menyewa sepeda motor listrik atau membeli makanan & minuman, berbelanja, dll.',
+        'Carbon-Free VIAJE, lini bisnis dari Bali Social Integrated melayani setiap kebutuhan pembayaran dengan mengintegrasikan token BSI dan mata uang fiat. Pengguna dapat menambahkan token BSI atau mata uang fiat (menggunakan kartu kredit atau jaringan pembayaran lainnya) dan menggunakannya melalui aplikasi VIAJE seperti VIAJEPAY di semua toko terafiliasi.',
+        'Wisatawan dapat menikmati jaringan pembayaran yang disederhanakan dan memanfaatkan berbagai layanan seperti memesan penerbangan, kegiatan rekreasi/perjalanan, hotel, menyewa sepeda motor listrik, membeli makanan & minuman, berbelanja, dan lain sebagainya.',
       ],
     },
     metaConcert: {
@@ -226,7 +226,7 @@ module.exports = {
   contact: {
     banner: {
       title: 'Hubungi Kami',
-      body: 'Apakah ada pertanyaan? Kami senang mendengarnya dari kamu ',
+      body: 'Apakah ada pertanyaan? Kami senang mendengarnya dari anda.',
     },
   },
   exchange: {
@@ -242,7 +242,7 @@ module.exports = {
         body: [
           'DigiFinex adalah platform perdagangan Cryptocurrency dan saat ini memiliki lebih dari 4 juta pengguna secara global. Platform perdagangan koin digital ini menawarkan pertukaran terus-menerus, pembelian koin digital menggunakan kartu kredit, dan perdagangan leverage.',
           'Karena fitur-fiturnya yang ramah pengguna dan semakin banyak pedagang, ini menempati peringkat ke-10 untuk likuiditas dan volume perdagangannya sesuai situs web Coinmarketcap. Berkantor pusat di Singapura, salah satu pasar Cryptocurrency yang signifikan, ia memiliki kantor yang terdaftar di Seychelles. Ini adalah salah satu dari enam bursa yang terdaftar di Seychelles.',
-          'Saat ini, platform ini menawarkan 100+ pasangan perdagangan mata uang kripto utama dan sepuluh mata uang fiat; pedagang dapat aktif berdagang. Daftarnya termasuk- Bitcoin, Cardano, Aave, ChainLink, Ethereum, dan lainnya. Ini memiliki Token DigiFinex sendiri yang membantu dalam perdagangan koin.',
+          'Saat ini, platform ini menawarkan 100+ pasangan perdagangan mata uang kripto utama dan sepuluh mata uang fiat; pedagang dapat aktif berdagang. Daftarnya termasuk Bitcoin, Cardano, Aave, ChainLink, Ethereum, dan lainnya. Ini memiliki Token DigiFinex sendiri yang membantu dalam perdagangan koin.',
         ],
         isExchange: true,
         url: 'https://www.digifinex.com/en-ww/trade/kline/USDT/BSI',
@@ -267,7 +267,7 @@ module.exports = {
           alt: 'Coinsbit',
         },
         body: [
-          'Coinsbit menjadi pertukaran cryptocurrency terbesar berarti keandalan. Kepercayaan diri Anda adalah hal terpenting bagi kami. Berkat kepercayaan para pedagang kami, kami memasuki bursa terbesar teratas dalam peringkat CoinMarketCap dan CoinGecko. Kami tahu bagaimana mencapai tujuan puncak dan kami tahu layanan apa yang dibutuhkan untuk ini. Jutaan pedagang kami menghargai kenyamanan dan keandalan platform kami - ini adalah pencapaian utama kami, dan alasan utama bagi Anda untuk mulai bekerja di platform kami. Sekarang juga.',
+          'Coinsbit menjadi platform pertukaran cryptocurrency terbesar yang dapat diandalkan. Kepercayaan anda adalah hal terpenting bagi kami. Berkat kepercayaan para traders kami, kami menjadi bursa dengan peringkat teratas dan terbesar di CoinMarketCap dan CoinGecko. Kami mengetahui layanan yang dibutuhkan saat ini dan mengetahui cara untuk mencapai tujuan utama kami. Kami sangat menghargai kenyamaan dan keandalan platform bagi jutaan traders kami. Ini adalah tujuan utama kami, dan merupakan alasan utama bagi anda untuk bekerjasama dengan platform kami sekarang.',
         ],
         isExchange: true,
         url: 'https://coinsbit.io/trade/BSI_USDT',
@@ -281,7 +281,7 @@ module.exports = {
         body: [
           'CoinGecko didirikan pada tahun 2014 oleh TM Lee (CEO) dan Bobby Ong (COO) dengan misi untuk mendemokrasikan akses data kripto dan memberdayakan pengguna dengan wawasan yang dapat ditindaklanjuti. Kami juga mendalami dunia kripto untuk memberikan wawasan berharga kepada pengguna kami melalui laporan mata uang kripto kami, serta publikasi, buletin, dan lainnya.',
           'CoinGecko adalah agregator data mata uang kripto independen terbesar dunia dengan lebih dari 13,000+ aset kripto berbeda yang dilacak di lebih dari 600+bursa di seluruh dunia.',
-          'CoinGecko adalah sumber independen terbesar di dunia untuk data mata uang kripto andal dan sering dikutip di seluruh industri oleh berbagai publikasi.',
+          'CoinGecko adalah sumber data cryptocurrency andal independen terbesar di dunia dan sering dikutip di seluruh industri oleh berbagai publikasi.',
         ],
         isExchange: false,
         url: 'https://www.coingecko.com/en/coins/bali-social-integrated',
@@ -293,7 +293,7 @@ module.exports = {
           alt: 'CoinMarketCap',
         },
         body: [
-          'CoinMarketCap adalah situs web pelacakan harga yang paling dijadikan referensi di dunia untuk aset-aset kripto di alam kripto yang berkembang pesat. Misinya adalah membuat kripto dapat ditemukan dan efisien secara global dengan memberdayakan pengguna ritel dengan informasi yang tidak memihak sebelah, berkualitas tinggi, dan akurat untuk menarik kesimpulan mereka sendiri yang berwawasan.',
+          'CoinMarketCap adalah situs web pelacakan harga yang dijadikan referensi di dunia untuk aset-aset kripto di dunia kripto yang berkembang pesat. Misinya adalah membuat informasi mengenai kripto mudah ditemukan secara global dengan memberdayakan pengguna ritel dengan informasi yang tidak memihak sebelah, berkualitas tinggi, dan akurat untuk menarik kesimpulan mereka sendiri.',
           'CoinMarketCap dan karyawannya tidak mengambil posisi publik apa pun atas manfaat ekonomi dari aset kripto apa pun, juga tidak secara terbuka mendukung aset kripto atau proyek blockchain apa pun. Semua aset kripto dan/atau dukungan proyek dari CZ dan/atau Binance tidak terkait dengan merek dan operasi CoinMarketCap.',
           'CoinMarketCap akan terus menyajikan data paling akurat tentang mata uang kripto kepada masyarakat luas secara mandiri. Kami yakin bahwa visi umum kami untuk memajukan revolusi kripto dan mempromosikan transparansi di alam kripto akan diperkuat dengan akuisisi ini.',
         ],
