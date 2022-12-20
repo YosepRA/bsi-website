@@ -8,12 +8,32 @@
     bsi: {
       subcategory: [
         companyProfileMeta,
-        tokenSummaryMeta,
+        roadmapMeta,
         tokenIntroductionMeta,
-        roadmapMeta
+        tokenSummaryMeta
       ]
     }
   } } = data;
+
+  let roadmapImage = '';
+
+  switch (lang) {
+    case 'en':
+      roadmapImage = 'roadmap-v2-en.png'
+      break;
+
+    case 'id':
+      roadmapImage = 'roadmap-v2-id.png'
+      break;
+
+    case 'kr':
+      roadmapImage = 'roadmap-v2-kr.png'
+      break;
+  
+    default:
+      roadmapImage = 'roadmap-v2-en.png'
+      break;
+  }
 %>
 
 <%- include('partials/header.ejs') %>
@@ -76,7 +96,7 @@
           <div class="row">
             <div class="col">
               <div class="roadmap__image-container">
-                <img src="/img/roadmap.png" alt="Bali Social Integrated Project Roadmap" class="roadmap__image-item" />
+                <img src="/img/<%= roadmapImage %>" alt="Bali Social Integrated Project Roadmap" class="roadmap__image-item" />
               </div>
             </div>
           </div>

@@ -10,6 +10,11 @@ body {
   @include montserrat();
   color: $body-color;
   font-weight: 400;
+  // text-align: justify;
+}
+
+p {
+  text-align: justify;
 }
 
 .navbar {
@@ -98,21 +103,43 @@ body {
     .container {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
     }
   }
 
   &__price {
     flex: 0 0 100%;
+    font-size: 0.9em;
+    font-weight: 400;
 
     p {
       margin-bottom: 0;
+    }
+
+    &-data {
+      font-weight: 700;
+    }
+
+    &-change {
+      &--up {
+        color: $success-color;
+      }
+
+      &--down {
+        color: $danger-color;
+      }
     }
   }
 }
 
 .main-container {
+  // With live price.
+  // padding-top: calc(3rem + 125px);
+
+  // Without live price.
   padding-top: calc(3rem + 75px);
+
   padding-bottom: 10rem;
 }
 
@@ -244,10 +271,6 @@ body {
 /* =============== Breakpoints =============== */
 
 @include media-breakpoint-sm {
-  p {
-    text-align: justify;
-  }
-
   .fb__button {
     margin-bottom: 0.5rem;
     box-shadow: 1px 0px 1px 0px #808089c2;
@@ -265,6 +288,10 @@ body {
   }
 
   .main-container {
+    // With live price.
+    // padding-top: calc(3rem + 139px);
+
+    // Without live price.
     padding-top: calc(3rem + 88px);
   }
 
@@ -283,6 +310,10 @@ body {
 
 @include media-breakpoint-lg {
   .main-container {
+    // With live price.
+    // padding-top: calc(4rem + 146px);
+
+    // Without live price.
     padding-top: calc(4rem + 104px);
   }
 
@@ -303,6 +334,10 @@ body {
         margin: 0 0.3rem;
         padding: 0;
       }
+    }
+
+    &__price {
+      font-size: 1em;
     }
   }
 
@@ -373,6 +408,10 @@ body {
   }
 
   .main-container {
+    // With live price.
+    // padding-top: calc(4rem + 162px);
+
+    // Without live price.
     padding-top: calc(4rem + 111px);
   }
 
@@ -413,10 +452,6 @@ body {
   body {
     font-size: 1.3rem;
   }
-
-  // .main-container {
-  //   padding-top: calc(6rem + 124px);
-  // }
 
   .navbar {
     &__lang {

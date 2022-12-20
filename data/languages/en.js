@@ -8,16 +8,16 @@ module.exports = {
           name: 'Company Profile',
         },
         {
-          id: 'tokenSummary',
-          name: 'Summary of The Token',
+          id: 'roadmap',
+          name: 'Roadmap',
         },
         {
           id: 'tokenIntroduction',
           name: 'Introduction of The Token',
         },
         {
-          id: 'roadmap',
-          name: 'Roadmap',
+          id: 'tokenSummary',
+          name: 'Summary of The Token',
         },
         {
           id: 'whitepaper',
@@ -94,7 +94,7 @@ module.exports = {
   },
   footer: {
     profile: [
-      'Bali Social Integrated is the first Blockchain project developed with an aim to optimize the global tourism industry. We use blockchain technology&apos;s cross-chain capabilities to connect global travelers to the respective service providers directly.',
+      'Bali Social Integrated is the first Blockchain project developed with the aim of optimizing the global tourism industry. We use blockchain technology&apos;s cross-chain capabilities to connect global travelers directly to the respective service providers.',
     ],
     navigation: {
       title: 'Get In Touch',
@@ -161,15 +161,15 @@ module.exports = {
     banner: {
       title: 'A New and Easy Payment System to Travel in Bali',
       body: [
-        'Bali Social Integrated (BSI) is a Blockchain-based platform connecting reputed online travel agencies (OTA) with global customers. The ecosystem is designed on blockchain to become transparent, secure, tamper-resistant with several incentives.',
-        'Bali Social Integrated offers a blockchain-powered tour and payment system. This system can be used to book and pay for tickets, accommodation, car rental, EV motorbike rental, restaurants, shopping, and recreational activities.',
+        'Bali Social Integrated (BSI) is a Blockchain-based platform connecting reputed online travel agencies (OTA) with global customers. The ecosystem is designed on blockchain to be transparent, secure, and tamper-resistant with several incentives.',
+        'Bali Social Integrated offers a blockchain-powered tour and payment system. This system can be used to book and pay for tickets, accommodations, car rentals, EV motorbike rentals, restaurants, shopping, and recreational activities.',
       ],
       button: 'Learn More',
     },
     companyProfile: {
       title: 'Company Profile',
       body: [
-        'Bali Social Integrated is the first Blockchain project developed with an aim to optimize the global tourism industry. We use blockchain technology&apos;s cross-chain capabilities to connect global travelers to the respective service providers directly. Bali Social Integrated houses a team of blockchain developers and crypto enthusiasts who work collectively to provide our users with a seamless travel experience.',
+        'Bali Social Integrated is the first Blockchain project developed with the aim of optimizing the global tourism industry. We use blockchain technology&apos;s cross-chain capabilities to connect global travelers directly to the respective service providers. Bali Social Integrated houses a team of blockchain developers and crypto enthusiasts who work collectively to provide our users with a seamless travel experience.',
         'We utilize blockchain&apos;s cost reduction abilities to remove the intermediaries and offer a unique also enjoyable customer experience with lower transactional and operational costs.',
       ],
     },
@@ -177,7 +177,7 @@ module.exports = {
       title: 'Introduction of Token',
       body: [
         'Bali Social Integrated (BSI) token is used as a payment method in the Carbon-Free VIAJE ecosystem and is an ERC-20 standard token. Tourists can use the Bali Social integrated (BSI) token to book and pay for tickets, accommodations, EV-mobility rentals, restaurants, and recreational activities.',
-        'Carbon-Free VIAJE develops and operates various services through eco-friendly ESG management by bringing users and suppliers into the VIAJE ecosystem through continuous service operation and ecosystem expansion. We are encouraging the expansion and use and number of BSI users.',
+        'Carbon-Free VIAJE develops and operates various services through eco-friendly ESG management by bringing users and suppliers into the VIAJE ecosystem through continuous service operation and ecosystem expansion. We are encouraging the expansion, use, and number of BSI users.',
       ],
     },
     summary: {
@@ -197,14 +197,14 @@ module.exports = {
     viajePlatform: {
       title: 'Viaje Platform',
       body: [
-        'Carbon-Free VIAJE, a business line by Bali Social Integrated, caters to every payment need by seamlessly integrating itself with BSI tokens and fiat currencies. Users can add BSI tokens or fiat currencies (using a credit card and other payment networks) and use them through VIAJE apps such as VIAJEPAY in all affiliated stores.',
-        'Travelers can enjoy a simplified payment network and avail of various services such as booking airlines, leisure/travel activities, hotels, renting electric motorcycles or purchasing food & drinks, shopping, etc.',
+        'Carbon-Free VIAJE, a business line by Bali Social Integrated, caters to every payment need by seamlessly integrating itself with BSI tokens and fiat currencies. Users can add BSI tokens or fiat currencies (using a credit card or other payment networks) and use them through VIAJE apps such as VIAJEPAY in all affiliated stores.',
+        'Travelers can enjoy a simplified payment network and avail of various services such as booking airlines, leisure or travel activities, hotels, renting electric motorcycles, purchasing food & drinks, shopping, etc.',
       ],
     },
     metaConcert: {
       title: 'Meta Concert',
       body: [
-        'BSI Foundation signs an agreement with META VIAJE (Dev Unlimit) to provide Dream Concert, the largest K-POP concert co-organized by the Ministry of Culture, Sports, and Tourism of Korea and the Celebrity Producers Association, in the &apos;BSI Ecosystem&apos; which create by BSI Altar Metaverse Space Metaism.',
+        'BSI Foundation signs an agreement with META VIAJE (Dev Unlimit) to provide Dream Concert, the largest K-POP concert co-organized by the Ministry of Culture, Sports, and Tourism of Korea and the Celebrity Producers Association, in the &apos;BSI Ecosystem&apos; which is created by the BSI Altar Metaverse Space Metaism.',
         'It will be introduced via metaverse (based on motion-on-touch) and aims to invite 300,000 to 1 million users every concert.  By promoting the advantages of K-POP and Korea&apos;s IT technology to the world, K-POP fans in Korea and around the world are able to attend the Dream Concert together via the metaverse as if they were enjoying the view of the real concert. There is also space for real-time chat and communication with the automatic translation function.',
       ],
     },
@@ -254,7 +254,7 @@ module.exports = {
           alt: 'Hotbit',
         },
         body: [
-          'Hotbit team aims at building the Amazon in blockchain industry',
+          'The Hotbit team&apos;s aim is to create the Amazon of the blockchain industry.',
           'According to CoinMarketCap, Hotbit had listed 2,000+ trading pairs in total and was ranked No. 1 among all exchanges regarding the number of types of cryptocurrency projects listed. Hotbit has accumulated 7,000,000+ registered users from more than 210 countries and areas all over the world. Hotbit started to distribute current deposit interests for its users, which means that Hotbit was the first cryptocurrency exchange in the world to offer daily current deposit interests to its users with no token lockup or freeze required.',
         ],
         isExchange: true,
@@ -267,7 +267,7 @@ module.exports = {
           alt: 'Coinsbit',
         },
         body: [
-          'Consbit being the largest cryptocurrency exchange means reliability. Your own confidence is the most important thing for us. It is thanks to this confidence of our Traders we entered the top largest exchanges in the ranking of CoinMarketCap and CoinGecko. We know how to achieve peak goals and we know what service is needed for this. A million of our Traders appreciated the convenience and reliability of our platform - this is our main achievement, and the main reason for you to start working on our platform. Right now.',
+          'Coinsbit being the largest cryptocurrency exchange means reliability. Your own confidence is the most important thing for us. It is thanks to this confidence of our traders that we entered the top largest exchanges in the ranking of CoinMarketCap and CoinGecko. We know how to achieve peak goals and we know what services are needed for this. A million of our traders appreciated the convenience and reliability of our platform. This is our main achievement, and the main reason for you to start working on our platform.',
         ],
         isExchange: true,
         url: 'https://coinsbit.io/trade/BSI_USDT',
@@ -279,7 +279,7 @@ module.exports = {
           alt: 'CoinGecko',
         },
         body: [
-          'CoinGecko was founded in 2014 by TM Lee (CEO) and Bobby Ong (COO) with the mission to democratize the access of crypto data and empower users with actionable insights. We also deep dive into the crypto space to deliver valuable insights to our users through our cryptocurrency reports, as well as our publications, newsletter and more.',
+          'CoinGecko was founded in 2014 by TM Lee (CEO) and Bobby Ong (COO) with the goal of democratizing crypto data access and providing users with actionable insights. We also deep dive into the crypto space to deliver valuable insights to our users through our cryptocurrency reports, as well as our publications, newsletter and more.',
           'CoinGecko is the world&apos;s largest independent cryptocurrency data aggregator with over 13,000+ different cryptoassets tracked across more than 600+ exchanges worldwide.',
           'CoinGecko is the world&apos;s largest independent source of reliable cryptocurrency data and is frequently cited across the industry by various publications.',
         ],
