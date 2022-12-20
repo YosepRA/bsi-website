@@ -12,6 +12,31 @@
       ]
     }
   } } = data;
+
+  let ecosystemImage = '';
+  let platformImage = '';
+
+  switch (lang) {
+    case 'en':
+      ecosystemImage = 'ecosystem-en.png';
+      platformImage = 'BBPP-en.png'
+      break;
+
+    case 'id':
+      ecosystemImage = 'ecosystem-id.png';
+      platformImage = 'BBPP-id.png'
+      break;
+
+    case 'kr':
+      ecosystemImage = 'ecosystem-kr.png';
+      platformImage = 'BBPP-en.png'
+      break;
+  
+    default:
+      ecosystemImage = 'ecosystem-en.png';
+      platformImage = 'BBPP-en.png'
+      break;
+  }
 %>
 
 <%- include('partials/header.ejs') %>
@@ -36,7 +61,7 @@
           <div class="container">
             <div class="row text-center viaje_ecosystem_picture">
               <div class="col-lg">
-                <img src="/img/viaje ecosystem.png" alt="viaje-ecosystem" class="viaje_ecosystem_icon"/>
+                <img src="/img/<%= ecosystemImage %>" alt="viaje-ecosystem" class="viaje_ecosystem_icon"/>
               </div>
             </div>
           </div>
@@ -61,7 +86,7 @@
   
           <div class="row text-center viaje_platform_page">
             <div class="col-md-12">
-              <img src="/img/viaje platform.png" alt="viaje_platform" class="viaje_platform_picture"/>
+              <img src="/img/<%= platformImage %>" alt="viaje_platform" class="viaje_platform_picture"/>
             </div>
           </div>
         </div>
@@ -72,7 +97,7 @@
           <div class="container">
             <div class="row meta_concert_prop">
               <div class="col meta_img">
-                <img class="meta-concert-img" src="/img/meta concert illust.png" alt="meta-concert-illust">
+                <img class="meta-concert-img" src="/img/meta-concert.png" alt="meta-concert-illust">
               </div>
               <div class="col-md-8 meta_concert_info">
                 <h4 class="big-title-1"><%= metaConcert.title %></h4>

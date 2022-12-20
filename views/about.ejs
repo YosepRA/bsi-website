@@ -12,6 +12,26 @@
       ]
     }
   } } = data;
+
+  let groupCompanyImage = '';
+
+  switch (lang) {
+    case 'en':
+      groupCompanyImage = 'group-company-en.png';
+      break;
+      
+    case 'id':
+      groupCompanyImage = 'group-company-id.png';
+      break;
+
+    case 'kr':
+      groupCompanyImage = 'group-company-kr.png';
+      break;
+  
+    default:
+      groupCompanyImage = 'group-company-en.png';
+      break;
+  }
 %>
 
 <%- include('partials/header.ejs') %>
@@ -28,7 +48,7 @@
 
         <div class="row group-company__image-row">
           <div class="col-12 group-company__col">
-            <img src="/img/group-company-white.png" alt="Viaje Foundation" class="group-company__image" />
+            <img src="/img/<%= groupCompanyImage %>" alt="Viaje Foundation" class="group-company__image" />
           </div>
         </div>
       </section>
