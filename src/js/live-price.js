@@ -1,11 +1,3 @@
-function ready(fn) {
-  if (document.readyState !== 'loading') {
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
-
 async function fetchLatestPrice() {
   const baseUrl = '/api/v1';
 
@@ -44,10 +36,4 @@ function fetchPriceOnInterval(delay) {
   setInterval(updatePriceData, delay);
 }
 
-async function globalInit() {
-  await updatePriceData();
-
-  fetchPriceOnInterval(30000);
-}
-
-// ready(globalInit);
+export { fetchPriceOnInterval, updatePriceData };

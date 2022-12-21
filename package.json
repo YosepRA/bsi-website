@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www --watch . --watch .env --ignore public/ --ignore src/ --ignore webpack.config.js",
-    "webpack:watch": "webpack --watch",
+    "watch": "webpack --watch",
     "build": "webpack"
   },
   "dependencies": {

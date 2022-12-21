@@ -98,7 +98,7 @@ p {
 
   &__menu {
     flex: 0 0 100%;
-    // margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 
     .container {
       display: flex;
@@ -135,10 +135,10 @@ p {
 
 .main-container {
   // With live price.
-  // padding-top: calc(3rem + 125px);
+  padding-top: calc(3rem + 125px);
 
   // Without live price.
-  padding-top: calc(3rem + 75px);
+  // padding-top: calc(3rem + 75px);
 
   padding-bottom: 10rem;
 }
@@ -289,10 +289,10 @@ p {
 
   .main-container {
     // With live price.
-    // padding-top: calc(3rem + 139px);
+    padding-top: calc(3rem + 139px);
 
     // Without live price.
-    padding-top: calc(3rem + 88px);
+    // padding-top: calc(3rem + 88px);
   }
 
   .page-footer {
@@ -311,10 +311,10 @@ p {
 @include media-breakpoint-lg {
   .main-container {
     // With live price.
-    // padding-top: calc(4rem + 146px);
+    padding-top: calc(4rem + 146px);
 
     // Without live price.
-    padding-top: calc(4rem + 104px);
+    // padding-top: calc(4rem + 104px);
   }
 
   .navbar {
@@ -409,10 +409,10 @@ p {
 
   .main-container {
     // With live price.
-    // padding-top: calc(4rem + 162px);
+    padding-top: calc(4rem + 162px);
 
     // Without live price.
-    padding-top: calc(4rem + 111px);
+    // padding-top: calc(4rem + 111px);
   }
 
   .page-section {
