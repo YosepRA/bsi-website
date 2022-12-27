@@ -1,0 +1,170 @@
+@import 'config';
+
+.service {
+  background: fixed url('/img/service-backg.png') center/cover no-repeat;
+  color: white;
+
+  .page-section {
+    &__title {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  .big-title {
+    color: white;
+  }
+
+  .viaje-ecosystem {
+    &__row {
+      &--text {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .viaje-platform {
+    &__row {
+      &--text {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .meta-concert {
+    &__image {
+      display: block;
+      position: relative;
+      left: -15px;
+      width: 60%;
+      height: auto;
+      margin: 0 auto 1rem;
+    }
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@include media-breakpoint-md {
+  .service {
+    .viaje-ecosystem,
+    .viaje-platform {
+      &__body {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 760px;
+      }
+    }
+
+    .viaje-platform {
+      &__image {
+        display: block;
+        max-width: 700px;
+        margin: auto;
+      }
+    }
+
+    .meta-concert {
+      &__col {
+        &--image {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &__title {
+        text-align: left;
+      }
+
+      &__image {
+        position: static;
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-lg {
+  .service {
+    .viaje-ecosystem {
+      &__image {
+        max-width: 560px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xl {
+  .service {
+    .viaje-ecosystem,
+    .viaje-platform {
+      &__row {
+        &--text {
+          margin-bottom: 2rem;
+        }
+      }
+
+      &__body {
+        max-width: 860px;
+      }
+    }
+
+    .viaje-ecosystem {
+      &__image {
+        max-width: 600px;
+      }
+    }
+
+    .viaje-platform {
+      &__image {
+        max-width: 800px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-xxxl {
+  .service {
+    .page-section {
+      &__title {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    .viaje-ecosystem,
+    .viaje-platform {
+      &__body {
+        max-width: 1100px;
+      }
+    }
+
+    .viaje-platform {
+      &__image {
+        max-width: 980px;
+      }
+    }
+
+    .meta-concert {
+      &__image {
+        max-width: 300px;
+      }
+    }
+  }
+}
