@@ -26,6 +26,7 @@ module.exports = {
         },
       ],
     },
+
     service: {
       name: 'Service',
       subcategory: [
@@ -90,6 +91,14 @@ module.exports = {
     },
     wallet: {
       name: 'My Wallet',
+    },
+  },
+  floatingButton: {
+    bsi: {
+      name: 'Buy BSI',
+    },
+    wallet: {
+      name: 'Wallet',
     },
   },
   footer: {
@@ -242,6 +251,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://www.digifinex.com/en-ww/trade/kline/USDT/BSI',
+        accordionButton: 'More Info',
+        actionButton: 'Buy BSI',
       },
       {
         id: 'hotbitPlatform',
@@ -255,6 +266,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
+        accordionButton: 'More Info',
+        actionButton: 'Buy BSI',
       },
       {
         id: 'coinsbitPlatform',
@@ -267,6 +280,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://coinsbit.io/trade/BSI_USDT',
+        accordionButton: 'More Info',
+        actionButton: 'Buy BSI',
       },
       {
         id: 'coingeckoPlatform',
@@ -281,6 +296,8 @@ module.exports = {
         ],
         isExchange: false,
         url: 'https://www.coingecko.com/en/coins/bali-social-integrated',
+        accordionButton: 'More Info',
+        actionButton: 'Go To Web',
       },
       {
         id: 'coinmarketcapPlatform',
@@ -296,6 +313,8 @@ module.exports = {
         ],
         isExchange: false,
         url: 'https://coinmarketcap.com/currencies/bali-social-integrated',
+        accordionButton: 'More Info',
+        actionButton: 'Go To Web',
       },
     ],
   },

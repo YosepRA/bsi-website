@@ -2,6 +2,10 @@
 
 @import 'config';
 
+// * {
+//   background-color: rgba(green, 0.1);
+// }
+
 html {
   scroll-behavior: smooth;
 }
@@ -42,6 +46,10 @@ p {
 
     &-link {
       color: $body-color;
+
+      &.active {
+        color: $primary-color;
+      }
     }
 
     &-primary-btn {
@@ -62,6 +70,12 @@ p {
       font-weight: 400;
 
       &:hover {
+        background-color: white;
+        color: $body-color;
+      }
+
+      &:active {
+        background-color: #ddd;
         color: $body-color;
       }
 
@@ -377,11 +391,11 @@ p {
       width: 85%;
     }
 
-    &__download {
-      &-icon {
-        max-width: 180px;
-      }
-    }
+    // &__download {
+    //   &-icon {
+    //     max-width: 180px;
+    //   }
+    // }
   }
 }
 
@@ -436,7 +450,7 @@ p {
 
     &__download {
       &-icon {
-        max-width: 190px;
+        max-width: 180px;
       }
     }
 
