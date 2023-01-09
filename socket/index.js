@@ -10,6 +10,8 @@ function startSocket(server) {
       console.log('Socket client is disconnected.');
     });
   });
+
+  return io;
 }
 
 module.exports = startSocket;
