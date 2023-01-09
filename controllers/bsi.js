@@ -1,9 +1,20 @@
 const Price = require('../database/models/price.js');
 
-module.exports = {
-  async price(req, res) {
-    const data = await Price.findOne({}).sort('-created');
+async function pricePoll(delay) {
+  const query = {};
+  const sortKey = '-created';
 
-    res.json(data);
-  },
-};
+  const prevPrice = await Price.findOne(query).sort(sortKey);
+
+  setInterval(async () => {
+    const data = await Price.findOne(query).sort(sortKey);
+  }, delay);
+}
+
+async function price(req, res) {
+  const data = await Price.findOne({}).sort('-created');
+
+  res.json(data);
+}
+
+module.exports = { price, pricePoll };
