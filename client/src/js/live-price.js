@@ -1,3 +1,7 @@
+const navbarPriceData = document.querySelector('.navbar__price-data');
+const navbarPriceChange = document.querySelector('.navbar__price-change');
+const navbarPriceTime = document.querySelector('.navbar__price-time');
+
 async function fetchLatestPrice() {
   const baseUrl = '/api/v1';
 
@@ -6,12 +10,8 @@ async function fetchLatestPrice() {
   return data;
 }
 
-async function updatePriceData() {
-  const navbarPriceData = document.querySelector('.navbar__price-data');
-  const navbarPriceChange = document.querySelector('.navbar__price-change');
-  const navbarPriceTime = document.querySelector('.navbar__price-time');
-
-  const data = await fetchLatestPrice();
+async function updatePriceData(data) {
+  // const data = await fetchLatestPrice();
   const priceText = `$${data.price}`;
   const changeText = `${data.change24Hr > 0 ? '+' : ''}${
     Math.round(data.change24Hr * 100) / 100
@@ -33,7 +33,11 @@ async function updatePriceData() {
 }
 
 function fetchPriceOnInterval(delay) {
-  setInterval(updatePriceData, delay);
+  setInterval(async () => {
+    const data = await fetchLatestPrice(data);
+
+    updatePriceData(data);
+  }, delay);
 }
 
-export { fetchPriceOnInterval, updatePriceData };
+export { fetchLatestPrice, fetchPriceOnInterval, updatePriceData };
