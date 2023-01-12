@@ -32,6 +32,12 @@ p {
   color: $body-color;
   box-shadow: 1px 1px 3px #333;
   font-weight: 600;
+  @include allTransition();
+  transform: translateY(0);
+
+  &.scroll {
+    transform: translateY(-100%);
+  }
 
   .container {
     flex: 0 0 100%;
@@ -255,14 +261,18 @@ p {
   }
 }
 
-/* =============== Floating Buttons =============== */
-
 .fb {
   position: fixed;
-  right: 25px;
+  right: 16px;
   bottom: 50px;
   z-index: 10;
   margin-top: 3rem;
+  @include allTransition();
+  transform: translateX(0);
+
+  &.scroll {
+    transform: translateX(120%);
+  }
 
   &__button {
     @include primary-button();
