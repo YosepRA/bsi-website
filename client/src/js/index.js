@@ -1,4 +1,5 @@
 import { ready } from './helpers.js';
+import ScrollControl from './scroll-control.js';
 import {
   fetchLatestPrice,
   updatePriceData,
@@ -7,6 +8,17 @@ import {
 import startSocket from './socket.js';
 
 async function start() {
+  function hello(scrollState) {
+    console.log('We are going:', scrollState.direction);
+  }
+
+  // function world() {
+  //   console.log('world');
+  // }
+
+  // Navbar scroll.
+  const scroll = new ScrollControl([hello]);
+
   const data = await fetchLatestPrice();
   const delay = 120000;
 

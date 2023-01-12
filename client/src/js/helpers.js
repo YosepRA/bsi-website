@@ -7,16 +7,15 @@ function ready(fn) {
 }
 
 function throttle(fn, delay) {
-  let start = Date.now();
+  let prev = Date.now();
 
   return function throttleFunction() {
     const now = Date.now();
 
-    // If the specified delay time has passed. Run it.
-    if (now - start > delay) {
+    if (now - prev > delay) {
       fn();
 
-      start = now;
+      prev = now;
     }
   };
 }
