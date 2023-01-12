@@ -26,6 +26,7 @@ module.exports = {
         },
       ],
     },
+
     service: {
       name: 'Service',
       subcategory: [
@@ -92,6 +93,14 @@ module.exports = {
       name: 'My Wallet',
     },
   },
+  floatingButton: {
+    bsi: {
+      name: 'Buy BSI',
+    },
+    wallet: {
+      name: 'Wallet',
+    },
+  },
   footer: {
     profile: [
       'Bali Social Integrated (BSI)는 글로벌 관광사업 최적화를 목표로 개발된 최초의 블록체인 프로젝트입니다. 저희는 블록체인 기술의 크로스 체인 기능을 사용하여 글로벌 여행자를 해당 서비스 제공업체에 직접 연결합니다.',
@@ -105,7 +114,7 @@ module.exports = {
       },
     },
     download: {
-      title: 'Download BSI App',
+      title: 'Download BSI Wallet',
     },
     copyright:
       '&copy; 2022 Bali Social Integrated Foundation. All rights reserved.',
@@ -242,6 +251,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://www.digifinex.com/en-ww/trade/kline/USDT/BSI',
+        accordionButton: 'More Info',
+        actionButton: 'Buy BSI',
       },
       {
         id: 'hotbitPlatform',
@@ -255,6 +266,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
+        accordionButton: 'More Info',
+        actionButton: 'Buy BSI',
       },
       {
         id: 'coinsbitPlatform',
@@ -267,6 +280,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://coinsbit.io/trade/BSI_USDT',
+        accordionButton: 'More Info',
+        actionButton: 'Buy BSI',
       },
       {
         id: 'coingeckoPlatform',
@@ -281,6 +296,8 @@ module.exports = {
         ],
         isExchange: false,
         url: 'https://www.coingecko.com/en/coins/bali-social-integrated',
+        accordionButton: 'More Info',
+        actionButton: 'Go To Web',
       },
       {
         id: 'coinmarketcapPlatform',
@@ -296,6 +313,8 @@ module.exports = {
         ],
         isExchange: false,
         url: 'https://coinmarketcap.com/currencies/bali-social-integrated',
+        accordionButton: 'More Info',
+        actionButton: 'Go To Web',
       },
     ],
   },

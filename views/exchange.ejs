@@ -38,10 +38,10 @@
 
                 <div class="exchange-list__accordion-controls">
                   <button type="button" class="exchange-list__accordion-btn exchange-list__accordion-btn--trigger btn" data-bs-toggle="collapse" data-bs-target="#<%= data.id %>" aria-expanded="<%= i === 0 ? 'true' : 'false' %>" aria-controls="<%= data.id %>">
-                    More Info
+                    <%- data.accordionButton %>
                   </button>
 
-                  <a href="<%= data.url %>" target="_blank" rel="noreferrer" class="exchange-list__accordion-btn exchange-list__accordion-btn--buy btn"><%- data.isExchange ? 'Buy BSI' : 'Details' %></a>
+                  <a href="<%= data.url %>" target="_blank" rel="noreferrer" class="exchange-list__accordion-btn exchange-list__accordion-btn--buy btn"><%- data.actionButton %></a>
                 </div>
               </div>
   

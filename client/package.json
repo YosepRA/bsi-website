@@ -1,0 +1,19 @@
+{
+  "name": "bsi-web-client",
+  "version": "1.0.0",
+  "description": "BSI website client source files.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "author": "Yosep Ryan Agusta <yosep.ryan.yra@gmail.com> (https://yosepra.github.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.5.4"
+  }
+}
