@@ -24,9 +24,14 @@ class ScrollControl {
 
   callFunctions() {
     // Invoke all functions attached to this instance.
-    this.fns.forEach((fn) =>
-      fn({ position: this.position, direction: this.direction }),
+    const promises = this.fns.map(
+      (fn) =>
+        new Promise((resolve) =>
+          resolve(fn({ position: this.position, direction: this.direction })),
+        ),
     );
+
+    return Promise.all(promises);
   }
 }
 

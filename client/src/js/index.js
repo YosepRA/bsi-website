@@ -1,24 +1,24 @@
 import { ready } from './helpers.js';
 import ScrollControl from './scroll-control.js';
+import { navbarScroll, floatingButtonScroll } from './scroll-behaviors.js';
 import {
   fetchLatestPrice,
   updatePriceData,
   fetchPriceOnInterval,
 } from './live-price.js';
-import startSocket from './socket.js';
+// import startSocket from './socket.js';
+
+const navbar = document.querySelector('.navbar');
+const floatingButton = document.querySelector('.fb');
 
 async function start() {
-  function hello(scrollState) {
-    console.log('We are going:', scrollState.direction);
-  }
+  // Scroll feature.
+  const scroll = new ScrollControl([
+    navbarScroll(navbar),
+    floatingButtonScroll(floatingButton),
+  ]);
 
-  // function world() {
-  //   console.log('world');
-  // }
-
-  // Navbar scroll.
-  const scroll = new ScrollControl([hello]);
-
+  // Live price feature.
   const data = await fetchLatestPrice();
   const delay = 120000;
 
