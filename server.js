@@ -11,11 +11,13 @@ const mongoConnect = require('./database/scripts/mongo-connect.js');
 const indexRouter = require('./routes/index.js');
 const bsiRouter = require('./routes/bsi.js');
 const startSocket = require('./socket/index.js');
+const { pricePoll } = require('./controllers/bsi.js');
 
 const app = express();
 const server = http.createServer(app);
 const mongoUrl =
   process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/BSI-exchange-collector';
+const pollDelay = process.env.POLL_DELAY || 180000;
 
 /* ======================= MongoDB Connection ======================= */
 
@@ -35,7 +37,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* ======================= Socket ======================= */
 
-startSocket(server);
+const io = startSocket(server);
+// This poll will constantly ask for the latest price on database.
+// And it will send data to client whenever there is a new data.
+pricePoll(io, pollDelay);
 
 /* ======================= Routes ======================= */
 

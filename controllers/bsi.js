@@ -1,13 +1,22 @@
 const Price = require('../database/models/price.js');
+// const socket = require('../socket/index.js');
 
-async function pricePoll(delay) {
+async function pricePoll(io, delay) {
   const query = {};
   const sortKey = '-created';
 
-  const prevPrice = await Price.findOne(query).sort(sortKey);
+  let prevPrice = await Price.findOne(query).sort(sortKey);
 
   setInterval(async () => {
-    const data = await Price.findOne(query).sort(sortKey);
+    const nextPrice = await Price.findOne(query).sort(sortKey);
+
+    // If it's not the latest, don't do anything.
+    if (!(prevPrice.lastUpdatedAt < nextPrice.lastUpdatedAt)) return undefined;
+
+    io.emit('price', nextPrice);
+    prevPrice = nextPrice;
+
+    return undefined;
   }, delay);
 }
 
