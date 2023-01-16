@@ -11,6 +11,7 @@
   }
 
   .big-title {
+    margin-top: 3rem;
     color: white;
   }
 
@@ -18,13 +19,14 @@
     &__row {
       &--text {
         margin-bottom: 1rem;
+        margin-top: 2rem;
       }
     }
 
     &__image {
       display: block;
       width: 100%;
-      max-width: 440px;
+      max-width: 200px;
       height: auto;
       margin: 0 auto;
     }
@@ -40,6 +42,8 @@
     &__image {
       width: 100%;
       height: auto;
+      justify-content: center;
+      margin: 0 auto;
     }
   }
 
@@ -71,8 +75,10 @@
     .viaje-platform {
       &__image {
         display: block;
-        max-width: 700px;
-        margin: auto;
+        height: 400px;
+        width: auto;
+        // margin: auto;
+        overflow-y: auto;
       }
     }
 
