@@ -7,7 +7,7 @@ class ScrollControl {
     this.direction = '';
     this.fns = fns || [];
 
-    const handleScroll = throttle(this.updateScroll.bind(this), 300);
+    const handleScroll = throttle(this.updateScroll.bind(this), 200);
 
     window.addEventListener('scroll', handleScroll);
   }
