@@ -69,13 +69,14 @@
   
       <section id="<%= viajePlatformMeta.id %>" class="viaje-platform page-section">
         <div class="container">
-          <div class="row viaje-platform__row viaje-platform__row--text">
-            <div class="col-12">
+          <div class="row viaje-platform__row viaje-platform__row--image">
+            <div class="col">
               <img src="/img/<%= platformImage %>" alt="viaje_platform" class="viaje-platform__image"/>
             </div>
-            <!-- <div class="row viaje-platform__row viaje-platform__row--image">
-            </div> -->
-            <div class="col-12">
+          </div>
+
+          <div class="row viaje-platform__row viaje-platform__row--text">
+            <div class="col">
               <h4 class="big-title viaje-platform__title page-section__title">
                 <%= viajePlatform.title %>
               </h4>
@@ -87,8 +88,6 @@
               <% } %>
             </div>
           </div>
-  
-          
         </div>
       </section>
       
