@@ -23,6 +23,7 @@
       // Without live price.
       // height: calc(100vh - 56px);
       z-index: 1;
+      
 
       &-inner {
         width: 100%;
@@ -36,13 +37,14 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 85% 50%;
+        
 
         &--01 {
-          background-image: url('/img/home-banner-01.png');
+          background-image: url('/img/home-banner1.png');
         }
 
         &--02 {
-          background-image: url('/img/home-banner-02.png');
+          background-image: url('/img/home-banner2.png');
         }
 
         &--03 {
@@ -59,6 +61,7 @@
       height: 100%;
       color: white;
       z-index: 2;
+      
 
       .container {
         height: 100%;
