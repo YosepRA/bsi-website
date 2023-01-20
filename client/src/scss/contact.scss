@@ -1,0 +1,92 @@
+@import 'config';
+
+.contact {
+  background: fixed url('/img/contact-background.png') no-repeat;
+  background-position: 80% center;
+  background-size: cover;
+
+  .page-section {
+    padding-top: 150px;
+    padding-bottom: 120px;
+  }
+
+  h1.banner-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  p.banner1 {
+    color: white;
+    // font-size: 1.7rem;
+  }
+
+  .banner {
+    // padding-top: 200px;
+    padding-bottom: 100px;
+  }
+
+  h1.partner {
+    color: white;
+    font-weight: 600;
+    margin-top: 4rem;
+    font-size: 1.7rem;
+  }
+
+  h1.email {
+    color: white;
+    font-weight: 600;
+    font-size: 1.7rem;
+  }
+}
+
+/* =============== Breakpoints =============== */
+
+@media screen and (max-width: 576px) {
+  .contact {
+    background-position: 80% center;
+  }
+  .contact p.banner1 {
+    color: white;
+    // font-size: 1.5rem;
+  }
+  .contact h1.partner {
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 5rem;
+    font-size: 1.5rem;
+  }
+  .contact h1.email {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+@include media-breakpoint-lg {
+  .contact {
+    background-position: 80% center;
+  }
+}
+
+@include media-breakpoint-xl {
+  .contact {
+    h1.banner-title {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+@include media-breakpoint-xxl {
+  .contact {
+    background-position: 80% center;
+
+    h1.banner-title {
+      font-size: 2.4rem;
+    }
+  }
+}

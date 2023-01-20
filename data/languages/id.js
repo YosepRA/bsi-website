@@ -92,6 +92,18 @@ module.exports = {
       name: 'Dompetku',
     },
   },
+  floatingButton: {
+    bsi: {
+      name: 'Beli BSI',
+    },
+    wallet: {
+      name: 'Dompet',
+    },
+    whitepaper: {
+      name: 'Whitepaper',
+      url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-indonesian-version',
+    },
+  },
   footer: {
     profile: [
       'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk menghubungkan turis global ke masing-masing penyedia layanan secara langsung.',
@@ -105,7 +117,7 @@ module.exports = {
       },
     },
     download: {
-      title: 'Unduh Aplikasi BSI',
+      title: 'Unduh BSI Wallet',
     },
     copyright:
       '&copy; 2022 Bali Social Integrated Foundation. Semua hak cipta dilindungi undang-undang.',
@@ -124,7 +136,7 @@ module.exports = {
       body: [
         'Bali Social Integrated (BSI) adalah proyek Blockchain pertama yang dikembangkan dengan tujuan untuk pengoptimalan industri pariwisata global. Kami menggunakan kemampuan dari teknologi blockchain untuk mengubungkan turis global ke masing-masing penyedia layanan secara langsung.',
       ],
-      button: 'Pelajari',
+      button: 'Selengkapnya',
     },
     pageBanners: {
       service: {
@@ -132,28 +144,28 @@ module.exports = {
         body: [
           'Turis yang membeli dan menggunakan Token Bali Social Integrated akan mendapatkan service dari VIAJE ekosistem, VIAJE Platform dan Konser Meta.',
         ],
-        button: 'Pelajari',
+        button: 'Selengkapnya',
       },
       about: {
         title: 'Profil',
         body: [
           'Token Bali Social Integrated (BSI) digunakan sebagai metode pembayaran dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
         ],
-        button: 'Pelajari',
+        button: 'Selengkapnya',
       },
       contact: {
         title: 'Kontak',
         body: [
           'Kami dengan senang berharap dapat mendengar feedback dari Anda mengenai pelayanan kami.',
         ],
-        button: 'Pelajari',
+        button: 'Selengkapnya',
       },
       exchange: {
         title: 'Perdagangan',
         body: [
           'Turis dapat membeli Bali Social Integrated di Digifinex, Hotbit, dan CoinsBit, serta bisa melihat informasi harga token Bali Social Integrated di CoinGecko dan CoinMarketCap.',
         ],
-        button: 'Pelajari',
+        button: 'Selengkapnya',
       },
     },
   },
@@ -164,7 +176,7 @@ module.exports = {
         'Bali Social Integrated (BSI) adalah platform berbasis blockchain yang menghubungkan "Online Travel Agencies" (OTA) ternama dengan pelanggan global. Ekosistem dirancang pada blockchian untuk menjadi transparan, aman, dan terbebas dari permintaan insentif tambahan.',
         'Bali Social Integrated (BSI) menawarkan sistem tour dan pembayaran dengan penggunaan teknologi Blockchain. Sistem ini dapat digunakan untuk pemesanan dan pembayaran tiket, akomodasi, rental mobil, rental motor EV, restoran, pembelanjaan dan kegiatan rekreasi dengan BSI token.',
       ],
-      button: 'Pelajari',
+      button: 'Selengkapnya',
     },
     companyProfile: {
       title: 'Profil Perusahaan',
@@ -215,6 +227,18 @@ module.exports = {
     },
     bsiTeam: {
       title: 'Tim BSI',
+      members: [
+        {
+          id: 'juleo',
+          name: 'Juleo Fernando',
+          title: 'Chief Executive Officer',
+        },
+        {
+          id: 'danniel',
+          name: 'Danniel Prakasa',
+          title: 'Komisaris',
+        },
+      ],
     },
     partnership: {
       title: 'Mitra Kerja',
@@ -246,6 +270,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://www.digifinex.com/en-ww/trade/kline/USDT/BSI',
+        accordionButton: 'Detail',
+        actionButton: 'Beli BSI',
       },
       {
         id: 'hotbitPlatform',
@@ -259,6 +285,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
+        accordionButton: 'Detail',
+        actionButton: 'Beli BSI',
       },
       {
         id: 'coinsbitPlatform',
@@ -271,6 +299,8 @@ module.exports = {
         ],
         isExchange: true,
         url: 'https://coinsbit.io/trade/BSI_USDT',
+        accordionButton: 'Detail',
+        actionButton: 'Beli BSI',
       },
       {
         id: 'coingeckoPlatform',
@@ -285,6 +315,8 @@ module.exports = {
         ],
         isExchange: false,
         url: 'https://www.coingecko.com/en/coins/bali-social-integrated',
+        accordionButton: 'Detail',
+        actionButton: 'Kunjungi Web',
       },
       {
         id: 'coinmarketcapPlatform',
@@ -299,6 +331,8 @@ module.exports = {
         ],
         isExchange: false,
         url: 'https://coinmarketcap.com/currencies/bali-social-integrated',
+        accordionButton: 'Detail',
+        actionButton: 'Kunjungi Web',
       },
     ],
   },

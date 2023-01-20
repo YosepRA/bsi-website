@@ -1,16 +1,31 @@
+<% 
+  const { floatingButton: {
+    bsi,
+    wallet,
+    whitepaper
+  } } = data;
+%>
+
 <div class="fb">
   <a href="/<%= lang %>/exchange" class="fb__button">
     <span class="fb__button-content fb__button-icon">
       <i class="fa-solid fa-chart-line"></i>
     </span>
 
-    <span class="fb__button-content fb__button-text">Buy BSI</span>
+    <span class="fb__button-content fb__button-text"><%- bsi.name %></span>
   </a>
   <a href="https://wallet.bsin.io" class="fb__button" target="_blank" rel="noreferrer">
     <span class="fb__button-content fb__button-icon">
       <i class="fa-solid fa-wallet"></i>
     </span>
 
-    <span class="fb__button-content fb__button-text">Wallet</span>
+    <span class="fb__button-content fb__button-text"><%- wallet.name %></span>
+  </a>
+  <a href="<%- whitepaper.url %>" class="fb__button" target="_blank" rel="noreferrer">
+    <span class="fb__button-content fb__button-icon">
+      <i class="fa-solid fa-file"></i>
+    </span>
+
+    <span class="fb__button-content fb__button-text"><%- whitepaper.name %></span>
   </a>
 </div>
