@@ -30,4 +30,4 @@ async function start() {
   // startSocket();
 }
 
-ready(start);
+// ready(start);
