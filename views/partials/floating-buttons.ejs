@@ -4,6 +4,26 @@
     wallet,
     whitepaper
   } } = data;
+
+  let whitepaperName = '';
+
+  switch (lang) {
+    case 'en':
+      whitepaperName = 'Whitepaper Final (English Ver) 2022.11.pdf';
+      break;
+
+    case 'id':
+      whitepaperName = 'Whitepaper Final (Indonesian Ver) 2022.11.pdf';
+      break;
+
+    case 'kr':
+      whitepaperName = 'Whitepaper Final (English Ver) 2022.11.pdf';
+      break;
+  
+    default:
+      whitepaperName = 'Whitepaper Final (English Ver) 2022.11.pdf';
+      break;
+  }
 %>
 
 <div class="fb">
@@ -21,7 +41,7 @@
 
     <span class="fb__button-content fb__button-text"><%- wallet.name %></span>
   </a>
-  <a href="<%- whitepaper.url %>" class="fb__button" target="_blank" rel="noreferrer">
+  <a href="/file/<%- whitepaperName %>" class="fb__button" target="_blank" rel="noreferrer">
     <span class="fb__button-content fb__button-icon">
       <i class="fa-solid fa-file"></i>
     </span>
