@@ -3,10 +3,10 @@
 .bsi {
   .main-container {
     // With live price.
-    padding-top: 125px;
+    // padding-top: 125px;
 
     // Without live price.
-    // padding-top: 75px;
+    padding-top: 75px;
   }
 
   .banner {
@@ -16,10 +16,10 @@
     .carousel {
       width: 100%;
       // With live price.
-      height: calc(100vh - 125px);
+      // height: calc(100vh - 125px);
 
       // Without live price.
-      // height: calc(100vh - 56px);
+      height: calc(100vh - 56px);
       z-index: 1;
 
       &-inner {
@@ -106,11 +106,11 @@
     &__image {
       &-container {
         width: 100%;
-        overflow-x: auto;
       }
 
       &-item {
-        height: 600px;
+        width: 100%;
+        height: auto;
       }
     }
   }
@@ -150,19 +150,19 @@
   .bsi {
     .main-container {
       // With live price.
-      padding-top: 139px;
+      // padding-top: 139px;
 
       // Without live price.
-      // padding-top: 88px;
+      padding-top: 88px;
     }
 
     .banner {
       .carousel {
         // With live price.
-        height: calc(100vh - 139px);
+        // height: calc(100vh - 139px);
 
         // Without live price.
-        // height: calc(100vh - 56px);
+        height: calc(100vh - 56px);
       }
 
       &__info {
@@ -231,35 +231,35 @@
   .bsi {
     .main-container {
       // With live price.
-      padding-top: 146px;
+      // padding-top: 146px;
 
       // Without live price.
-      // padding-top: 104px;
+      padding-top: 104px;
     }
 
     .banner {
       .carousel {
         // With live price.
-        height: calc(100vh - 146px);
+        // height: calc(100vh - 146px);
 
         // Without live price.
-        // height: calc(100vh - 56px);
+        height: calc(100vh - 56px);
       }
     }
 
-    .roadmap {
-      &__image {
-        &-container {
-          width: 100%;
-          overflow-x: hidden;
-        }
+    // .roadmap {
+    //   &__image {
+    //     &-container {
+    //       width: 100%;
+    //       // overflow-x: hidden;
+    //     }
 
-        &-item {
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
+    //     &-item {
+    //       width: 100%;
+    //       height: auto;
+    //     }
+    //   }
+    // }
   }
 }
 
@@ -286,19 +286,19 @@
   .bsi {
     .main-container {
       // With live price.
-      padding-top: 162px;
+      // padding-top: 162px;
 
       // Without live price.
-      // padding-top: 111px;
+      padding-top: 111px;
     }
 
     .banner {
       .carousel {
         // With live price.
-        height: calc(100vh - 162px);
+        // height: calc(100vh - 162px);
 
         // Without live price.
-        // height: calc(100vh - 56px);
+        height: calc(100vh - 56px);
       }
     }
   }

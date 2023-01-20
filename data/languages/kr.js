@@ -26,7 +26,6 @@ module.exports = {
         },
       ],
     },
-
     service: {
       name: 'Service',
       subcategory: [
@@ -99,6 +98,10 @@ module.exports = {
     },
     wallet: {
       name: 'Wallet',
+    },
+    whitepaper: {
+      name: 'Whitepaper',
+      url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-korean-version',
     },
   },
   footer: {
@@ -220,6 +223,18 @@ module.exports = {
     },
     bsiTeam: {
       title: 'BSI Team',
+      members: [
+        {
+          id: 'juleo',
+          name: 'Juleo Fernando',
+          title: 'Chief Executive Officer',
+        },
+        {
+          id: 'danniel',
+          name: 'Danniel Prakasa',
+          title: '감사',
+        },
+      ],
     },
     partnership: {
       title: 'Partnership',

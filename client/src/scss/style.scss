@@ -17,7 +17,7 @@ body {
 }
 
 p {
-  text-align: justify;
+  text-align: left;
 }
 
 .navbar {
@@ -156,10 +156,10 @@ p {
 
 .main-container {
   // With live price.
-  padding-top: calc(3rem + 125px);
+  // padding-top: calc(3rem + 125px);
 
   // Without live price.
-  // padding-top: calc(3rem + 75px);
+  padding-top: calc(3rem + 75px);
 
   padding-bottom: 10rem;
 }
@@ -280,19 +280,16 @@ p {
   &__button {
     @include primary-button();
     display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1em;
     text-align: center;
     text-decoration: none;
+    box-shadow: 1px 0px 1px 2px #808089c2;
 
     &:hover {
       color: white;
     }
   }
-}
-
-.fb__button {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  box-shadow: 1px 0px 1px 2px #808089c2;
 }
 
 /* =============== Breakpoints =============== */
@@ -316,10 +313,10 @@ p {
 
   .main-container {
     // With live price.
-    padding-top: calc(3rem + 139px);
+    // padding-top: calc(3rem + 139px);
 
     // Without live price.
-    // padding-top: calc(3rem + 88px);
+    padding-top: calc(3rem + 88px);
   }
 
   .page-footer {
@@ -338,10 +335,10 @@ p {
 @include media-breakpoint-lg {
   .main-container {
     // With live price.
-    padding-top: calc(4rem + 146px);
+    // padding-top: calc(4rem + 146px);
 
     // Without live price.
-    // padding-top: calc(4rem + 104px);
+    padding-top: calc(4rem + 104px);
   }
 
   .navbar {
@@ -403,12 +400,6 @@ p {
     &__navigation {
       width: 85%;
     }
-
-    // &__download {
-    //   &-icon {
-    //     max-width: 180px;
-    //   }
-    // }
   }
 }
 
@@ -418,8 +409,6 @@ p {
   }
 
   .navbar {
-    // font-size: 1rem;
-
     &-brand {
       &__image {
         width: 200px;
@@ -436,10 +425,10 @@ p {
 
   .main-container {
     // With live price.
-    padding-top: calc(4rem + 162px);
+    // padding-top: calc(4rem + 162px);
 
     // Without live price.
-    // padding-top: calc(4rem + 111px);
+    padding-top: calc(4rem + 111px);
   }
 
   .page-section {
@@ -531,7 +520,6 @@ p {
 
     &__button {
       padding: 1rem 1.4rem;
-      font-size: 1.5rem;
     }
   }
 }

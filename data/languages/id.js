@@ -26,7 +26,6 @@ module.exports = {
         },
       ],
     },
-
     service: {
       name: 'Pelayanan',
       subcategory: [
@@ -99,6 +98,10 @@ module.exports = {
     },
     wallet: {
       name: 'Dompet',
+    },
+    whitepaper: {
+      name: 'Whitepaper',
+      url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-indonesian-version',
     },
   },
   footer: {
@@ -224,6 +227,18 @@ module.exports = {
     },
     bsiTeam: {
       title: 'Tim BSI',
+      members: [
+        {
+          id: 'juleo',
+          name: 'Juleo Fernando',
+          title: 'Chief Executive Officer',
+        },
+        {
+          id: 'danniel',
+          name: 'Danniel Prakasa',
+          title: 'Komisaris',
+        },
+      ],
     },
     partnership: {
       title: 'Mitra Kerja',
