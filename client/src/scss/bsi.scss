@@ -106,11 +106,11 @@
     &__image {
       &-container {
         width: 100%;
-        overflow-x: auto;
       }
 
       &-item {
-        height: 600px;
+        width: 100%;
+        height: auto;
       }
     }
   }
@@ -247,19 +247,19 @@
       }
     }
 
-    .roadmap {
-      &__image {
-        &-container {
-          width: 100%;
-          overflow-x: hidden;
-        }
+    // .roadmap {
+    //   &__image {
+    //     &-container {
+    //       width: 100%;
+    //       // overflow-x: hidden;
+    //     }
 
-        &-item {
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
+    //     &-item {
+    //       width: 100%;
+    //       height: auto;
+    //     }
+    //   }
+    // }
   }
 }
 
