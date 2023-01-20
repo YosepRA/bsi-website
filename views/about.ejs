@@ -61,27 +61,42 @@
         </div>
 
         <div class="row bsi-team__row bsi-team__row--images">
-          <div class="col-12 col-md-5 col-lg-4 col-xl-4">
-            <div class="bsi-team__item bsi-team__item--danniel">
+          <% for( let i = 0; i < bsiTeam.members.length; i++ ) { %>
+            <% const { id, name, title } = bsiTeam.members[i]; %>
+
+            <div class="col-12 col-md-5 col-lg-4 col-xl-4">
+              <div class="bsi-team__item bsi-team__item--<%- id %>">
+                <div class="bsi-team__item-overlay"></div>
+
+                <div class="bsi-team__item-info">
+                  <h4 class="bsi-team__item-name"><%- name %></h4>
+                  <h5 class="bsi-team__item-position"><%- title %></h5>
+                </div>
+              </div>
+            </div>
+          <% } %>
+
+          <!-- <div class="col-12 col-md-5 col-lg-4 col-xl-4">
+            <div class="bsi-team__item bsi-team__item--juleo">
               <div class="bsi-team__item-overlay"></div>
 
               <div class="bsi-team__item-info">
-                <h4 class="bsi-team__item-name">Danniel Prakasa</h4>
+                <h4 class="bsi-team__item-name">Juleo Fernando</h4>
                 <h5 class="bsi-team__item-position">Chief Executive Officer</h5>
               </div>
             </div>
           </div>
 
           <div class="col-12 col-md-5 col-lg-4 col-xl-4">
-            <div class="bsi-team__item bsi-team__item--juleo">
+            <div class="bsi-team__item bsi-team__item--danniel">
               <div class="bsi-team__item-overlay"></div>
 
               <div class="bsi-team__item-info">
-                <h4 class="bsi-team__item-name">Juleo Fernando</h4>
-                <h5 class="bsi-team__item-position">Chief Operational Officer</h5>
+                <h4 class="bsi-team__item-name">Danniel Prakasa</h4>
+                <h5 class="bsi-team__item-position">Komisaris</h5>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
 

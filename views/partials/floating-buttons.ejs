@@ -1,7 +1,8 @@
 <% 
   const { floatingButton: {
     bsi,
-    wallet
+    wallet,
+    whitepaper
   } } = data;
 %>
 
@@ -19,5 +20,12 @@
     </span>
 
     <span class="fb__button-content fb__button-text"><%- wallet.name %></span>
+  </a>
+  <a href="<%- whitepaper.url %>" class="fb__button" target="_blank" rel="noreferrer">
+    <span class="fb__button-content fb__button-icon">
+      <i class="fa-solid fa-file"></i>
+    </span>
+
+    <span class="fb__button-content fb__button-text"><%- whitepaper.name %></span>
   </a>
 </div>

@@ -99,6 +99,10 @@ module.exports = {
     wallet: {
       name: 'Wallet',
     },
+    whitepaper: {
+      name: 'Whitepaper',
+      url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-english-version',
+    },
   },
   footer: {
     profile: [
@@ -223,6 +227,18 @@ module.exports = {
     },
     bsiTeam: {
       title: 'BSI Team',
+      members: [
+        {
+          id: 'juleo',
+          name: 'Juleo Fernando',
+          title: 'Chief Executive Officer',
+        },
+        {
+          id: 'danniel',
+          name: 'Danniel Prakasa',
+          title: 'Commissioner',
+        },
+      ],
     },
     partnership: {
       title: 'Partnership',
