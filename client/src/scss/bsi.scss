@@ -109,8 +109,11 @@
       }
 
       &-item {
+        display: block;
         width: 100%;
+        max-width: 760px;
         height: auto;
+        margin: auto;
       }
     }
   }
