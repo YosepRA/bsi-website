@@ -14,7 +14,6 @@ body {
   @include montserrat();
   color: $body-color;
   font-weight: 400;
-  // text-align: justify;
 }
 
 p {
@@ -34,9 +33,11 @@ p {
   font-weight: 600;
   @include allTransition();
   transform: translateY(0);
+  opacity: 1;
 
   &.scroll {
     transform: translateY(-100%);
+    opacity: 0;
   }
 
   .container {
@@ -269,9 +270,11 @@ p {
   margin-top: 3rem;
   @include allTransition();
   transform: translateX(0);
+  opacity: 1;
 
   &.scroll {
     transform: translateX(120%);
+    opacity: 0;
   }
 
   &__button {

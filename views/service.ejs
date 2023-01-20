@@ -47,6 +47,12 @@
     <main class="main-container">
       <section id="<%= viajeEcosystemMeta.id %>" class="viaje-ecosystem page-section">
         <div class="container">
+          <div class="row viaje-ecosystem__row viaje-ecosystem__row--image">
+            <div class="col">
+              <img src="/img/<%= ecosystemImage %>" alt="viaje-ecosystem" class="viaje-ecosystem__image"/>
+            </div>
+          </div>
+
           <div class="row viaje-ecosystem__row viaje-ecosystem__row--text">
             <div class="col">
               <h4 class="big-title viaje-ecosystem__title page-section__title"><%= viajeEcosystem.title %></h4>
@@ -58,17 +64,17 @@
               <% } %>
             </div>
           </div>
-
-          <div class="row viaje-ecosystem__row viaje-ecosystem__row--image">
-            <div class="col">
-              <img src="/img/<%= ecosystemImage %>" alt="viaje-ecosystem" class="viaje-ecosystem__image"/>
-            </div>
-          </div>
         </div>
       </section>
   
       <section id="<%= viajePlatformMeta.id %>" class="viaje-platform page-section">
         <div class="container">
+          <div class="row viaje-platform__row viaje-platform__row--image">
+            <div class="col">
+              <img src="/img/<%= platformImage %>" alt="viaje_platform" class="viaje-platform__image"/>
+            </div>
+          </div>
+
           <div class="row viaje-platform__row viaje-platform__row--text">
             <div class="col">
               <h4 class="big-title viaje-platform__title page-section__title">
@@ -80,12 +86,6 @@
   
                 <p class="viaje-platform__body"><%- text %></p>
               <% } %>
-            </div>
-          </div>
-
-          <div class="row viaje-platform__row viaje-platform__row--image">
-            <div class="col">
-              <img src="/img/<%= platformImage %>" alt="viaje_platform" class="viaje-platform__image"/>
             </div>
           </div>
         </div>
