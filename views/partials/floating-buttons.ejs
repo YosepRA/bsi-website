@@ -9,19 +9,19 @@
 
   switch (lang) {
     case 'en':
-      whitepaperName = 'Whitepaper Final (English Ver) 2022.11.pdf';
+      whitepaperName = 'BSI Whitepaper (English Version).pdf';
       break;
 
     case 'id':
-      whitepaperName = 'Whitepaper Final (Indonesian Ver) 2022.11.pdf';
+      whitepaperName = 'BSI Whitepaper (Indonesian Version).pdf';
       break;
 
     case 'kr':
-      whitepaperName = 'Whitepaper Final (English Ver) 2022.11.pdf';
+      whitepaperName = 'BSI Whitepaper (Korean Version).pdf';
       break;
   
     default:
-      whitepaperName = 'Whitepaper Final (English Ver) 2022.11.pdf';
+      whitepaperName = 'BSI Whitepaper (English Version).pdf';
       break;
   }
 %>
@@ -41,9 +41,9 @@
 
     <span class="fb__button-content fb__button-text"><%- wallet.name %></span>
   </a>
-  <a href="/file/<%- whitepaperName %>" class="fb__button" target="_blank" rel="noreferrer">
+  <a href="/file/<%- whitepaperName %>" class="fb__button" target="_blank" rel="noreferrer" download>
     <span class="fb__button-content fb__button-icon">
-      <i class="fa-solid fa-file"></i>
+      <i class="fa-solid fa-file-pdf"></i>
     </span>
 
     <span class="fb__button-content fb__button-text"><%- whitepaper.name %></span>
