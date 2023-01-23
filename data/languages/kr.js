@@ -227,7 +227,7 @@ module.exports = {
         {
           id: 'juleo',
           name: 'Juleo Fernando',
-          title: 'Chief Executive Officer',
+          title: '최고경영자',
         },
         {
           id: 'danniel',
