@@ -33,18 +33,28 @@
         background-color: $primary-color;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 85% 50%;
+
+        &::before {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(black, 0.5);
+          content: '';
+        }
 
         &--01 {
-          background-image: url('/img/home-banner-01.png');
+          background-image: url('/img/home-banner-01-v2.png');
+          background-position: 87% bottom;
         }
 
         &--02 {
-          background-image: url('/img/home-banner-02.png');
+          background-image: url('/img/home-banner-02-v2.png');
+          background-position: 78% center;
         }
 
         &--03 {
-          background-image: url('/img/home-banner-03.png');
+          background-image: url('/img/home-banner-03-v2.png');
+          background-position: 84% bottom;
         }
       }
     }
@@ -124,7 +134,7 @@
     }
 
     &__image {
-      width: 80%;
+      width: 60%;
       height: auto;
       margin-bottom: 1.8rem;
     }
@@ -166,6 +176,20 @@
 
         // Without live price.
         height: calc(100vh - 56px);
+
+        &-item {
+          &--01 {
+            background-position: center bottom;
+          }
+
+          &--02 {
+            background-position: center;
+          }
+
+          &--03 {
+            background-position: 60% bottom;
+          }
+        }
       }
 
       &__info {
@@ -217,7 +241,7 @@
       }
 
       &__image {
-        width: 100%;
+        width: 80%;
       }
     }
 
@@ -249,20 +273,6 @@
         height: calc(100vh - 56px);
       }
     }
-
-    // .roadmap {
-    //   &__image {
-    //     &-container {
-    //       width: 100%;
-    //       // overflow-x: hidden;
-    //     }
-
-    //     &-item {
-    //       width: 100%;
-    //       height: auto;
-    //     }
-    //   }
-    // }
   }
 }
 
@@ -274,6 +284,12 @@
           font-size: 2.2rem;
           margin-bottom: 1rem;
         }
+      }
+    }
+
+    .introduction {
+      &__image {
+        width: 70%;
       }
     }
 
