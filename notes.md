@@ -33,6 +33,7 @@ Finished item will be marked as done. ✅
 - Cannot read text on banners for the low contrast against the banner images.
 - Banner image background position.
 - `main-container` new padding top to follow the new navbar height following the new logo.
+- Add new logo favicon.
 
 ## Back-end
 
