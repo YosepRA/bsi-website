@@ -120,7 +120,7 @@ module.exports = {
       title: 'Download BSI Wallet',
     },
     copyright:
-      '&copy; 2022 Bali Social Integrated Foundation. All rights reserved.',
+      '&copy; 2023 Bali Social Integrated Foundation. All rights reserved.',
   },
   home: {
     banner: {

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-$primary-color: #3962f5;
+$primary-color: #00008c;
+$secondary-color: #00fe80;
 $primary-color-dark-1: #04213f;
 $light-color: #fff;
 $body-color: #333;
@@ -16,6 +17,21 @@ $animation-ease: ease-out;
   font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@mixin page-gradient {
+  background: $primary-color;
+  background: linear-gradient(180deg, $gradient-from 0%, $gradient-to 100%);
+}
+
+@mixin button-gradient {
+  background: $primary-color;
+  background: linear-gradient(
+    50deg,
+    $primary-color 0%,
+    rgba(0, 47, 138, 1) 40%,
+    rgba(0, 173, 132, 1) 100%
+  );
+}
+
 @mixin button {
   padding: 0.6rem 1rem;
   border: none;
@@ -27,7 +43,8 @@ $animation-ease: ease-out;
 
 @mixin primary-button {
   @include button();
-  background-color: $primary-color;
+  // background-color: $primary-color;
+  @include button-gradient();
   color: white;
 }
 
@@ -56,11 +73,6 @@ $animation-ease: ease-out;
     height: 100%;
     content: 'Placeholder Image';
   }
-}
-
-@mixin page-gradient {
-  background: $primary-color;
-  background: linear-gradient(180deg, $gradient-from 0%, $gradient-to 100%);
 }
 
 @mixin allTransition {

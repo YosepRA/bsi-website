@@ -6,7 +6,7 @@
     // padding-top: 125px;
 
     // Without live price.
-    padding-top: 75px;
+    padding-top: 73px;
 
     padding-bottom: 0;
   }
@@ -21,7 +21,7 @@
       // height: calc(100vh - 125px);
 
       // Without live price.
-      height: calc(100vh - 56px);
+      height: calc(100vh - 73px);
       z-index: 1;
 
       &-inner {
@@ -35,18 +35,28 @@
         background-color: $primary-color;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 85% 50%;
+
+        &::before {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(black, 0.5);
+          content: '';
+        }
 
         &--01 {
-          background-image: url('/img/home-banner-01.png');
+          background-image: url('/img/home-banner-01-v2.png');
+          background-position: 87% bottom;
         }
 
         &--02 {
-          background-image: url('/img/home-banner-02.png');
+          background-image: url('/img/home-banner-02-v2.png');
+          background-position: 78% center;
         }
 
         &--03 {
-          background-image: url('/img/home-banner-03.png');
+          background-image: url('/img/home-banner-03-v2.png');
+          background-position: 84% bottom;
         }
       }
     }
@@ -109,7 +119,6 @@
     &__item {
       padding: 5rem 0;
       background-color: $primary-color;
-      // background-attachment: fixed;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -158,7 +167,7 @@
       // padding-top: 139px;
 
       // Without live price.
-      padding-top: 88px;
+      padding-top: 79px;
     }
 
     .banner {
@@ -167,7 +176,21 @@
         // height: calc(100vh - 139px);
 
         // Without live price.
-        height: calc(100vh - 56px);
+        height: calc(100vh - 79px);
+
+        &-item {
+          &--01 {
+            background-position: center bottom;
+          }
+
+          &--02 {
+            background-position: center;
+          }
+
+          &--03 {
+            background-position: 60% bottom;
+          }
+        }
       }
 
       &__info {
@@ -187,7 +210,7 @@
       // padding-top: 146px;
 
       // Without live price.
-      padding-top: 104px;
+      padding-top: 95px;
     }
 
     .banner {
@@ -196,7 +219,7 @@
         // height: calc(100vh - 146px);
 
         // Without live price.
-        height: calc(100vh - 56px);
+        height: calc(100vh - 95px);
       }
     }
   }
@@ -228,7 +251,7 @@
       // padding-top: 162px;
 
       // Without live price.
-      padding-top: 111px;
+      padding-top: 107px;
     }
 
     .banner {
@@ -237,7 +260,7 @@
         // height: calc(100vh - 162px);
 
         // Without live price.
-        height: calc(100vh - 56px);
+        height: calc(100vh - 107px);
       }
     }
 
@@ -254,8 +277,6 @@
 @include media-breakpoint-xxxl {
   .home {
     .banner {
-      // margin-bottom: 8rem;
-
       &__info {
         &-title {
           font-size: 2.4rem;

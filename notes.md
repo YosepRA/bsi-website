@@ -30,6 +30,10 @@ Finished item will be marked as done. ✅
 - Smaller language flag right margin. ✅
 - A feature to display the full-version of an image assets. The images will be small in mobile, that's not ideal.
 - More modular page banner SCSS for Home and BSI pages.
+- Cannot read text on banners for the low contrast against the banner images.
+- Banner image background position.
+- `main-container` new padding top to follow the new navbar height following the new logo.
+- Add new logo favicon.
 
 ## Back-end
 
@@ -44,7 +48,4 @@ Finished item will be marked as done. ✅
 
 Questions and concerns that should be asked in the next meeting.
 
-- Exchange page CoinGecko and CoinMarketCap "Details" vs "More Info"
 - About Us page image card text legibility.
-- Check Indonesian non-body texts, e.g. section titles and nav items.
-- Remove download app button?
