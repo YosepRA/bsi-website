@@ -5,23 +5,23 @@
     whitepaper
   } } = data;
 
-  let whitepaperName = '';
+  let whitepaperUrl = '';
 
   switch (lang) {
     case 'en':
-      whitepaperName = 'BSI Whitepaper (English Version).pdf';
+      whitepaperUrl = '/file/BSI Whitepaper (English Version).pdf';
       break;
 
     case 'id':
-      whitepaperName = 'BSI Whitepaper (Indonesian Version).pdf';
+      whitepaperUrl = '/file/BSI Whitepaper (Indonesian Version).pdf';
       break;
 
     case 'kr':
-      whitepaperName = 'BSI Whitepaper (Korean Version).pdf';
+      whitepaperUrl = '/file/BSI Whitepaper (Korean Version).pdf';
       break;
   
     default:
-      whitepaperName = 'BSI Whitepaper (English Version).pdf';
+      whitepaperUrl = '/file/BSI Whitepaper (English Version).pdf';
       break;
   }
 %>
@@ -41,7 +41,7 @@
 
     <span class="fb__button-content fb__button-text"><%- wallet.name %></span>
   </a>
-  <a href="/file/<%- whitepaperName %>" class="fb__button" target="_blank" rel="noreferrer" download>
+  <a href="<%- whitepaperUrl %>" class="fb__button" target="_blank" rel="noreferrer" download>
     <span class="fb__button-content fb__button-icon">
       <i class="fa-solid fa-file-pdf"></i>
     </span>

@@ -41,6 +41,7 @@ Finished item will be marked as done. ✅
 - Migrate `index-v2.ejs` and all files related to it to be `index.ejs`.
 - Delete Exchange page subcategories from dictionaries.
 - Restructure nav items hierarchy on dictionaries according to navbar's orders.
+- Change Korean site from "/kr" to "/ko".
 
 ---
 
