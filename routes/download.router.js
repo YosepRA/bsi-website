@@ -1,11 +1,11 @@
 const express = require('express');
 
-const controller = require('../controllers/bsi.js');
+const controller = require('../controllers/download.controller.js');
 
 const router = express.Router();
 
 /* ======================= Routes ======================= */
 
-router.get('/price', controller.price);
+router.get('/:fileName', controller.download);
 
 module.exports = router;
