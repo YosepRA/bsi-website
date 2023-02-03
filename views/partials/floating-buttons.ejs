@@ -9,19 +9,19 @@
 
   switch (lang) {
     case 'en':
-      whitepaperUrl = '/file/BSI Whitepaper (English Version).pdf';
+      whitepaperUrl = '/download/BSI Whitepaper (English Version).pdf';
       break;
 
     case 'id':
-      whitepaperUrl = '/file/BSI Whitepaper (Indonesian Version).pdf';
+      whitepaperUrl = '/download/BSI Whitepaper (Indonesian Version).pdf';
       break;
 
     case 'kr':
-      whitepaperUrl = '/file/BSI Whitepaper (Korean Version).pdf';
+      whitepaperUrl = '/download/BSI Whitepaper (Korean Version).pdf';
       break;
   
     default:
-      whitepaperUrl = '/file/BSI Whitepaper (English Version).pdf';
+      whitepaperUrl = '/download/BSI Whitepaper (English Version).pdf';
       break;
   }
 %>
@@ -41,7 +41,7 @@
 
     <span class="fb__button-content fb__button-text"><%- wallet.name %></span>
   </a>
-  <a href="<%- whitepaperUrl %>" class="fb__button" target="_blank" rel="noreferrer" download>
+  <a href="<%- whitepaperUrl %>" class="fb__button" target="_blank" rel="noreferrer">
     <span class="fb__button-content fb__button-icon">
       <i class="fa-solid fa-file-pdf"></i>
     </span>
