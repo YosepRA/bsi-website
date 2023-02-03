@@ -38,11 +38,11 @@
     &__item {
       position: relative;
       width: 100%;
-      height: 380px;
+      height: 340px;
       max-width: 300px;
       margin: 0 auto 1rem;
       padding: 1.8rem 1.4rem;
-      background-color: rgba(black, 0.8);
+      background-color: #161616;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -52,6 +52,7 @@
       &--danniel {
         background-image: url('/img/portrait-pak-danniel.png');
         background-position: center bottom;
+        background-size: 110%;
       }
 
       &--juleo {
@@ -253,21 +254,13 @@
 
 @include media-breakpoint-xxxl {
   .about {
-    // .bsi-team {
-    //   &__item {
-    //     max-width: 420px;
-    //     height: 520px;
-    //     padding: 2.4rem 2rem;
-
-    //     &-name {
-    //       font-size: 1.7rem;
-    //     }
-
-    //     &-position {
-    //       font-size: 1.4rem;
-    //     }
-    //   }
-    // }
+    .bsi-team {
+      &__item {
+        &--danniel {
+          background-size: 115%;
+        }
+      }
+    }
 
     .partnership {
       &__body {

@@ -1,6 +1,6 @@
 const express = require('express');
 
-const controller = require('../controllers/index.js');
+const controller = require('../controllers/index.controller.js');
 const { lang } = require('../middlewares/index.js');
 
 const router = express.Router({ mergeParams: true });

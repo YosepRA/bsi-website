@@ -8,10 +8,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const mongoConnect = require('./database/scripts/mongo-connect.js');
-const indexRouter = require('./routes/index.js');
-const bsiRouter = require('./routes/bsi.js');
+const indexRouter = require('./routes/index.router.js');
+const bsiRouter = require('./routes/bsi.router.js');
+const downloadRouter = require('./routes/download.router.js');
 const startSocket = require('./socket/index.js');
-const { pricePoll } = require('./controllers/bsi.js');
+const { pricePoll } = require('./controllers/bsi.controller.js');
 
 const app = express();
 const server = http.createServer(app);
@@ -21,9 +22,10 @@ const pollDelay = process.env.POLL_DELAY || 180000;
 
 /* ======================= MongoDB Connection ======================= */
 
-const dbConnection = mongoConnect(mongoUrl);
+mongoConnect(mongoUrl);
 
 /* ======================= View Engine Setup ======================= */
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -40,11 +42,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 const io = startSocket(server);
 // This poll will constantly ask for the latest price on database.
 // And it will send data to client whenever there is a new data.
-pricePoll(io, pollDelay);
+// pricePoll(io, pollDelay);
 
 /* ======================= Routes ======================= */
 
 app.use('/api/v1', bsiRouter);
+app.use('/download', downloadRouter);
 app.use('/:lang', indexRouter);
 app.get('*', (req, res) => {
   res.redirect('/en/home');
