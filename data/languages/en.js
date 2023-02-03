@@ -216,7 +216,7 @@ module.exports = {
     metaConcert: {
       title: 'Meta Concert',
       body: [
-        'BSI Foundation signs an agreement with META VIAJE (Dev Unlimit) to provide Dream Concert, the largest K-POP concert co-organized by the Ministry of Culture, Sports, and Tourism of Korea and the Celebrity Producers Association, in the &apos;BSI Ecosystem&apos; which is created by the BSI Altar Metaverse Space Metaism.',
+        'BSI Foundation signs an agreement with META VIAJE (LAVATA) to provide Dream Concert, the largest K-POP concert co-organized by the Ministry of Culture, Sports, and Tourism of Korea and the Celebrity Producers Association, in the &apos;BSI Ecosystem&apos; which is created by the BSI Altar Metaverse Space Metaism.',
         'It will be introduced via metaverse (based on motion-on-touch) and aims to invite 300,000 to 1 million users every concert.  By promoting the advantages of K-POP and Korea&apos;s IT technology to the world, K-POP fans in Korea and around the world are able to attend the Dream Concert together via the metaverse as if they were enjoying the view of the real concert. There is also space for real-time chat and communication with the automatic translation function.',
       ],
     },
