@@ -123,6 +123,9 @@ module.exports = {
     download: {
       title: 'Unduh BSI Wallet',
     },
+    social: {
+      title: 'Ikuti Kami',
+    },
     copyright:
       '&copy; 2023 Bali Social Integrated Foundation. Semua hak cipta dilindungi undang-undang.',
   },
