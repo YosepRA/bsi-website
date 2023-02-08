@@ -20,6 +20,10 @@ module.exports = {
           name: 'Ringkasan Token',
         },
         {
+          id: 'smartAudit',
+          name: 'Smart Audit',
+        },
+        {
           id: 'whitepaper',
           name: 'Whitepaper',
           url: 'https://viaje-holdings.gitbook.io/whitepaper-bsi-indonesian-version',

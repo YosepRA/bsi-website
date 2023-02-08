@@ -20,6 +20,10 @@ module.exports = {
           name: 'Summary of The Token',
         },
         {
+          id: 'smartAudit',
+          name: 'Smart Audit',
+        },
+        {
           id: 'whitepaper',
           name: 'Whitepaper',
           url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-korean-version',
