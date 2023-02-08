@@ -7,6 +7,8 @@
     exchange,
     wallet
   } } = data;
+
+  const smartAuditUrl = '/file/Smart Contract Security Audit Report - BSI.pdf';
 %>
 
 <nav class="navbar navbar-expand-lg">
@@ -49,6 +51,8 @@
                 <li>
                   <% if (id === 'whitepaper') { %>
                     <a class="dropdown-item" href="<%= url %>" target="_blank" rel="noreferrer"><%= name %></a>
+                  <% } else if (id === 'smartAudit') { %>
+                    <a class="dropdown-item" href="<%= smartAuditUrl %>" target="_blank" rel="noreferrer"><%= name %></a>
                   <% } else { %>
                     <a class="dropdown-item" href="/<%= lang %>/bsi#<%= id %>"><%= name %></a>
                   <% } %>
