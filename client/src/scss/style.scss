@@ -231,8 +231,6 @@ p {
   }
 
   &__download {
-    margin-bottom: 0;
-
     &-list {
       list-style: none;
       padding-left: 0;
@@ -251,6 +249,19 @@ p {
       width: 100%;
       max-width: 160px;
       height: auto;
+    }
+  }
+
+  &__social {
+    &-link {
+      display: inline-block;
+      margin-right: 0.5rem;
+      color: white;
+      font-size: 1.8rem;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 
@@ -309,18 +320,6 @@ p {
 
     // Without live price.
     padding-top: calc(3rem + 79px);
-  }
-
-  .page-footer {
-    &__section {
-      margin-bottom: 0;
-    }
-
-    // &__profile {
-    //   &-brand {
-    //     width: 180px;
-    //   }
-    // }
   }
 }
 
