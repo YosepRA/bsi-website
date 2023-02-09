@@ -237,11 +237,64 @@ module.exports = {
           id: 'juleo',
           name: 'Juleo Fernando',
           title: 'Chief Executive Officer',
+          profile: [
+            'Juleo, has been planning Business and Operational Professionals for 8 years in the field of Branding Consultant, Digital Agency, Construction, and F&B. He has established plans and actions in accordance with the business models of each company to achieve maximum results. Currently, he overseeing the formation of Partners and global market planning.',
+          ],
+          img: 'portrait-juleo.png',
         },
         {
           id: 'danniel',
           name: 'Danniel Prakasa',
           title: 'Commissioner',
+          profile: [
+            'Danniel, the Director of the IPA Korea (Indonesia Professionals Association). He started the very first project of his life by giving him the challenge to stay in South Korea. The result of that became his life roadmap as an alumnus of Kyung Sung University Department of International Business. Then continued his life adventure by putting in the field of International Projects for about 3 years and an additional 4 years in the Overseas Market Management sector, followed up as a Chief Executive Officer in a corporate managing a Global Business of the Eco-Friendly industry.',
+          ],
+          img: 'portrait-danniel.png',
+        },
+        {
+          id: 'irfan',
+          name: 'Irfan Mulia',
+          title: 'Advisor',
+          profile: [
+            'Irfan Mulia started undergraduate and postgraduate education in Domestic Administration and worked as an Echelon IV Civil Servant at the Ministry of Home Affairs. He has worked as a Director for several exchange companies in Indonesia. With his experiences in the Government Politics, Blockchain Observers, and Traders, he has worked with many parties to legalize Cryptocurrency in Indonesia. He is currently assisting the Bandung City Kadin in incubating Crypto developers who are members of the Singapore Coinstore Global Exchange and working as a business development executive at the Singapore Coinstore Global Exchange and he serves as advisor of BSI Foundation.',
+          ],
+          img: 'portrait-irfan.png',
+        },
+        {
+          id: 'kelvin',
+          name: 'Kelvin Chandra',
+          title: 'Media Contents and Illustrator Manager',
+          profile: [
+            'Kelvin, who has been active in the field of Graphic Design, Illustrator, and Content Creator through various online and social media channels. He has shown results by taking advantage of viral marketing in various fields through the content he produces. Currently, he serves as the head of a global design team that produces content for various eco-friendly projects.',
+          ],
+          img: 'portrait-kelvin.png',
+        },
+        {
+          id: 'riswanton',
+          name: 'Riswanton Ramudin',
+          title: 'Front-end Developer',
+          profile: [
+            'Riswanton, has been responsible for technical support and IT planning as a Front-end Developer. Currently, he is responsible for Front-end activities and BSI Website and Application planning to run the company&apos;s eco-friendly projects and business.',
+          ],
+          img: 'portrait-riswanton.png',
+        },
+        {
+          id: 'yosep',
+          name: 'Yosep Ryan Agusta',
+          title: 'Back-end Developer',
+          profile: [
+            'Yosep, has developed a website application solution and built a back-end server. Based on this, has been responsible for troubleshooting internal server issues and operating the website application efficiently to help companies in various fields of servers. Currently, He developed an eco-friendly platform in the back-end system.',
+          ],
+          img: 'portrait-yosep.png',
+        },
+        {
+          id: 'theresa',
+          name: 'Theresa',
+          title: 'Management Support',
+          profile: [
+            'Theresa, has worked and mastered the field of Back-office database and finance. She is known for her expertise in Database processes, where she worked as a Manager for 4 years. Currently, she is responsible as a Management support manager who will help run projects on advertising content and financial matters.',
+          ],
+          img: 'portrait-theresa.png',
         },
       ],
     },

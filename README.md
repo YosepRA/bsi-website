@@ -35,3 +35,14 @@ npm install
 ```bash
 npm run dev
 ```
+
+---
+
+## Environment Variables
+
+- `PORT`  
+  Port number which the server will be started on.
+- `MONGO_URL`  
+  MongoDB instance URL.
+- `POLL_DELAY`  
+  BSI token information collector poll delay in miliseconds.

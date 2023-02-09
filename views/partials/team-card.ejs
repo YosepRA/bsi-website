@@ -1,0 +1,38 @@
+<% 
+  const { id, name, title, profile, img } = member;
+%>
+
+<!-- <div class="col-12 col-md-5 col-lg-4 col-xl-4">
+  <div class="bsi-team__item bsi-team__item--<%- id %>">
+    <div class="bsi-team__item-overlay"></div>
+
+    <div class="bsi-team__item-info">
+      <h4 class="bsi-team__item-name"><%- name %></h4>
+      <h5 class="bsi-team__item-position"><%- title %></h5>
+    </div>
+  </div>
+</div> -->
+
+<div class="col-12 col-lg-6">
+  <article class="bsi-team__item bsi-team__item--<%- id %>">
+    <header class="bsi-team__item-header">
+      <img src="/img/<%= img %>" alt="<%= name %>" class="bsi-team__item-image" />
+
+      <div class="bsi-team__item-metadata">
+        <h3 class="bsi-team__item-name"><%= name %></h3>
+
+        <h4 class="bsi-team__item-title"><%= title %></h4>
+      </div>
+    </header>
+
+    <div class="bsi-team__item-body">
+      <% for( let i = 0; i < profile.length; i++ ) { %>
+        <% const paragraph = profile[i]; %>
+
+        <p class="bsi-team__item-paragraph"><%- paragraph %></p>
+      <% } %>
+
+      <!-- <button type="button" class="btn bsi-team__item-read-more">Read More</button> -->
+    </div>
+  </article>
+</div>
