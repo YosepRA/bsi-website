@@ -16,7 +16,7 @@
       z-index: 1;
       width: 100%;
       height: 100%;
-      background-color: rgba($gradient-from, 0.85);
+      background-color: rgba($gradient-dark-blue, 0.85);
       content: '';
     }
 
@@ -35,66 +35,115 @@
       text-align: center;
     }
 
+    // &__item {
+    //   position: relative;
+    //   width: 100%;
+    //   height: 340px;
+    //   max-width: 300px;
+    //   margin: 0 auto 1rem;
+    //   padding: 1.8rem 1.4rem;
+    //   background-color: #161616;
+    //   background-position: center;
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   border-radius: $border-radius;
+    //   color: white;
+
+    //   &--danniel {
+    //     background-image: url('/img/portrait-pak-danniel.png');
+    //     background-position: center bottom;
+    //     background-size: 110%;
+    //   }
+
+    //   &--juleo {
+    //     background-image: url('/img/portrait-pak-juleo.png');
+    //     background-position: 50% bottom;
+    //   }
+
+    //   &-overlay {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 1;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: rgba(black, 0.2);
+    //     border-radius: $border-radius;
+    //   }
+
+    //   &-info {
+    //     position: relative;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-end;
+    //     align-items: start;
+    //     z-index: 2;
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+
+    //   &-name,
+    //   &-position {
+    //     text-shadow: 0 0 1px black;
+    //   }
+
+    //   &-name {
+    //     font-size: 1.4rem;
+    //     font-weight: 400;
+    //     text-transform: uppercase;
+    //   }
+
+    //   &-position {
+    //     font-size: 1.1rem;
+    //   }
+    // }
+
+    &__col {
+      margin-bottom: 2rem;
+    }
+
     &__item {
-      position: relative;
-      width: 100%;
-      height: 340px;
-      max-width: 300px;
-      margin: 0 auto 1rem;
-      padding: 1.8rem 1.4rem;
-      background-color: #161616;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: $border-radius;
-      color: white;
+      padding: 1.3rem;
+      border-radius: 2rem;
+      background: $primary-color;
+      background: linear-gradient(
+        100deg,
+        $gradient-light-blue 0%,
+        $gradient-dark-blue 50%
+      );
 
-      &--danniel {
-        background-image: url('/img/portrait-pak-danniel.png');
-        background-position: center bottom;
-        background-size: 110%;
-      }
-
-      &--juleo {
-        background-image: url('/img/portrait-pak-juleo.png');
-        background-position: 50% bottom;
-      }
-
-      &-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(black, 0.2);
-        border-radius: $border-radius;
-      }
-
-      &-info {
-        position: relative;
+      &-header {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: start;
-        z-index: 2;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        height: 100%;
+        margin-bottom: 1.4rem;
       }
 
-      &-name,
-      &-position {
-        text-shadow: 0 0 1px black;
+      &-image {
+        width: 160px;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+      &-metadata {
+        width: 100%;
+        text-align: center;
       }
 
       &-name {
-        font-size: 1.4rem;
-        font-weight: 400;
-        text-transform: uppercase;
+        font-weight: 600;
       }
 
-      &-position {
+      &-title {
+        margin-bottom: 0;
         font-size: 1.1rem;
+      }
+
+      &-read-more {
+        padding: 0;
+        color: white;
       }
     }
   }
@@ -131,21 +180,21 @@
 @include media-breakpoint-sm {
   .about {
     .bsi-team {
-      &__row {
-        &--images {
-          justify-content: center;
-        }
-      }
+      // &__row {
+      //   &--images {
+      //     justify-content: flex-s;
+      //   }
+      // }
 
-      &__item {
-        &-name {
-          font-size: 1.3rem;
-        }
+      // &__item {
+      //   &-name {
+      //     font-size: 1.3rem;
+      //   }
 
-        &-position {
-          font-size: 1.1rem;
-        }
-      }
+      //   &-position {
+      //     font-size: 1.1rem;
+      //   }
+      // }
     }
 
     .partnership {
@@ -177,16 +226,44 @@
     }
 
     .bsi-team {
+      // &__item {
+      //   margin-bottom: 0;
+
+      //   &-name {
+      //     font-size: 1.2rem;
+      //   }
+
+      //   &-position {
+      //     font-size: 1rem;
+      //   }
+      // }
+
       &__item {
-        margin-bottom: 0;
+        max-width: 630px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: linear-gradient(
+          100deg,
+          $gradient-light-blue 0%,
+          $gradient-dark-blue 70%
+        );
 
-        &-name {
-          font-size: 1.2rem;
+        &-header {
+          flex-direction: row;
         }
 
-        &-position {
-          font-size: 1rem;
+        &-metadata {
+          text-align: left;
         }
+
+        &-image {
+          margin-bottom: 0;
+          margin-right: 2rem;
+        }
+
+        // &-name {
+        //   font-size: 1.8rem;
+        // }
       }
     }
 
@@ -225,6 +302,16 @@
 
 @include media-breakpoint-xl {
   .about {
+    .bsi-team {
+      &__item {
+        height: 100%;
+
+        &-name {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
     .partnership {
       &__body {
         max-width: 940px;
@@ -236,16 +323,22 @@
 @include media-breakpoint-xxl {
   .about {
     .bsi-team {
+      // &__item {
+      //   max-width: 340px;
+      //   height: 420px;
+
+      //   &-name {
+      //     font-size: 1.3rem;
+      //   }
+
+      //   &-position {
+      //     font-size: 1.1rem;
+      //   }
+      // }
+
       &__item {
-        max-width: 340px;
-        height: 420px;
-
-        &-name {
-          font-size: 1.3rem;
-        }
-
-        &-position {
-          font-size: 1.1rem;
+        &-title {
+          font-size: 1.2rem;
         }
       }
     }
@@ -255,9 +348,19 @@
 @include media-breakpoint-xxxl {
   .about {
     .bsi-team {
+      // &__item {
+      //   &--danniel {
+      //     background-size: 115%;
+      //   }
+      // }
+
       &__item {
-        &--danniel {
-          background-size: 115%;
+        &-name {
+          font-size: 1.7rem;
+        }
+
+        &-title {
+          font-size: 1.4rem;
         }
       }
     }

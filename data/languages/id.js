@@ -237,11 +237,65 @@ module.exports = {
           id: 'juleo',
           name: 'Juleo Fernando',
           title: 'Chief Executive Officer',
+          profile: [
+            'Juleo, telah melakukan perencanaan Professional Bisnis dan Operasional selama 8 tahun di bidang Branding Consultant, Digital Agency, Construction, serta F&B. Ia telah menetapkan rencana dan aksi sesuai dengan model bisnis di masing-masing perusahaan untuk mencapai hasil yang maksimal.',
+            'Saat ini, Ia bertugas dalam mengawasi pembentukan Mitra Kerja dan perencanaan pasar global.',
+          ],
+          img: 'portrait-juleo.png',
         },
         {
           id: 'danniel',
           name: 'Danniel Prakasa',
-          title: 'Komisaris',
+          title: 'Commissioner',
+          profile: [
+            'Danniel, merupakan bagian dari Direktur Organisasi IPA Korea (Indonesian Professionals Association). Ia adalah lulusan International Business and Administration di Universitas Kyungsung, Korea Selatan. Ia telah menjalankan perencanaan dan operasi proyek Internasional selama 3 tahun dan selama 4 tahun dalam menjalankan bisnis di pasar Global. Saat ini, ia menjalankan proyek dan bisnis ramah lingkungan dalam perusahaan global ESG.',
+          ],
+          img: 'portrait-danniel.png',
+        },
+        {
+          id: 'irfan',
+          name: 'Irfan Mulia',
+          title: 'Advisor',
+          profile: [
+            'Irfan Mulia memulai pendidikan S1 dan S2 Administrasi Dalam Negeri dan bekerja sebagai Pegawai Negeri Sipil Eselon IV di Kementerian Dalam Negeri. Pernah bekerja sebagai Direktur di beberapa perusahaan bursa di Indonesia. Dengan pengalamannya di politik pemerintahan, pengamat blockchain, dan traders, ia telah bekerjasama dengan banyak pihak untuk melegalkan Cryptocurrency di Indonesia. Saat ini beliau membantu Kadin Kota Bandung dalam menginkubasi developer crypto yang tergabung dalam Singapore Coinstore Global Exchange dan bekerja sebagai Businness Development Executive di Singapore Coinstore Global Exchange serta menjabat sebagai penasihat BSI Foundation.',
+          ],
+          img: 'portrait-irfan.png',
+        },
+        {
+          id: 'kelvin',
+          name: 'Kelvin Chandra',
+          title: 'Media Contents and Illustrator Manager',
+          profile: [
+            'Kelvin, yang selama ini telah aktif di bidang Desain Grafis, Illustrator, dan Kreator Konten melalui berbagai kanal media online dan sosial. Ia telah menunjukkan hasil dengan memanfaatkan marketing viral di berbagai bidang melalui konten yang Ia produksi. Saat ini, Ia menjabat sebagai kepala tim desain global yang memproduksi konten untuk berbagai proyek ramah lingkungan.',
+          ],
+          img: 'portrait-kelvin.png',
+        },
+        {
+          id: 'riswanton',
+          name: 'Riswanton Ramudin',
+          title: 'Front-end Developer',
+          profile: [
+            'Riswanton, telah bertanggung jawab atas dukungan teknis dan perencanaan IT sebagai pengembang Front-end Developer. Saat ini, Ia bertanggung jawab atas aktivitas Front-end dan perencanaan website maupun aplikasi BSI untuk menjalankan proyek dan bisnis ramah lingkungan perusahaan.',
+          ],
+          img: 'portrait-riswanton.png',
+        },
+        {
+          id: 'yosep',
+          name: 'Yosep Ryan Agusta',
+          title: 'Back-end Developer',
+          profile: [
+            'Yosep, telah mengembangkan solusi aplikasi website dan membangun server back-end. Berdasarkan ini, Ia telah bertanggung jawab untuk memecahkan masalah internal server dan mengoperasikan aplikasi website secara efisien untuk membantu perusahaan di berbagai bidang server. Saat ini, Ia mengembangkan platform ramah lingkungan dalam sistem Back-end.',
+          ],
+          img: 'portrait-yosep.png',
+        },
+        {
+          id: 'theresa',
+          name: 'Theresa',
+          title: 'Management Support',
+          profile: [
+            'Theresa, telah bergerak dan menguasai bidang Back-office database dan finansial. Ia dikenal keahlian-nya dalam proses Database dimana Ia bekerja sebagai Manajer selama 4 tahun. Saat ini, Ia bertanggung jawab sebagai Management support manager yang akan membantu jalannya proyek atas konten periklanan dan urusan keuangan.',
+          ],
+          img: 'portrait-theresa.png',
         },
       ],
     },

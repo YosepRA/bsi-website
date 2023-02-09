@@ -232,12 +232,65 @@ module.exports = {
         {
           id: 'juleo',
           name: 'Juleo Fernando',
-          title: '최고경영자',
+          title: 'Chief Executive Officer',
+          profile: [
+            'Juleo는 브랜딩 컨설턴트, F&B, 디지털 에이전시, 건설 등 각분야의 사업기획 및 운영을 8년간 진행해 왔으며 각 회사의 비지니스 모델에 따라 실행계획을 구축하여 최고의 성과가 날수 있도록 이끌어 왔습니다.각 나라별 파트너쉽 및 글로벌 플랜 구축을 총괄하고 있습니다.',
+          ],
+          img: 'portrait-juleo.png',
         },
         {
           id: 'danniel',
           name: 'Danniel Prakasa',
-          title: '감사',
+          title: 'Commissioner',
+          profile: [
+            'Danniel은 IPA Korea (인도네시아 전문가 협회)의 디렉터로 한국 경성대학교에서국제경영학과를전공하였고 이후 한국에서 국제 프로젝트 기획 운영 3년, 글로벌 시장 총괄 관리자로 4년 동안 업무를 진행하면서 실력을 인정 받아 현재 글로벌 기업의 친환경 및 ESG 프로젝트를 운영하는 글로벌 총괄 담당자로 일하고 있습니다.',
+          ],
+          img: 'portrait-danniel.png',
+        },
+        {
+          id: 'irfan',
+          name: 'Irfan Mulia',
+          title: 'Advisor',
+          profile: [
+            'Irfan Mulia는 학부 및 대학원에서 교육을 시작, 내무부에서 제4급 공무원으로 일했습니다. 그는 인도네시아의코인 거래소에서 이사로 일을 해왔으며 정부 정치, 블록체인 조사기관 및 거래유저간 경험을 바탕으로 인도네시아에서암호화폐를 합법화하기 위해 많은 파트너들과 협력해 왔습니다. 그는 현재 반둥시 Kadin을 보좌해 싱가포르 코인스토어 글로벌 거래소 회원인 암호화폐 개발자들을 육성하고 있으며 싱가포르 코인스토어 글로벌거래소에서사업개발 임원으로 활동하고 있고 현재 BSI재단의 고문을 맡고 있습니다.',
+          ],
+          img: 'portrait-irfan.png',
+        },
+        {
+          id: 'kelvin',
+          name: 'Kelvin Chandra',
+          title: 'Media Contents and Illustrator Manager',
+          profile: [
+            '다양한 온라인 및 SNS를 통해 그래픽 디자인, 일러스트레이터및 콘텐츠 크리에이터 로 활약해온 Kelvin은 자체 제작한 콘텐츠를 통해 다양한 분야에 바이럴 마케팅으로 활용하여 성과를 나타냈습니다. 현재 다양한 친환경 사업을 콘텐츠로 제작하는 글로벌 디자인팀 부서장을 맞고 있습니다',
+          ],
+          img: 'portrait-kelvin.png',
+        },
+        {
+          id: 'riswanton',
+          name: 'Riswanton Ramudin',
+          title: 'Front-end Developer',
+          profile: [
+            'Riswanton는 대학에서 학사 졸업 후 프론트 엔드 개발자로 2년간 IT 기술지원 및 기획을 맡아 왔으며 현재는 친환경 기업 프론트 엔드 개발자로서 웹사이트 / 앱 기획 및 프론트 개발을 맞고 있습니다.',
+          ],
+          img: 'portrait-riswanton.png',
+        },
+        {
+          id: 'yosep',
+          name: 'Yosep Ryan Agusta',
+          title: 'Back-end Developer',
+          profile: [
+            'Yosep은 웹 애플리케이션솔루션 개발 및 백 엔드 서버를 구축 해 왔으며 이를 기반으로 다양한 분야의 많은 기업들의 서버 문제 해결 및 웹 어플리케이션의효율적 운영을 맡아 왔습니다. 현재 친환경 플랫폼 및 서비스 백 엔드 개발을 진행하고 있습니다.',
+          ],
+          img: 'portrait-yosep.png',
+        },
+        {
+          id: 'theresa',
+          name: 'Theresa',
+          title: 'Management Support',
+          profile: [
+            'Theresa는 고객 서비스 및 백 오피스, DB관련 부서에서 일해왔으며 DB처리부서에서실력을 인정받아 총괄 관리자로 4년간 근무했습니다.현재 친환경 기업 경영 지원팀 소속으로 광고 컨텐츠 및 재무 파트를 맡아 진행하고 있습니다.',
+          ],
+          img: 'portrait-theresa.png',
         },
       ],
     },
