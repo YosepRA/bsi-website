@@ -8,7 +8,26 @@
     wallet
   } } = data;
 
+  let whitepaperUrl = '';
   const smartAuditUrl = '/file/Smart Contract Security Audit Report - BSI.pdf';
+
+  switch (lang) {
+    case 'en':
+      whitepaperUrl = '/file/BSI Whitepaper (English Version).pdf';
+      break;
+
+    case 'id':
+      whitepaperUrl = '/file/BSI Whitepaper (Indonesian Version).pdf';
+      break;
+
+    case 'kr':
+      whitepaperUrl = '/file/BSI Whitepaper (Korean Version).pdf';
+      break;
+  
+    default:
+      whitepaperUrl = '/file/BSI Whitepaper (English Version).pdf';
+      break;
+  }
 %>
 
 <nav class="navbar navbar-expand-lg">
@@ -49,10 +68,10 @@
                 <% const { id, name, url } = bsi.subcategory[index]  %>
                 
                 <li>
-                  <% if (id === 'whitepaper') { %>
-                    <a class="dropdown-item" href="<%= url %>" target="_blank" rel="noreferrer"><%= name %></a>
-                  <% } else if (id === 'smartAudit') { %>
+                  <% if (id === 'smartAudit') { %>
                     <a class="dropdown-item" href="<%= smartAuditUrl %>" target="_blank" rel="noreferrer"><%= name %></a>
+                  <% } else if (id === 'whitepaper') { %>
+                    <a class="dropdown-item" href="<%= whitepaperUrl %>" target="_blank" rel="noreferrer"><%= name %></a>
                   <% } else { %>
                     <a class="dropdown-item" href="/<%= lang %>/bsi#<%= id %>"><%= name %></a>
                   <% } %>
