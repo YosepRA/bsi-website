@@ -26,7 +26,6 @@ module.exports = {
         {
           id: 'whitepaper',
           name: 'Whitepaper',
-          url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-english-version',
         },
       ],
     },
@@ -105,7 +104,6 @@ module.exports = {
     },
     whitepaper: {
       name: 'Whitepaper',
-      url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-english-version',
     },
   },
   footer: {
@@ -131,10 +129,10 @@ module.exports = {
   },
   home: {
     banner: {
-      title: 'A New and Easy Payment System to Travel in Bali',
+      title: 'A New and Easy Reward System to Travel in Bali',
       body: [
         'Developed with the idea of easy and borderless travel.',
-        'Bali Social Integrated is a new payment way to see and experience the world by utilizing the immense potential of blockchain technology.',
+        'Bali Social Integrated is a new reward system to see and experience the world by utilizing the immense potential of blockchain technology.',
         '<b>The world is big and so is our vision.</b>',
       ],
     },
@@ -156,7 +154,7 @@ module.exports = {
       about: {
         title: 'About Us',
         body: [
-          'Bali Social Integrated (BSI) token is used as a payment method in the Carbon-Free VIAJE ecosystem and is an ERC-20 standard token. Tourists can use the Bali Social integrated (BSI) token to book and pay for tickets, accommodations, EV-mobility rentals, restaurants, and recreational activities.',
+          'Bali Social Integrated (BSI) token is used as a reward system in the Carbon-Free VIAJE ecosystem and is an ERC-20 standard token. Tourists can use the Bali Social integrated (BSI) token to book for tickets, accommodations, EV-mobility rentals, restaurants, and recreational activities.',
         ],
         button: 'Learn More',
       },
@@ -178,10 +176,10 @@ module.exports = {
   },
   bsi: {
     banner: {
-      title: 'A New and Easy Payment System to Travel in Bali',
+      title: 'A New and Easy Reward System to Travel in Bali',
       body: [
         'Bali Social Integrated (BSI) is a Blockchain-based platform connecting reputed online travel agencies (OTA) with global customers. The ecosystem is designed on blockchain to be transparent, secure, and tamper-resistant with several incentives.',
-        'Bali Social Integrated offers a blockchain-powered tour and payment system. This system can be used to book and pay for tickets, accommodations, car rentals, EV motorbike rentals, restaurants, shopping, and recreational activities.',
+        'Bali Social Integrated offers a blockchain-powered tour and reward system. This system can be used to book for tickets, accommodations, car rentals, EV motorbike rentals, restaurants, shopping, and recreational activities.',
       ],
       button: 'Learn More',
     },
@@ -195,14 +193,14 @@ module.exports = {
     introduction: {
       title: 'Introduction of Token',
       body: [
-        'Bali Social Integrated (BSI) token is used as a payment method in the Carbon-Free VIAJE ecosystem and is an ERC-20 standard token. Tourists can use the Bali Social integrated (BSI) token to book and pay for tickets, accommodations, EV-mobility rentals, restaurants, and recreational activities.',
+        'Bali Social Integrated (BSI) token is used as a reward system in the Carbon-Free VIAJE ecosystem and is an ERC-20 standard token. Tourists can use the Bali Social integrated (BSI) token to book for tickets, accommodations, EV-mobility rentals, restaurants, and recreational activities.',
         'Carbon-Free VIAJE develops and operates various services through eco-friendly ESG management by bringing users and suppliers into the VIAJE ecosystem through continuous service operation and ecosystem expansion. We are encouraging the expansion, use, and number of BSI users.',
       ],
     },
     summary: {
       title: 'Summary of The Token',
       body: [
-        'Bali Social Integrated (BSI) Token uses the ERC-20 standard, which is used for transactions within the Carbon-Free VIAJE&apos;s ecosystem and is the first blockchain project developed with the goal of optimizing the global tourism industry. To provide users with a seamless travel experience, Bali Social Integrated collaborates closely with a team of blockchain technology developers and crypto enthusiasts. Thus, global tourists can order and pay for tickets, accommodations, EV-mobility rentals, restaurants, shopping, and other recreational activities directly from each service provider.',
+        'Bali Social Integrated (BSI) Token uses the ERC-20 standard, which is used for transactions within the Carbon-Free VIAJE&apos;s ecosystem and is the first blockchain project developed with the goal of optimizing the global tourism industry. To provide users with a seamless travel experience, Bali Social Integrated collaborates closely with a team of blockchain technology developers and crypto enthusiasts. Thus, global tourists can order for tickets, accommodations, EV-mobility rentals, restaurants, shopping, and other recreational activities directly from each service provider.',
       ],
     },
   },
@@ -216,8 +214,8 @@ module.exports = {
     viajePlatform: {
       title: 'Viaje Platform',
       body: [
-        'Carbon-Free VIAJE, a business line by Bali Social Integrated, caters to every payment need by seamlessly integrating itself with BSI tokens and fiat currencies. Users can add BSI tokens or fiat currencies (using a credit card or other payment networks) and use them through VIAJE apps such as VIAJEPAY in all affiliated stores.',
-        'Travelers can enjoy a simplified payment network and avail of various services such as booking airlines, leisure or travel activities, hotels, renting electric motorcycles, purchasing food & drinks, shopping, etc.',
+        'Carbon-Free VIAJE, a business line by Bali Social Integrated, caters to every reward exchange need by seamlessly integrating itself with BSI tokens and fiat currencies. Users can add BSI tokens or fiat currencies (using a credit card or other options) and use them through VIAJE apps such as VIAJEPAY in all affiliated stores.',
+        'Travelers can enjoy a simplified reward system and avail of various services such as booking airlines, leisure or travel activities, hotels, renting electric motorcycles, purchasing food & drinks, shopping, etc.',
       ],
     },
     metaConcert: {
