@@ -26,7 +26,6 @@ module.exports = {
         {
           id: 'whitepaper',
           name: 'Whitepaper',
-          url: 'https://viaje-holdings.gitbook.io/whitepaper-bsi-indonesian-version',
         },
       ],
     },
@@ -105,7 +104,6 @@ module.exports = {
     },
     whitepaper: {
       name: 'Whitepaper',
-      url: 'https://viaje-holdings.gitbook.io/bsi-whitepaper-indonesian-version',
     },
   },
   footer: {
@@ -131,10 +129,10 @@ module.exports = {
   },
   home: {
     banner: {
-      title: 'Cara Pembayaran Baru dan Mudah Travel di Bali',
+      title: 'Sistem Reward Baru dan Mudah Untuk Travel di Bali',
       body: [
         'Dikembangkan dengan ide perjalanan mudah dan tanpa batas.',
-        'Bali Social Integrated adalah cara pembayaran baru untuk melihat dan mengalami dunia dengan memanfaatkan potensi besar teknologi blockchain.',
+        'Bali Social Integrated adalah sistem reward baru untuk melihat dan mengalami dunia dengan memanfaatkan potensi besar teknologi blockchain.',
         '<b>Dunia ini besar dan begitu juga visi kami.</b>',
       ],
     },
@@ -156,7 +154,7 @@ module.exports = {
       about: {
         title: 'Profil',
         body: [
-          'Token Bali Social Integrated (BSI) digunakan sebagai metode pembayaran dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
+          'Token Bali Social Integrated (BSI) digunakan sebagai sistem reward dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
         ],
         button: 'Selengkapnya',
       },
@@ -178,10 +176,10 @@ module.exports = {
   },
   bsi: {
     banner: {
-      title: 'Cara Pembayaran Baru dan Mudah Travel di Bali',
+      title: 'Sistem Reward Baru dan Mudah Untuk Travel di Bali',
       body: [
-        'Bali Social Integrated (BSI) adalah platform berbasis blockchain yang menghubungkan "Online Travel Agencies" (OTA) ternama dengan pelanggan global. Ekosistem dirancang pada blockchian untuk menjadi transparan, aman, dan terbebas dari permintaan insentif tambahan.',
-        'Bali Social Integrated (BSI) menawarkan sistem tour dan pembayaran dengan penggunaan teknologi Blockchain. Sistem ini dapat digunakan untuk pemesanan dan pembayaran tiket, akomodasi, rental mobil, rental motor EV, restoran, pembelanjaan dan kegiatan rekreasi dengan BSI token.',
+        'Bali Social Integrated (BSI) adalah platform berbasis blockchain yang menghubungkan "Online Travel Agencies" (OTA) ternama dengan pelanggan global. Ekosistem dirancang pada blockchain untuk menjadi transparan, aman, dan terbebas dari permintaan insentif tambahan.',
+        'Bali Social Integrated (BSI) menawarkan sistem reward dan wisata dengan menggunakan teknologi Blockchain. Sistem ini dapat digunakan untuk pemesanan tiket, akomodasi, rental mobil, rental motor EV, restoran, pembelanjaan dan kegiatan rekreasi dengan BSI token.',
       ],
       button: 'Selengkapnya',
     },
@@ -195,14 +193,14 @@ module.exports = {
     introduction: {
       title: 'Pengenalan Token',
       body: [
-        'Token Bali Social Integrated (BSI) digunakan sebagai metode pembayaran dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
+        'Token Bali Social Integrated (BSI) digunakan sebagai sistem reward dalam ekosistem Carbon-Free VIAJE dan merupakan token standar ERC-20. Wisatawan dapat menggunakan token Bali Social Integrated (BSI) untuk memesan tiket, akomodasi, penyewaan kendaraan EV, restoran, dan kegiatan rekreasi.',
         'Carbon-Free VIAJE mengembangkan dan mengoperasikan berbagai layanan melalui pengelolaan Lingkungan, Sosial, dan Tata kelola (LST) yang ramah lingkungan dengan membawa pengguna dan pemasok ke dalam ekosistem VIAJE melalui operasi layanan berkelanjutan dan perluasan ekosistem. Kami mendorong perluasan, penggunaan, dan jumlah pengguna BSI.',
       ],
     },
     summary: {
       title: 'Ringkasan Token',
       body: [
-        'Token Bali Social Integrated (BSI) menggunakan standar ERC-20, yang digunakan untuk transaksi dalam ekosistem Carbon-Free VIAJE, dan merupakan proyek blockchain pertama yang dikembangkan dengan tujuan mengoptimalkan industri pariwisata global. Untuk memberikan pengalaman perjalanan yang mulus kepada pengguna, Bali Social Integrated bekerja sama erat dengan tim pengembang teknologi blockchain dan penggemar kripto. Dengan demikian, wisatawan global dapat memesan dan membayar tiket, akomodasi, penyewaan kendaraan EV, restoran, belanja, dan aktivitas rekreasi lainnya langsung dari masing-masing penyedia layanan.',
+        'Token Bali Social Integrated (BSI) menggunakan standar ERC-20, yang digunakan untuk transaksi dalam ekosistem Carbon-Free VIAJE, dan merupakan proyek blockchain pertama yang dikembangkan dengan tujuan mengoptimalkan industri pariwisata global. Untuk memberikan pengalaman perjalanan yang mulus kepada pengguna, Bali Social Integrated bekerja sama erat dengan tim pengembang teknologi blockchain dan penggemar kripto. Dengan demikian, wisatawan global dapat memesan tiket, akomodasi, penyewaan kendaraan EV, restoran, belanja, dan aktivitas rekreasi lainnya langsung dari masing-masing penyedia layanan.',
       ],
     },
   },
@@ -216,8 +214,8 @@ module.exports = {
     viajePlatform: {
       title: 'Platform Viaje',
       body: [
-        'Carbon-Free VIAJE, lini bisnis dari Bali Social Integrated melayani setiap kebutuhan pembayaran dengan mengintegrasikan token BSI dan mata uang fiat. Pengguna dapat menambahkan token BSI atau mata uang fiat (menggunakan kartu kredit atau jaringan pembayaran lainnya) dan menggunakannya melalui aplikasi VIAJE seperti VIAJEPAY di semua toko terafiliasi.',
-        'Wisatawan dapat menikmati jaringan pembayaran yang disederhanakan dan memanfaatkan berbagai layanan seperti memesan penerbangan, kegiatan rekreasi/perjalanan, hotel, menyewa sepeda motor listrik, membeli makanan & minuman, berbelanja, dan lain sebagainya.',
+        'Carbon-Free VIAJE, lini bisnis dari Bali Social Integrated melayani setiap kebutuhan pertukaran reward dengan mengintegrasikan token BSI dan mata uang fiat. Pengguna dapat menambahkan token BSI atau mata uang fiat (menggunakan kartu kredit atau metode lainnya) dan menggunakannya melalui aplikasi VIAJE seperti VIAJEPAY di semua toko terafiliasi.',
+        'Wisatawan dapat menikmati sistem reward yang disederhanakan dan memanfaatkan berbagai layanan seperti memesan penerbangan, kegiatan rekreasi/perjalanan, hotel, menyewa sepeda motor listrik, membeli makanan & minuman, berbelanja, dan lain sebagainya.',
       ],
     },
     metaConcert: {
