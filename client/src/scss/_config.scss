@@ -8,8 +8,8 @@ $body-color: #333;
 $success-color: rgb(25, 135, 84);
 $danger-color: rgb(220, 53, 69);
 $border-radius: 8px;
-$gradient-from: #08233f;
-$gradient-to: #246295;
+$gradient-dark-blue: #08233f;
+$gradient-light-blue: #246295;
 $animation-time: 300ms;
 $animation-ease: ease-out;
 
@@ -19,7 +19,11 @@ $animation-ease: ease-out;
 
 @mixin page-gradient {
   background: $primary-color;
-  background: linear-gradient(180deg, $gradient-from 0%, $gradient-to 100%);
+  background: linear-gradient(
+    180deg,
+    $gradient-dark-blue 0%,
+    $gradient-light-blue 100%
+  );
 }
 
 @mixin button-gradient {
