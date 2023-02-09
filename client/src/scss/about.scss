@@ -98,8 +98,11 @@
     //   }
     // }
 
-    &__item {
+    &__col {
       margin-bottom: 2rem;
+    }
+
+    &__item {
       padding: 1.3rem;
       border-radius: 2rem;
       background: $primary-color;
@@ -177,11 +180,11 @@
 @include media-breakpoint-sm {
   .about {
     .bsi-team {
-      &__row {
-        &--images {
-          justify-content: center;
-        }
-      }
+      // &__row {
+      //   &--images {
+      //     justify-content: flex-s;
+      //   }
+      // }
 
       // &__item {
       //   &-name {
@@ -237,7 +240,7 @@
 
       &__item {
         max-width: 630px;
-        margin: 0 auto 2rem;
+        margin: 0 auto;
         padding: 2rem;
         background: linear-gradient(
           100deg,
@@ -301,6 +304,8 @@
   .about {
     .bsi-team {
       &__item {
+        height: 100%;
+
         &-name {
           font-size: 1.5rem;
         }
