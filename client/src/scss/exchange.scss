@@ -40,8 +40,8 @@
         background: rgb(6, 0, 103);
         background: linear-gradient(
           90deg,
-          $gradient-from 20%,
-          $gradient-to 100%
+          $gradient-dark-blue 20%,
+          $gradient-light-blue 100%
         );
         margin-bottom: 2rem;
         border-radius: $border-radius;
@@ -54,7 +54,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: $gradient-from;
+        background-color: $gradient-dark-blue;
         background: url('/img/platform-card-background.jpg') no-repeat
           center/cover;
         padding: 1.4rem;
@@ -76,8 +76,8 @@
           height: 100%;
           background: linear-gradient(
             90deg,
-            $gradient-from 0%,
-            $gradient-to 100%
+            $gradient-dark-blue 0%,
+            $gradient-light-blue 100%
           );
           border-radius: $border-radius;
           opacity: 0.8;
@@ -137,8 +137,8 @@
         background: rgb(6, 0, 103);
         background: linear-gradient(
           90deg,
-          $gradient-from 20%,
-          $gradient-to 100%
+          $gradient-dark-blue 20%,
+          $gradient-light-blue 100%
         );
         padding-bottom: 2rem;
         border: none;
