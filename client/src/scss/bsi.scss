@@ -20,6 +20,7 @@
 
       // Without live price.
       height: calc(100vh - 73px);
+      max-height: 600px;
       z-index: 1;
 
       &-inner {
@@ -95,7 +96,7 @@
 
     &__image {
       width: 80%;
-      max-width: 400px;
+      max-width: 360px;
       height: auto;
       margin-bottom: 1.8rem;
     }
@@ -133,9 +134,9 @@
     }
 
     &__image {
-      width: 60%;
+      width: 90%;
       height: auto;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2.8rem;
     }
 
     &__info {
@@ -158,6 +159,24 @@
 
 /* =============== Breakpoints =============== */
 
+@include media-breakpoint-sm {
+  .bsi {
+    .banner {
+      .carousel {
+        &-item {
+          &--02 {
+            background-position: 88% center;
+          }
+
+          &--03 {
+            background-position: 92% center;
+          }
+        }
+      }
+    }
+  }
+}
+
 @include media-breakpoint-md {
   .bsi {
     .main-container {
@@ -178,15 +197,15 @@
 
         &-item {
           &--01 {
-            background-position: center bottom;
+            background-position: 80% bottom;
           }
 
           &--02 {
-            background-position: center;
+            background-position: 70% center;
           }
 
           &--03 {
-            background-position: 60% bottom;
+            background-position: 80% center;
           }
         }
       }
@@ -204,23 +223,8 @@
         align-items: center;
       }
 
-      &__col:nth-child(1) {
-        order: 2;
-      }
-
-      &__col:nth-child(2) {
-        order: 1;
-      }
-
-      &__info {
-        &-title {
-          text-align: left;
-        }
-      }
-
       &__image {
         width: 100%;
-        margin-bottom: 0;
       }
     }
 
@@ -241,14 +245,8 @@
         text-align: right;
       }
 
-      &__info {
-        &-title {
-          text-align: left;
-        }
-      }
-
       &__image {
-        width: 80%;
+        width: 60%;
       }
     }
 
@@ -281,10 +279,38 @@
       }
     }
 
+    .company-profile {
+      &__col:nth-child(1) {
+        order: 2;
+      }
+
+      &__col:nth-child(2) {
+        order: 1;
+      }
+
+      &__info {
+        &-title {
+          text-align: left;
+        }
+      }
+    }
+
     .roadmap {
       &__image {
         &-item {
           width: 60%;
+        }
+      }
+    }
+
+    .introduction {
+      &__image {
+        width: 100%;
+      }
+
+      &__info {
+        &-title {
+          text-align: left;
         }
       }
     }
@@ -299,12 +325,6 @@
           font-size: 2.2rem;
           margin-bottom: 1rem;
         }
-      }
-    }
-
-    .introduction {
-      &__image {
-        width: 70%;
       }
     }
 
@@ -342,6 +362,16 @@
   .bsi {
     .banner {
       margin-bottom: 8rem;
+
+      .carousel {
+        max-height: 760px;
+
+        &-item {
+          &--01 {
+            background-position: center bottom;
+          }
+        }
+      }
 
       &__info {
         &-title {
