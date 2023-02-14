@@ -22,6 +22,7 @@
 
       // Without live price.
       height: calc(100vh - 73px);
+      max-height: 600px;
       z-index: 1;
 
       &-inner {
@@ -160,6 +161,24 @@
 
 /* =============== Breakpoints =============== */
 
+@include media-breakpoint-sm {
+  .home {
+    .banner {
+      .carousel {
+        &-item {
+          &--02 {
+            background-position: 88% center;
+          }
+
+          &--03 {
+            background-position: 92% center;
+          }
+        }
+      }
+    }
+  }
+}
+
 @include media-breakpoint-md {
   .home {
     .main-container {
@@ -180,15 +199,15 @@
 
         &-item {
           &--01 {
-            background-position: center bottom;
+            background-position: 80% bottom;
           }
 
           &--02 {
-            background-position: center;
+            background-position: 70% center;
           }
 
           &--03 {
-            background-position: 60% bottom;
+            background-position: 80% center;
           }
         }
       }
@@ -277,6 +296,16 @@
 @include media-breakpoint-xxxl {
   .home {
     .banner {
+      .carousel {
+        max-height: 760px;
+
+        &-item {
+          &--01 {
+            background-position: center bottom;
+          }
+        }
+      }
+
       &__info {
         &-title {
           font-size: 2.4rem;
