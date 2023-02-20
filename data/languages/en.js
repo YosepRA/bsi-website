@@ -327,7 +327,7 @@ module.exports = {
           'Currently, the platform offers 100+ major cryptocurrencies trading pairs and ten fiat currencies; traders can actively trade. The list includes- Bitcoin, Cardano, Aave, ChainLink, Ethereum, and others. It has its own DigiFinex Token that helps in trading coins.',
         ],
         isExchange: true,
-        url: 'https://www.digifinex.com/en-ww/trade/kline/USDT/BSI',
+        url: 'https://www.digifinex.com/en-ww/trade/USDT/BSI',
         accordionButton: 'More Info',
         actionButton: 'Buy BSI',
       },
