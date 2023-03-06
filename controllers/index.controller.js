@@ -29,4 +29,9 @@ module.exports = {
 
     res.render('exchange', { ...lang, currentPage: 'exchange' });
   },
+  dreamConcert(req, res) {
+    const { lang } = req.data;
+
+    res.render('dream-concert', { ...lang, currentPage: 'dream-concert' });
+  },
 };
