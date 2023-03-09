@@ -17,6 +17,10 @@ $animation-ease: ease-out;
   font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@mixin arial {
+  font-family: 'Arial', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 @mixin page-gradient {
   background: $primary-color;
   background: linear-gradient(
