@@ -91,6 +91,53 @@
     }
   }
 
+  .dc {
+    margin-top: 6rem;
+
+    &__title {
+      color: $primary-color;
+    }
+
+    &__banner {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 460px;
+      margin: auto;
+      background-color: #eee;
+      border-radius: $border-radius;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+      &-poster {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $border-radius;
+      }
+
+      &-info {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 1.8rem;
+        background-color: rgba(black, 0.8);
+        color: white;
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+
+      &-title {
+        color: white;
+        font-size: 1.6rem;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
   .introduction {
     margin: 6rem auto;
 
