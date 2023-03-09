@@ -394,4 +394,13 @@ module.exports = {
       },
     ],
   },
+  dreamConcertEvent: {
+    ticket: {
+      title: 'Ticket',
+      target: {
+        title: 'Target',
+        body: 'Lorem',
+      },
+    },
+  },
 };

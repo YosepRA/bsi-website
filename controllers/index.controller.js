@@ -29,4 +29,12 @@ module.exports = {
 
     res.render('exchange', { ...lang, currentPage: 'exchange' });
   },
+  dreamConcertEvent(req, res) {
+    const { lang } = req.data;
+
+    res.render('dream-concert-event', {
+      ...lang,
+      currentPage: 'dream-concert-event',
+    });
+  },
 };
