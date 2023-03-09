@@ -19,6 +19,6 @@ router.get('/contact', lang, controller.contact);
 
 router.get('/exchange', lang, controller.exchange);
 
-router.get('/dream-concert', lang, controller.dreamConcert);
+// router.get('/dream-concert', lang, controller.dreamConcert);
 
 module.exports = router;
