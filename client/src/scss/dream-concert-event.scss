@@ -1,615 +1,288 @@
 @import 'config';
 
-$primary-color: #002b42;
-$secondary-color: #005a3f;
-$body-black: rgba(black, 0.85);
-$body-white: #fff;
-$border-radius: 10px;
+// $primary-color: #002b42;
+// $secondary-color: #005a3f;
+// $body-black: rgba(black, 0.85);
+// $body-white: #fff;
+// $border-radius: 10px;
 
-// @mixin Montserrat {
-//   font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-// }
-
-// @mixin flex-center {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-@mixin gradient-background {
-  background: rgb(0, 43, 66);
-  background: linear-gradient(100deg, $primary-color 0%, $secondary-color 100%);
+.image-banner{
+  width: 300px;
+  height: 300px;
+  float: left;
+  // margin-left: 10rem;
+  // bottom: 5rem;
 }
 
-@mixin button {
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: $border-radius;
+.ticket__metaverse{
+  background-image: url('/img/dream-concert-28-poster.png');
+  background-size: cover;
+  background-position: center;
+  height: fit-content;
+  padding-bottom: 100px;
+}
+
+.ticket__metaverse{
+  width: 100%;
+  height: 100%;
+  background-color: #EEEEEE;
+  opacity: 0.3; 
+  background-size: cover;
+}
+.text-image{
+  width: 100px;
+  height: auto;
+}
+.card{
+  border-radius: 3rem;
+  border: 0.9rem #D0946D solid;
+}
+// .ticket_card{
+//   flex-direction: column;
+//   flex-wrap: wrap;
+  
+// }
+.card-body{
+  background-color: #E9DECB;
+  border-radius: 2rem;
+}
+.card-title{
   font-weight: 700;
-
-  @include media-breakpoint-xxxl {
-    padding: 1rem;
-  }
+  font-size: 3rem;
+  margin-left: 3rem;
+  
+}
+.card-text{
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 3rem;
 }
 
-@mixin button-primary {
-  @include button();
-  background-color: #fff;
-  color: $body-black;
+section.ticket__metaverse{
+  padding-top: 20px;
+  padding-bottom: 120px;
 }
 
-@mixin button-outline {
-  @include button();
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: white;
+// .card_small_text{
+//   font-weight: 700;
+//   font-size: 1rem;
+//   background-color: #005a3f;
+// }
+.text__small{
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: 3rem;
+  flex-direction: row;
 }
 
-/* =============== Page =============== */
-
-.dream-concert-event {
-  @include gradient-background();
-  color: white;
-  @include arial();
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @include montserrat();
-    font-weight: 600;
-  }
-
-  .main-container {
-    padding-top: 0;
-  }
-
-  // .bsi-logo {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   padding: 1rem;
-
-  //   &__img {
-  //     width: 40px;
-  //     height: auto;
-  //   }
-  // }
-
-  .banner {
-    width: 100%;
-
-    &__image {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: auto;
-
-      &-container {
-        position: relative;
-      }
-    }
-
-    .lang-dropdown {
-      position: absolute;
-      top: 10px;
-      right: 5px;
-      font-size: 0.9rem;
-
-      &__control {
-        padding: 0.2rem 0.5rem;
-        background-color: rgba(black, 0.3);
-        color: white;
-        font-size: inherit;
-      }
-
-      &__flag {
-        display: inline-block;
-        width: 18px;
-        height: auto;
-        margin-right: 0.2rem;
-
-        &-img {
-          width: 100%;
-        }
-      }
-
-      &__menu {
-        font-size: inherit;
-      }
-    }
-  }
-
-  // .web-actions {
-  //   padding: 1.4rem;
-  //   background-color: $primary-color;
-
-  //   &__title {
-  //     @include montserrat();
-  //     text-align: center;
-  //     font-size: 1rem;
-  //     font-weight: 600;
-  //   }
-
-  //   &__buttons {
-  //     @include flex-center();
-  //   }
-
-  //   &__btn {
-  //     @include button-primary();
-  //     display: inline-flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     margin: 0 0.5rem;
-  //     text-decoration: none;
-  //   }
-
-  //   &__flag {
-  //     display: inline-block;
-  //     width: 20px;
-  //     height: auto;
-  //     margin-right: 10px;
-
-  //     &-img {
-  //       width: 100%;
-  //     }
-  //   }
-  // }
-
-  .date {
-    @include flex-center();
-    width: 100%;
-    padding: 1.4rem;
-    background-color: $primary-color;
-
-    &__text {
-      @include montserrat();
-      margin-bottom: 0;
-      font-size: 1.6rem;
-      font-weight: 600;
-    }
-  }
-
-  .intro-video {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-
-    &__iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .ticket {
-    margin: 3rem 0;
-
-    &__panel {
-      padding: 2rem 1.4rem 2.4rem;
-      background-color: rgba(black, 0.3);
-      border-radius: $border-radius;
-    }
-
-    &__digifinex {
-      margin-bottom: 1.8rem;
-      text-align: center;
-
-      &-logo {
-        width: 240px;
-        height: auto;
-      }
-    }
-
-    &__info {
-      &-primary {
-        display: flex;
-      }
-
-      &-title {
-        width: 80px;
-      }
-
-      &-content {
-        flex: 1;
-      }
-    }
-
-    &__actions {
-      @include flex-center();
-
-      &-btn {
-        width: 140px;
-        margin: 0 0.3rem;
-        text-decoration: none;
-        text-align: center;
-        font-weight: 700;
-
-        &--buy {
-          @include button-primary();
-        }
-
-        &--coming {
-          @include button-outline();
-        }
-      }
-    }
-  }
-
-  .partner {
-    &__title {
-      margin-bottom: 2rem;
-    }
-
-    &__col {
-      text-align: center;
-    }
-
-    &__logo {
-      width: 100%;
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 1.8rem;
-
-      &--digifinex {
-        max-width: 220px;
-      }
-    }
-  }
-
-  .about-bsi {
-    p {
-      text-align: center;
-    }
-  }
-
-  .notice {
-    & > * {
-      margin-bottom: 1.6rem;
-    }
-
-    &__title {
-      margin-bottom: 1rem;
-    }
-
-    &__procedure-title {
-      width: auto;
-      font-size: 1.2rem;
-    }
-
-    &__procedure-image {
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    &__info {
-      font-size: 0.9rem;
-
-      & > * {
-        margin-bottom: 1rem;
-      }
-
-      &-title {
-        font-size: 0.9rem;
-        font-weight: 700;
-      }
-
-      &-cancel {
-        &__list {
-          padding-left: 1rem;
-        }
-      }
-    }
-  }
+.input__ticket{
+  font-weight: 300;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3rem;
+}
+.form-control{
+  width: 250px;
+  height: 50px;
+  margin-left: 2rem;
 }
 
-.page-section {
-  margin-bottom: 4rem;
+.text__input{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 5px;  
 }
 
-.page-title {
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+////=====Button Exchange=====///
+
+.button__exchange{
+  float: right;
+}
+.btn__BUY{
+  background-color: #FFF;
+  width: 200px;
+  height: 50px;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+.btn__Exchange{
+  background-color: #51B2AA;
+  width: 200px;
+  height: 50px;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+// ========Powered By=========//
+
+.powered{
+  padding-top:120px;
+  background: #EEEEEE;
+  padding-bottom: 120px;
+}
+
+.text__powered{
+  // font-size: 1rem;
+  // font-weight: 700;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+.text__powered_by{
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+// .logo__custom{
+//   display: flex;
+//   flex-direction: row;
+// }
+
+.logo__partner{
+  margin-left: 4rem;
+  width: auto;
+  height: 55px;
+}
+
+.logo__digifinex{
+  width: auto;
+  height: 55px;
+  margin-left: 1rem;
+}
+
+.concert__start{
+  float: right;
+  display: flex;
+  // margin-left: 2rem;
+}
+.text__start{
+  margin-left: 7rem;
+}
+
+.date__concert{
+  margin-left: 3rem;
+}
+
+
+//=======Page Number======//
+.number__tag{
+  display: inline;
+  display: flex;
+}
+.page__number{
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.number__1{
+  width: 120px;
+  height: 80px;
   text-align: center;
+  background-color: #51B2AA;
+  border-radius: 50%;
+  margin-right: -2.5rem;
+  backface-visibility: hidden;
+
 }
 
-/* =============== Breakpoints =============== */
-
-@include media-breakpoint-sm {
-  .dream-concert-event {
-    .banner {
-      .lang-dropdown {
-        top: 20px;
-        right: 20px;
-        font-size: 1rem;
-
-        &__control {
-          padding: 0.4rem 0.6rem;
-        }
-
-        &__flag {
-          width: 24px;
-        }
-      }
-    }
-  }
+.text__number{
+  background-color: #EEEEEE;
+  height: 80px;
+  width: 55rem;
+  margin-left: -1.5rem;
+  border-radius: 40px;
 }
 
-@include media-breakpoint-md {
-  .dream-concert-event {
-    .banner {
-      .lang-dropdown {
-        top: 34px;
-        right: 20px;
-
-        &__control {
-          padding: 0.4rem 0.6rem;
-        }
-      }
-    }
-
-    .ticket {
-      &__panel {
-        max-width: 580px;
-        margin: auto;
-      }
-    }
-
-    .partner {
-      &__logo {
-        max-width: 280px;
-        margin-bottom: 2.4rem;
-
-        &--digifinex {
-          max-width: 380px;
-        }
-      }
-    }
-
-    .notice {
-      &__procedure-image {
-        img {
-          display: block;
-          width: 80%;
-          margin: auto;
-        }
-      }
-    }
-  }
+.custom__number{
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1rem;
+  color: #FFF;
+}
+.custom__text{
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: justify;
+  margin-left: 4.3rem;
+  margin-top: 1rem;
 }
 
-@include media-breakpoint-lg {
-  .dream-concert-event {
-    .banner {
-      @include flex-center();
-      background-color: rgba(black, 0.6);
-
-      &__image {
-        &-container {
-          width: 70%;
-          margin: auto;
-        }
-      }
-    }
-
-    .intro-video {
-      @include flex-center();
-      background-color: rgba(black, 0.6);
-      padding-top: 39.5%;
-
-      &__iframe {
-        width: 70%;
-        margin: auto;
-      }
-    }
-  }
+.text__2{
+  margin-top: 50px;
+  margin-left: 200px;
 }
 
-@include media-breakpoint-xl {
-  .dream-concert-event {
-    .banner {
-      .lang-dropdown {
-        top: 42px;
-        right: 24px;
-
-        &__control {
-          padding: 0.6rem 0.9rem;
-        }
-      }
-    }
-
-    .date {
-      padding: 3rem;
-
-      &__text {
-        font-size: 2rem;
-      }
-    }
-
-    .ticket {
-      &__panel {
-        max-width: 640px;
-        padding: 2rem 2rem 3.2rem;
-      }
-
-      &__digifinex {
-        margin-bottom: 2rem;
-
-        &-logo {
-          width: 300px;
-        }
-      }
-
-      &__info {
-        &-primary {
-          display: flex;
-        }
-
-        &-title {
-          width: 100px;
-        }
-
-        &-content {
-          flex: 1;
-        }
-      }
-
-      &__actions {
-        &-btn {
-          width: 160px;
-        }
-      }
-    }
-
-    .about-bsi {
-      &__text {
-        max-width: 760px;
-        margin: auto;
-      }
-    }
-
-    .notice {
-      max-width: 760px;
-      margin: auto;
-    }
-  }
+.text__3{
+  padding-top: 50px;
+  padding-left: 500px;
 }
 
-@include media-breakpoint-xxl {
-  .dream-concert-event {
-    .notice {
-      & > * {
-        margin-bottom: 1.8rem;
-      }
+////=======Iframe Section========///
 
-      &__title {
-        margin-bottom: 1.3rem;
-      }
-
-      &__info {
-        font-size: 1rem;
-
-        &-title {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
+.intro-video{
+  // padding-top: 10px;
+  // padding-bottom: 100px;
+  background-color: #EEEEEE;
+}
+.intro-video__iframe {
+  width: 100%;
+  height: 600px;
+}
+.btn__Exchange1{
+  margin-top: 1rem;
+  background-color: #51B2AA;
+  width: 200px;
+  height: 50px;
+  border-radius: 1rem;
+  font-weight: 600;
 }
 
-@include media-breakpoint-xxxl {
-  .dream-concert-event {
-    font-size: 1.3rem;
+///====== Section page about Dream concert =======////
 
-    .banner {
-      .lang-dropdown {
-        top: 58px;
-        right: 24px;
-        font-size: inherit;
-
-        &__control {
-          padding: 0.6rem 0.9rem;
-        }
-
-        &__flag {
-          width: 40px;
-        }
-      }
-    }
-
-    .date {
-      &__text {
-        font-size: 3.2rem;
-      }
-    }
-
-    .ticket {
-      margin: 5rem auto;
-
-      &__panel {
-        max-width: 900px;
-        padding: 2.4rem 2.4rem 3.4rem;
-      }
-
-      &__digifinex {
-        &-logo {
-          width: 400px;
-        }
-      }
-
-      &__info {
-        margin-bottom: 2.4rem;
-
-        &-primary {
-          font-size: 1.6rem;
-        }
-
-        &-title {
-          width: 130px;
-        }
-      }
-
-      &__actions {
-        &-btn {
-          width: 200px;
-        }
-      }
-    }
-
-    .about-bsi {
-      margin-bottom: 5rem;
-
-      &__text {
-        max-width: 1000px;
-      }
-    }
-
-    .notice {
-      max-width: 1000px;
-
-      & > * {
-        margin-bottom: 3rem;
-      }
-
-      &__title {
-        margin-bottom: 2rem;
-      }
-
-      &__procedure-title {
-        font-size: 1.6rem;
-      }
-
-      &__info {
-        font-size: 1.2rem;
-
-        & > * {
-          margin-bottom: 1rem;
-        }
-
-        &-title {
-          font-size: 1.2rem;
-          font-weight: 700;
-        }
-      }
-    }
-  }
-
-  .page-section:not(:last-child) {
-    margin-bottom: 5rem;
-  }
-
-  .page-title {
-    margin-bottom: 2rem;
-    font-size: 2.4rem;
-  }
+.about__dream__concert{
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
+
+.About__title {
+  font-size: 3rem;
+  text-transform: none;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.dream__concert__about{
+  text-align: justify;
+}
+.thumbnail_custom{
+  margin-top: 2rem;
+}
+
+//=======/////
+
+.page__reminder{
+  padding-top: 120px;
+  padding-bottom: 120px ;
+}
+.custom_Frame1{
+  width: 400px;
+  height: auto;
+}
+
+.custom_Frame2{
+  width: 600px;
+  height: auto;
+}
+
+.text__notice{
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.text__small__notice{
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
