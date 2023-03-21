@@ -1,0 +1,323 @@
+<% 
+  let currentLangText = '';
+  let currentLangFlagName = '';
+  switch (lang) {
+    case 'en':
+      currentLangText = 'EN';
+      currentLangFlagName = 'en-lang-flag.png';
+      break;
+    case 'id':
+      currentLangText = 'ID';
+      currentLangFlagName = 'id-lang-flag.png';
+      break;
+    case 'kr':
+      currentLangText = 'KO';
+      currentLangFlagName = 'ko-lang-flag.png';
+      break;
+  
+    default:
+      currentLangText = 'EN';
+      currentLangFlagName = 'en-lang-flag.png';
+      break;
+  }
+%>
+
+<%- include('partials/header.ejs') %>
+  <body class="dream-concert-event-v2 <%= lang %>">
+    <header class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="page-header__wrapper">
+              <div class="bsi-logo">
+                <img src="/img/bsi-logo-v2.png" alt="Bali Social Integrated" class="bsi-logo__image" />
+              </div>
+  
+              <div class="viaje-logo">
+                <p class="viaje-logo__title">Powered By</p>
+
+                <img src="/img/dream-concert/Viaje-logo-grey.svg" alt="Viaje" class="viaje-logo__image" />
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <section class="banner">
+        <div class="container">
+          <div class="row banner__ticket">
+            <div class="col-12">
+              <div class="banner__ticket-info">
+                <h2 class="banner__ticket-info__title">29th<br /> Dream Concert<br /> In Busan</h2>
+  
+                <h3 class="banner__ticket-info__subtitle">Metaverse Ticket</h3>
+  
+                <p class="banner__ticket-info__date">May 27th, 2023</p>
+              </div>
+            </div>
+  
+            <div class="col-12">
+              <div class="banner__ticket-form">
+                <div class="row">
+                  <div class="col">
+                    <div class="banner__ticket-form__info">
+                      <p class="banner__ticket-form__info-uid">BSI Event Account UID: 691265286</p>
+                      <p class="banner__ticket-form__info-note">Buy <b>$<span class="banner__ticket-form__info-price">0.25</span></b> worth BSI token from DIGIFINEX and send it to the BSI Event Account UID</p>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="banner__ticket-form__separator"></div>
+  
+                <div class="row banner__ticket-form__form">
+                  <div class="col-12">
+                    <div class="banner__ticket-form__form-section">
+                      <label for="uidInput" class="form-label">User UID</label>
+                      <input type="text" class="form-control banner__ticket-form__input" id="uidInput" placeholder="Enter user UID" />
+                    </div>
+                  </div>
+  
+                  <div class="col-12">
+                    <div class="banner__ticket-form__form-section">
+                      <label for="emailInput" class="form-label">Your email</label>
+                      <input type="email" class="form-control banner__ticket-form__input" id="emailInput" placeholder="Enter your email" />
+                    </div>
+                  </div>
+  
+                  <div class="col-12">
+                    <div class="banner__ticket-form__form-section">
+                      <label for="payeeInput" class="form-label">Payee code</label>
+                      <input type="text" class="form-control banner__ticket-form__input" id="payeeInput" placeholder="Enter your payee code" />
+                      <div id="payeeHelp" class="form-text banner__ticket-form__input-help">&ast;Only to users who set-up to receive the code</div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="banner__ticket-form__separator"></div>
+  
+                <div class="row">
+                  <div class="col-12">
+                    <div class="banner__ticket-form__form-section banner__ticket-form__form-amount">
+                      <label for="amountInput" class="form-label">Add the number of tickets</label>
+                      <input type="number" class="form-control banner__ticket-form__input" id="amountInput"" />
+                    </div>
+                  </div>
+  
+                  <div class="col-12">
+                    <div class="banner__ticket-form__total">
+                      <div class="banner__ticket-form__total-top">
+                        <p class="banner__ticket-form__total-title">Total</p>
+    
+                        <p class="banner__ticket-form__total-amount"><span class="banner__ticket-form__total-bsi">0</span> BSI</p>
+                      </div>
+  
+                      <div class="banner__ticket-form__total-bottom">
+                        <p class="banner__ticket-form__total-dollar">
+                          $0.00
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="banner__actions">
+            <a href="#" class="banner__actions-btn banner__actions-buy">Buy BSI</a>
+    
+            <button class="banner__actions-btn banner__actions-exchange">Exchange</button>
+          </div>
+        </div>
+      </section>
+  
+      <section class="panel">
+        <div class="container">
+          <div class="panel__info">
+            <p class="panel__info-digifinex">Purchase BSI at (DIGIFINEX LOGO HERE) and get <b>50% Discount</b> <span class="panel__info-discount">$5 → <span class="panel__info-discount__amount">$2.5</span></span></p>
+          </div>
+    
+          <div class="panel__partners"></div>
+    
+          <div class="panel__datetime">
+            <div class="panel__datetime-info">
+              <p class="panel__datetime-info__title">Concert starts in</p>
+    
+              <p class="panel__datetime-info__date">May 27th, 2023</p>
+            </div>
+    
+            <div class="panel__datetime-timer"></div>
+          </div>
+        </div>
+      </section>
+  
+      <section class="notes">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h2 class="notes__title">
+                Notes
+              </h2>
+  
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col">
+              <div class="notes__content">
+                <p class="notes__content-number">1</p>
+                <p class="notes__content-text">Purchase according to the fluctuating BSI price</p>
+              </div>
+  
+              <div class="notes__content">
+                <p class="notes__content-number">2</p>
+                <p class="notes__content-text">DIGIFINEX Event scheduled on <br />March 24 - April 25</p>
+              </div>
+  
+              <div class="notes__content">
+                <p class="notes__content-number">3</p>
+                <p class="notes__content-text">Event tickets would be sent weekly after the participation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section class="video">
+        <!-- <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/kD3wJE55wkk?autoplay=1&mute=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          class="video__iframe"
+        /> -->
+        <!-- <div class="container">
+        </div> -->
+  
+        <p>Video Section</p>
+      </section>
+  
+      <section class="dream-concert">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="dream-concert__info">
+                <h2 class="dream-concert__info-title">What is Dream Concert?</h2>
+    
+                <p class="dream-concert__info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequatur nulla voluptate corrupti architecto similique distinctio ad beatae aliquam voluptatibus possimus harum repellat debitis, eos earum facilis delectus sunt a!</p>
+    
+                <button class="dream-concert__info-buy">Buy Ticket</button>
+              </div>
+            </div>
+    
+            <div class="col-12">
+              <div class="dream-concert__slider">
+                <img src="/img/dream-concert/Gallery01.jpg" alt="" class="dream-concert__slider-image" />
+
+                <!-- <div class="dream-concert__slider-items">
+                  <img src="/img/dream-concert/Gallery01.jpg" alt="" class="dream-concert__slider-item" />
+                  <img src="/img/dream-concert/Gallery01.jpg" alt="" class="dream-concert__slider-item" />
+                  <img src="/img/dream-concert/Gallery01.jpg" alt="" class="dream-concert__slider-item" />
+                  <img src="/img/dream-concert/Gallery01.jpg" alt="" class="dream-concert__slider-item" />
+                  <img src="/img/dream-concert/Gallery01.jpg" alt="" class="dream-concert__slider-item" />
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section class="about-bsi">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="about-bsi__token">
+                <img src="/img/dream-concert/Coin.svg" alt="BSI Coin" class="about-bsi__token-image" />
+              </div>
+            </div>
+  
+            <div class="col-12">
+              <div class="about-bsi__info">
+                <h2 class="about-bsi__info-title">About BSI</h2>
+        
+                <p class="about-bsi__info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta hic expedita, vero amet quas molestias dolorem fugit a natus?</p>
+        
+                <button class="about-bsi__info-btn">Read more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section class="notice">
+        <div class="container">
+  
+          <div class="row">
+            <div class="col-12">
+              <div class="notice__titles">
+                <h2 class="notice__title">Notice</h2>
+          
+                <h3 class="notice__subtitle">Ticket Redemption Procedure</h3>
+              </div>
+            </div>
+    
+            <div class="col-12">
+              <div class="notice__ticket-procedure">
+                <img src="/img/dream-concert/ticket-procedure.png" alt="" class="notice__ticket-procedure__image" />
+              </div>
+            </div>
+    
+            <div class="col-12">
+              <div class="notice__procedure">
+                <div class="notice__new-user">
+                  <h3 class="notice__new-user__title">New Users of DIGIFINEX</h3>
+      
+                  <ol class="notice__new-user__list">
+                    <li class="notice__new-user__list-item">Register / Log In to DIGIFINEX</li>
+                    <li class="notice__new-user__list-item">Purchase as much BSI as you want</li>
+                    <li class="notice__new-user__list-item">Send it to specified BSI Event Account UID</li>
+                    <li class="notice__new-user__list-item">Insert user UID, email address, and the payee code</li>
+                    <li class="notice__new-user__list-item">Click Exchange and your ticket will be sent</li>
+                    <li class="notice__new-user__list-item">All tickets will be sent sequentially after the registration</li>
+                  </ol>
+                </div>
+  
+                <!-- <div class="notice__existing-user">
+                  <h3 class="notice__new-user__title">Existing Users of DIGIFINEX</h3>
+      
+                  <ol class="notice__new-user__list">
+                    <li class="notice__new-user__list-item">Click Buy BSI</li>
+                    <li class="notice__new-user__list-item">Buy the amount of BSI according to your needs</li>
+                    <li class="notice__new-user__list-item">Send it to specified BSI Event Account UID</li>
+                    <li class="notice__new-user__list-item">Insert user UID, email address, and the payee code</li>
+                    <li class="notice__new-user__list-item">Click Exchange and your ticket will be sent</li>
+                    <li class="notice__new-user__list-item">All tickets will be sent sequentially after the registration</li>
+                  </ol>
+                </div> -->
+  
+                 <div class="notice__note">
+                  <h3 class="notice__note-title">Note:</h3>
+      
+                  <p class="notice__note-text">There might be a fluctuation in the amount of BSI according to the real-time rate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <p class="page-footer__copyright">Copyright&copy; 2023 BSI Bali Social Integrated. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/javascripts/dream-concert.js"></script>
+  </body>
+</html>
