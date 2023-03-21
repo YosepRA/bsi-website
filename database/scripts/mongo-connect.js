@@ -1,23 +1,33 @@
 const mongoose = require('mongoose');
 
-function mongoConnect(mongoUrl) {
-  const connectionOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  };
+async function mongoConnect(mongoUrl) {
+  try {
+    const connectionOptions = {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    };
 
-  mongoose.connect(mongoUrl, connectionOptions);
+    mongoose.connect(mongoUrl, connectionOptions);
 
-  const dbConnection = mongoose.connection;
-  dbConnection.on('error', () => console.error('Database connection error.'));
-  dbConnection.once('open', () =>
-    console.log('Successfully connected to database...'),
-  );
-  dbConnection.on('close', () => console.log('Database connection is closed.'));
+    const dbConnection = mongoose.connection;
+    dbConnection.once('open', () =>
+      console.log('Successfully connected to database...'),
+    );
+    dbConnection.on('disconnected', () =>
+      console.log('Disconnected from database.'),
+    );
+    dbConnection.on('close', () =>
+      console.log('Database connection is closed.'),
+    );
 
-  return dbConnection;
+    return dbConnection;
+  } catch (error) {
+    handleConnectionError(error);
+  }
+}
+
+function handleConnectionError(error) {
+  console.error('Database initial connection error:', error.message);
 }
 
 module.exports = mongoConnect;
