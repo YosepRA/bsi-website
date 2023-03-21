@@ -48,18 +48,43 @@
       <section class="banner">
         <div class="container">
           <div class="row banner__ticket">
-            <div class="col-12">
+            <div class="col-12 col-lg-3 banner__ticket-info--mobile">
               <div class="banner__ticket-info">
-                <h2 class="banner__ticket-info__title">29th<br /> Dream Concert<br /> In Busan</h2>
+                <h2 class="banner__ticket-info__title">29th<br /> Dream Concert In Busan</h2>
   
                 <h3 class="banner__ticket-info__subtitle">Metaverse Ticket</h3>
   
                 <p class="banner__ticket-info__date">May 27th, 2023</p>
               </div>
             </div>
-  
-            <div class="col-12">
+
+            <div class="col-12 col-lg-3 banner__ticket-info--desktop">
+              <div class="banner__ticket-info-wrapper">
+                <div class="banner__ticket-info">
+                  <h2 class="banner__ticket-info__title">29th<br /> Dream Concert In Busan</h2>
+    
+                  <h3 class="banner__ticket-info__subtitle">Metaverse Ticket</h3>
+    
+                  <p class="banner__ticket-info__date">May 27th, 2023</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-12 col-lg-9">
               <div class="banner__ticket-form">
+                <div class="row">
+                  <div class="col">
+                    <div class="banner__ticket-form__header">
+                      <h1 class="banner__ticket-form__header-title">29th Dream Concert in Busan</h1>
+
+                      <h2 class="banner__ticket-form__header-subtitle">Metaverse Ticket</h2>
+
+                      <p class="banner__ticket-form__header-date">May 27th, 2023</p>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="row">
                   <div class="col">
                     <div class="banner__ticket-form__info">
@@ -72,21 +97,21 @@
                 <div class="banner__ticket-form__separator"></div>
   
                 <div class="row banner__ticket-form__form">
-                  <div class="col-12">
+                  <div class="col-12 col-lg-3">
                     <div class="banner__ticket-form__form-section">
                       <label for="uidInput" class="form-label">User UID</label>
                       <input type="text" class="form-control banner__ticket-form__input" id="uidInput" placeholder="Enter user UID" />
                     </div>
                   </div>
   
-                  <div class="col-12">
+                  <div class="col-12 col-lg-5">
                     <div class="banner__ticket-form__form-section">
                       <label for="emailInput" class="form-label">Your email</label>
                       <input type="email" class="form-control banner__ticket-form__input" id="emailInput" placeholder="Enter your email" />
                     </div>
                   </div>
   
-                  <div class="col-12">
+                  <div class="col-12 col-lg-4">
                     <div class="banner__ticket-form__form-section">
                       <label for="payeeInput" class="form-label">Payee code</label>
                       <input type="text" class="form-control banner__ticket-form__input" id="payeeInput" placeholder="Enter your payee code" />
@@ -97,15 +122,15 @@
   
                 <div class="banner__ticket-form__separator"></div>
   
-                <div class="row">
-                  <div class="col-12">
+                <div class="row justify-content-between">
+                  <div class="col-12 col-lg-6">
                     <div class="banner__ticket-form__form-section banner__ticket-form__form-amount">
                       <label for="amountInput" class="form-label">Add the number of tickets</label>
-                      <input type="number" class="form-control banner__ticket-form__input" id="amountInput"" />
+                      <input type="number" min="1" class="form-control banner__ticket-form__input banner__ticket-form__input--amount" id="amountInput"" />
                     </div>
                   </div>
   
-                  <div class="col-12">
+                  <div class="col-12 col-lg-4">
                     <div class="banner__ticket-form__total">
                       <div class="banner__ticket-form__total-top">
                         <p class="banner__ticket-form__total-title">Total</p>
@@ -124,12 +149,19 @@
               </div>
             </div>
           </div>
-    
-          <div class="banner__actions">
-            <a href="#" class="banner__actions-btn banner__actions-buy">Buy BSI</a>
-    
-            <button class="banner__actions-btn banner__actions-exchange">Exchange</button>
+
+          <div class="banner__footer">
+            <div class="banner__footer-note">
+              <p class="banner__footer-note-text">&ast;Tickets will be distributed sequentially from the 1st of April.</p>
+            </div>
+
+            <div class="banner__footer-actions">
+              <a href="#" class="banner__footer-actions-btn banner__footer-actions-buy">Buy BSI</a>
+      
+              <button class="banner__footer-actions-btn banner__footer-actions-exchange">Exchange</button>
+            </div>
           </div>
+    
         </div>
       </section>
   
