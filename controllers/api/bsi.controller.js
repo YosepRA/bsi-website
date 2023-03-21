@@ -1,4 +1,4 @@
-const Price = require('../database/models/price.js');
+const Price = require('../../database/models/price.js');
 // const socket = require('../socket/index.js');
 
 async function pricePoll(io, delay) {
