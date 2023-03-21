@@ -26,7 +26,7 @@ $background-04: rgba(#eeeeee, 0.8);
 @mixin button {
   padding: 0.8rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 18px;
   font-weight: 600;
 }
 
@@ -111,6 +111,10 @@ body {
         border: 6px solid $ticket-outer;
         border-radius: 40px;
 
+        &--desktop {
+          display: none;
+        }
+
         &__title {
           @include DoHyeon();
           font-size: 2rem;
@@ -139,6 +143,10 @@ body {
         border: 6px solid $ticket-outer;
         border-radius: 40px;
 
+        &__header {
+          display: none;
+        }
+
         &__info {
           margin-bottom: 0.5rem;
 
@@ -149,7 +157,7 @@ body {
             border-radius: 14px;
             color: #fff;
             text-align: center;
-            font-weight: 600;
+            font-weight: 500;
           }
 
           &-note {
@@ -219,25 +227,27 @@ body {
       }
     }
 
-    &__actions {
-      &-btn {
-        display: block;
-        width: 100%;
-        text-decoration: none;
-        text-align: center;
-        font-size: 1.1rem;
+    &__footer {
+      &-actions {
+        &-btn {
+          display: block;
+          width: 100%;
+          text-decoration: none;
+          text-align: center;
+          font-size: 1.1rem;
 
-        &:not(:last-child) {
-          margin-bottom: 1.2rem;
+          &:not(:last-child) {
+            margin-bottom: 1.2rem;
+          }
         }
-      }
 
-      &-buy {
-        @include secondary-button();
-      }
+        &-buy {
+          @include secondary-button();
+        }
 
-      &-exchange {
-        @include primary-button();
+        &-exchange {
+          @include primary-button();
+        }
       }
     }
   }
@@ -395,7 +405,6 @@ body {
   }
 
   .notice {
-    // padding: 3rem 0;
     background-color: $background-01;
 
     &__title {
@@ -424,7 +433,6 @@ body {
     }
 
     &__new-user {
-      // margin-bottom: 1.6rem;
       padding: 1rem;
       background-color: $background-01;
       border-radius: 20px;
@@ -475,3 +483,155 @@ body {
 }
 
 /* =============== Breakpoints =============== */
+
+@include media-breakpoint-lg {
+  .dream-concert-event-v2 {
+    .banner {
+      &__ticket {
+        margin-bottom: 1rem;
+
+        & > div {
+          &:nth-of-type(1) {
+            order: 2;
+          }
+
+          &:nth-of-type(2) {
+            order: 1;
+          }
+        }
+
+        &-info {
+          &--mobile {
+            display: none;
+          }
+
+          &--desktop {
+            display: block;
+
+            .banner {
+              &__ticket {
+                &-info-wrapper {
+                  position: relative;
+                  // margin-bottom: 0.2rem;
+                  // padding: 1.2rem 1.4rem;
+                  width: 100%;
+                  height: 100%;
+                  background-color: $ticket-inner;
+                  border: 6px solid $ticket-outer;
+                  border-radius: 40px;
+                }
+
+                &-info {
+                  position: absolute;
+                  top: 120px;
+                  left: -100px;
+                  width: 440px;
+                  background-color: transparent;
+                  border: none;
+                  transform: rotate(90deg);
+
+                  &__title {
+                    margin-bottom: 0;
+                    font-size: 2.6rem;
+                    line-height: 2.6rem;
+                  }
+
+                  &__subtitle {
+                    font-size: 1.4rem;
+                    letter-spacing: 3px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &-form {
+          &__header {
+            display: block;
+
+            &-title {
+              margin-bottom: -8px;
+              @include DoHyeon();
+              text-transform: uppercase;
+              font-size: 3rem;
+            }
+
+            &-subtitle {
+              margin-bottom: -6px;
+              font-size: 1.6rem;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+
+            &-date {
+              font-weight: 600;
+            }
+          }
+
+          &__info {
+            &-uid {
+              width: fit-content;
+              padding-left: 1.3rem;
+              padding-right: 1.3rem;
+              font-size: 1.1rem;
+            }
+          }
+
+          &__form {
+            &-section {
+              margin-bottom: 0;
+            }
+          }
+
+          &__input {
+            &-help {
+              font-size: 0.6rem;
+            }
+
+            &--amount {
+              width: 180px;
+              text-align: center;
+              font-size: 1.8rem;
+            }
+          }
+
+          &__total {
+            &-top {
+              flex-direction: column;
+            }
+
+            &-dollar {
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      &__footer {
+        display: flex;
+        justify-content: space-between;
+
+        &-note {
+          padding-left: 1.4rem;
+        }
+
+        &-actions {
+          &-btn {
+            display: inline-block;
+            width: 180px;
+
+            &:not(:last-child) {
+              margin-bottom: 0;
+            }
+          }
+
+          &-exchange {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
