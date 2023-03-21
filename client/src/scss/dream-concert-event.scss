@@ -230,6 +230,9 @@ section.ticket__metaverse{
   flex-direction: row;
   margin-left: 3rem;
 }
+.powered__BY{
+  margin-left: 2rem;
+}
 .big__text__start {
   font-size: 1.5rem;
   font-weight: 600;
@@ -245,6 +248,9 @@ section.ticket__metaverse{
   margin-bottom: 2rem;
   margin-left: 1rem;
   
+}
+.left__content{
+  margin-left: 4rem;
 }
 .text__powered__by{
   font-weight: 700;
@@ -274,20 +280,20 @@ section.ticket__metaverse{
 // }
 
 .logo__partner{
-  margin-left: 4rem;
+  // margin-left: 4rem;
   width: auto;
   height: 55px;
 }
 
-.logo__digifinex{
-  width: auto;
-  height: 55px;
-  margin-left: 1rem;
-}
+// .logo__digifinex{
+//   width: auto;
+//   height: 55px;
+//   margin-left: 1rem;
+// }
 
 .concert__start{
   float: right;
-  display: flex;
+  display: inline;
   // margin-left: 2rem;
 }
 .text__start{
@@ -533,143 +539,244 @@ section.ticket__metaverse{
   width: 100%;
 }
 
-@media (min-width:320px)  { 
-  /* smartphones, iPhone, portrait 480x320 phones */ 
-  .card__ticket__metaverse{
-    width: 100%;
-  }
-  .box-right{
-    border-radius: 30px;
-    border: 0.4rem solid  #D0946D;
-    transform: none;
-    width: 200px;
-    height: 200px;
-    margin-top: 7rem;
-    margin-left: -5rem;
-  }
+// @media (min-width:320px)  { 
+//   /* smartphones, iPhone, portrait 480x320 phones */ 
+//   .card__ticket__metaverse{
+//     width: 100%;
+//   }
+//   .box-right{
+//     border-radius: 30px;
+//     border: 0.4rem solid  #D0946D;
+//     transform: none;
+//     width: 200px;
+//     height: 200px;
+//     margin-top: 7rem;
+//     margin-left: -5rem;
+//   }
   
-  .box-left{
-    border-radius: 30px;
-    border: 0.4rem solid  #D0946D;
-    height: 400px;
-    background-color: #E9DECB;
-      width: 400px;
-      // height: 400px;
-  }
-  .text-image{
-    width: 100px;
-    height: auto;
-    margin-bottom: 1.5rem;
-    margin-left: 1rem;
-  }
+//   .box-left{
+//     border-radius: 30px;
+//     border: 0.4rem solid  #D0946D;
+//     height: 400px;
+//     background-color: #E9DECB;
+//       width: 400px;
+//       // height: 400px;
+//   }
+//   .text-image{
+//     width: 100px;
+//     height: auto;
+//     margin-bottom: 1.5rem;
+//     margin-left: 1rem;
+//   }
   
-  .card{
-    border-radius: 3rem;
-    border: 0.9rem solid;
-  }
-  // .ticket_card{
-  //   flex-direction: column;
-  //   flex-wrap: wrap;
+//   .card{
+//     border-radius: 3rem;
+//     border: 0.9rem solid;
+//   }
+//   // .ticket_card{
+//   //   flex-direction: column;
+//   //   flex-wrap: wrap;
     
-  // }
-  .card-body{
-    background-color: #E9DECB;
-    border-radius: 2rem;
-  }
-  .discount__custom{
-    background-color: #000000b0;
-    color: #FFF;
-    height: 25px;
-    font-weight: 700;
-    font-size: 1rem;
-    width: 120px;
-    text-align: center;
-    margin-left: 1rem;
+//   // }
+//   .card-body{
+//     background-color: #E9DECB;
+//     border-radius: 2rem;
+//   }
+//   .discount__custom{
+//     background-color: #000000b0;
+//     color: #FFF;
+//     height: 25px;
+//     font-weight: 700;
+//     font-size: 1rem;
+//     width: 120px;
+//     text-align: center;
+//     margin-left: 1rem;
    
-    border-radius: 10px;
-  }
-  .card-title{
-    font-weight: 700;
-    font-size: 2rem;
-    margin-left: 3rem;
-    margin-top: 1.5rem;
+//     border-radius: 10px;
+//   }
+//   .card-title{
+//     font-weight: 700;
+//     font-size: 2rem;
+//     margin-left: 3rem;
+//     margin-top: 1.5rem;
     
-  }
-  .card-text{
-    font-weight: 700;
-    font-size: 1rem;
-    margin-left: 3rem;
-  }
-}
-@media (min-width:481px)  {
-   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
-   .card__ticket__metaverse{
-    width: 100%;
-  }
-  .box-right{
+//   }
+//   .card-text{
+//     font-weight: 700;
+//     font-size: 1rem;
+//     margin-left: 3rem;
+//   }
+// }
+// @media (min-width:481px)  {
+//    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+//    .card__ticket__metaverse{
+//     width: 100%;
+//   }
+//   .box-right{
+//     border-radius: 30px;
+//     border: 0.4rem solid  #D0946D;
+//     transform: rotate(90deg);
+//     width: 20vw;
+//     height: auto;
+//     margin-top: 7rem;
+//     margin-left: -5rem;
+//   }
+  
+//   .box-left{
+//     border-radius: 30px;
+//     border: 0.4rem solid  #D0946D;
+//     height: 400px;
+//     background-color: #E9DECB;
+//       width: 80vh;
+//       height: 400px;
+//   }
+//   .text-image{
+//     width: 100px;
+//     height: auto;
+//     margin-bottom: 1.5rem;
+//     margin-left: 1rem;
+//   }
+  
+//   .card{
+//     border-radius: 3rem;
+//     border: 0.9rem solid;
+//   }
+//   // .ticket_card{
+//   //   flex-direction: column;
+//   //   flex-wrap: wrap;
+    
+//   // }
+//   .card-body{
+//     background-color: #E9DECB;
+//     border-radius: 2rem;
+//   }
+//   .discount__custom{
+//     background-color: #000000b0;
+//     color: #FFF;
+//     height: 25px;
+//     font-weight: 700;
+//     font-size: 1rem;
+//     width: 120px;
+//     text-align: center;
+//     margin-left: 1rem;
+   
+//     border-radius: 10px;
+//   }
+//   .card-title{
+//     font-weight: 700;
+//     font-size: 2rem;
+//     margin-left: 3rem;
+//     margin-top: 1.5rem;
+    
+//   }
+//   .card-text{
+//     font-weight: 700;
+//     font-size: 1rem;
+//     margin-left: 3rem;
+//   }
+//   }
+// @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+// @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+// @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+// @media (max-width:1281px) {
+//    /* hi-res laptops and desktops */ 
+   
+
+// @media (max-width:641px) {
+//   /* hi-res laptops and desktops */ 
+//   .box-right {
+//    display: none;
+//  }
+//  .box-left{
+//    border-radius: 30px;
+//    border: 0.4rem solid  #D0946D;
+//    height: 400px;
+//    background-color: #E9DECB;
+//      width: 80vh;
+//      height: 400px;
+//  }
+// }
+
+@media (max-width:1920px){
+  /* hi-res laptops and desktops */ 
+  .box-right {
     border-radius: 30px;
-    border: 0.4rem solid  #D0946D;
+    border: 0.4rem solid #d0946d;
     transform: rotate(90deg);
-    width: 20vw;
+    width: 21vw;
     height: auto;
     margin-top: 7rem;
-    margin-left: -5rem;
+    margin-left: -1rem;
   }
-  
-  .box-left{
+ .box-left{
+   border-radius: 30px;
+   border: 0.4rem solid  #D0946D;
+   height: 400px;
+   background-color: #E9DECB;
+     width: 80vh;
+     height: 400px;
+ }
+ .day__custom__count {
+   display: flex;
+   flex-direction: row;
+   margin-left: -2rem;
+}
+.right__content{
+ margin-left: -4rem;
+}
+}
+
+
+@media (min-width:1260px){
+  /* hi-res laptops and desktops */ 
+  .box-right {
     border-radius: 30px;
-    border: 0.4rem solid  #D0946D;
-    height: 400px;
-    background-color: #E9DECB;
-      width: 80vh;
-      height: 400px;
-  }
-  .text-image{
-    width: 100px;
+    border: 0.4rem solid #d0946d;
+    transform: rotate(90deg);
+    width: 32vw;
     height: auto;
-    margin-bottom: 1.5rem;
-    margin-left: 1rem;
-  }
-  
-  .card{
-    border-radius: 3rem;
-    border: 0.9rem solid;
-  }
-  // .ticket_card{
-  //   flex-direction: column;
-  //   flex-wrap: wrap;
-    
-  // }
-  .card-body{
-    background-color: #E9DECB;
-    border-radius: 2rem;
-  }
-  .discount__custom{
-    background-color: #000000b0;
-    color: #FFF;
-    height: 25px;
-    font-weight: 700;
-    font-size: 1rem;
-    width: 120px;
-    text-align: center;
-    margin-left: 1rem;
-   
-    border-radius: 10px;
-  }
-  .card-title{
-    font-weight: 700;
-    font-size: 2rem;
-    margin-left: 3rem;
-    margin-top: 1.5rem;
-    
-  }
-  .card-text{
-    font-weight: 700;
-    font-size: 1rem;
-    margin-left: 3rem;
-  }
-  }
-@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+    margin-top: 7rem;
+    margin-left: -1rem;
+}
+ .box-left{
+   border-radius: 30px;
+   border: 0.4rem solid  #D0946D;
+   height: 400px;
+   background-color: #E9DECB;
+     width: 80vh;
+     height: 400px;
+ }
+ .day__custom__count {
+  display: flex;
+  flex-direction: row;
+  margin-left: -4rem;
+}
+.right__content {
+  margin-left: -7rem;
+}
+}
+@media (min-width:2100px){
+  /* hi-res laptops and desktops */ 
+  .box-right {
+   width: 20vw;
+}
+ .box-left{
+   border-radius: 30px;
+   border: 0.4rem solid  #D0946D;
+   height: 400px;
+   background-color: #E9DECB;
+     width: 80vh;
+     height: 400px;
+ }
+ .day__custom__count {
+  display: flex;
+  flex-direction: row;
+  margin-left: -4rem;
+}
+.right__content {
+  margin-left: -7rem;
+}
+}
+
+
+
