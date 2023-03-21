@@ -22,7 +22,7 @@ const pollDelay = process.env.POLL_DELAY || 180000;
 
 /* ======================= MongoDB Connection ======================= */
 
-// mongoConnect(mongoUrl);
+mongoConnect(mongoUrl);
 
 /* ======================= View Engine Setup ======================= */
 
