@@ -15,27 +15,51 @@
 }
 
 .ticket__metaverse{
-  background-image: url('/img/dream-concert-28-poster.png');
+  background-image: url('/img/Background.jpg');
   background-size: cover;
   background-position: center;
   height: fit-content;
   padding-bottom: 100px;
 }
 
-.ticket__metaverse{
+// .ticket__metaverse{
+//   width: 100%;
+//   height: 100%;
+//   background-color: #EEEEEE;
+//   opacity: 0.3;
+// }
+
+.card__ticket__metaverse{
   width: 100%;
-  height: 100%;
-  background-color: #EEEEEE;
-  opacity: 0.3; 
-  background-size: cover;
+}
+.box-right{
+  border-radius: 30px;
+  border: 0.4rem solid  #D0946D;
+  transform: rotate(90deg);
+  width: 20vw;
+  height: auto;
+  margin-top: 7rem;
+  margin-left: -5rem;
+}
+
+.box-left{
+  border-radius: 30px;
+  border: 0.4rem solid  #D0946D;
+  height: 400px;
+  background-color: #E9DECB;
+    width: 80vh;
+    height: 400px;
 }
 .text-image{
   width: 100px;
   height: auto;
+  margin-bottom: 1.5rem;
+  margin-left: 1rem;
 }
+
 .card{
   border-radius: 3rem;
-  border: 0.9rem #D0946D solid;
+  border: 0.9rem solid;
 }
 // .ticket_card{
 //   flex-direction: column;
@@ -46,17 +70,90 @@
   background-color: #E9DECB;
   border-radius: 2rem;
 }
+.discount__custom{
+  background-color: #000000b0;
+  color: #FFF;
+  height: 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 120px;
+  text-align: center;
+  margin-left: 1rem;
+ 
+  border-radius: 10px;
+}
 .card-title{
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-left: 3rem;
+  margin-top: 1.5rem;
   
 }
 .card-text{
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-left: 3rem;
 }
+
+//===== button add =====///
+
+// .iput__number__count{
+//   background-color: #FFF;
+//   width: 200px;
+// }
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 200px;
+  // height: 70px;
+  background-color: #FFF;
+  border-radius: 15px;
+  justify-content: center;
+  margin-left: 3rem;
+}
+
+.input-group .form-control {
+  flex: 1;
+  margin-left: -5px;
+  margin-right: -5px;
+  border: #FFF;
+  text-align: center;
+}
+
+.input-group .btn {
+  width: 33.33%;
+  border-radius: 15px;
+}
+
+.input-group #minus-btn {
+  border-right: none;
+  background-color: #EEEEEE;
+  width: 50px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  height: 50px;
+  color: black;
+  margin-right: -3px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: #FFF;
+}
+
+.input-group #plus-btn {
+  border-left: none;
+  background-color: #EEEEEE;
+  width: 50px;
+    font-size: 1.8rem;
+    color: black;
+    font-weight: 600;
+    height: 50px;
+    margin-left: -5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: #FFF;
+}
+////==-=======////
 
 section.ticket__metaverse{
   padding-top: 20px;
@@ -76,8 +173,8 @@ section.ticket__metaverse{
 }
 
 .input__ticket{
-  font-weight: 300;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 0.89rem;
   display: flex;
   flex-direction: row;
   margin-left: 3rem;
@@ -98,6 +195,7 @@ section.ticket__metaverse{
 
 .button__exchange{
   float: right;
+  margin-right: 9rem;
 }
 .btn__BUY{
   background-color: #FFF;
@@ -105,32 +203,69 @@ section.ticket__metaverse{
   height: 50px;
   border-radius: 1rem;
   font-weight: 600;
+  border: #51B2AA 1px solid;
+  color: #51B2AA;
 }
 .btn__Exchange{
   background-color: #51B2AA;
   width: 200px;
   height: 50px;
   border-radius: 1rem;
+  color: #FFF;
+  border:#FFF;
   font-weight: 600;
 }
 
 // ========Powered By=========//
 
 .powered{
-  padding-top:120px;
+  padding-top:100px;
   background: #EEEEEE;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
-
+.header__custom{
+  // font-weight: 300;
+  // font-size: 0.89rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3rem;
+}
+.big__text__start {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.text__date__start{
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-left: 2rem;
+}
 .text__powered{
   // font-size: 1rem;
   // font-weight: 700;
   margin-bottom: 2rem;
   margin-left: 1rem;
+  
 }
-.text__powered_by{
-  font-weight: 500;
-  font-size: 1rem;
+.text__powered__by{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.number__custom{
+  width: 90px;
+  height: 45px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background-color: #51B2AA;
+  color: #FFF;
+}
+.space__line{
+  font-size: 1.8rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 600;
 }
 
 // .logo__custom{
@@ -163,35 +298,95 @@ section.ticket__metaverse{
   margin-left: 3rem;
 }
 
+.day__custom__count{
+  // font-weight: 300;
+  // font-size: 0.89rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3rem;
+}
+.day__custom__ready{
+  width: 90px;
+  height: 45px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 0.89rem;
+  font-weight: 600;
+  margin-left: 4.5rem;
+  // background-color: #51B2AA;
+  color: black;
+}
+.day__custom__ready__1{
+  width: 90px;
+  height: 45px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 0.89rem;
+  font-weight: 600;
+  margin-left: 1.2rem;
+  // background-color: #51B2AA;
+  color: black;
+}
 
-//=======Page Number======//
+//=======Page Number 1======//
 .number__tag{
   display: inline;
   display: flex;
 }
 .page__number{
-  padding-top: 120px;
-  padding-bottom: 100px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
-.number__1{
-  width: 120px;
-  height: 80px;
+.number__custom__1{
+  width: 90px;
+  height: 60px;
   text-align: center;
   background-color: #51B2AA;
-  border-radius: 50%;
-  margin-right: -2.5rem;
+  border-radius: 60%;
+  // margin-right: -2.5rem;
   backface-visibility: hidden;
 
 }
 
-.text__number{
+.text__number__custom{
   background-color: #EEEEEE;
-  height: 80px;
-  width: 55rem;
-  margin-left: -1.5rem;
+  height: 60px;
+  width: 700px;
+  margin-left: -1.8rem;
   border-radius: 40px;
 }
+.number__custom__text{
+  margin-left: 3rem;
+}
+///=======Number 2=======///
+.page__line{
+  margin-top: 3rem;
+}
+.number__custom__2{
+  width: 70px;
+  height: 60px;
+  text-align: center;
+  background-color: #51B2AA;
+  border-radius: 60%;
+  // margin-right: -2.5rem;
+  backface-visibility: hidden;
+
+}
+
+.text__number__custom__2{
+  background-color: #EEEEEE;
+  height: 60px;
+  width: 500px;
+  margin-left: -1.8rem;
+  border-radius: 40px;
+}
+.number__custom__text__2{
+  margin-left: 3rem;
+}
+
+///======Number 3======////
+
 
 .custom__number{
   font-size: 1.5rem;
@@ -235,7 +430,9 @@ section.ticket__metaverse{
   width: 200px;
   height: 50px;
   border-radius: 1rem;
+  border: #FFF;
   font-weight: 600;
+  color: #FFF;
 }
 
 ///====== Section page about Dream concert =======////
@@ -262,27 +459,217 @@ section.ticket__metaverse{
 //=======/////
 
 .page__reminder{
-  padding-top: 120px;
-  padding-bottom: 120px ;
+  padding-top: 150px;
+  padding-bottom: 150px ;
+  background-color: #EEEEEE;
 }
-.custom_Frame1{
+.img-fluid{
   width: 400px;
   height: auto;
+  margin-top: 1.5rem;
 }
 
-.custom_Frame2{
-  width: 600px;
-  height: auto;
-}
-
-.text__notice{
-  font-size: 4rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
+.text__before__image{
+  font-weight: 600;
 }
 
 .text__small__notice{
   font-size: 2.5rem;
+  font-weight: 700;
+}
+.rules__to__buy{
+  background-color: #FFF;
+  border-radius: 20px;
+  margin-left: 5rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.content__1{
+  font-size: 0.89rem;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+.title__of__content{
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.rules__{
+  margin-left: 10px;
+}
+.content__2{
+  font-size: 0.89rem;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+.title__of__content_2{
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.rules__to__buy__1{
+  margin-top: 2rem;
+  background-color: #FFF;
+  border-radius: 20px;
+  margin-left: 5rem;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  border: 1px #51B2AA solid;
+}
+.content__3{
+  margin-left: 2rem;
+  color: black;
   font-weight: 600;
 }
 
+/////=====Footer====////
+
+.page__footer{
+  background-color: #02010172;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #FFF;
+  width: 100%;
+}
+
+@media (min-width:320px)  { 
+  /* smartphones, iPhone, portrait 480x320 phones */ 
+  .card__ticket__metaverse{
+    width: 100%;
+  }
+  .box-right{
+    border-radius: 30px;
+    border: 0.4rem solid  #D0946D;
+    transform: none;
+    width: 200px;
+    height: 200px;
+    margin-top: 7rem;
+    margin-left: -5rem;
+  }
+  
+  .box-left{
+    border-radius: 30px;
+    border: 0.4rem solid  #D0946D;
+    height: 400px;
+    background-color: #E9DECB;
+      width: 400px;
+      // height: 400px;
+  }
+  .text-image{
+    width: 100px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+  }
+  
+  .card{
+    border-radius: 3rem;
+    border: 0.9rem solid;
+  }
+  // .ticket_card{
+  //   flex-direction: column;
+  //   flex-wrap: wrap;
+    
+  // }
+  .card-body{
+    background-color: #E9DECB;
+    border-radius: 2rem;
+  }
+  .discount__custom{
+    background-color: #000000b0;
+    color: #FFF;
+    height: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 120px;
+    text-align: center;
+    margin-left: 1rem;
+   
+    border-radius: 10px;
+  }
+  .card-title{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    
+  }
+  .card-text{
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 3rem;
+  }
+}
+@media (min-width:481px)  {
+   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+   .card__ticket__metaverse{
+    width: 100%;
+  }
+  .box-right{
+    border-radius: 30px;
+    border: 0.4rem solid  #D0946D;
+    transform: rotate(90deg);
+    width: 20vw;
+    height: auto;
+    margin-top: 7rem;
+    margin-left: -5rem;
+  }
+  
+  .box-left{
+    border-radius: 30px;
+    border: 0.4rem solid  #D0946D;
+    height: 400px;
+    background-color: #E9DECB;
+      width: 80vh;
+      height: 400px;
+  }
+  .text-image{
+    width: 100px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+  }
+  
+  .card{
+    border-radius: 3rem;
+    border: 0.9rem solid;
+  }
+  // .ticket_card{
+  //   flex-direction: column;
+  //   flex-wrap: wrap;
+    
+  // }
+  .card-body{
+    background-color: #E9DECB;
+    border-radius: 2rem;
+  }
+  .discount__custom{
+    background-color: #000000b0;
+    color: #FFF;
+    height: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 120px;
+    text-align: center;
+    margin-left: 1rem;
+   
+    border-radius: 10px;
+  }
+  .card-title{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    
+  }
+  .card-text{
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 3rem;
+  }
+  }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
