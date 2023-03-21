@@ -252,15 +252,15 @@ module.exports = {
           ],
           img: 'portrait-danniel.png',
         },
-        {
-          id: 'irfan',
-          name: 'Irfan Mulia',
-          title: 'Advisor',
-          profile: [
-            'Irfan Mulia memulai pendidikan S1 dan S2 Administrasi Dalam Negeri dan bekerja sebagai Pegawai Negeri Sipil Eselon IV di Kementerian Dalam Negeri. Pernah bekerja sebagai Direktur di beberapa perusahaan bursa di Indonesia. Dengan pengalamannya di politik pemerintahan, pengamat blockchain, dan traders, ia telah bekerjasama dengan banyak pihak untuk melegalkan Cryptocurrency di Indonesia. Saat ini beliau membantu Kadin Kota Bandung dalam menginkubasi developer crypto yang tergabung dalam Singapore Coinstore Global Exchange dan bekerja sebagai Businness Development Executive di Singapore Coinstore Global Exchange serta menjabat sebagai penasihat BSI Foundation.',
-          ],
-          img: 'portrait-irfan.png',
-        },
+        // {
+        //   id: 'irfan',
+        //   name: 'Irfan Mulia',
+        //   title: 'Advisor',
+        //   profile: [
+        //     'Irfan Mulia memulai pendidikan S1 dan S2 Administrasi Dalam Negeri dan bekerja sebagai Pegawai Negeri Sipil Eselon IV di Kementerian Dalam Negeri. Pernah bekerja sebagai Direktur di beberapa perusahaan bursa di Indonesia. Dengan pengalamannya di politik pemerintahan, pengamat blockchain, dan traders, ia telah bekerjasama dengan banyak pihak untuk melegalkan Cryptocurrency di Indonesia. Saat ini beliau membantu Kadin Kota Bandung dalam menginkubasi developer crypto yang tergabung dalam Singapore Coinstore Global Exchange dan bekerja sebagai Businness Development Executive di Singapore Coinstore Global Exchange serta menjabat sebagai penasihat BSI Foundation.',
+        //   ],
+        //   img: 'portrait-irfan.png',
+        // },
         {
           id: 'kelvin',
           name: 'Kelvin Chandra',

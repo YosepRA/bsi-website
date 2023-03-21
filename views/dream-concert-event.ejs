@@ -24,362 +24,241 @@
 
 <%- include('partials/header.ejs') %>
   <body class="dream-concert-event <%= lang %>">
-    <main class="main-container">
-      <section class="banner">
-        <div class="banner__image-container">
-          <img
-            src="/img/main-banner.png"
-            alt="Dream Concert Banner"
-            class="banner__image"
-          />
-
-          <div class="dropdown lang-dropdown">
-            <a class="btn dropdown-toggle lang-dropdown__control" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="lang-dropdown__flag">
-                <img src="/img/<%= currentLangFlagName %>" alt="<%= `${currentLangText} Flag` %>" class="lang-dropdown__flag-img" />
-              </span>
-  
-              <span class="lang-dropdown__text"><%= currentLangText %></span>
-            </a>
-  
-            <ul class="dropdown-menu lang-dropdown__menu">
-              <li>
-                <a class="dropdown-item lang-dropdown__item" href="/en/<%= currentPage %>">
-                  <span class="lang-dropdown__flag">
-                    <img src="/img/en-lang-flag.png" alt="United States Flag" class="lang-dropdown__flag-img" />
-                  </span>
-                  English
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item lang-dropdown__item" href="/id/<%= currentPage %>">
-                  <span class="lang-dropdown__flag">
-                    <img src="/img/id-lang-flag.png" alt="Indonesia Flag" class="lang-dropdown__flag-img" />
-                  </span>
-                  Indonesian
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/kr/<%= currentPage %>">
-                  <span class="lang-dropdown__flag">
-                    <img src="/img/kr-lang-flag.png" alt="South Korea Flag" class="lang-dropdown__flag-img" />
-                  </span>
-                  Korean
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-  
-      <!-- <section class="web-actions">
-        <p class="web-actions__title">Visit BSI Website</p>
-  
-        <div class="web-actions__buttons">
-          <a
-            href="https://enbsi.com/en/home"
-            target="_blank"
-            rel="noreferrer"
-            class="web-actions__btn"
-          >
-            <span class="web-actions__flag">
-              <img
-                src="/img/en-lang-flag.png"
-                alt="US Flag"
-                class="web-actions__flag-img"
-              />
-            </span>
-            EN
-          </a>
-  
-          <a
-            href="https://enbsi.com/id/home"
-            target="_blank"
-            rel="noreferrer"
-            class="web-actions__btn"
-          >
-            <span class="web-actions__flag">
-              <img
-                src="/img/id-lang-flag.png"
-                alt="Indonesian Flag"
-                class="web-actions__flag-img"
-              />
-            </span>
-            ID
-          </a>
-  
-          <a
-            href="https://enbsi.com/kr/home"
-            target="_blank"
-            rel="noreferrer"
-            class="web-actions__btn"
-          >
-            <span class="web-actions__flag">
-              <img
-                src="/img/ko-lang-flag.png"
-                alt="Korean Flag"
-                class="web-actions__flag-img"
-              />
-            </span>
-            KO
-          </a>
-        </div>
-      </section> -->
-  
-      <section class="date">
-        <p class="date__text">2023/5/27</p>
-      </section>
-  
-      <section class="intro-video">
-        <!-- <video autoplay loop muted>
-          <source src="/video/DreamConcert.mp4" type="video/mp4" />
-        </video> -->
-  
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/kD3wJE55wkk?autoplay=1&mute=1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          class="intro-video__iframe"
-        ></iframe>
-      </section>
-  
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <section class="ticket">
-              <h2 class="ticket__title page-title">Ticket</h2>
-  
-              <article class="ticket__panel">
-                <div class="ticket__digifinex">
-                  <img
-                    src="/img/digifinex-white.png"
-                    alt="Digifinex"
-                    class="ticket__digifinex-logo"
-                  />
-                </div>
-  
-                <div class="ticket__info">
-                  <p class="ticket__info-primary ticket__info-target">
-                    <span class="ticket__info-title">Target: </span>
-                    <span class="ticket__info-content">
-                      Customers purchasing <i>DIGIFINEX / BSI</i> (50% Discount)
-                    </span>
-                  </p>
-  
-                  <p class="ticket__info-primary ticket__info-schedule">
-                    <span class="ticket__info-title">Schedule: </span>
-                    <span class="ticket__info-content">
-                      From March 15th to April 30th
-                    </span>
-                  </p>
-  
-                  <p class="ticket__info-notes">
-                    After purchasing BSI, participate in the
-                    <i>DIGIFINEX</i> ticket Exchange.
-                  </p>
-  
-                  <p class="ticket__info-notes">
-                    After purchasing a ticket, enter the league firm and expected
-                    number to close the picture.
-                  </p>
-                </div>
-  
-                <div class="ticket__actions">
-                  <a
-                    href="https://www.digifinex.com/en-ww/trade/USDT/BSI"
-                    class="ticket__actions-btn ticket__actions-btn--buy"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Buy BSI
-                  </a>
-                  <a
-                    href="https://t.me/CFBSI"
-                    class="ticket__actions-btn ticket__actions-btn--coming"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Ticket Inquiry
-                  </a>
-                </div>
-              </article>
-            </section>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col"></div>
-        </div>
-      </div> -->
-  
-      <section class="partner page-section">
-        <div class="container">
+      <section class="ticket__metaverse ">
+        <div class="container metaverse_wrap">
           <div class="row">
             <div class="col">
-              <h2 class="partner__title page-title">Partner</h2>
+              <img src="/img/digifinex.svg" alt="" class="image-banner">
             </div>
           </div>
-  
-          <div class="row justify-content-center">
-            <div class="col-6 col-xl-4 partner__col partner__col--viaje">
-              <img
-                src="/img/viaje-logo-white.png"
-                alt=""
-                class="partner__logo partner__logo--viaje"
-              />
-            </div>
-            <div class="col-6 col-xl-4 partner__col partner__col--bsi">
-              <img
-                src="/img/bsi-logo-white.png"
-                alt=""
-                class="partner__logo partner__logo--bsi"
-              />
-            </div>
-            <div class="col-12 partner__col partner__col--digifinex">
-              <img
-                src="/img/digifinex-white.png"
-                alt=""
-                class="partner__logo partner__logo--digifinex"
-              />
+          <div class="row ">
+            <!-- <div class="backround__white">
+            </div> -->
+            <div class="col-md-12 ticket_card ">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">29TH DREAM CONCERT IN BUSAN</h5>
+                  <p class="card-text">METAVERSE TICKET.</p>
+                  <p class="card-text">May 27 th, 2023.</p>
+                  <div class="row">
+                    <div class="col-xl-12">
+                      <div class="text__small">
+                        <p class="card_small_text">Purchasing BSI at</p>
+                        <img src="/img/digifinex.svg" alt="" class="text-image">
+                        <p class="discount__text">50% Discount</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="input__ticket">
+                        <p class="ml-2 text__input">Your email</p>
+                        <input  type="text"  class="form-control" placeholder="Enter your email">
+
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
             </div>
           </div>
+          <div class="button mt-4">
+            <div class="row button__exchange">
+                <div class="col ">
+                    <button type="button" class="btn__BUY" data-bs-toggle="modal" data-bs-target="#BUY">
+                        <span data-feather="plus"></span>
+                        Buy BSI
+                    </button>
+                    <button type="button" class="btn__Exchange" data-bs-toggle="modal" data-bs-target="#Exchange">
+                      <span data-feather="plus"></span>
+                      Exchange
+                  </button>
+                </div>
+            </div>
         </div>
       </section>
-  
-      <div class="container">
+      
+    
+     <section class="powered">
         <div class="row">
-          <div class="col">
-            <section class="about-bsi page-section">
-              <h2 class="about__title page-title">About BSI</h2>
-  
-              <div class="about__text">
-                <p>
-                  BSI Token is a partner of the 29th Dream Concert, and the BSI
-                  project is an eco-friendly project that is part of its plan to
-                  create eco-friendly performances without paper tickets, and it
-                  is agreed to work with Dream Concert every year in the future.
-                </p>
-  
-                <p>
-                  Dream Concert is in its 29th year and is famous for being the
-                  largest among KPOP concerts.<br />
-                  This Dream Concert will be held as a concert for Korea's Busan
-                  Expo, and it is expected that more popular teams will appear
-                  than ever.
-                </p>
-  
-                <p>
-                  The BSI Foundation has global online live broadcasting rights
-                  for Dream Concert, and it is attracting attention from global
-                  KPOP fans by allowing them to intuitively watch live
-                  performances in the metaverse environment.<br />
-                  We are currently preparing for the second concert in October
-                  2023, and we want to reduce paper tickets for the environment
-                  through real-time online broadcasting at least twice a year so
-                  that fans around the world can enjoy it at the same time.
-                </p>
-  
-                <p>
-                  In addition, the BSI project is carrying out eco-friendly
-                  programs in tourist destinations around the world, and
-                  representatively, electric motorcycles in Bali, Indonesia; a
-                  project to reduce environmental pollution through electric
-                  bicycles is currently in operation and plans to carry out
-                  projects in Jeju Island in Korea, Cebu in the Philippines, and
-                  Pattaya in Thailand in 2023.
-                </p>
-  
-                <p>
-                  The BSI Foundation is designed to reflect the sales generated
-                  both online and offline in token transactions on the exchange so
-                  that the sales of the ecosystem work on the exchange. Through
-                  this, the sales of the ecosystem are made in the direction of
-                  maintaining the token price.
-                </p>
-  
-                <p>
-                  In the case of the Dream Concert, the sales generated from early
-                  bird and main ticket purchases are also planned to be reflected
-                  on the exchange.
-                </p>
-  
-                <p>
-                  However, above all, exchanging tickets through direct token
-                  purchase is the cheapest purchase method.
-                </p>
-  
-                <p>
-                  We hope that many people can enjoy KPOP through the Dream
-                  Concert Metaverse live performances and enjoy KPOP performances
-                  at a cheaper price by purchasing tokens.
-                </p>
+        
+          <div class="col-14 col-lg-6 logo__custom">
+            <div class="text__powered">
+              <h2 class="text__powered_by">POWERED BY</h2>
+            </div>
+            <div class="logo__custom">
+              <img src="/img/Digifinex Logo.svg" alt="" class="logo__digifinex">
+              <img src="/img/Viaje Logo.svg" alt="" class="logo__partner">
+              <img src="/img/Bsi Logo.svg" alt="" class="logo__partner">
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 concert__start">
+            <div class="text__start">
+              <h1>Concert Starts in</h1>
+            </div>
+            <div class="date__concert">
+              <p>May 27th, 2023</p>
+            </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="date__reminder d-inline">
+                      <p class="d-inline">124<p>
+                      <p class="d-inline">:</p>
+                      <p class="d-inline">08</p>
+                      <p class="d-inline">:</p>
+                      <p class="d-inline">24</p>
+                      <p class="d-inline">:</p>
+                      <p class="d-inline">43</p>
+                  </div>
+                </div>
               </div>
-            </section>
+            </div>
+          </div>
+        </div>
+     </section>
+
+     <section class="page__number">
+      <div class="container">
+        <div class="row tex__1">
+          <div class="col-lg-7 col-12 number__tag">
+            <div class="number__1">
+              <p class="custom__number">1</p>
+            </div>
+            <div class="text__number">
+             <p class="custom__text">Purchase according to the fluctuating BSI Price</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="row text__2">
+          <div class="col-lg-8 col-12 number__tag">
+            <div class="number__1">
+              <p class="custom__number">2</p>
+            </div>
+            <div class="text__number">
+             <p class="custom__text">Digifinex Event Scheduled on March 24th - April 25th</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="row text__3">
+          <div class="col-lg-12 col-12 number__tag">
+            <div class="number__1">
+              <p class="custom__number">3</p>
+            </div>
+            <div class="text__number">
+             <p class="custom__text">Event tickets would be sent weekly after the participation</p> 
+            </div>
           </div>
         </div>
       </div>
-  
+      
+     </section>
+
+     <section class="intro-video">
       <div class="container">
-        <div class="row">
-          <div class="col">
-            <section class="notice page-section">
-              <h2 class="notice__title page-title">Notice</h2>
-  
-              <h3 class="notice__procedure-title">Ticket Redemption Procedure</h3>
-  
-              <div class="notice__procedure-image">
-                <img
-                  src="/img/ticket-procedure-4-3.png"
-                  alt="Ticket Redemption Procedure"
-                />
+        <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/kD3wJE55wkk?autoplay=1&mute=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        class="intro-video__iframe"
+      >
+    </iframe>
+      </div>
+      <!-- <video autoplay loop muted>
+        <source src="/video/DreamConcert.mp4" type="video/mp4" />
+      </video> -->
+
+      
+    </section>
+
+    <section  class="about__dream__concert container">
+      <div class="row company-profile__row">
+
+        <div class="col-12 col-lg-8 company-profile__col">
+          <div class="company-profile__info">
+            <h2 class=" About__title">What is Dream Concert?</h2>
+              <p class="dream__concert__about">
+
+                Dream Concert is Korea’s longest-running, largest-scale performance by top K-POP stars This is known to be the K-POP concert that fans all over the world are looking forward to the most. This year’s Dream Concert is operating in a Metaverse world, in a real-time online live-streaming way wherein all K-POP fans around the world could participate and enjoy at the same time. Come and join our concert with your avatar! Don’t miss this chance! See you up there.</p> 
+                
+                <div class="col ">
+                  <button type="button" class="btn__Exchange1" data-bs-toggle="modal" data-bs-target="#BUY">
+                      <span data-feather="plus"></span>
+                      Buy Ticket
+                  </button>
               </div>
-  
-              <div class="notice__info">
-                <div class="notice__info-cancel">
-                  <h4 class="notice__info-title">Ticket Cancellation Policy</h4>
-  
-                  <ol class="notice__info-cancel__list">
-                    <li class="notice__info-cancel__list-item">
-                      Non-refundable in countries other than Korea (because it is
-                      a digital product).
-                    </li>
-                    <li class="notice__info-cancel__list-item">
-                      Korea: Only coupons can be refunded. No refunds if the
-                      coupon is exchanged for an admission ticket.
-                    </li>
-                  </ol>
-                </div>
-  
-                <div class="notice__info-refund">
-                  <h4 class="notice__info-title">Coupon Refund</h4>
-  
-                  <p>Cancellation fee 15 days before the performance: 10%</p>
-  
-                  <p>Cancellation fee 2 days before the performance: 30%</p>
-  
-                  <p>
-                    Sponsor and bulk ticket sales: Non-refundable in any case
-                    except for performance cancellation.
-                  </p>
-                </div>
-              </div>
-            </section>
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 company-profile__col">
+          <img src="/img/Gallery01.jpg" alt="BSI company profile" class="company-profile__image"/>
+          <div class="row thumbnail_custom">
+            <div class="col-md-4">
+              <img src="/img/Gallery02.jpg" alt="Image 1" class="img-thumbnail">
+            </div>
+            <div class="col-md-4">
+              <img src="/img/Gallery03.jpg" alt="Image 2" class="img-thumbnail">
+            </div>
+            <div class="col-md-4">
+              <img src="/img/Gallery04.jpg" alt="Image 3" class="img-thumbnail">
+            </div>
+            <!-- <div class="col-md-4">
+              <img src="/img/Gallery05.jpg" alt="Image 3" class="img-thumbnail">
+            </div> -->
           </div>
         </div>
       </div>
-    </main>
+    </section>
+
+    <section class=" page__reminder container ">
+      <div class="reminder">
+        <div class="text">
+          <h1 class="text__notice">NOTICE</h1>
+          <p class="text__small__notice">Ticket Redemption Procedure</p>
+        </div>
+        
+        <div class="col-12 col-lg-2">
+          <img src="/img/Frame 32.png" alt="BSI company profile" class="custom_Frame1" />
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="">
+            <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore tenetur ipsa quo, id unde odio reprehenderit enim dolores quasi impedit, necessitatibus incidunt blanditiis. Dicta et soluta ab minima, quisquam unde.</h2>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- <section id="" class="company-profile page-section container">
+      <div class="row company-profile__row">
+        <div class="col-12 col-lg-4 company-profile__col">
+          <img src="/img/bsi-company-profile.png" alt="BSI company profile" class="company-profile__image" />
+        </div>
+
+        <div class="col-12 col-lg-8 company-profile__col">
+          <div class="company-profile__info">
+            <h2 class="company-profile__info-title page-section__title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore tenetur ipsa quo, id unde odio reprehenderit enim dolores quasi impedit, necessitatibus incidunt blanditiis. Dicta et soluta ab minima, quisquam unde.</h2>
+              <p class="company-profile__info-body">Lorem, ipsum dolor.</p>  
+          </div>
+        </div>
+      </div>
+    </section> -->
 
     <!-- <script type="module" src="/src/main.ts"></script> -->
     
     <!-- <%- include('partials/floating-buttons.ejs') %> -->
     <!-- <%- include('partials/footer.ejs') %> -->
-    <%- include('partials/js-libraries.ejs') %>
+    <%- include('partials/js-libraries.ejs')%>
 
     <!-- <script src="/javascripts/global.js"></script> -->
     <!-- <script src="/javascripts/index.js"></script> -->
