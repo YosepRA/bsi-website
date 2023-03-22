@@ -26,7 +26,7 @@ $background-04: rgba(#eeeeee, 0.8);
 @mixin button {
   padding: 0.8rem;
   border: none;
-  border-radius: 18px;
+  border-radius: 16px;
   font-weight: 600;
 }
 
@@ -326,16 +326,18 @@ body {
 
   .video {
     @include flex-center();
-    width: 100%;
-    max-width: 400px;
-    height: 200px;
-    background-color: $background-02;
-    border-radius: 5px;
+    // width: 100%;
+    // max-width: 400px;
+    // height: 200px;
 
     margin-bottom: 3rem;
 
     p {
       margin-bottom: 0;
+    }
+
+    video {
+      width: 100%;
     }
   }
 
@@ -465,6 +467,7 @@ body {
 
       &-text {
         font-size: 0.9rem;
+        margin-bottom: 0;
       }
     }
   }
@@ -486,6 +489,35 @@ body {
 
 @include media-breakpoint-lg {
   .dream-concert-event-v2 {
+    .main-container {
+      padding-top: 71px;
+    }
+
+    .page-header {
+      padding: 1rem 0;
+
+      .bsi-logo {
+        &__image {
+          width: 140px;
+        }
+      }
+
+      .viaje-logo {
+        flex-direction: row;
+        width: initial;
+
+        &__title {
+          font-size: 0.8rem;
+        }
+
+        &__image {
+          width: 100px;
+          height: auto;
+          margin-left: 0.8rem;
+        }
+      }
+    }
+
     .banner {
       &__ticket {
         margin-bottom: 1rem;
@@ -512,8 +544,6 @@ body {
               &__ticket {
                 &-info-wrapper {
                   position: relative;
-                  // margin-bottom: 0.2rem;
-                  // padding: 1.2rem 1.4rem;
                   width: 100%;
                   height: 100%;
                   background-color: $ticket-inner;
@@ -524,7 +554,7 @@ body {
                 &-info {
                   position: absolute;
                   top: 120px;
-                  left: -100px;
+                  left: -95px;
                   width: 440px;
                   background-color: transparent;
                   border: none;
@@ -631,6 +661,226 @@ body {
             margin-left: 1rem;
           }
         }
+      }
+    }
+
+    .panel {
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__info {
+        display: block;
+
+        &-digifinex {
+          &:nth-of-type(1) {
+            margin-bottom: 10px;
+          }
+
+          &:nth-of-type(2) {
+            margin-bottom: 0;
+          }
+
+          &__logo {
+            position: relative;
+            top: -2px;
+            width: auto;
+            height: 24px;
+          }
+        }
+
+        &-discount {
+          padding: 4px 12px;
+          background-color: $text-primary;
+          color: #fff;
+          border-radius: 56px;
+
+          &__amount {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .notes {
+      padding: 120px 0;
+
+      .row {
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__title {
+        margin-bottom: 0;
+      }
+
+      &__content {
+        position: relative;
+
+        &:not(:last-child) {
+          margin-bottom: 44px;
+        }
+
+        &:nth-of-type(2) {
+          padding-left: 160px;
+
+          .notes {
+            &__content {
+              &-number {
+                left: 160px;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(3) {
+          padding-left: 320px;
+
+          .notes {
+            &__content {
+              &-number {
+                left: 320px;
+              }
+            }
+          }
+        }
+
+        &-number {
+          width: 100px;
+          height: 100px;
+          font-size: 48px;
+        }
+
+        &-text {
+          @include flex-center();
+          width: initial;
+          height: 100px;
+          padding: 0 48px 0 120px;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .dream-concert {
+      background-color: $background-02;
+      padding: 128px 0;
+
+      &__info {
+        &-title {
+          margin-bottom: 1rem;
+          font-size: 40px;
+        }
+
+        &-text {
+          // margin-bottom: 42px;
+        }
+
+        &-buy {
+          width: 162px;
+        }
+      }
+    }
+
+    .about-bsi {
+      padding: 120px 0;
+
+      .row {
+        & > div {
+          &:nth-of-type(1) {
+            order: 2;
+          }
+
+          &:nth-of-type(2) {
+            order: 1;
+          }
+        }
+      }
+
+      &__token {
+        width: 70%;
+        margin: 0 0 0 auto;
+      }
+
+      &__info {
+        &-title {
+          font-size: 40px;
+          text-align: left;
+        }
+
+        &-btn {
+          width: 162px;
+        }
+      }
+    }
+
+    .notice {
+      padding: 88px 0;
+      background-color: $background-02;
+
+      &__title {
+        margin-bottom: 24px;
+      }
+
+      &__subtitle {
+        font-size: 19.2px;
+      }
+
+      &__ticket {
+        &-procedure {
+          &__item {
+            position: relative;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            &:not(:last-child) {
+              margin-bottom: 24px;
+            }
+
+            &-number {
+              position: absolute;
+              top: 0;
+              left: 0;
+              @include flex-center();
+              width: 82px;
+              height: 82px;
+              background-color: $primary-color;
+              border-radius: 50%;
+
+              p {
+                margin-bottom: 0;
+                color: #fff;
+                font-size: 40px;
+                font-weight: 600;
+              }
+            }
+
+            &-text {
+              @include flex-center();
+              height: 82px;
+              padding: 8px 32px 8px 100px;
+              background-color: $background-03;
+              border-radius: 70px;
+
+              p {
+                margin-bottom: 0;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      &__new-user {
+        padding: 32px 40px;
+        margin-bottom: 24px;
+      }
+
+      &__note {
+        padding: 20px 40px;
       }
     }
   }
