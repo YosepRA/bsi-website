@@ -47,7 +47,7 @@
     <main class="main-container">
       <section class="banner">
         <div class="container">
-          <div class="row banner__ticket">
+          <div class="row gx-1 banner__ticket">
             <div class="col-12 col-lg-3 banner__ticket-info--mobile">
               <div class="banner__ticket-info">
                 <h2 class="banner__ticket-info__title">29th<br /> Dream Concert In Busan</h2>
@@ -156,7 +156,7 @@
             </div>
 
             <div class="banner__footer-actions">
-              <a href="#" class="banner__footer-actions-btn banner__footer-actions-buy">Buy BSI</a>
+              <a href="https://www.digifinex.com/en-ww/trade/USDT/BSI" target="_blank" rel="noreferrer" class="banner__footer-actions-btn banner__footer-actions-buy">Buy BSI</a>
       
               <button class="banner__footer-actions-btn banner__footer-actions-exchange">Exchange</button>
             </div>
@@ -168,7 +168,8 @@
       <section class="panel">
         <div class="container">
           <div class="panel__info">
-            <p class="panel__info-digifinex">Purchase BSI at (DIGIFINEX LOGO HERE) and get <b>50% Discount</b> <span class="panel__info-discount">$5 → <span class="panel__info-discount__amount">$2.5</span></span></p>
+            <p class="panel__info-digifinex">Purchase BSI at <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="panel__info-digifinex__logo" /> and get <b>50% Discount</b> <span class="panel__info-discount">$5 → <span class="panel__info-discount__amount">$2.5</span></span></p>
+            <p class="panel__info-digifinex">Ticket per unit price <b><span class="panel__info-bsi-unit">AMOUNT BSI</span></b></p>
           </div>
     
           <div class="panel__partners"></div>
@@ -188,16 +189,13 @@
       <section class="notes">
         <div class="container">
           <div class="row">
-            <div class="col">
+            <div class="col-12 col-lg-2">
               <h2 class="notes__title">
                 Notes
               </h2>
-  
             </div>
-          </div>
-  
-          <div class="row">
-            <div class="col">
+
+            <div class="col-12 col-lg-10">
               <div class="notes__content">
                 <p class="notes__content-number">1</p>
                 <p class="notes__content-text">Purchase according to the fluctuating BSI price</p>
@@ -218,36 +216,27 @@
       </section>
   
       <section class="video">
-        <!-- <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/kD3wJE55wkk?autoplay=1&mute=1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          class="video__iframe"
-        /> -->
-        <!-- <div class="container">
-        </div> -->
-  
-        <p>Video Section</p>
+        <div class="container">
+          <video controls muted>
+            <source src="/video/bsi-dream-concert-720.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
   
       <section class="dream-concert">
         <div class="container">
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-lg-7">
               <div class="dream-concert__info">
                 <h2 class="dream-concert__info-title">What is Dream Concert?</h2>
     
-                <p class="dream-concert__info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequatur nulla voluptate corrupti architecto similique distinctio ad beatae aliquam voluptatibus possimus harum repellat debitis, eos earum facilis delectus sunt a!</p>
+                <p class="dream-concert__info-text">Dream Concert is Korea&apos;s longest-running, largest-scale performance by top K-POP stars This is known to be the K-POP concert that fans all over the world are looking forward to the most. This year&apos;s Dream Concert is operating in a Metaverse world, in a real-time online live-streaming way wherein all K-POP fans around the world could participate and enjoy at the same time. Come and join our concert with your avatar! Don&apos;t miss this chance! See you up there.</p>
     
                 <button class="dream-concert__info-buy">Buy Ticket</button>
               </div>
             </div>
     
-            <div class="col-12">
+            <div class="col-12 col-lg-5">
               <div class="dream-concert__slider">
                 <img src="/img/dream-concert/Gallery01.jpg" alt="" class="dream-concert__slider-image" />
 
@@ -267,17 +256,18 @@
       <section class="about-bsi">
         <div class="container">
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-lg-5">
               <div class="about-bsi__token">
                 <img src="/img/dream-concert/Coin.svg" alt="BSI Coin" class="about-bsi__token-image" />
               </div>
             </div>
   
-            <div class="col-12">
+            <div class="col-12 col-lg-7">
               <div class="about-bsi__info">
                 <h2 class="about-bsi__info-title">About BSI</h2>
         
-                <p class="about-bsi__info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta hic expedita, vero amet quas molestias dolorem fugit a natus?</p>
+                <p class="about-bsi__info-text">BSI Token is a partner of the 29th Dream Concert, and the BSI project is an eco-friendly project that is part of its plan to create eco-friendly performances without paper tickets, and it is agreed to work with Dream Concert every year in the future.</p>
+                <p class="about-bsi__info-text">Dream Concert is in its 29th year and is famous for being the largest among KPOP concerts.This Dream Concert will be held as a concert for...</p>
         
                 <button class="about-bsi__info-btn">Read more</button>
               </div>
@@ -288,7 +278,6 @@
   
       <section class="notice">
         <div class="container">
-  
           <div class="row">
             <div class="col-12">
               <div class="notice__titles">
@@ -298,16 +287,66 @@
               </div>
             </div>
     
-            <div class="col-12">
+            <div class="col-12 col-lg-7">
               <div class="notice__ticket-procedure">
-                <img src="/img/dream-concert/ticket-procedure.png" alt="" class="notice__ticket-procedure__image" />
+                <!-- <img src="/img/dream-concert/ticket-procedure.png" alt="" class="notice__ticket-procedure__image" /> -->
+
+                <div class="notice__ticket-procedure__item">
+                  <div class="notice__ticket-procedure__item-number">
+                    <p>1</p>
+                  </div>
+
+                  <div class="notice__ticket-procedure__item-text">
+                    <p>Sign up in DIGIFINEX</p>
+                  </div>
+                </div>
+
+                <div class="notice__ticket-procedure__item">
+                  <div class="notice__ticket-procedure__item-number">
+                    <p>2</p>
+                  </div>
+
+                  <div class="notice__ticket-procedure__item-text">
+                    <p>Buy BSI</p>
+                  </div>
+                </div>
+
+                <div class="notice__ticket-procedure__item">
+                  <div class="notice__ticket-procedure__item-number">
+                    <p>3</p>
+                  </div>
+
+                  <div class="notice__ticket-procedure__item-text">
+                    <p>Send the BSI bought to the BSI Event Account ID</p>
+                  </div>
+                </div>
+
+                <div class="notice__ticket-procedure__item">
+                  <div class="notice__ticket-procedure__item-number">
+                    <p>4</p>
+                  </div>
+
+                  <div class="notice__ticket-procedure__item-text">
+                    <p>Insert the user UID, email address and the payee code</p>
+                  </div>
+                </div>
+
+                <div class="notice__ticket-procedure__item">
+                  <div class="notice__ticket-procedure__item-number">
+                    <p>5</p>
+                  </div>
+
+                  <div class="notice__ticket-procedure__item-text">
+                    <p>Click Exchange</p>
+                  </div>
+                </div>
               </div>
             </div>
     
-            <div class="col-12">
+            <div class="col-12 col-lg-5">
               <div class="notice__procedure">
                 <div class="notice__new-user">
-                  <h3 class="notice__new-user__title">New Users of DIGIFINEX</h3>
+                  <h3 class="notice__new-user__title">Steps to purchase the ticket:</h3>
       
                   <ol class="notice__new-user__list">
                     <li class="notice__new-user__list-item">Register / Log In to DIGIFINEX</li>
