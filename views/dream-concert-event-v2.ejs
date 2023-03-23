@@ -172,7 +172,7 @@
             <p class="panel__info-digifinex">Ticket per unit price <b><span class="panel__info-bsi-unit">AMOUNT BSI</span></b></p>
           </div>
     
-          <div class="panel__partners"></div>
+          <!-- <div class="panel__partners"></div> -->
     
           <div class="panel__datetime">
             <div class="panel__datetime-info">
@@ -181,7 +181,46 @@
               <p class="panel__datetime-info__date">May 27th, 2023</p>
             </div>
     
-            <div class="panel__datetime-timer"></div>
+            <div class="panel__datetime-timer">
+              <div class="panel__datetime-timer__item">
+                <p class="panel__datetime-timer__digit panel__datetime-timer__digit-days">00</p>
+                <p class="panel__datetime-timer__name">Days</p>
+              </div>
+
+              <div class="panel__datetime-timer__item">
+                <p class="panel__datetime-timer__colon">:</p>
+              </div>
+
+              <div class="panel__datetime-timer__item">
+                <p class="panel__datetime-timer__digit panel__datetime-timer__digit-hours">00</p>
+                <p class="panel__datetime-timer__name">Hours</p>
+              </div>
+
+              <div class="panel__datetime-timer__item">
+                <p class="panel__datetime-timer__colon">:</p>
+              </div>
+
+              <div class="panel__datetime-timer__item">
+                <p class="panel__datetime-timer__digit panel__datetime-timer__digit-minutes">00</p>
+                <p class="panel__datetime-timer__name">Minutes</p>
+              </div>
+
+              <div class="panel__datetime-timer__item">
+                <p class="panel__datetime-timer__colon">:</p>
+              </div>
+
+              <div class="panel__datetime-timer__item">
+                <p class="panel__datetime-timer__digit panel__datetime-timer__digit-seconds">00</p>
+                <p class="panel__datetime-timer__name">Seconds</p>
+              </div>
+
+              <!-- <p>
+                <span class="panel__datetime-timer__days">00</span>
+                <span class="panel__datetime-timer__hours">00</span>
+                <span class="panel__datetime-timer__minutes">00</span>
+                <span class="panel__datetime-timer__seconds">00</span>
+              </p> -->
+            </div>
           </div>
         </div>
       </section>
@@ -203,7 +242,7 @@
   
               <div class="notes__content">
                 <p class="notes__content-number">2</p>
-                <p class="notes__content-text">DIGIFINEX Event scheduled on <br />March 24 - April 25</p>
+                <p class="notes__content-text">DIGIFINEX Event scheduled on <br />March 31 - April 26</p>
               </div>
   
               <div class="notes__content">
@@ -327,7 +366,7 @@
                   </div>
 
                   <div class="notice__ticket-procedure__item-text">
-                    <p>Insert the user UID, email address and the payee code</p>
+                    <p>Insert your User UID, Email, Password, payee code, and the amount of the ticket you wish</p>
                   </div>
                 </div>
 
@@ -352,7 +391,7 @@
                     <li class="notice__new-user__list-item">Register / Log In to DIGIFINEX</li>
                     <li class="notice__new-user__list-item">Purchase as much BSI as you want</li>
                     <li class="notice__new-user__list-item">Send it to specified BSI Event Account UID</li>
-                    <li class="notice__new-user__list-item">Insert user UID, email address, and the payee code</li>
+                    <li class="notice__new-user__list-item">Insert your User UID, Email, Password, payee code, and the amount of the ticket you wish</li>
                     <li class="notice__new-user__list-item">Click Exchange and your ticket will be sent</li>
                     <li class="notice__new-user__list-item">All tickets will be sent sequentially after the registration</li>
                   </ol>
@@ -374,7 +413,7 @@
                  <div class="notice__note">
                   <h3 class="notice__note-title">Note:</h3>
       
-                  <p class="notice__note-text">There might be a fluctuation in the amount of BSI according to the real-time rate.</p>
+                  <p class="notice__note-text">We would like to inform that all users who participate in this event will also be automatically registered in the BSI Wallet.</p>
                 </div>
               </div>
             </div>
@@ -382,6 +421,8 @@
         </div>
       </section>
     </main>
+
+    <%- include('partials/dialog-tests.ejs') %>
 
     <footer class="page-footer">
       <div class="container">

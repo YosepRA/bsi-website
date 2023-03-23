@@ -253,7 +253,6 @@ body {
   }
 
   .panel {
-    margin-bottom: 2rem;
     padding: 1.4rem 0;
     background-color: $background-04;
 
@@ -279,12 +278,49 @@ body {
           font-size: 1.1rem;
         }
       }
+
+      &-timer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          margin-bottom: 0;
+        }
+
+        &__item {
+          @include flex-center();
+          flex-direction: column;
+
+          &:not(:first-of-type) {
+            margin-left: 14px;
+          }
+        }
+
+        &__digit {
+          padding: 8px 16px;
+          background-color: $primary-color;
+          font-size: 28px;
+          color: #fff;
+          font-weight: 700;
+          border-radius: 12px;
+        }
+
+        &__name {
+          font-size: 14px;
+        }
+
+        &__colon {
+          position: relative;
+          top: -16px;
+          font-size: 32px;
+          font-weight: 700;
+        }
+      }
     }
   }
 
   .notes {
-    margin-bottom: 1rem;
-
     &__title {
       margin-bottom: 1.4rem;
       font-weight: 700;
@@ -342,8 +378,6 @@ body {
   }
 
   .dream-concert {
-    margin-bottom: 3rem;
-
     &__info {
       margin-bottom: 1rem;
 
@@ -481,6 +515,119 @@ body {
       margin-bottom: 0;
       font-size: 0.7rem;
       text-align: center;
+    }
+  }
+}
+
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0.3);
+  }
+
+  &__window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 527px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+  }
+
+  &__body {
+    @include flex-center();
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 26px;
+
+    &-icon {
+      width: 126px;
+      height: 126px;
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    &-info {
+      width: 80%;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    &-input {
+      width: 60%;
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+  }
+
+  &__actions {
+    @include flex-center();
+    background-color: $background-03;
+    padding: 32px 16px;
+    border-radius: 0 0 40px 40px;
+
+    &-btn {
+      width: 192.5px;
+      text-align: center;
+      margin: 0 0.5rem;
+    }
+
+    &-close {
+      @include primary-button();
+      font-size: 18px;
+    }
+  }
+
+  &--fail {
+    .dialog {
+      &__actions {
+        &-close {
+          @include secondary-button();
+        }
+
+        &-buy {
+          @include primary-button();
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &--otp {
+    .dialog {
+      &__body {
+        &-info {
+          margin-bottom: 1rem;
+        }
+
+        &-input {
+          text-align: center;
+        }
+      }
+
+      &__actions {
+        &-otp {
+          @include primary-button();
+        }
+      }
     }
   }
 }
@@ -668,6 +815,7 @@ body {
       .container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
 
       &__info {
@@ -701,10 +849,27 @@ body {
           }
         }
       }
+
+      &__datetime {
+        &-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &__title {
+            font-size: 24px;
+            font-weight: 600;
+          }
+
+          &__date {
+            font-weight: 500;
+          }
+        }
+      }
     }
 
     .notes {
-      padding: 120px 0;
+      padding: 80px 0;
 
       .row {
         justify-content: center;
@@ -719,7 +884,7 @@ body {
         position: relative;
 
         &:not(:last-child) {
-          margin-bottom: 44px;
+          margin-bottom: 38px;
         }
 
         &:nth-of-type(2) {
@@ -766,7 +931,7 @@ body {
 
     .dream-concert {
       background-color: $background-02;
-      padding: 128px 0;
+      padding: 80px 0;
 
       &__info {
         &-title {
@@ -785,7 +950,7 @@ body {
     }
 
     .about-bsi {
-      padding: 120px 0;
+      padding: 80px 0;
 
       .row {
         & > div {
@@ -817,7 +982,7 @@ body {
     }
 
     .notice {
-      padding: 88px 0;
+      padding: 80px 0;
       background-color: $background-02;
 
       &__title {
