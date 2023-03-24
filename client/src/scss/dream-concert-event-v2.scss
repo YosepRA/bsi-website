@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Inter:wght@400;500;600;700&display=swap');
 
 $primary-color: #51b2aa;
+$error-color: #dc3545;
 $text-primary: #333333;
 $text-secondary: #888888;
 $text-button: #ffffff;
@@ -152,12 +153,14 @@ body {
 
           &-uid {
             margin-bottom: 0.6rem;
-            padding: 0.6rem 0.5rem;
+            padding: 12px;
             background-color: $text-primary;
             border-radius: 14px;
             color: #fff;
             text-align: center;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
           }
 
           &-note {
@@ -198,16 +201,20 @@ body {
             font-size: 0.8rem;
             color: $text-primary;
           }
+
+          &.invalid {
+            border-color: $error-color;
+
+            & ~ .invalid-feedback {
+              display: block;
+            }
+          }
         }
 
         &__total {
           &-top {
             display: flex;
             justify-content: space-between;
-          }
-
-          &-title {
-            color: $text-secondary;
           }
 
           &-amount {
@@ -222,6 +229,26 @@ body {
 
           p {
             margin-bottom: 0;
+          }
+        }
+
+        &__unit-price {
+          @include flex-center();
+          flex-direction: column;
+          align-items: start;
+          height: 100%;
+          padding: 12px 20px;
+          background-color: $ticket-outer;
+          border-radius: 16px;
+          color: #fff;
+
+          p {
+            margin-bottom: 0;
+          }
+
+          &-amount {
+            font-size: 24px;
+            font-weight: 700;
           }
         }
       }
@@ -499,9 +526,8 @@ body {
         font-weight: 700;
       }
 
-      &-text {
-        font-size: 0.9rem;
-        margin-bottom: 0;
+      &-list {
+        padding-left: 1.3rem;
       }
     }
   }
@@ -575,6 +601,15 @@ body {
       width: 60%;
       padding: 6px 10px;
       border-radius: 10px;
+
+      &.invalid {
+        border-color: $error-color;
+
+        & ~ .invalid-feedback {
+          display: block;
+          text-align: center;
+        }
+      }
     }
   }
 
@@ -625,6 +660,26 @@ body {
 
       &__actions {
         &-otp {
+          @include primary-button();
+        }
+      }
+    }
+  }
+
+  &--pin {
+    .dialog {
+      &__body {
+        &-info {
+          margin-bottom: 1rem;
+        }
+
+        &-input {
+          text-align: center;
+        }
+      }
+
+      &__actions {
+        &-pin {
           @include primary-button();
         }
       }
@@ -791,7 +846,14 @@ body {
         justify-content: space-between;
 
         &-note {
+          width: 40%;
           padding-left: 1.4rem;
+
+          &-text {
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 16px;
+          }
         }
 
         &-actions {
@@ -990,7 +1052,7 @@ body {
       }
 
       &__subtitle {
-        font-size: 19.2px;
+        font-size: 20px;
       }
 
       &__ticket {
@@ -1042,10 +1104,30 @@ body {
       &__new-user {
         padding: 32px 40px;
         margin-bottom: 24px;
+
+        &__title {
+          font-size: 20px;
+        }
+
+        &__list {
+          &-item {
+            font-size: 16px;
+          }
+        }
       }
 
       &__note {
         padding: 20px 40px;
+
+        &-title {
+          font-size: 20px;
+        }
+
+        &-list {
+          &-item {
+            font-size: 18px;
+          }
+        }
       }
     }
   }
