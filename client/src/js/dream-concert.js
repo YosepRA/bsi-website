@@ -4,6 +4,7 @@ import { ready } from './helpers.js';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
+const passwordInput = document.getElementById('passwordInput');
 const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
 const exchangeButton = document.querySelector(
@@ -27,9 +28,14 @@ function start() {
   const ticket = new Ticket();
 
   uidInput.addEventListener('input', ticket.handleUIDChange);
+  uidInput.addEventListener('focus', ticket.resetErrors);
   emailInput.addEventListener('input', ticket.handleEmailChange);
+  emailInput.addEventListener('focus', ticket.resetErrors);
+  passwordInput.addEventListener('input', ticket.handlePasswordChange);
+  passwordInput.addEventListener('focus', ticket.resetErrors);
   payeeInput.addEventListener('input', ticket.handlePayeeChange);
   amountInput.addEventListener('input', ticket.handleAmountChange);
+  amountInput.addEventListener('focus', ticket.resetErrors);
   exchangeButton.addEventListener('click', ticket.handleExchange);
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
 

@@ -96,11 +96,12 @@
   
                 <div class="banner__ticket-form__separator"></div>
   
-                <div class="row banner__ticket-form__form">
-                  <div class="col-12 col-lg-3">
+                <div class="row gx-1 banner__ticket-form__form">
+                  <div class="col-12 col-lg-2">
                     <div class="banner__ticket-form__form-section">
                       <label for="uidInput" class="form-label">User UID</label>
                       <input type="text" class="form-control banner__ticket-form__input" id="uidInput" placeholder="Enter user UID" />
+                      <div class="invalid-feedback"></div>
                     </div>
                   </div>
   
@@ -108,14 +109,23 @@
                     <div class="banner__ticket-form__form-section">
                       <label for="emailInput" class="form-label">Your email</label>
                       <input type="email" class="form-control banner__ticket-form__input" id="emailInput" placeholder="Enter your email" />
+                      <div class="invalid-feedback"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-lg-3">
+                    <div class="banner__ticket-form__form-section">
+                      <label for="passwordInput" class="form-label">Your password</label>
+                      <input type="password" class="form-control banner__ticket-form__input" id="passwordInput" placeholder="Enter your password" />
+                      <div class="invalid-feedback"></div>
                     </div>
                   </div>
   
-                  <div class="col-12 col-lg-4">
+                  <div class="col-12 col-lg-2">
                     <div class="banner__ticket-form__form-section">
                       <label for="payeeInput" class="form-label">Payee code</label>
-                      <input type="text" class="form-control banner__ticket-form__input" id="payeeInput" placeholder="Enter your payee code" />
-                      <div id="payeeHelp" class="form-text banner__ticket-form__input-help">&ast;Only to users who set-up to receive the code</div>
+                      <input type="text" class="form-control banner__ticket-form__input" id="payeeInput" placeholder="000-000" />
+                      <div id="payeeHelp" class="form-text banner__ticket-form__input-help">See more information</div>
                     </div>
                   </div>
                 </div>
@@ -123,10 +133,11 @@
                 <div class="banner__ticket-form__separator"></div>
   
                 <div class="row justify-content-between">
-                  <div class="col-12 col-lg-6">
+                  <div class="col-12 col-lg-4">
                     <div class="banner__ticket-form__form-section banner__ticket-form__form-amount">
                       <label for="amountInput" class="form-label">Add the number of tickets</label>
                       <input type="number" min="1" class="form-control banner__ticket-form__input banner__ticket-form__input--amount" id="amountInput"" />
+                      <div class="invalid-feedback"></div>
                     </div>
                   </div>
   
@@ -145,6 +156,16 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="col-12 col-lg-4">
+                    <div class="banner__ticket-form__unit-price">
+                      <p class="banner__ticket-form__unit-price-title">Ticket per unit price</p>
+
+                      <p class="banner__ticket-form__unit-price-amount">
+                        <span class="banner__ticket-form__unit-price-amount">0</span> BSI
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,6 +174,7 @@
           <div class="banner__footer">
             <div class="banner__footer-note">
               <p class="banner__footer-note-text">&ast;Tickets will be distributed sequentially from the 1st of April.</p>
+              <p class="banner__footer-note-text">&ast;&ast;We inform to all users who participate in this event will also be automatically registered in the BSI Wallet</p>
             </div>
 
             <div class="banner__footer-actions">
@@ -169,7 +191,6 @@
         <div class="container">
           <div class="panel__info">
             <p class="panel__info-digifinex">Purchase BSI at <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="panel__info-digifinex__logo" /> and get <b>50% Discount</b> <span class="panel__info-discount">$5 → <span class="panel__info-discount__amount">$2.5</span></span></p>
-            <p class="panel__info-digifinex">Ticket per unit price <b><span class="panel__info-bsi-unit">AMOUNT BSI</span></b></p>
           </div>
     
           <!-- <div class="panel__partners"></div> -->
@@ -356,7 +377,7 @@
                   </div>
 
                   <div class="notice__ticket-procedure__item-text">
-                    <p>Send the BSI bought to the BSI Event Account ID</p>
+                    <p>Send the BSI bought to the BSI Event Account: 691265286</p>
                   </div>
                 </div>
 
@@ -366,7 +387,7 @@
                   </div>
 
                   <div class="notice__ticket-procedure__item-text">
-                    <p>Insert your User UID, Email, Password, payee code, and the amount of the ticket you wish</p>
+                    <p>Insert the user UID, email address, password, and the payee code</p>
                   </div>
                 </div>
 
@@ -379,6 +400,16 @@
                     <p>Click Exchange</p>
                   </div>
                 </div>
+
+                <div class="notice__ticket-procedure__item">
+                  <div class="notice__ticket-procedure__item-number">
+                    <p>6</p>
+                  </div>
+
+                  <div class="notice__ticket-procedure__item-text">
+                    <p>Verification code will be sent to the email address. Kindly check it and insert the code provided.</p>
+                  </div>
+                </div>
               </div>
             </div>
     
@@ -388,12 +419,12 @@
                   <h3 class="notice__new-user__title">Steps to purchase the ticket:</h3>
       
                   <ol class="notice__new-user__list">
-                    <li class="notice__new-user__list-item">Register / Log In to DIGIFINEX</li>
-                    <li class="notice__new-user__list-item">Purchase as much BSI as you want</li>
-                    <li class="notice__new-user__list-item">Send it to specified BSI Event Account UID</li>
-                    <li class="notice__new-user__list-item">Insert your User UID, Email, Password, payee code, and the amount of the ticket you wish</li>
-                    <li class="notice__new-user__list-item">Click Exchange and your ticket will be sent</li>
-                    <li class="notice__new-user__list-item">All tickets will be sent sequentially after the registration</li>
+                    <li class="notice__new-user__list-item">Register / Log In to DIGIFINEX.</li>
+                    <li class="notice__new-user__list-item">Purchase as much BSI as you want.</li>
+                    <li class="notice__new-user__list-item">Send it to specified BSI Event Account UID.</li>
+                    <li class="notice__new-user__list-item">Insert your User UID, Email, Password, payee code, and the amount of the ticket you wish.</li>
+                    <li class="notice__new-user__list-item">When you click exchange button, the verification code will be sent to your email.</li>
+                    <li class="notice__new-user__list-item">After you input the verification code, you are successfully registered in the Dream Concert. Tickets will be sent sequentially.</li>
                   </ol>
                 </div>
   
@@ -412,8 +443,11 @@
   
                  <div class="notice__note">
                   <h3 class="notice__note-title">Note:</h3>
-      
-                  <p class="notice__note-text">We would like to inform that all users who participate in this event will also be automatically registered in the BSI Wallet.</p>
+                  
+                  <ul class="notice__note-list">
+                    <li class="notice__note-list-item">We would like to inform that all users who participate in this event will also be automatically registered in the BSI Wallet.</li>
+                    <li class="notice__note-list-item">There might be fluctuation in the amount of BSI according to the real-time rate.</li>
+                  </ul>
                 </div>
               </div>
             </div>
