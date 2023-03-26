@@ -29,8 +29,12 @@
         <div class="row">
           <div class="col">
             <div class="page-header__wrapper">
-              <div class="bsi-logo">
-                <img src="/img/bsi-logo-v2.png" alt="Bali Social Integrated" class="bsi-logo__image" />
+              <div class="primary-logo">
+                <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="primary-logo__image primary-logo__digifinex" />
+
+                <span class="primary-logo__separator">X</span>
+                
+                <img src="/img/bsi-logo-v2.png" alt="Bali Social Integrated" class="primary-logo__image primary-logo__bsi" />
               </div>
   
               <div class="viaje-logo">
@@ -99,7 +103,7 @@
                 <div class="row gx-1 banner__ticket-form__form">
                   <div class="col-12 col-lg-2">
                     <div class="banner__ticket-form__form-section">
-                      <label for="uidInput" class="form-label">User UID</label>
+                      <label for="uidInput" class="form-label">User UID <button class="form-label__guide-btn"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button></label>
                       <input type="text" class="form-control banner__ticket-form__input" id="uidInput" placeholder="Enter user UID" />
                       <div class="invalid-feedback"></div>
                     </div>
@@ -123,9 +127,9 @@
   
                   <div class="col-12 col-lg-2">
                     <div class="banner__ticket-form__form-section">
-                      <label for="payeeInput" class="form-label">Payee code</label>
+                      <label for="payeeInput" class="form-label">Payee code <button class="form-label__guide-btn"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button></label>
                       <input type="text" class="form-control banner__ticket-form__input" id="payeeInput" placeholder="000-000" />
-                      <div id="payeeHelp" class="form-text banner__ticket-form__input-help">See more information</div>
+                      <div id="payeeHelp" class="form-text banner__ticket-form__input-help"><span class="banner__ticket-form__input-help-icon"><img src="/img/dream-concert/Icon S Information.png" alt="" /></span> See more information</div>
                     </div>
                   </div>
                 </div>
@@ -178,6 +182,8 @@
             </div>
 
             <div class="banner__footer-actions">
+              <button class="banner__footer-actions-btn banner__footer-actions-check-ticket">Check My Ticket</button>
+
               <a href="https://www.digifinex.com/en-ww/trade/USDT/BSI" target="_blank" rel="noreferrer" class="banner__footer-actions-btn banner__footer-actions-buy">Buy BSI</a>
       
               <button class="banner__footer-actions-btn banner__footer-actions-exchange">Exchange</button>
@@ -190,7 +196,9 @@
       <section class="panel">
         <div class="container">
           <div class="panel__info">
-            <p class="panel__info-digifinex">Purchase BSI at <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="panel__info-digifinex__logo" /> and get <b>50% Discount</b> <span class="panel__info-discount">$5 → <span class="panel__info-discount__amount">$2.5</span></span></p>
+            <p class="panel__info-digifinex">Purchase BSI at <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="panel__info-digifinex__logo" /><br /> 
+              and get <b>50% Discount</b> <span class="panel__info-discount">$5 → <span class="panel__info-discount__amount">$2.5</span></span>
+            </p>
           </div>
     
           <!-- <div class="panel__partners"></div> -->
@@ -234,13 +242,6 @@
                 <p class="panel__datetime-timer__digit panel__datetime-timer__digit-seconds">00</p>
                 <p class="panel__datetime-timer__name">Seconds</p>
               </div>
-
-              <!-- <p>
-                <span class="panel__datetime-timer__days">00</span>
-                <span class="panel__datetime-timer__hours">00</span>
-                <span class="panel__datetime-timer__minutes">00</span>
-                <span class="panel__datetime-timer__seconds">00</span>
-              </p> -->
             </div>
           </div>
         </div>
@@ -270,6 +271,30 @@
                 <p class="notes__content-number">3</p>
                 <p class="notes__content-text">Event tickets would be sent weekly after the participation.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="artist">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="artist__title">Artists</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-lg-4">
+              <div class="artist__item">?</div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+              <div class="artist__item">?</div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+              <div class="artist__item">?</div>
             </div>
           </div>
         </div>
@@ -454,6 +479,54 @@
           </div>
         </div>
       </section>
+
+      <section class="partners">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="partners__title">Partners</div>
+            </div>
+          </div>
+
+          <div class="row partners__row partners__row-items">
+            <div class="col-6 col-lg-2">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Viaje.png" alt="Viaje" class="partners__item-logo partners__item-logo--viaje" />
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Kepa.png" alt="KEPA" class="partners__item-logo partners__item-logo--kepa" />
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Korea Tourism Organization.png" alt="Korea Tourism Organization" class="partners__item-logo partners__item-logo--kto" />
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo - Ministry of culture, sports and tourism.png" alt="Ministry of Culture, Sports, and Tourism" class="partners__item-logo partners__item-logo--ministry" />
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Chabot Planet.png" alt="Chatbot Planet" class="partners__item-logo partners__item-logo--chatbot" />
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Lavata.png" alt="Lavata" class="partners__item-logo partners__item-logo--lavata" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <%- include('partials/dialog-tests.ejs') %>
@@ -464,6 +537,7 @@
       </div>
     </footer>
 
+    <%- include('partials/js-libraries.ejs') %>
     <script src="/javascripts/dream-concert.js"></script>
   </body>
 </html>
