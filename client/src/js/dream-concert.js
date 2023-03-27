@@ -11,6 +11,11 @@ const exchangeButton = document.querySelector(
   '.banner__footer-actions-exchange',
 );
 const dreamConcertBuy = document.querySelector('.dream-concert__info-buy');
+const checkTicketButton = document.querySelector(
+  '.banner__footer-actions-check-ticket',
+);
+const uidInputGuide = document.querySelector('.form-label__guide-btn--uid');
+const payeeInputGuide = document.querySelector('.form-label__guide-btn--payee');
 
 function handleDreamConcertBuy() {
   window.scroll({ top: 0, left: 0, behavior: 'smooth' });
@@ -38,6 +43,9 @@ function start() {
   amountInput.addEventListener('focus', ticket.resetErrors);
   exchangeButton.addEventListener('click', ticket.handleExchange);
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
+  checkTicketButton.addEventListener('click', ticket.showCheckTicket);
+  uidInputGuide.addEventListener('click', ticket.showUIDGuide);
+  payeeInputGuide.addEventListener('click', ticket.showPayeeCodeGuide);
 
   // BSI price polling.
   const pollInterval = 60000;

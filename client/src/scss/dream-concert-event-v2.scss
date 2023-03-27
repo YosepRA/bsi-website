@@ -65,9 +65,23 @@ body {
       align-items: center;
     }
 
-    .bsi-logo {
-      &__image {
+    .primary-logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__bsi {
         width: 120px;
+        height: auto;
+      }
+
+      &__separator {
+        margin: 0 28px;
+        font-size: 32px;
+        font-weight: 600;
+      }
+
+      &__digifinex {
         height: auto;
       }
     }
@@ -183,7 +197,16 @@ body {
             margin-bottom: 0.6rem;
 
             .form-label {
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
               margin-bottom: 0.3rem;
+
+              &__guide-btn {
+                background-color: transparent;
+                padding: 0;
+                border: none;
+              }
             }
           }
 
@@ -274,6 +297,10 @@ body {
 
         &-exchange {
           @include primary-button();
+        }
+
+        &-check-ticket {
+          @include secondary-button();
         }
       }
     }
@@ -387,6 +414,29 @@ body {
     }
   }
 
+  .artist {
+    background-color: $background-02;
+    padding: 80px 0;
+
+    &__title {
+      margin-bottom: 24px;
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &__item {
+      @include flex-center();
+      width: 100%;
+      height: 360px;
+      background-color: #888;
+      font-size: 115px;
+      font-weight: 700;
+      color: #fff;
+      border-radius: 32px;
+    }
+  }
+
   .video {
     @include flex-center();
     // width: 100%;
@@ -440,6 +490,20 @@ body {
 
   .about-bsi {
     margin-bottom: 3rem;
+
+    &__col {
+      &--token {
+        &-long {
+          display: none;
+        }
+      }
+
+      &--info {
+        &-long {
+          display: none;
+        }
+      }
+    }
 
     &__token {
       width: 50%;
@@ -528,6 +592,32 @@ body {
 
       &-list {
         padding-left: 1.3rem;
+      }
+    }
+  }
+
+  .partners {
+    padding: 40px;
+
+    &__row {
+      &-items {
+        align-items: center;
+      }
+    }
+
+    &__title {
+      margin-bottom: 30px;
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &__item {
+      width: 100%;
+
+      &-logo {
+        width: 100%;
+        height: auto;
       }
     }
   }
@@ -649,18 +739,37 @@ body {
   &--otp {
     .dialog {
       &__body {
+        &-title {
+          color: $primary-color;
+        }
+
         &-info {
           margin-bottom: 1rem;
         }
 
         &-input {
+          margin-left: 0;
+          font-size: 18px;
           text-align: center;
         }
       }
 
       &__actions {
+        flex-direction: column;
+
         &-otp {
           @include primary-button();
+        }
+
+        &-resend {
+          margin-top: 8px;
+          margin-bottom: 0;
+
+          &-btn {
+            border: none;
+            padding: 0;
+            color: $primary-color;
+          }
         }
       }
     }
@@ -674,6 +783,7 @@ body {
         }
 
         &-input {
+          margin-left: 0;
           text-align: center;
         }
       }
@@ -681,6 +791,142 @@ body {
       &__actions {
         &-pin {
           @include primary-button();
+        }
+      }
+    }
+  }
+
+  &--uid {
+    .dialog {
+      &__body {
+        &-title {
+          margin-bottom: 24px;
+          color: $primary-color;
+        }
+
+        &-uid {
+          &-image--01 {
+            display: block;
+            margin: auto;
+            width: auto;
+            height: 275px;
+          }
+
+          &-image--02 {
+            width: 90%;
+            height: auto;
+          }
+        }
+      }
+
+      &__actions {
+        &-uid {
+          @include primary-button();
+        }
+      }
+    }
+  }
+
+  &--payee {
+    .dialog {
+      &__body {
+        .carousel {
+          width: 100%;
+
+          &-item {
+            text-align: center;
+
+            &-title {
+              margin-bottom: 16px;
+              font-size: 18px;
+              text-align: center;
+              font-weight: 600;
+            }
+
+            &-image {
+              width: auto;
+              height: 275px;
+            }
+          }
+
+          &-indicators {
+            position: static;
+            margin-top: 16px;
+            margin-bottom: 0;
+
+            button {
+              width: 8px;
+              height: 8px;
+              background-color: $primary-color;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+
+      &__actions {
+        &-payee {
+          @include primary-button();
+        }
+      }
+    }
+  }
+
+  &--check-ticket {
+    .dialog {
+      &__body {
+        &-title {
+          margin-bottom: 24px;
+        }
+      }
+
+      &__actions {
+        &-check-ticket {
+          @include primary-button();
+        }
+      }
+    }
+
+    .form {
+      &-section {
+        margin-bottom: 16px;
+      }
+
+      &-control {
+        margin-left: 0;
+        width: 338px;
+        background-color: $background-02;
+      }
+    }
+  }
+
+  &--check-ticket-result {
+    .dialog {
+      &__body {
+        &-title {
+          margin-bottom: 24px;
+        }
+
+        &-ticket-result {
+          padding: 12px 16px;
+          background-color: $background-02;
+          font-size: 32px;
+          color: $primary-color;
+          font-weight: 600;
+          border: 1px solid #ddd;
+          border-radius: 12px;
+        }
+      }
+
+      &__actions {
+        &-check-ticket-result {
+          &--close {
+            @include secondary-button();
+          }
+
+          &--copy {
+            @include primary-button();
+          }
         }
       }
     }
@@ -698,9 +944,13 @@ body {
     .page-header {
       padding: 1rem 0;
 
-      .bsi-logo {
-        &__image {
+      .primary-logo {
+        &__bsi {
           width: 140px;
+        }
+
+        &__digifinex {
+          width: 182px;
         }
       }
 
@@ -860,14 +1110,11 @@ body {
           &-btn {
             display: inline-block;
             width: 180px;
+            margin-left: 0.5rem;
 
             &:not(:last-child) {
               margin-bottom: 0;
             }
-          }
-
-          &-exchange {
-            margin-left: 1rem;
           }
         }
       }
@@ -882,6 +1129,7 @@ body {
 
       &__info {
         display: block;
+        font-size: 26px;
 
         &-digifinex {
           &:nth-of-type(1) {
@@ -896,7 +1144,7 @@ body {
             position: relative;
             top: -2px;
             width: auto;
-            height: 24px;
+            height: 46px;
           }
         }
 
@@ -1128,6 +1376,31 @@ body {
             font-size: 18px;
           }
         }
+      }
+    }
+
+    .partners {
+      &__item {
+        &-logo {
+          &--viaje {
+            width: 90%;
+          }
+
+          &--kepa {
+            position: relative;
+            left: -20px;
+            width: 120%;
+          }
+        }
+      }
+    }
+
+    .page-footer {
+      padding: 24px 0;
+
+      &__copyright {
+        text-align: left;
+        font-size: 16px;
       }
     }
   }
