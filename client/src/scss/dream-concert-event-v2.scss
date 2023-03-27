@@ -491,6 +491,20 @@ body {
   .about-bsi {
     margin-bottom: 3rem;
 
+    &__col {
+      &--token {
+        &-long {
+          display: none;
+        }
+      }
+
+      &--info {
+        &-long {
+          display: none;
+        }
+      }
+    }
+
     &__token {
       width: 50%;
       margin: 0 auto 2rem;

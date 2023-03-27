@@ -2,6 +2,7 @@ import axios from 'axios';
 import { object, string, number } from 'yup';
 
 import walletAPI from './api/wallet-api.js';
+import ticketAPI from './api/ticket-api.js';
 import Dialog from './dialog.js';
 
 const uidInput = document.getElementById('uidInput');
@@ -77,6 +78,9 @@ class Ticket {
     this.handlePinChange = this.handlePinChange.bind(this);
     this.getPrice = this.getPrice.bind(this);
     this.resetErrors = this.resetErrors.bind(this);
+    this.showUIDGuide = this.showUIDGuide.bind(this);
+    this.showPayeeCodeGuide = this.showPayeeCodeGuide.bind(this);
+    this.showCheckTicket = this.showCheckTicket.bind(this);
 
     // Initialize.
     this.render();
@@ -177,7 +181,40 @@ class Ticket {
     return true;
   }
 
-  validatePin() {}
+  validatePin() {
+    const pinCharacterLimit = 4;
+    const pinPattern = /^\d{4}$/;
+
+    if (this.pin.length !== pinCharacterLimit) {
+      const pinError = {
+        ...this.errors.pin,
+        status: true,
+        message: `PIN number should only be ${pinCharacterLimit} digits long`,
+      };
+
+      this.errors = {
+        ...this.errors,
+        pin: pinError,
+      };
+
+      return false;
+    } else if (!pinPattern.test(this.pin)) {
+      const pinError = {
+        ...this.errors.pin,
+        status: true,
+        message: 'PIN should only contain numbers',
+      };
+
+      this.errors = {
+        ...this.errors,
+        pin: pinError,
+      };
+
+      return false;
+    }
+
+    return true;
+  }
 
   renderInputError() {
     Object.keys(this.errors)
@@ -249,14 +286,28 @@ class Ticket {
 
   handleOTPChange(event) {
     const { value } = event.target;
+    const otpCharacterLimit = 6;
 
-    if (value.length <= 6) {
-      this.otp = value;
+    if (value.length > otpCharacterLimit) {
+      event.target.value = value.substring(0, otpCharacterLimit);
+
+      return undefined;
     }
+
+    this.otp = value;
+
+    return undefined;
   }
 
   handlePinChange(event) {
     const { value } = event.target;
+    const pinCharacterLimit = 4;
+
+    if (value.length > pinCharacterLimit) {
+      event.target.value = value.substring(0, pinCharacterLimit);
+
+      return undefined;
+    }
 
     this.pin = value;
   }
@@ -289,49 +340,62 @@ class Ticket {
       };
       const res = await walletAPI.verifyOTP(data);
 
-      return res;
+      return res.data;
     } catch (error) {}
   }
 
   async userRegistration() {
     try {
-      // const data = new FormData();
+      const data = new FormData();
 
-      // data.append('id', this.email);
-      // data.append('mobile_auth_key', this.otp);
-      // data.append('pw', this.password);
-      // data.append('pw2', this.password);
-      // data.append('pin', this.pin);
+      data.append('name', this.email);
+      data.append('id', this.email);
+      data.append('mobile_auth_key', this.otp);
+      data.append('pw', this.password);
+      data.append('pw2', this.password);
+      data.append('pin', this.pin);
 
-      // data.append('mode', 'signup');
-      // data.append('output_type', 'json');
-      // data.append('is_dev', 'N');
-      // data.append('btn_submit', '');
-      // data.append('iagree', 'Y');
-      // data.append('iagree', 'Y');
+      data.append('country_dial', '1');
+      data.append('mobile_num', '01000000000');
 
-      // const res = await axios.post(`${walletBaseUrl}/auth/signup_proc`);
+      data.append('mode', 'signup');
+      data.append('output_type', 'json');
+      data.append('is_dev', 'N');
+      data.append('btn_submit', '');
+      data.append('iagree', 'Y');
+      data.append('iagree', 'Y');
 
-      // if (res.status === 200) {
-      //   this.sendTicketInformation();
-      // }
+      const res = await walletAPI.signup(data);
 
-      alert('Initiate user registration');
       this.sendTicketInformation();
     } catch (error) {}
   }
 
   async sendTicketInformation() {
+    try {
+      const data = new FormData();
+
+      data.append('go_url', '/'); // Return URL
+      data.append('id', this.email); // ID
+      data.append('uid', this.uid); // UID
+      data.append('payee_code', this.payeeCode); // payee_code
+      data.append('count', this.ticketAmount); // ticket count
+      data.append('bsi_amount', this.totalBSI); // BSI Amount
+
+      const { data: result } = await ticketAPI.sendTicketInformation(data);
+
+      if (result.code === 200) {
+        this.showSuccessTransactionDialog();
+      }
+    } catch (error) {}
+
+    // What's below this are for testing only.
     const value = {
       uid: this.uid,
       email: this.email,
-      password: this.password,
       payeeCode: this.payeeCode,
       ticketAmount: this.ticketAmount,
-      bsiPrice: this.bsiPrice,
       totalBSI: this.totalBSI,
-      otp: this.otp,
-      pin: this.pin,
     };
 
     alert(JSON.stringify(value, null, 2));
@@ -343,14 +407,8 @@ class Ticket {
     if (!validateResult) return undefined;
 
     // Verify Email using OTP.
-    // await this.requestOTP();
+    await this.requestOTP();
     this.showOTPDialog();
-
-    // On successful email verification, create user 4 digit pin number.
-
-    // Perform user account registration.
-
-    // Finally, send ticket exchange data to Event DB.
 
     return undefined;
   }
@@ -506,6 +564,15 @@ class Ticket {
     // Dialog actions.
     const actions = document.createElement('div');
     const actionsOtp = document.createElement('button');
+    const actionsResend = document.createElement('p');
+    const actionsResendBtn = document.createElement('button');
+
+    const resetOTPInput = () => {
+      const otpInput = document.getElementById('otpInput');
+      // If it's wrong OTP, reset everything and show error.
+      this.otp = '';
+      otpInput.value = '';
+    };
 
     const handleOTPVerify = () => {
       // if (!this.validateOTP()) {
@@ -521,14 +588,38 @@ class Ticket {
       //   return undefined;
       // }
 
-      this.dialog.closeDialog();
-
       // Call verify method...
+      this.verifyOTP()
+        .then((res) => {
+          if (res.status === 200) {
+            this.dialog.closeDialog();
+            // Create pin number.
+            this.showPinDialog();
+          } else if (res.status === 400) {
+            resetOTPInput();
+            alert('Wrong email verification code.');
+          } else {
+            resetOTPInput();
+            alert('Server error. Please try again.');
+          }
+        })
+        .catch((error) => {
+          resetOTPInput();
+          alert('Server error. Please try again.');
+        });
 
-      // Create pin number.
-      this.showPinDialog();
+      // this.dialog.closeDialog();
+      // this.showPinDialog();
 
       return undefined;
+    };
+
+    const handleOTPResend = async () => {
+      // Resend and remove resend button.
+      await this.requestOTP();
+
+      alert(`Verification code has been sent to ${this.email}`);
+      resetOTPInput();
     };
 
     actions.classList.add('dialog__actions');
@@ -537,7 +628,17 @@ class Ticket {
     actionsOtp.textContent = 'Verify';
     actionsOtp.addEventListener('click', () => handleOTPVerify());
 
+    actionsResend.classList.add('dialog__actions-resend');
+    actionsResend.innerHTML = 'Didn&apos;t receive the email? ';
+
+    actionsResendBtn.classList.add('dialog__actions-resend-btn');
+    actionsResendBtn.textContent = 'Resend';
+    actionsResendBtn.addEventListener('click', handleOTPResend);
+
+    actionsResend.appendChild(actionsResendBtn);
+
     actions.appendChild(actionsOtp);
+    actions.appendChild(actionsResend);
 
     // Show dialog.
     dialogWindow.appendChild(body);
@@ -556,6 +657,7 @@ class Ticket {
     const bodyTitle = document.createElement('h2');
     const bodyInfo = document.createElement('p');
     const bodyInput = document.createElement('input');
+    const bodyError = document.createElement('div');
 
     body.classList.add('dialog__body');
 
@@ -572,21 +674,37 @@ class Ticket {
     bodyInput.placeholder = '0000';
     bodyInput.addEventListener('input', this.handlePinChange);
 
+    bodyError.classList.add('invalid-feedback');
+
     body.appendChild(bodyTitle);
     body.appendChild(bodyInfo);
     body.appendChild(bodyInput);
+    body.appendChild(bodyError);
 
     // Dialog actions.
     const actions = document.createElement('div');
     const actionsOtp = document.createElement('button');
 
     const handlePinSubmit = () => {
+      if (!this.validatePin()) {
+        const {
+          pin: { message, inputId },
+        } = this.errors;
+        const pinInput = document.getElementById(inputId);
+        const errorBox = pinInput.nextElementSibling;
+
+        pinInput.classList.add('invalid');
+        errorBox.textContent = message;
+
+        return undefined;
+      }
+
       this.dialog.closeDialog();
 
       // Handle user registration.
       this.userRegistration();
 
-      this.showSuccessTransactionDialog();
+      return undefined;
     };
 
     actions.classList.add('dialog__actions');
@@ -635,6 +753,7 @@ class Ticket {
         </div>
       </div>
     `;
+    body.classList.add('dialog__body');
     body.innerHTML = bodyContent;
 
     // Dialog actions.
@@ -706,6 +825,7 @@ class Ticket {
         </button>
       </div>
     `;
+    body.classList.add('dialog__body');
     body.innerHTML = bodyContent;
 
     // Dialog actions.
@@ -742,13 +862,23 @@ class Ticket {
     // Dialog body.
     const body = document.createElement('div');
     const bodyTitle = document.createElement('h2');
+    const bodyEmailInputSection = document.createElement('div');
+    const bodyEmailLabel = document.createElement('label');
     const bodyEmailInput = document.createElement('input');
+    const bodyPasswordInputSection = document.createElement('div');
+    const bodyPasswordLabel = document.createElement('label');
     const bodyPasswordInput = document.createElement('input');
 
     body.classList.add('dialog__body');
 
     bodyTitle.classList.add('dialog__body-title');
     bodyTitle.textContent = 'Request your ticket number';
+
+    bodyEmailInputSection.classList.add('form-section');
+
+    bodyEmailLabel.htmlFor = 'checkTicketEmail';
+    bodyEmailLabel.textContent = 'Email';
+    bodyEmailLabel.classList.add('form-label');
 
     bodyEmailInput.type = 'email';
     bodyEmailInput.name = 'checkTicketEmail';
@@ -757,6 +887,15 @@ class Ticket {
     bodyEmailInput.placeholder = 'Enter your email';
     bodyEmailInput.addEventListener('input', this.handleCheckTicketEmail);
 
+    bodyEmailInputSection.appendChild(bodyEmailLabel);
+    bodyEmailInputSection.appendChild(bodyEmailInput);
+
+    bodyPasswordInputSection.classList.add('form-section');
+
+    bodyPasswordLabel.htmlFor = 'checkTicketPassword';
+    bodyPasswordLabel.textContent = 'Password';
+    bodyPasswordLabel.classList.add('form-label');
+
     bodyPasswordInput.type = 'password';
     bodyPasswordInput.name = 'checkTicketPassword';
     bodyPasswordInput.id = 'checkTicketPassword';
@@ -764,8 +903,12 @@ class Ticket {
     bodyPasswordInput.placeholder = 'Enter your password';
     bodyPasswordInput.addEventListener('input', this.handleCheckTicketPassword);
 
+    bodyPasswordInputSection.appendChild(bodyPasswordLabel);
+    bodyPasswordInputSection.appendChild(bodyPasswordInput);
+
     body.appendChild(bodyTitle);
-    body.appendChild(bodyEmailInput);
+    body.appendChild(bodyEmailInputSection);
+    body.appendChild(bodyPasswordInputSection);
 
     // Dialog actions.
     const actions = document.createElement('div');
@@ -781,6 +924,7 @@ class Ticket {
 
       // Handle check ticket.
       // If success, show result dialog.
+      alert('Coming soon');
     };
 
     actions.classList.add('dialog__actions');
