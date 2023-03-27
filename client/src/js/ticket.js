@@ -333,15 +333,13 @@ class Ticket {
   }
 
   async verifyOTP() {
-    try {
-      const data = {
-        email: this.email,
-        otp: this.otp,
-      };
-      const res = await walletAPI.verifyOTP(data);
+    const data = {
+      email: this.email,
+      otp: this.otp,
+    };
+    const res = await walletAPI.verifyOTP(data);
 
-      return res.data;
-    } catch (error) {}
+    return res.data;
   }
 
   async userRegistration() {
@@ -384,21 +382,21 @@ class Ticket {
 
       const { data: result } = await ticketAPI.sendTicketInformation(data);
 
-      if (result.code === 200) {
+      if (result.code === '200') {
         this.showSuccessTransactionDialog();
       }
     } catch (error) {}
 
     // What's below this are for testing only.
-    const value = {
-      uid: this.uid,
-      email: this.email,
-      payeeCode: this.payeeCode,
-      ticketAmount: this.ticketAmount,
-      totalBSI: this.totalBSI,
-    };
+    // const value = {
+    //   uid: this.uid,
+    //   email: this.email,
+    //   payeeCode: this.payeeCode,
+    //   ticketAmount: this.ticketAmount,
+    //   totalBSI: this.totalBSI,
+    // };
 
-    alert(JSON.stringify(value, null, 2));
+    // alert(JSON.stringify(value, null, 2));
   }
 
   async handleExchange() {
@@ -595,17 +593,20 @@ class Ticket {
             this.dialog.closeDialog();
             // Create pin number.
             this.showPinDialog();
-          } else if (res.status === 400) {
+          }
+        })
+        .catch((error) => {
+          const {
+            response: { data },
+          } = error;
+
+          if (data.status === 400) {
             resetOTPInput();
             alert('Wrong email verification code.');
           } else {
             resetOTPInput();
             alert('Server error. Please try again.');
           }
-        })
-        .catch((error) => {
-          resetOTPInput();
-          alert('Server error. Please try again.');
         });
 
       // this.dialog.closeDialog();
