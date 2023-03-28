@@ -72,18 +72,19 @@ body {
       justify-content: space-between;
       align-items: center;
 
-      &__bsi {
-        width: 120px;
+      &__digifinex {
+        width: 100px;
         height: auto;
       }
 
       &__separator {
-        margin: 0 28px;
-        font-size: 32px;
+        margin: 0 8px;
+        font-size: 12px;
         font-weight: 600;
       }
 
-      &__digifinex {
+      &__bsi {
+        width: 66px;
         height: auto;
       }
     }
@@ -128,6 +129,18 @@ body {
         border: 6px solid $ticket-outer;
         border-radius: 40px;
 
+        &--mobile {
+          .banner {
+            &__ticket {
+              &-info {
+                &__title {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+
         &--desktop {
           display: none;
         }
@@ -155,13 +168,37 @@ body {
       }
 
       &-form {
-        padding: 1.2rem 1.4rem;
+        padding: 16px;
         background-color: $ticket-inner;
         border: 6px solid $ticket-outer;
         border-radius: 40px;
 
         &__header {
           display: none;
+        }
+
+        &__discount {
+          &-digifinex {
+            line-height: 26px;
+          }
+
+          &-logo {
+            position: relative;
+            top: -2px;
+            width: 130px;
+            height: auto;
+          }
+
+          &-box {
+            padding: 4px 12px;
+            background-color: $text-primary;
+            color: #fff;
+            border-radius: 56px;
+          }
+
+          &-amount {
+            font-weight: 700;
+          }
         }
 
         &__info {
@@ -205,6 +242,10 @@ body {
               margin-bottom: 0.3rem;
 
               &__guide-btn {
+                position: relative;
+                top: -1px;
+                display: inline-block;
+                margin-left: 4px;
                 background-color: transparent;
                 padding: 0;
                 border: none;
@@ -213,7 +254,7 @@ body {
           }
 
           &-amount {
-            margin-bottom: 2rem;
+            margin-bottom: 7px;
           }
         }
 
@@ -222,9 +263,38 @@ body {
           margin-left: 0;
           border-radius: 14px;
 
+          &--amount {
+            width: 146px;
+            text-align: center;
+            font-size: 28px;
+          }
+
           &-help {
+            position: relative;
             font-size: 0.8rem;
             color: $text-primary;
+
+            &-caution {
+              display: none;
+              position: absolute;
+              top: 20px;
+              z-index: 10;
+              width: 295px;
+              background-color: #fff;
+              padding: 12px 16px;
+              border-radius: 0px 16px 16px 16px;
+
+              &__text {
+                margin-bottom: 0;
+                font-size: 12px;
+              }
+            }
+
+            &:hover {
+              .banner__ticket-form__input-help-caution {
+                display: block;
+              }
+            }
           }
 
           &.invalid {
@@ -237,6 +307,8 @@ body {
         }
 
         &__total {
+          margin-bottom: 12px;
+
           &-top {
             display: flex;
             justify-content: space-between;
@@ -280,6 +352,10 @@ body {
     }
 
     &__footer {
+      &-note {
+        display: none;
+      }
+
       &-actions {
         &-btn {
           display: block;
@@ -289,7 +365,7 @@ body {
           font-size: 1.1rem;
 
           &:not(:last-child) {
-            margin-bottom: 1.2rem;
+            margin-bottom: 16px;
           }
         }
 
@@ -321,17 +397,26 @@ body {
     }
 
     &__datetime {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
       &-info {
+        position: relative;
+        top: -4px;
         width: 100%;
 
         p {
           margin-bottom: 0;
-          text-align: center;
         }
 
         &__title {
           font-weight: 700;
-          font-size: 1.1rem;
+          font-size: 16px;
+        }
+
+        &__date {
+          font-size: 14px;
         }
       }
 
@@ -349,27 +434,29 @@ body {
           flex-direction: column;
 
           &:not(:first-of-type) {
-            margin-left: 14px;
+            margin-left: 2px;
           }
         }
 
         &__digit {
-          padding: 8px 16px;
+          width: 38px;
+          padding: 8px;
           background-color: $primary-color;
-          font-size: 28px;
+          font-size: 16px;
           color: #fff;
           font-weight: 700;
-          border-radius: 12px;
+          text-align: center;
+          border-radius: 8px;
         }
 
         &__name {
-          font-size: 14px;
+          font-size: 11px;
         }
 
         &__colon {
           position: relative;
-          top: -16px;
-          font-size: 32px;
+          top: -10px;
+          font-size: 24px;
           font-weight: 700;
         }
       }
@@ -377,6 +464,8 @@ body {
   }
 
   .notes {
+    padding: 32px 0;
+
     &__title {
       margin-bottom: 1.4rem;
       font-weight: 700;
@@ -386,7 +475,10 @@ body {
     &__content {
       position: relative;
       display: flex;
-      margin-bottom: 1rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
 
       p {
         margin-bottom: 0;
@@ -401,7 +493,7 @@ body {
         height: 40px;
         background-color: $primary-color;
         color: white;
-        font-size: 1.4rem;
+        font-size: 32px;
         font-weight: 700;
         border-radius: 50%;
       }
@@ -412,17 +504,31 @@ body {
         padding-left: 50px;
         background-color: $background-02;
         border-radius: 50px;
+        font-weight: 500;
       }
     }
   }
 
   .artist {
     background-color: $background-02;
-    padding: 80px 0;
+    padding: 20px 0 40px;
+
+    &__row {
+      &-items {
+        .artist {
+          &__col {
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
 
     &__title {
-      margin-bottom: 24px;
-      font-size: 40px;
+      margin-bottom: 20px;
+      font-size: 24px;
       font-weight: 700;
       text-align: center;
     }
@@ -436,16 +542,19 @@ body {
       font-weight: 700;
       color: #fff;
       border-radius: 32px;
+
+      &:first-of-type {
+        width: 288px;
+        height: 288px;
+        margin: auto;
+        background-color: #333;
+      }
     }
   }
 
   .video {
     @include flex-center();
-    // width: 100%;
-    // max-width: 400px;
-    // height: 200px;
-
-    margin-bottom: 3rem;
+    padding: 20px 0;
 
     p {
       margin-bottom: 0;
@@ -457,17 +566,30 @@ body {
   }
 
   .dream-concert {
+    padding: 20px 0 48px;
+
     &__info {
-      margin-bottom: 1rem;
+      margin-bottom: 32px;
 
       &-title {
         font-size: 1.7rem;
         font-weight: 700;
       }
 
+      &-text {
+        margin-bottom: 24px;
+      }
+
       &-buy {
+        @include flex-center();
         @include primary-button();
         width: 100%;
+        font-size: 18px;
+
+        &-icon {
+          display: inline-block;
+          margin-left: 4px;
+        }
       }
     }
 
@@ -491,6 +613,9 @@ body {
   }
 
   .about-bsi {
+    padding: 32px 0;
+    background-color: $background-02;
+
     &__col {
       &--token {
         &-long {
@@ -518,7 +643,7 @@ body {
     &__info {
       &-title {
         margin-bottom: 0.8rem;
-        font-size: 1.7rem;
+        font-size: 32px;
         font-weight: 700;
         text-align: center;
       }
@@ -527,6 +652,7 @@ body {
         @include secondary-button();
         width: 100%;
         margin-top: 0.8rem;
+        font-size: 18px;
       }
     }
 
@@ -573,27 +699,82 @@ body {
   }
 
   .notice {
+    padding: 40px 0;
     background-color: $background-01;
 
     &__title {
+      margin-bottom: 16px;
+      font-size: 24px;
       font-weight: 700;
       text-transform: uppercase;
     }
 
     &__subtitle {
-      font-size: 1.1rem;
+      font-size: 18px;
       font-weight: 700;
     }
 
-    &__ticket-procedure {
-      padding-bottom: 2rem;
+    &__ticket {
+      &-procedure {
+        padding-bottom: 40px;
 
-      &__image {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
+        &__item {
+          position: relative;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+
+          &:not(:last-child) {
+            margin-bottom: 24px;
+          }
+
+          &-number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include flex-center();
+            width: 60px;
+            height: 60px;
+            background-color: $primary-color;
+            border-radius: 50%;
+
+            p {
+              margin-bottom: 0;
+              color: #fff;
+              font-size: 32px;
+              font-weight: 600;
+            }
+          }
+
+          &-text {
+            @include flex-center();
+            justify-content: start;
+            width: 100%;
+            height: 60px;
+            padding: 8px 32px 8px 70px;
+            background-color: $background-03;
+            border-radius: 70px;
+            line-height: 17px;
+
+            p {
+              margin-bottom: 0;
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
+        }
       }
     }
+
+    // &__ticket-procedure {
+    //   padding-bottom: 2rem;
+
+    //   &__image {
+    //     width: 100%;
+    //     max-width: 300px;
+    //     height: auto;
+    //   }
+    // }
 
     &__procedure {
       // padding-top: 2rem;
@@ -638,17 +819,46 @@ body {
   }
 
   .partners {
-    padding: 40px;
+    // &__row {
+    //   &-items {
+    //     align-items: center;
+    //   }
+    // }
 
-    &__row {
-      &-items {
-        align-items: center;
+    padding-bottom: 32px;
+
+    &__row-items {
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        .partners {
+          &__item {
+            @include flex-center();
+            height: 100%;
+
+            &-logo {
+              &--viaje {
+                width: 80%;
+              }
+
+              &--kto {
+                width: 80%;
+              }
+
+              &--lavata {
+                width: 80%;
+              }
+            }
+          }
+        }
       }
     }
 
     &__title {
-      margin-bottom: 30px;
-      font-size: 40px;
+      margin-bottom: 16px;
+      font-size: 32px;
       font-weight: 700;
       text-align: center;
     }
@@ -748,7 +958,8 @@ body {
     top: 50%;
     left: 50%;
     z-index: 2;
-    width: 527px;
+    width: 95%;
+    max-width: 527px;
     background-color: #fff;
     transform: translate(-50%, -50%);
     border-radius: 40px;
@@ -757,8 +968,7 @@ body {
   &__body {
     @include flex-center();
     flex-direction: column;
-    padding-top: 40px;
-    padding-bottom: 26px;
+    padding: 40px 16px 26px;
 
     &-icon {
       width: 126px;
@@ -772,7 +982,7 @@ body {
     }
 
     &-info {
-      width: 80%;
+      width: 100%;
       margin-bottom: 0;
       text-align: center;
     }
@@ -1057,12 +1267,17 @@ body {
       padding: 1rem 0;
 
       .primary-logo {
-        &__bsi {
-          width: 140px;
-        }
-
         &__digifinex {
           width: 182px;
+        }
+
+        &__separator {
+          margin: 0 28px;
+          font-size: 32px;
+        }
+
+        &__bsi {
+          width: 140px;
         }
       }
 
@@ -1164,6 +1379,12 @@ body {
             }
           }
 
+          &__discount {
+            &-row {
+              display: none;
+            }
+          }
+
           &__info {
             &-uid {
               width: fit-content;
@@ -1208,6 +1429,7 @@ body {
         justify-content: space-between;
 
         &-note {
+          display: block;
           width: 40%;
           padding-left: 1.4rem;
 
@@ -1273,6 +1495,8 @@ body {
       }
 
       &__datetime {
+        flex-direction: column;
+
         &-info {
           display: flex;
           justify-content: space-between;
@@ -1285,6 +1509,47 @@ body {
 
           &__date {
             font-weight: 500;
+            font-size: 16px;
+          }
+        }
+
+        &-timer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            margin-bottom: 0;
+          }
+
+          &__item {
+            @include flex-center();
+            flex-direction: column;
+
+            &:not(:first-of-type) {
+              margin-left: 14px;
+            }
+          }
+
+          &__digit {
+            width: 70px;
+            padding: 8px 16px;
+            background-color: $primary-color;
+            font-size: 28px;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 12px;
+          }
+
+          &__name {
+            font-size: 14px;
+          }
+
+          &__colon {
+            position: relative;
+            top: -16px;
+            font-size: 32px;
+            font-weight: 700;
           }
         }
       }
@@ -1347,6 +1612,45 @@ body {
           font-size: 20px;
           font-weight: 600;
           line-height: 28px;
+        }
+      }
+    }
+
+    .artist {
+      background-color: $background-02;
+      padding: 80px 0;
+
+      &__row {
+        &-items {
+          .artist {
+            &__col {
+              &:nth-of-type(2),
+              &:nth-of-type(3) {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      &__title {
+        margin-bottom: 24px;
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      &__item {
+        @include flex-center();
+        font-size: 115px;
+        font-weight: 700;
+        color: #fff;
+        border-radius: 32px;
+
+        &:first-of-type {
+          width: 100%;
+          height: 360px;
+          background-color: #888;
         }
       }
     }
@@ -1447,6 +1751,7 @@ body {
 
             &-text {
               @include flex-center();
+              justify-content: start;
               height: 82px;
               padding: 8px 32px 8px 100px;
               background-color: $background-03;
@@ -1455,6 +1760,7 @@ body {
               p {
                 margin-bottom: 0;
                 font-size: 20px;
+                line-height: 24px;
               }
             }
           }
@@ -1492,8 +1798,36 @@ body {
     }
 
     .partners {
+      padding: 40px;
+
+      &__row {
+        &-items {
+          align-items: center;
+
+          &--mobile {
+            display: none;
+          }
+
+          &--desktop {
+            display: flex;
+          }
+        }
+      }
+
+      &__title {
+        margin-bottom: 30px;
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+      }
+
       &__item {
+        width: 100%;
+
         &-logo {
+          width: 100%;
+          height: auto;
+
           &--viaje {
             width: 90%;
           }
@@ -1513,6 +1847,14 @@ body {
       &__copyright {
         text-align: left;
         font-size: 16px;
+      }
+    }
+  }
+
+  .dialog {
+    &__body {
+      &-info {
+        width: 80%;
       }
     }
   }

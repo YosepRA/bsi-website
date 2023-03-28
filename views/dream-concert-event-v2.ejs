@@ -72,7 +72,6 @@
                   <p class="banner__ticket-info__date">May 27th, 2023</p>
                 </div>
               </div>
-
             </div>
 
             <div class="col-12 col-lg-9">
@@ -85,6 +84,16 @@
                       <h2 class="banner__ticket-form__header-subtitle">Metaverse Ticket</h2>
 
                       <p class="banner__ticket-form__header-date">May 27th, 2023</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row banner__ticket-form__discount-row">
+                  <div class="col">
+                    <div class="banner__ticket-form__discount">
+                      <p class="banner__ticket-form__discount-digifinex">Purchase <b>BSI</b> at <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="banner__ticket-form__discount-logo" /><br /> 
+                        and get <b>50% Discount</b> <span class="banner__ticket-form__discount-box">$5 → <span class="banner__ticket-form__discount-amount">$2.5</span></span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -129,7 +138,20 @@
                     <div class="banner__ticket-form__form-section">
                       <label for="payeeInput" class="form-label">Payee code <button class="form-label__guide-btn form-label__guide-btn--payee"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button></label>
                       <input type="text" class="form-control banner__ticket-form__input" id="payeeInput" placeholder="000-000" />
-                      <div id="payeeHelp" class="form-text banner__ticket-form__input-help"><span class="banner__ticket-form__input-help-icon"><img src="/img/dream-concert/Icon S Information.png" alt="" /></span> See more information</div>
+                      <div id="payeeHelp" class="form-text banner__ticket-form__input-help">
+                        <span class="banner__ticket-form__input-help-icon">
+                          <img src="/img/dream-concert/Icon S Information.png" alt="" />
+                        </span> 
+
+                        <span class="banner__ticket-form__input-help-text">
+                          See more information
+                        </span>
+
+                        <div class="banner__ticket-form__input-help-caution">
+                          <p class="banner__ticket-form__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
+                          <p class="banner__ticket-form__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -278,22 +300,22 @@
 
       <section class="artist">
         <div class="container">
-          <div class="row">
+          <div class="row artist__row artist__row-title">
             <div class="col-12">
               <div class="artist__title">Artists</div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-12 col-lg-4">
+          <div class="row artist__row artist__row-items">
+            <div class="col-12 col-lg-4 artist__col" >
               <div class="artist__item">?</div>
             </div>
 
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 artist__col">
               <div class="artist__item">?</div>
             </div>
 
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 artist__col">
               <div class="artist__item">?</div>
             </div>
           </div>
@@ -303,7 +325,7 @@
       <section class="video">
         <div class="container">
           <video controls muted>
-            <source src="/video/bsi-dream-concert-720.mp4" type="video/mp4" />
+            <source src="/video/DreamConcert 29th Official Metaverse LiveStreaming Service_720p.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
@@ -317,7 +339,12 @@
     
                 <p class="dream-concert__info-text">Dream Concert is Korea&apos;s longest-running, largest-scale performance by top K-POP stars This is known to be the K-POP concert that fans all over the world are looking forward to the most. This year&apos;s Dream Concert is operating in a Metaverse world, in a real-time online live-streaming way wherein all K-POP fans around the world could participate and enjoy at the same time. Come and join our concert with your avatar! Don&apos;t miss this chance! See you up there.</p>
     
-                <button class="dream-concert__info-buy">Buy Ticket</button>
+                <button class="dream-concert__info-buy">
+                  Buy Ticket 
+                  <span class="dream-concert__info-buy-icon">
+                    <img src="/img/dream-concert/Icon S Arrow Circle Up White.png" alt="Buy" class="dream-concert__info-buy-image" />
+                  </span>
+                </button>
               </div>
             </div>
     
@@ -356,7 +383,12 @@
                 <p class="about-bsi__info-text">BSI Token is a partner of the 29th Dream Concert, and the BSI project is an eco-friendly project that is part of its plan to create eco-friendly performances without paper tickets, and it is agreed to work with Dream Concert every year in the future.</p>
                 <p class="about-bsi__info-text">Dream Concert is in its 29th year and is famous for being the largest among KPOP concerts.This Dream Concert will be held as a concert for...</p>
         
-                <button class="about-bsi__info-btn">Read more</button>
+                <button class="about-bsi__info-btn">
+                  Read more
+                  <span class="about-bsi__info-btn-icon">
+                    <img src="/img/dream-concert/Icon S Arrow Circle Down.png" alt="More" class="about-bsi__info-btn-image" />
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -514,7 +546,45 @@
             </div>
           </div>
 
-          <div class="row partners__row partners__row-items">
+          <div class="row partners__row partners__row-items partners__row-items--mobile">
+            <div class="col-6">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Viaje.png" alt="Viaje" class="partners__item-logo partners__item-logo--viaje" />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo - Ministry of culture, sports and tourism.png" alt="Ministry of Culture, Sports, and Tourism" class="partners__item-logo partners__item-logo--ministry" />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Kepa.png" alt="KEPA" class="partners__item-logo partners__item-logo--kepa" />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Chabot Planet.png" alt="Chatbot Planet" class="partners__item-logo partners__item-logo--chatbot" />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Korea Tourism Organization.png" alt="Korea Tourism Organization" class="partners__item-logo partners__item-logo--kto" />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="partners__item">
+                <img src="/img/dream-concert/Logo Lavata.png" alt="Lavata" class="partners__item-logo partners__item-logo--lavata" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row partners__row partners__row-items partners__row-items--desktop">
             <div class="col-6 col-lg-2">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Viaje.png" alt="Viaje" class="partners__item-logo partners__item-logo--viaje" />
