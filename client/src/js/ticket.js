@@ -3,6 +3,7 @@ import { object, string, number } from 'yup';
 
 import walletAPI from './api/wallet-api.js';
 import ticketAPI from './api/ticket-api.js';
+import tokenAPI from './api/token-api.js';
 import Dialog from './dialog.js';
 
 const uidInput = document.getElementById('uidInput');
@@ -21,8 +22,6 @@ const totalBSI = document.querySelector('.banner__ticket-form__total-bsi');
 const unitPriceBSI = document.querySelector(
   '.banner__ticket-form__unit-price-amount',
 );
-
-const walletBaseUrl = 'https://api.wallet.bsin.io';
 
 class Ticket {
   constructor() {
@@ -103,11 +102,12 @@ class Ticket {
   }
 
   async getPrice() {
-    const result = await axios.get(
-      'https://openapi.digifinex.com/v3/ticker?symbol=bsi_usdt',
-    );
+    // const result = await axios.get(
+    //   'https://openapi.digifinex.com/v3/ticker?symbol=bsi_usdt',
+    // );
+    const result = await tokenAPI.getPrice();
 
-    this.bsiPrice = result.data.ticker[0].last;
+    this.bsiPrice = result.data.price;
 
     this.render();
   }
@@ -384,19 +384,12 @@ class Ticket {
 
       if (result.code === '200') {
         this.showSuccessTransactionDialog();
+      } else if (result.code === '502') {
+        this.showSubmittedIDDialog();
       }
-    } catch (error) {}
-
-    // What's below this are for testing only.
-    // const value = {
-    //   uid: this.uid,
-    //   email: this.email,
-    //   payeeCode: this.payeeCode,
-    //   ticketAmount: this.ticketAmount,
-    //   totalBSI: this.totalBSI,
-    // };
-
-    // alert(JSON.stringify(value, null, 2));
+    } catch (error) {
+      alert('Server error. Please try again later.');
+    }
   }
 
   async handleExchange() {
@@ -517,7 +510,57 @@ class Ticket {
     dialogWindow.appendChild(body);
     dialogWindow.appendChild(actions);
 
-    this.dialog.showDialog(dialogWindow, 'dialog--fail');
+    this.dialog.showDialog(dialogWindow, 'dialog--insufficient');
+  }
+
+  showSubmittedIDDialog() {
+    // Dialog window.
+    const dialogWindow = document.createElement('div');
+    dialogWindow.classList.add('dialog__window');
+
+    // Dialog body.
+    const body = document.createElement('div');
+    const bodyIcon = document.createElement('img');
+    const bodyTitle = document.createElement('h2');
+    const bodyInfo = document.createElement('p');
+
+    body.classList.add('dialog__body');
+
+    bodyIcon.classList.add('dialog__body-icon');
+    bodyIcon.src = '/img/dream-concert/fail-icon.png';
+
+    bodyTitle.classList.add('dialog__body-title');
+    bodyTitle.textContent = 'Submitted';
+
+    bodyInfo.classList.add('dialog__body-info');
+    bodyInfo.textContent =
+      'You have submitted your exchange request using this ID.';
+
+    body.appendChild(bodyIcon);
+    body.appendChild(bodyTitle);
+    body.appendChild(bodyInfo);
+
+    // Dialog actions.
+    const actions = document.createElement('div');
+    const actionsClose = document.createElement('button');
+
+    const handleActionsClick = () => {
+      this.dialog.closeDialog();
+    };
+
+    actions.classList.add('dialog__actions');
+
+    actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
+    actionsClose.textContent = 'Close';
+    actionsClose.addEventListener('click', () => handleActionsClick());
+
+    actions.appendChild(actionsClose);
+
+    // Show dialog.
+    dialogWindow.appendChild(body);
+    dialogWindow.appendChild(actions);
+
+    this.dialog.showDialog(dialogWindow, 'dialog--submitted');
   }
 
   showOTPDialog() {

@@ -5,7 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Inter:wght@400;500;600;700&display=swap');
 
 $primary-color: #51b2aa;
-$error-color: #dc3545;
+$primary-hover-color: #2a938a;
+$primary-pressed-color: #117067;
+$error-color: #ec4545;
 $text-primary: #333333;
 $text-secondary: #888888;
 $text-button: #ffffff;
@@ -489,8 +491,6 @@ body {
   }
 
   .about-bsi {
-    margin-bottom: 3rem;
-
     &__col {
       &--token {
         &-long {
@@ -527,6 +527,47 @@ body {
         @include secondary-button();
         width: 100%;
         margin-top: 0.8rem;
+      }
+    }
+
+    &.show {
+      .about-bsi {
+        &__col {
+          &--token-short {
+            display: none;
+          }
+
+          &--info-short {
+            display: none;
+          }
+
+          &--token-long {
+            display: block;
+          }
+
+          &--info-long {
+            display: block;
+          }
+        }
+
+        &__token {
+          width: 25%;
+          margin: 0 auto 28px;
+        }
+
+        &__info {
+          padding: 32px;
+
+          &-title {
+            margin-bottom: 16px;
+            text-align: center;
+          }
+
+          &-btn {
+            display: block;
+            margin: 42px auto 0;
+          }
+        }
       }
     }
   }
@@ -618,6 +659,55 @@ body {
       &-logo {
         width: 100%;
         height: auto;
+      }
+    }
+  }
+
+  .fb {
+    position: fixed;
+    top: 300px;
+    right: 0;
+
+    &__inquiries {
+      position: absolute;
+      right: 0;
+
+      &-btn {
+        width: 145px;
+        background-color: $primary-pressed-color;
+        padding: 16px 24px;
+        border: 3px solid #ffffff;
+        border-radius: 28px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+
+        &--initial {
+          position: absolute;
+          right: 0;
+          padding: 12px 24px 12px 12px;
+
+          @include flex-center();
+          border-radius: 37px 0px 0px 37px;
+
+          .fb {
+            &__inquiries {
+              &-text {
+                display: inline-block;
+                margin-left: 8px;
+              }
+            }
+          }
+        }
+
+        &--telegram {
+          width: 275px;
+          font-size: 18px;
+        }
+      }
+
+      &-text {
+        flex: 1;
       }
     }
   }
@@ -721,8 +811,14 @@ body {
     }
   }
 
-  &--fail {
+  &--insufficient {
     .dialog {
+      &__body {
+        &-title {
+          color: $error-color;
+        }
+      }
+
       &__actions {
         &-close {
           @include secondary-button();
@@ -731,6 +827,22 @@ body {
         &-buy {
           @include primary-button();
           text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &--submitted {
+    .dialog {
+      &__body {
+        &-title {
+          color: $error-color;
+        }
+      }
+
+      &__actions {
+        &-close {
+          @include primary-button();
         }
       }
     }
