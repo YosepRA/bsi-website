@@ -22,7 +22,7 @@
   }
 %>
 
-<%- include('partials/header.ejs') %>
+<%- include('partials/header.ejs', { title: '29th Dream Concert in Busan | Bali Social Integrated' }) %>
   <body class="dream-concert-event-v2 <%= lang %>">
     <header class="page-header">
       <div class="container">
@@ -62,6 +62,16 @@
               </div>
             </div>
 
+            <div class="col-12 col-lg-3 banner__ticket-info--tablet">
+              <div class="banner__ticket-info">
+                <h2 class="banner__ticket-info__title">29th Dream Concert In Busan</h2>
+  
+                <h3 class="banner__ticket-info__subtitle">Metaverse Ticket</h3>
+  
+                <p class="banner__ticket-info__date">May 27th, 2023</p>
+              </div>
+            </div>
+
             <div class="col-12 col-lg-3 banner__ticket-info--desktop">
               <div class="banner__ticket-info-wrapper">
                 <div class="banner__ticket-info">
@@ -91,7 +101,7 @@
                 <div class="row banner__ticket-form__discount-row">
                   <div class="col">
                     <div class="banner__ticket-form__discount">
-                      <p class="banner__ticket-form__discount-digifinex">Purchase <b>BSI</b> at <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="banner__ticket-form__discount-logo" /><br /> 
+                      <p class="banner__ticket-form__discount-digifinex">Purchase <b>BSI</b> at <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="banner__ticket-form__discount-logo" /> 
                         and get <b>50% Discount</b> <span class="banner__ticket-form__discount-box">$5 → <span class="banner__ticket-form__discount-amount">$2.5</span></span>
                       </p>
                     </div>
@@ -110,7 +120,7 @@
                 <div class="banner__ticket-form__separator"></div>
   
                 <div class="row gx-1 banner__ticket-form__form">
-                  <div class="col-12 col-lg-2">
+                  <div class="col-12 col-md-4 col-lg-3">
                     <div class="banner__ticket-form__form-section">
                       <label for="uidInput" class="form-label">User UID <button class="form-label__guide-btn form-label__guide-btn--uid"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button></label>
                       <input type="text" class="form-control banner__ticket-form__input" id="uidInput" placeholder="Enter user UID" />
@@ -118,7 +128,7 @@
                     </div>
                   </div>
   
-                  <div class="col-12 col-lg-5">
+                  <div class="col-12 col-md-4 col-lg-5">
                     <div class="banner__ticket-form__form-section">
                       <label for="emailInput" class="form-label">Your email</label>
                       <input type="email" class="form-control banner__ticket-form__input" id="emailInput" placeholder="Enter your email" />
@@ -126,7 +136,7 @@
                     </div>
                   </div>
 
-                  <div class="col-12 col-lg-3">
+                  <div class="col-12 col-md-4 col-lg-4">
                     <div class="banner__ticket-form__form-section">
                       <label for="passwordInput" class="form-label">Your password</label>
                       <input type="password" class="form-control banner__ticket-form__input" id="passwordInput" placeholder="Enter your password" />
@@ -134,7 +144,7 @@
                     </div>
                   </div>
   
-                  <div class="col-12 col-lg-2">
+                  <!-- <div class="col-12 col-lg-2">
                     <div class="banner__ticket-form__form-section">
                       <label for="payeeInput" class="form-label">Payee code <button class="form-label__guide-btn form-label__guide-btn--payee"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button></label>
                       <input type="text" class="form-control banner__ticket-form__input" id="payeeInput" placeholder="000-000" />
@@ -153,13 +163,13 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
   
                 <div class="banner__ticket-form__separator"></div>
   
-                <div class="row justify-content-between">
-                  <div class="col-12 col-lg-4">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-12 col-md-8 col-lg-4">
                     <div class="banner__ticket-form__form-section banner__ticket-form__form-amount">
                       <label for="amountInput" class="form-label">Add the number of tickets</label>
                       <input type="number" min="1" class="form-control banner__ticket-form__input banner__ticket-form__input--amount" id="amountInput"" />
@@ -167,7 +177,7 @@
                     </div>
                   </div>
   
-                  <div class="col-12 col-lg-4">
+                  <div class="col-12 col-md-4 col-lg-4">
                     <div class="banner__ticket-form__total">
                       <div class="banner__ticket-form__total-top">
                         <p class="banner__ticket-form__total-title">Total</p>
@@ -307,15 +317,15 @@
           </div>
 
           <div class="row artist__row artist__row-items">
-            <div class="col-12 col-lg-4 artist__col" >
+            <div class="col-12 col-md-6 col-lg-4 artist__col" >
               <div class="artist__item">?</div>
             </div>
 
-            <div class="col-12 col-lg-4 artist__col">
+            <div class="col-12 col-md-6 col-lg-4 artist__col">
               <div class="artist__item">?</div>
             </div>
 
-            <div class="col-12 col-lg-4 artist__col">
+            <div class="col-12 col-md-6 col-lg-4 artist__col">
               <div class="artist__item">?</div>
             </div>
           </div>
@@ -370,13 +380,13 @@
           <div class="row">
             <!-- Short content -->
             
-            <div class="col-12 col-lg-5 about-bsi__col about-bsi__col--token-short">
+            <div class="col-12 col-md-5 about-bsi__col about-bsi__col--token-short">
               <div class="about-bsi__token">
                 <img src="/img/dream-concert/Coin.svg" alt="BSI Coin" class="about-bsi__token-image" />
               </div>
             </div>
   
-            <div class="col-12 col-lg-7 about-bsi__col about-bsi__col--info-short">
+            <div class="col-12 col-md-7 about-bsi__col about-bsi__col--info-short">
               <div class="about-bsi__info">
                 <h2 class="about-bsi__info-title">About BSI</h2>
         
@@ -437,8 +447,6 @@
     
             <div class="col-12 col-lg-7">
               <div class="notice__ticket-procedure">
-                <!-- <img src="/img/dream-concert/ticket-procedure.png" alt="" class="notice__ticket-procedure__image" /> -->
-
                 <div class="notice__ticket-procedure__item">
                   <div class="notice__ticket-procedure__item-number">
                     <p>1</p>
@@ -589,38 +597,38 @@
             </div>
           </div>
 
-          <div class="row partners__row partners__row-items partners__row-items--desktop">
-            <div class="col-6 col-lg-2">
+          <div class="row gy-2 partners__row partners__row-items partners__row-items--desktop">
+            <div class="col-6 col-md-4 col-lg-2">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Viaje.png" alt="Viaje" class="partners__item-logo partners__item-logo--viaje" />
               </div>
             </div>
 
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-md-4 col-lg-2">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Kepa.png" alt="KEPA" class="partners__item-logo partners__item-logo--kepa" />
               </div>
             </div>
 
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-md-4 col-lg-2">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Korea Tourism Organization.png" alt="Korea Tourism Organization" class="partners__item-logo partners__item-logo--kto" />
               </div>
             </div>
 
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-md-4 col-lg-2">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo - Ministry of culture, sports and tourism.png" alt="Ministry of Culture, Sports, and Tourism" class="partners__item-logo partners__item-logo--ministry" />
               </div>
             </div>
 
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-md-4 col-lg-2">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Chabot Planet.png" alt="Chatbot Planet" class="partners__item-logo partners__item-logo--chatbot" />
               </div>
             </div>
 
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-md-4 col-lg-2">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Lavata.png" alt="Lavata" class="partners__item-logo partners__item-logo--lavata" />
               </div>
