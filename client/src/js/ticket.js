@@ -35,8 +35,12 @@ class Ticket {
     this.pin = '';
     // this.pinCheck = '';
     // this.pinStep = 'first';
+
+    // Check ticket form states.
     this.checkTicketEmail = '';
     this.checkTicketPassword = '';
+    this.checkTicketPayeeCode = '';
+    this.checkTicketTxID = '';
 
     this.bsiPrice = null;
     this.totalBSI = 0;
@@ -92,7 +96,7 @@ class Ticket {
     uidInput.value = this.uid;
     emailInput.value = this.email;
     passwordInput.value = this.password;
-    payeeInput.value = this.payeeCode;
+    // payeeInput.value = this.payeeCode;
     amountInput.value = this.ticketAmount;
 
     totalPriceOne.textContent = this.totalPrice;

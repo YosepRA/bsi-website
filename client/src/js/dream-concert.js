@@ -54,14 +54,14 @@ function start() {
   emailInput.addEventListener('focus', ticket.resetErrors);
   passwordInput.addEventListener('input', ticket.handlePasswordChange);
   passwordInput.addEventListener('focus', ticket.resetErrors);
-  payeeInput.addEventListener('input', ticket.handlePayeeChange);
+  // payeeInput.addEventListener('input', ticket.handlePayeeChange);
   amountInput.addEventListener('input', ticket.handleAmountChange);
   amountInput.addEventListener('focus', ticket.resetErrors);
   exchangeButton.addEventListener('click', ticket.handleExchange);
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
   checkTicketButton.addEventListener('click', ticket.showCheckTicket);
   uidInputGuide.addEventListener('click', ticket.showUIDGuide);
-  payeeInputGuide.addEventListener('click', ticket.showPayeeCodeGuide);
+  // payeeInputGuide.addEventListener('click', ticket.showPayeeCodeGuide);
   aboutBSIShortBtn.addEventListener('click', () => handleAboutBSIToggle(true));
   aboutBSILongBtn.addEventListener('click', () => handleAboutBSIToggle(false));
 
