@@ -1,10 +1,12 @@
-import axios from 'axios';
 import { object, string, number } from 'yup';
 
 import walletAPI from './api/wallet-api.js';
 import ticketAPI from './api/ticket-api.js';
 import tokenAPI from './api/token-api.js';
 import Dialog from './dialogs/dialog.js';
+import UIDDialog from './dialogs/uid-guide-dialog.js';
+import PayeeDialog from './dialogs/payee-guide-dialog.js';
+import TxIDDialog from './dialogs/txid-guide-dialog.js';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
@@ -49,6 +51,9 @@ class Ticket {
     this.totalPrice = 2.5;
 
     this.dialog = new Dialog();
+    this.uidDialog = new UIDDialog('dialog--uid');
+    this.payeeDialog = new PayeeDialog('dialog--payee');
+    this.txIdDialog = new TxIDDialog('dialog--txid');
 
     // Validation system.
     this.ticketSchema = object({
@@ -71,6 +76,28 @@ class Ticket {
       pin: { status: false, message: '', inputId: 'pinInput' },
     };
 
+    // Check ticket error validation schema.
+
+    this.checkTicketSchema = object({
+      email: string()
+        .required('Fill your email')
+        .email('Please enter a valid email'),
+      uid: string().required('Fill your UID'),
+      txId: string().required('Fill your TxID'),
+      payeeCode: string().required('Fill your payee code'),
+    });
+
+    this.checkTicketErrors = {
+      email: { status: false, message: '', inputId: 'checkTicketEmail' },
+      uid: { status: false, message: '', inputId: 'checkTicketUID' },
+      txId: { status: false, message: '', inputId: 'checkTicketTxID' },
+      payeeCode: {
+        status: false,
+        message: '',
+        inputId: 'checkTicketPayeeCode',
+      },
+    };
+
     this.handleUIDChange = this.handleUIDChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -88,6 +115,7 @@ class Ticket {
     this.handleCheckTicketUID = this.handleCheckTicketUID.bind(this);
     this.handleCheckTicketPayee = this.handleCheckTicketPayee.bind(this);
     this.handleCheckTicketTxID = this.handleCheckTicketTxID.bind(this);
+    this.resetCheckTicketError = this.resetCheckTicketError.bind(this);
 
     // Initialize.
     this.render();
@@ -258,6 +286,80 @@ class Ticket {
 
     this.errors = reset;
   }
+
+  /* ======================= Check Ticket Validation ======================= */
+
+  async validateCheckTicket() {
+    try {
+      const data = {
+        email: this.checkTicketEmail,
+        uid: this.checkTicketUID,
+        txId: this.checkTicketTxID,
+        payeeCode: this.checkTicketPayeeCode,
+      };
+
+      await this.checkTicketSchema.validate(data, {
+        abortEarly: false,
+      });
+
+      return true;
+    } catch (error) {
+      // It's where all the errors from Yup stored.
+      error.inner.forEach(({ path, message }) => {
+        const newField = {
+          ...this.checkTicketErrors[path],
+          status: true,
+          message,
+        };
+
+        this.checkTicketErrors = {
+          ...this.checkTicketErrors,
+          [path]: newField,
+        };
+      });
+
+      this.renderCheckTicketInputError();
+
+      return false;
+    }
+  }
+
+  renderCheckTicketInputError() {
+    Object.keys(this.checkTicketErrors)
+      .filter((key) => this.checkTicketErrors[key].status)
+      .forEach((key) => {
+        const { message, inputId } = this.checkTicketErrors[key];
+        const input = document.getElementById(inputId);
+        const errorBox = input.nextElementSibling;
+
+        input.classList.add('invalid');
+        errorBox.textContent = message;
+      });
+  }
+
+  resetCheckTicketError() {
+    const reset = {};
+
+    Object.keys(this.checkTicketErrors).forEach((key) => {
+      const value = this.checkTicketErrors[key];
+      reset[key] = {
+        ...value,
+        status: false,
+        message: '',
+      };
+
+      // Remove "invalid" class.
+      const input = document.getElementById(value.inputId);
+      input?.classList.remove('invalid');
+      // Empty error box.
+      const errorBox = input?.nextElementSibling;
+      errorBox.textContent = '';
+    });
+
+    this.checkTicketErrors = reset;
+  }
+
+  /* ======================= Event Handlers ======================= */
 
   handleUIDChange(event) {
     const { value } = event.target;
@@ -849,7 +951,8 @@ class Ticket {
     bodyTitle.textContent = 'Create a New Pin';
 
     bodyInfo.classList.add('dialog__body-info');
-    bodyInfo.textContent = 'Please enter a 4-digit number for your pin.';
+    bodyInfo.textContent =
+      'Please enter a 4-digit number for your pin for your new BSI Wallet account';
 
     bodyInput.type = 'text';
     bodyInput.name = 'pin';
@@ -1056,6 +1159,7 @@ class Ticket {
     const bodyEmailInputSection = document.createElement('div');
     const bodyEmailLabel = document.createElement('label');
     const bodyEmailInput = document.createElement('input');
+    const bodyEmailError = document.createElement('div');
 
     bodyEmailInputSection.classList.add('form-section');
 
@@ -1069,15 +1173,21 @@ class Ticket {
     bodyEmailInput.classList.add('form-control');
     bodyEmailInput.placeholder = 'Enter your email';
     bodyEmailInput.addEventListener('input', this.handleCheckTicketEmail);
+    bodyEmailInput.addEventListener('focus', this.resetCheckTicketError);
+
+    bodyEmailError.classList.add('invalid-feedback');
 
     bodyEmailInputSection.appendChild(bodyEmailLabel);
     bodyEmailInputSection.appendChild(bodyEmailInput);
+    bodyEmailInputSection.appendChild(bodyEmailError);
 
     // UID input.
     const bodyUIDInputSection = document.createElement('div');
     const bodyUIDLabel = document.createElement('label');
     const bodyUIDLabelGuideBtn = document.createElement('button');
+    const bodyUIDLabelGuideImage = document.createElement('img');
     const bodyUIDInput = document.createElement('input');
+    const bodyUIDError = document.createElement('div');
 
     bodyUIDInputSection.classList.add('form-section');
 
@@ -1085,21 +1195,39 @@ class Ticket {
     bodyUIDLabel.textContent = 'User UID';
     bodyUIDLabel.classList.add('form-label');
 
+    bodyUIDLabelGuideBtn.classList.add(
+      'form-label__guide-btn',
+      'form-label__guide-btn--check-ticket-uid',
+    );
+    bodyUIDLabelGuideBtn.addEventListener('click', () =>
+      this.uidDialog.showUIDDialog(),
+    );
+    bodyUIDLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
+    bodyUIDLabelGuideImage.alt = 'Help';
+
     bodyUIDInput.type = 'text';
     bodyUIDInput.name = 'checkTicketUID';
     bodyUIDInput.id = 'checkTicketUID';
     bodyUIDInput.classList.add('form-control');
     bodyUIDInput.placeholder = 'Enter your UID';
     bodyUIDInput.addEventListener('input', this.handleCheckTicketUID);
+    bodyUIDInput.addEventListener('focus', this.resetCheckTicketError);
 
+    bodyUIDError.classList.add('invalid-feedback');
+
+    bodyUIDLabelGuideBtn.appendChild(bodyUIDLabelGuideImage);
+    bodyUIDLabel.appendChild(bodyUIDLabelGuideBtn);
     bodyUIDInputSection.appendChild(bodyUIDLabel);
     bodyUIDInputSection.appendChild(bodyUIDInput);
+    bodyUIDInputSection.appendChild(bodyUIDError);
 
     // TxID input.
     const bodyTxIDInputSection = document.createElement('div');
     const bodyTxIDLabel = document.createElement('label');
     const bodyTxIDLabelGuideBtn = document.createElement('button');
+    const bodyTxIDLabelGuideImage = document.createElement('img');
     const bodyTxIDInput = document.createElement('input');
+    const bodyTxIDError = document.createElement('div');
 
     bodyTxIDInputSection.classList.add('form-section');
 
@@ -1107,15 +1235,31 @@ class Ticket {
     bodyTxIDLabel.textContent = 'TxID';
     bodyTxIDLabel.classList.add('form-label');
 
+    bodyTxIDLabelGuideBtn.classList.add(
+      'form-label__guide-btn',
+      'form-label__guide-btn--check-ticket-txid',
+    );
+    bodyTxIDLabelGuideBtn.addEventListener('click', () =>
+      this.txIdDialog.showTxIDDialog(),
+    );
+    bodyTxIDLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
+    bodyTxIDLabelGuideImage.alt = 'Help';
+
     bodyTxIDInput.type = 'text';
     bodyTxIDInput.name = 'checkTicketTxID';
     bodyTxIDInput.id = 'checkTicketTxID';
     bodyTxIDInput.classList.add('form-control');
     bodyTxIDInput.placeholder = '0000-0000';
     bodyTxIDInput.addEventListener('input', this.handleCheckTicketTxID);
+    bodyTxIDInput.addEventListener('focus', this.resetCheckTicketError);
 
+    bodyTxIDError.classList.add('invalid-feedback');
+
+    bodyTxIDLabelGuideBtn.appendChild(bodyTxIDLabelGuideImage);
+    bodyTxIDLabel.appendChild(bodyTxIDLabelGuideBtn);
     bodyTxIDInputSection.appendChild(bodyTxIDLabel);
     bodyTxIDInputSection.appendChild(bodyTxIDInput);
+    bodyTxIDInputSection.appendChild(bodyTxIDError);
 
     // Payee code input.
     const bodyPayeeInputSection = document.createElement('div');
@@ -1123,6 +1267,7 @@ class Ticket {
     const bodyPayeeLabelGuideBtn = document.createElement('button');
     const bodyPayeeLabelGuideImage = document.createElement('img');
     const bodyPayeeInput = document.createElement('input');
+    const bodyPayeeError = document.createElement('div');
 
     bodyPayeeInputSection.classList.add('form-section');
 
@@ -1134,7 +1279,9 @@ class Ticket {
       'form-label__guide-btn',
       'form-label__guide-btn--check-ticket-payee',
     );
-    bodyPayeeLabelGuideBtn.addEventListener('click', this.showPayeeCodeGuide);
+    bodyPayeeLabelGuideBtn.addEventListener('click', () =>
+      this.payeeDialog.showPayeeDialog(),
+    );
     bodyPayeeLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
     bodyPayeeLabelGuideImage.alt = 'Help';
 
@@ -1144,11 +1291,15 @@ class Ticket {
     bodyPayeeInput.classList.add('form-control');
     bodyPayeeInput.placeholder = '000-000';
     bodyPayeeInput.addEventListener('input', this.handleCheckTicketPayee);
+    bodyPayeeInput.addEventListener('focus', this.resetCheckTicketError);
 
-    // bodyPayeeLabelGuideBtn.appendChild(bodyPayeeLabelGuideImage);
-    // bodyPayeeLabel.appendChild(bodyPayeeLabelGuideBtn);
+    bodyPayeeError.classList.add('invalid-feedback');
+
+    bodyPayeeLabelGuideBtn.appendChild(bodyPayeeLabelGuideImage);
+    bodyPayeeLabel.appendChild(bodyPayeeLabelGuideBtn);
     bodyPayeeInputSection.appendChild(bodyPayeeLabel);
     bodyPayeeInputSection.appendChild(bodyPayeeInput);
+    bodyPayeeInputSection.appendChild(bodyPayeeError);
 
     body.appendChild(bodyTitle);
     body.appendChild(bodyEmailInputSection);
@@ -1160,9 +1311,14 @@ class Ticket {
     const actions = document.createElement('div');
     const actionsCheckTicket = document.createElement('button');
 
-    const handleCheckTicket = () => {
+    const handleCheckTicket = async () => {
+      const validateResult = await this.validateCheckTicket();
+      if (!validateResult) return undefined;
+
       this.dialog.closeDialog();
       this.sendTicketConfirmation();
+
+      return undefined;
     };
 
     actions.classList.add('dialog__actions');

@@ -788,6 +788,7 @@ body {
           display: flex;
           justify-content: start;
           align-items: center;
+          flex-wrap: wrap;
 
           &:not(:last-child) {
             margin-bottom: 24px;
@@ -825,6 +826,18 @@ body {
               margin-bottom: 0;
               font-size: 14px;
               font-weight: 500;
+            }
+          }
+
+          &-note {
+            // position: absolute;
+            // bottom: 0;
+            // left: 0;
+            padding-left: 70px;
+
+            p {
+              margin-bottom: 0;
+              font-size: 12px;
             }
           }
         }
@@ -1014,6 +1027,12 @@ body {
   z-index: 1000;
   width: 100%;
   height: 100%;
+
+  .form-control {
+    &.invalid ~ .invalid-feedback {
+      display: block;
+    }
+  }
 
   &__overlay {
     position: absolute;
@@ -2330,6 +2349,14 @@ body {
                 margin-bottom: 0;
                 font-size: 20px;
                 line-height: 24px;
+              }
+            }
+
+            &-note {
+              padding-left: 100px;
+
+              p {
+                font-size: 14px;
               }
             }
           }
