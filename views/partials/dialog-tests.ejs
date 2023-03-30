@@ -188,23 +188,11 @@
       <h2 class="dialog__body-title">Request your ticket number</h2>
 
       <div class="form-section">
-        <label for="checkTicketEmail" class="form-label">Email</label>
-        <input type="email" class="form-control" id="checkTicketEmail" placeholder="Enter your email" />
-        <div class="invalid-feedback"></div>
-      </div>
-
-      <div class="form-section">
-        <label for="checkTicketPassword" class="form-label">Password</label>
-        <input type="password" class="form-control" id="checkTicketPassword" placeholder="Enter your password" />
-        <div class="invalid-feedback"></div>
-      </div>
-
-      <div class="form-section">
-        <label for="checkTicketPayeeCode" class="form-label">
-          Payee code
-          <button class="form-label__guide-btn form-label__guide-btn--check-ticket-payee"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button>
+        <label for="checkTicketUID" class="form-label">
+          UID
+          <button class="form-label__guide-btn form-label__guide-btn--check-ticket-uid"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button>
         </label>
-        <input type="text" class="form-control" id="checkTicketPayeeCode" placeholder="Enter your payee code" />
+        <input type="text" class="form-control" id="checkTicketUID" placeholder="Enter your UID" />
         <div class="invalid-feedback"></div>
       </div>
 
@@ -214,6 +202,17 @@
           <button class="form-label__guide-btn form-label__guide-btn--check-ticket-txid"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button>
         </label>
         <input type="text" class="form-control" id="checkTicketTxID" placeholder="Enter your TxID" />
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <div class="form-section">
+        <label for="checkTicketPayeeCode" class="form-label">
+          Payee code
+          <button class="form-label__guide-btn form-label__guide-btn--check-ticket-payee">
+            <img src="/img/dream-concert/Icon S Help.png" alt="Help" />
+          </button>
+        </label>
+        <input type="text" class="form-control" id="checkTicketPayeeCode" placeholder="Enter your payee code" />
         <div class="invalid-feedback"></div>
       </div>
     </div>
@@ -237,6 +236,50 @@
     <div class="dialog__actions">
       <button class="dialog__actions-btn dialog__actions-check-ticket-result dialog__actions-check-ticket-result--close">Close</button>
       <button class="dialog__actions-btn dialog__actions-check-ticket-result dialog__actions-check-ticket-result--copy">Copy</button>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="dialog dialog--txid">
+  <div class="dialog__overlay"></div>
+
+  <div class="dialog__window">
+    <div class="dialog__body">
+      <div id="txidGuideCarousel" class="carousel slide" data-bs-ride="false" data-bs-wrap="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2 class="carousel-item-title">Step 1: Click Withdraw</h2>
+            <img src="/img/dream-concert/txid-guide-01.png" class="carousel-item-image" alt="" />
+          </div>
+
+          <div class="carousel-item">
+            <h2 class="carousel-item-title">Step 2 : You can find the TxID below the time</h2>
+            <img src="/img/dream-concert/txid-guide-02.png" class="carousel-item-image" alt="" />
+          </div>
+        </div>
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#txidGuideCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#txidGuideCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#txidGuideCarousel" data-bs-slide="prev">
+          <span class="carousel-control-icon carousel-control-icon--prev" aria-hidden="true">
+            <img src="/img/dream-concert/Icon S Arrow Left.png" alt="Prev" />
+          </span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#txidGuideCarousel" data-bs-slide="next">
+          <span class="carousel-control-icon carousel-control-icon--next" aria-hidden="true">
+            <img src="/img/dream-concert/Icon S Arrow Right.png" alt="Next" />
+          </span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="dialog__actions">
+      <button class="dialog__actions-btn dialog__actions-txid">Done</button>
     </div>
   </div>
 </div> -->

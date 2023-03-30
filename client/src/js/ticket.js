@@ -4,7 +4,7 @@ import { object, string, number } from 'yup';
 import walletAPI from './api/wallet-api.js';
 import ticketAPI from './api/ticket-api.js';
 import tokenAPI from './api/token-api.js';
-import Dialog from './dialog.js';
+import Dialog from './dialogs/dialog.js';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
@@ -37,8 +37,7 @@ class Ticket {
     // this.pinStep = 'first';
 
     // Check ticket form states.
-    this.checkTicketEmail = '';
-    this.checkTicketPassword = '';
+    this.checkTicketUID = '';
     this.checkTicketPayeeCode = '';
     this.checkTicketTxID = '';
 
@@ -84,6 +83,9 @@ class Ticket {
     this.showUIDGuide = this.showUIDGuide.bind(this);
     this.showPayeeCodeGuide = this.showPayeeCodeGuide.bind(this);
     this.showCheckTicket = this.showCheckTicket.bind(this);
+    this.handleCheckTicketUID = this.handleCheckTicketUID.bind(this);
+    this.handleCheckTicketPayee = this.handleCheckTicketPayee.bind(this);
+    this.handleCheckTicketTxID = this.handleCheckTicketTxID.bind(this);
 
     // Initialize.
     this.render();
@@ -316,16 +318,22 @@ class Ticket {
     this.pin = value;
   }
 
-  handleCheckTicketEmail(event) {
+  handleCheckTicketUID(event) {
     const { value } = event.target;
 
-    this.checkTicketEmail = value;
+    this.checkTicketUID = value;
   }
 
-  handleCheckTicketPassword(event) {
+  handleCheckTicketPayee(event) {
     const { value } = event.target;
 
-    this.checkTicketPassword = value;
+    this.checkTicketPayeeCode = value;
+  }
+
+  handleCheckTicketTxID(event) {
+    const { value } = event.target;
+
+    this.checkTicketTxID = value;
   }
 
   async requestOTP() {
@@ -910,69 +918,111 @@ class Ticket {
     // Dialog body.
     const body = document.createElement('div');
     const bodyTitle = document.createElement('h2');
-    const bodyEmailInputSection = document.createElement('div');
-    const bodyEmailLabel = document.createElement('label');
-    const bodyEmailInput = document.createElement('input');
-    const bodyPasswordInputSection = document.createElement('div');
-    const bodyPasswordLabel = document.createElement('label');
-    const bodyPasswordInput = document.createElement('input');
 
     body.classList.add('dialog__body');
 
     bodyTitle.classList.add('dialog__body-title');
     bodyTitle.textContent = 'Request your ticket number';
 
-    bodyEmailInputSection.classList.add('form-section');
+    // UID input.
+    const bodyUIDInputSection = document.createElement('div');
+    const bodyUIDLabel = document.createElement('label');
+    const bodyUIDLabelGuideBtn = document.createElement('button');
+    const bodyUIDInput = document.createElement('input');
 
-    bodyEmailLabel.htmlFor = 'checkTicketEmail';
-    bodyEmailLabel.textContent = 'Email';
-    bodyEmailLabel.classList.add('form-label');
+    bodyUIDInputSection.classList.add('form-section');
 
-    bodyEmailInput.type = 'email';
-    bodyEmailInput.name = 'checkTicketEmail';
-    bodyEmailInput.id = 'checkTicketEmail';
-    bodyEmailInput.classList.add('form-control');
-    bodyEmailInput.placeholder = 'Enter your email';
-    bodyEmailInput.addEventListener('input', this.handleCheckTicketEmail);
+    bodyUIDLabel.htmlFor = 'checkTicketUID';
+    bodyUIDLabel.textContent = 'User UID';
+    bodyUIDLabel.classList.add('form-label');
 
-    bodyEmailInputSection.appendChild(bodyEmailLabel);
-    bodyEmailInputSection.appendChild(bodyEmailInput);
+    bodyUIDInput.type = 'text';
+    bodyUIDInput.name = 'checkTicketUID';
+    bodyUIDInput.id = 'checkTicketUID';
+    bodyUIDInput.classList.add('form-control');
+    bodyUIDInput.placeholder = 'Enter your UID';
+    bodyUIDInput.addEventListener('input', this.handleCheckTicketUID);
 
-    bodyPasswordInputSection.classList.add('form-section');
+    bodyUIDInputSection.appendChild(bodyUIDLabel);
+    bodyUIDInputSection.appendChild(bodyUIDInput);
 
-    bodyPasswordLabel.htmlFor = 'checkTicketPassword';
-    bodyPasswordLabel.textContent = 'Password';
-    bodyPasswordLabel.classList.add('form-label');
+    // TxID input.
+    const bodyTxIDInputSection = document.createElement('div');
+    const bodyTxIDLabel = document.createElement('label');
+    const bodyTxIDLabelGuideBtn = document.createElement('button');
+    const bodyTxIDInput = document.createElement('input');
 
-    bodyPasswordInput.type = 'password';
-    bodyPasswordInput.name = 'checkTicketPassword';
-    bodyPasswordInput.id = 'checkTicketPassword';
-    bodyPasswordInput.classList.add('form-control');
-    bodyPasswordInput.placeholder = 'Enter your password';
-    bodyPasswordInput.addEventListener('input', this.handleCheckTicketPassword);
+    bodyTxIDInputSection.classList.add('form-section');
 
-    bodyPasswordInputSection.appendChild(bodyPasswordLabel);
-    bodyPasswordInputSection.appendChild(bodyPasswordInput);
+    bodyTxIDLabel.htmlFor = 'checkTicketTxID';
+    bodyTxIDLabel.textContent = 'TxID';
+    bodyTxIDLabel.classList.add('form-label');
+
+    bodyTxIDInput.type = 'text';
+    bodyTxIDInput.name = 'checkTicketTxID';
+    bodyTxIDInput.id = 'checkTicketTxID';
+    bodyTxIDInput.classList.add('form-control');
+    bodyTxIDInput.placeholder = '0000-0000';
+    bodyTxIDInput.addEventListener('input', this.handleCheckTicketTxID);
+
+    bodyTxIDInputSection.appendChild(bodyTxIDLabel);
+    bodyTxIDInputSection.appendChild(bodyTxIDInput);
+
+    // Payee code input.
+    const bodyPayeeInputSection = document.createElement('div');
+    const bodyPayeeLabel = document.createElement('label');
+    const bodyPayeeLabelGuideBtn = document.createElement('button');
+    const bodyPayeeLabelGuideImage = document.createElement('img');
+    const bodyPayeeInput = document.createElement('input');
+
+    bodyPayeeInputSection.classList.add('form-section');
+
+    bodyPayeeLabel.htmlFor = 'checkTicketPayeeCode';
+    bodyPayeeLabel.textContent = 'Payee Code';
+    bodyPayeeLabel.classList.add('form-label');
+
+    bodyPayeeLabelGuideBtn.classList.add(
+      'form-label__guide-btn',
+      'form-label__guide-btn--check-ticket-payee',
+    );
+    bodyPayeeLabelGuideBtn.addEventListener('click', this.showPayeeCodeGuide);
+    bodyPayeeLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
+    bodyPayeeLabelGuideImage.alt = 'Help';
+
+    bodyPayeeInput.type = 'text';
+    bodyPayeeInput.name = 'checkTicketPayeeCode';
+    bodyPayeeInput.id = 'checkTicketPayeeCode';
+    bodyPayeeInput.classList.add('form-control');
+    bodyPayeeInput.placeholder = '000-000';
+    bodyPayeeInput.addEventListener('input', this.handleCheckTicketPayee);
+
+    // bodyPayeeLabelGuideBtn.appendChild(bodyPayeeLabelGuideImage);
+    // bodyPayeeLabel.appendChild(bodyPayeeLabelGuideBtn);
+    bodyPayeeInputSection.appendChild(bodyPayeeLabel);
+    bodyPayeeInputSection.appendChild(bodyPayeeInput);
 
     body.appendChild(bodyTitle);
-    body.appendChild(bodyEmailInputSection);
-    body.appendChild(bodyPasswordInputSection);
+    body.appendChild(bodyUIDInputSection);
+    body.appendChild(bodyTxIDInputSection);
+    body.appendChild(bodyPayeeInputSection);
 
     // Dialog actions.
     const actions = document.createElement('div');
     const actionsCheckTicket = document.createElement('button');
 
     const handleCheckTicket = () => {
-      this.dialog.closeDialog();
+      // this.dialog.closeDialog();
 
       const data = {
-        email: this.checkTicketEmail,
-        password: this.checkTicketPassword,
+        uid: this.checkTicketUID,
+        payeeCode: this.checkTicketPayeeCode,
+        txId: this.checkTicketTxID,
       };
 
       // Handle check ticket.
       // If success, show result dialog.
-      alert('Coming soon');
+      // alert('Coming soon');
+      alert(JSON.stringify(data, null, 2));
     };
 
     actions.classList.add('dialog__actions');

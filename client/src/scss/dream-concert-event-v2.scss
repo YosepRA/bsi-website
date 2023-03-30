@@ -56,6 +56,39 @@ $background-04: rgba(#eeeeee, 0.8);
   border: none;
 }
 
+@mixin guide-carousel {
+  width: 100%;
+
+  &-item {
+    text-align: center;
+
+    &-title {
+      margin-bottom: 16px;
+      font-size: 18px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    &-image {
+      width: auto;
+      height: 275px;
+    }
+  }
+
+  &-indicators {
+    position: static;
+    margin-top: 16px;
+    margin-bottom: 0;
+
+    button {
+      width: 8px;
+      height: 8px;
+      background-color: $primary-color;
+      border-radius: 50%;
+    }
+  }
+}
+
 /* =============== Style =============== */
 
 body {
@@ -64,6 +97,10 @@ body {
 }
 
 .dream-concert-event-v2 {
+  sup {
+    font-size: 0.6em;
+  }
+
   .page-header {
     position: fixed;
     z-index: 100;
@@ -902,7 +939,6 @@ body {
   }
 
   .fb {
-    display: none;
     position: fixed;
     top: 50%;
     right: 0;
@@ -925,56 +961,36 @@ body {
         @include allTransition();
 
         &--initial {
-          position: absolute;
-          right: -3px;
-          z-index: 2;
-          width: 145px;
-          // padding: 16px 24px 16px 16px;
-          padding: 0 16px 0 16px;
-          transform: translateX(0);
-          @include flex-center();
-          border-radius: 37px 0px 0px 37px;
-
-          .fb {
-            &__inquiries {
-              &-text {
-                display: inline-block;
-                margin-left: 8px;
-              }
-            }
-          }
+          display: none;
         }
 
         &--telegram {
           display: block;
-          width: 275px;
+          // width: 275px;
+          width: fit-content;
           z-index: 1;
+          padding: 14px 18px;
           font-size: 18px;
           text-decoration: none;
           text-align: center;
-          transform: translateX(100%);
+          transform: translateX(8px);
+          border-radius: 37px 0px 0px 37px;
+
+          .fb {
+            &__inquiries {
+              &-icon-image {
+                width: auto;
+                height: 100%;
+              }
+            }
+          }
         }
       }
 
       &-text {
+        display: none;
         flex: 1;
       }
-
-      // &:hover {
-      //   .fb {
-      //     &__inquiries {
-      //       &-btn {
-      //         &--initial {
-      //           transform: translateX(100%);
-      //         }
-
-      //         &--telegram {
-      //           transform: translateX(0);
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
     }
   }
 
@@ -1214,41 +1230,28 @@ body {
     .dialog {
       &__body {
         .carousel {
-          width: 100%;
-
-          &-item {
-            text-align: center;
-
-            &-title {
-              margin-bottom: 16px;
-              font-size: 18px;
-              text-align: center;
-              font-weight: 600;
-            }
-
-            &-image {
-              width: auto;
-              height: 275px;
-            }
-          }
-
-          &-indicators {
-            position: static;
-            margin-top: 16px;
-            margin-bottom: 0;
-
-            button {
-              width: 8px;
-              height: 8px;
-              background-color: $primary-color;
-              border-radius: 50%;
-            }
-          }
+          @include guide-carousel();
         }
       }
 
       &__actions {
         &-payee {
+          @include primary-button();
+        }
+      }
+    }
+  }
+
+  &--txid {
+    .dialog {
+      &__body {
+        .carousel {
+          @include guide-carousel();
+        }
+      }
+
+      &__actions {
+        &-txid {
           @include primary-button();
         }
       }
@@ -1977,10 +1980,20 @@ body {
         }
 
         &-actions {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          align-items: stretch;
+
           &-btn {
-            display: inline-block;
-            width: 180px;
+            flex: 1;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            // width: 180px;
             margin-left: 0.5rem;
+            padding: 9px 0;
+            line-height: 18px;
 
             &:not(:last-child) {
               margin-bottom: 0;
@@ -2401,6 +2414,45 @@ body {
       display: block;
 
       &__inquiries {
+        &-btn {
+          padding: 16px 24px;
+
+          &--initial {
+            @include flex-center();
+            position: absolute;
+            right: -3px;
+            z-index: 2;
+            width: 145px;
+            padding: 0 16px 0 16px;
+            transform: translateX(0);
+            border-radius: 37px 0px 0px 37px;
+
+            .fb {
+              &__inquiries {
+                &-text {
+                  display: inline-block;
+                  margin-left: 8px;
+                }
+              }
+            }
+          }
+
+          &--telegram {
+            display: block;
+            width: 275px;
+            z-index: 1;
+            font-size: 18px;
+            text-decoration: none;
+            text-align: center;
+            transform: translateX(100%);
+          }
+        }
+
+        &-text {
+          display: inline;
+          flex: 1;
+        }
+
         &:hover {
           .fb {
             &__inquiries {
