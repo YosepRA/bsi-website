@@ -1,12 +1,13 @@
 class Dialog {
-  constructor() {
+  constructor(dialogClassName = 'dialog') {
     this.show = false;
     this.node = null; // Full node.
+    this.dialogClassName = dialogClassName;
   }
 
-  render(node, dialogClass) {
+  render(node, dialogClass = 'dialog') {
     if (!this.show) {
-      const dialog = document.querySelector('.dialog');
+      const dialog = document.querySelector(`.${dialogClass}`);
       dialog.remove();
 
       return undefined;
@@ -17,7 +18,9 @@ class Dialog {
 
     dialog.classList.add('dialog', dialogClass);
     dialogOverlay.classList.add('dialog__overlay');
-    dialogOverlay.addEventListener('click', () => this.closeDialog());
+    dialogOverlay.addEventListener('click', () =>
+      this.closeDialog(null, this.dialogClassName),
+    );
 
     dialog.appendChild(dialogOverlay);
     dialog.appendChild(node);
@@ -32,11 +35,11 @@ class Dialog {
     this.render(node, dialogClass);
   }
 
-  closeDialog() {
+  closeDialog(node, dialogClass) {
     this.show = false;
     this.node = null;
 
-    this.render();
+    this.render(node, dialogClass);
   }
 }
 
