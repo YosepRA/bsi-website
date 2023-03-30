@@ -37,6 +37,7 @@ class Ticket {
     // this.pinStep = 'first';
 
     // Check ticket form states.
+    this.checkTicketEmail = '';
     this.checkTicketUID = '';
     this.checkTicketPayeeCode = '';
     this.checkTicketTxID = '';
@@ -83,6 +84,7 @@ class Ticket {
     this.showUIDGuide = this.showUIDGuide.bind(this);
     this.showPayeeCodeGuide = this.showPayeeCodeGuide.bind(this);
     this.showCheckTicket = this.showCheckTicket.bind(this);
+    this.handleCheckTicketEmail = this.handleCheckTicketEmail.bind(this);
     this.handleCheckTicketUID = this.handleCheckTicketUID.bind(this);
     this.handleCheckTicketPayee = this.handleCheckTicketPayee.bind(this);
     this.handleCheckTicketTxID = this.handleCheckTicketTxID.bind(this);
@@ -318,6 +320,12 @@ class Ticket {
     this.pin = value;
   }
 
+  handleCheckTicketEmail(event) {
+    const { value } = event.target;
+
+    this.checkTicketEmail = value;
+  }
+
   handleCheckTicketUID(event) {
     const { value } = event.target;
 
@@ -388,7 +396,6 @@ class Ticket {
       data.append('go_url', '/'); // Return URL
       data.append('id', this.email); // ID
       data.append('uid', this.uid); // UID
-      data.append('payee_code', this.payeeCode); // payee_code
       data.append('count', this.ticketAmount); // ticket count
       data.append('bsi_amount', this.totalBSI); // BSI Amount
 
@@ -398,6 +405,28 @@ class Ticket {
         this.showSuccessTransactionDialog();
       } else if (result.code === '502') {
         this.showSubmittedIDDialog();
+      }
+    } catch (error) {
+      alert('Server error. Please try again later.');
+    }
+  }
+
+  async sendTicketConfirmation() {
+    try {
+      const data = new FormData();
+
+      data.append('go_url', '/'); // Return URL
+      data.append('id', this.checkTicketEmail); // ID
+      data.append('uid', this.checkTicketUID); // UID
+      data.append('payee_code', this.checkTicketPayeeCode); // payee_code
+      data.append('txid', this.checkTicketTxID); // ticket count
+
+      const { data: result } = await ticketAPI.sendTicketConfirmation(data);
+
+      if (result.code === '200') {
+        this.showSuccessTicketConfirmation();
+      } else if (result.code === '502') {
+        this.showNoTicketHistory();
       }
     } catch (error) {
       alert('Server error. Please try again later.');
@@ -438,6 +467,56 @@ class Ticket {
     bodyInfo.classList.add('dialog__body-info');
     bodyInfo.textContent =
       'Tickets will be distributed sequentially from the 1st of April.';
+
+    body.appendChild(bodyIcon);
+    body.appendChild(bodyTitle);
+    body.appendChild(bodyInfo);
+
+    // Dialog actions.
+    const actions = document.createElement('div');
+    const actionsClose = document.createElement('button');
+
+    const handleActionsClick = () => {
+      this.dialog.closeDialog();
+    };
+
+    actions.classList.add('dialog__actions');
+
+    actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
+    actionsClose.textContent = 'Close';
+    actionsClose.addEventListener('click', () => handleActionsClick());
+
+    actions.appendChild(actionsClose);
+
+    // Show dialog.
+    dialogWindow.appendChild(body);
+    dialogWindow.appendChild(actions);
+
+    this.dialog.showDialog(dialogWindow, 'dialog--success');
+  }
+
+  showSuccessTicketConfirmation() {
+    // Dialog window.
+    const dialogWindow = document.createElement('div');
+    dialogWindow.classList.add('dialog__window');
+
+    // Dialog body.
+    const body = document.createElement('div');
+    const bodyIcon = document.createElement('img');
+    const bodyTitle = document.createElement('h2');
+    const bodyInfo = document.createElement('p');
+
+    body.classList.add('dialog__body');
+
+    bodyIcon.classList.add('dialog__body-icon');
+    bodyIcon.src = '/img/dream-concert/success-icon.png';
+
+    bodyTitle.classList.add('dialog__body-title');
+    bodyTitle.textContent = 'Successful!';
+
+    bodyInfo.classList.add('dialog__body-info');
+    bodyInfo.textContent =
+      'Token transfer confirmation request has been completed.';
 
     body.appendChild(bodyIcon);
     body.appendChild(bodyTitle);
@@ -573,6 +652,55 @@ class Ticket {
     dialogWindow.appendChild(actions);
 
     this.dialog.showDialog(dialogWindow, 'dialog--submitted');
+  }
+
+  showNoTicketHistory() {
+    // Dialog window.
+    const dialogWindow = document.createElement('div');
+    dialogWindow.classList.add('dialog__window');
+
+    // Dialog body.
+    const body = document.createElement('div');
+    const bodyIcon = document.createElement('img');
+    const bodyTitle = document.createElement('h2');
+    const bodyInfo = document.createElement('p');
+
+    body.classList.add('dialog__body');
+
+    bodyIcon.classList.add('dialog__body-icon');
+    bodyIcon.src = '/img/dream-concert/fail-icon.png';
+
+    bodyTitle.classList.add('dialog__body-title');
+    bodyTitle.textContent = 'Something is wrong';
+
+    bodyInfo.classList.add('dialog__body-info');
+    bodyInfo.textContent = 'Ticket request history is not found.';
+
+    body.appendChild(bodyIcon);
+    body.appendChild(bodyTitle);
+    body.appendChild(bodyInfo);
+
+    // Dialog actions.
+    const actions = document.createElement('div');
+    const actionsClose = document.createElement('button');
+
+    const handleActionsClick = () => {
+      this.dialog.closeDialog();
+    };
+
+    actions.classList.add('dialog__actions');
+
+    actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
+    actionsClose.textContent = 'Close';
+    actionsClose.addEventListener('click', () => handleActionsClick());
+
+    actions.appendChild(actionsClose);
+
+    // Show dialog.
+    dialogWindow.appendChild(body);
+    dialogWindow.appendChild(actions);
+
+    this.dialog.showDialog(dialogWindow, 'dialog--no-ticket-history');
   }
 
   showOTPDialog() {
@@ -924,6 +1052,27 @@ class Ticket {
     bodyTitle.classList.add('dialog__body-title');
     bodyTitle.textContent = 'Request your ticket number';
 
+    // Email input.
+    const bodyEmailInputSection = document.createElement('div');
+    const bodyEmailLabel = document.createElement('label');
+    const bodyEmailInput = document.createElement('input');
+
+    bodyEmailInputSection.classList.add('form-section');
+
+    bodyEmailLabel.htmlFor = 'checkTicketEmail';
+    bodyEmailLabel.textContent = 'Email';
+    bodyEmailLabel.classList.add('form-label');
+
+    bodyEmailInput.type = 'email';
+    bodyEmailInput.name = 'checkTicketEmail';
+    bodyEmailInput.id = 'checkTicketEmail';
+    bodyEmailInput.classList.add('form-control');
+    bodyEmailInput.placeholder = 'Enter your email';
+    bodyEmailInput.addEventListener('input', this.handleCheckTicketEmail);
+
+    bodyEmailInputSection.appendChild(bodyEmailLabel);
+    bodyEmailInputSection.appendChild(bodyEmailInput);
+
     // UID input.
     const bodyUIDInputSection = document.createElement('div');
     const bodyUIDLabel = document.createElement('label');
@@ -1002,6 +1151,7 @@ class Ticket {
     bodyPayeeInputSection.appendChild(bodyPayeeInput);
 
     body.appendChild(bodyTitle);
+    body.appendChild(bodyEmailInputSection);
     body.appendChild(bodyUIDInputSection);
     body.appendChild(bodyTxIDInputSection);
     body.appendChild(bodyPayeeInputSection);
@@ -1011,18 +1161,8 @@ class Ticket {
     const actionsCheckTicket = document.createElement('button');
 
     const handleCheckTicket = () => {
-      // this.dialog.closeDialog();
-
-      const data = {
-        uid: this.checkTicketUID,
-        payeeCode: this.checkTicketPayeeCode,
-        txId: this.checkTicketTxID,
-      };
-
-      // Handle check ticket.
-      // If success, show result dialog.
-      // alert('Coming soon');
-      alert(JSON.stringify(data, null, 2));
+      this.dialog.closeDialog();
+      this.sendTicketConfirmation();
     };
 
     actions.classList.add('dialog__actions');

@@ -10,6 +10,11 @@ const ticketAPI = {
 
     return res;
   },
+  async sendTicketConfirmation(data) {
+    const res = await axios.post(`${baseUrl}/auth/ticketing_check_proc`, data);
+
+    return res;
+  },
 };
 
 export const ticketBaseUrl = baseUrl;
