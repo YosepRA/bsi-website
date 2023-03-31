@@ -121,19 +121,27 @@
         bottom: 0;
         width: 100%;
         padding: 1.8rem;
-        background-color: rgba(black, 0.8);
+        background-color: rgba(black, 0.6);
         color: white;
         border-radius: 0 0 $border-radius $border-radius;
+        @include Inter();
       }
 
-      &-title {
-        color: white;
-        font-size: 1.6rem;
-        text-decoration: none;
+      &-excerpt {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 16px;
+      }
 
-        &:hover {
-          text-decoration: underline;
-        }
+      &-btn {
+        width: 220px;
+        padding: 16px;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #51b2aa;
+        border-radius: 16px;
       }
     }
   }
@@ -298,6 +306,30 @@
         &-title {
           font-size: 2.2rem;
           margin-bottom: 1.4rem;
+        }
+      }
+    }
+
+    .dc {
+      &__banner {
+        max-width: 1200px;
+
+        &-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 34px 60px;
+        }
+
+        &-excerpt {
+          font-size: 24px;
+        }
+
+        &-btn {
+          width: 220px;
+          padding: 16px;
+          color: #fff;
+          font-size: 18px;
         }
       }
     }
