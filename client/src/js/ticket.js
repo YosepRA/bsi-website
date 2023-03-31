@@ -116,6 +116,7 @@ class Ticket {
     this.handleCheckTicketPayee = this.handleCheckTicketPayee.bind(this);
     this.handleCheckTicketTxID = this.handleCheckTicketTxID.bind(this);
     this.resetCheckTicketError = this.resetCheckTicketError.bind(this);
+    this.resetState = this.resetState.bind(this);
 
     // Initialize.
     this.render();
@@ -156,8 +157,8 @@ class Ticket {
     this.checkTicketTxID = '';
 
     // Render front page inputs.
-
     // Reset ticket price calculation and render it.
+    this.calculate();
   }
 
   async getPrice() {
@@ -914,9 +915,6 @@ class Ticket {
             alert('Server error. Please try again.');
           }
         });
-
-      // this.dialog.closeDialog();
-      // this.showPinDialog();
 
       return undefined;
     };

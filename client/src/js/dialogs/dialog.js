@@ -18,9 +18,11 @@ class Dialog {
 
     dialog.classList.add('dialog', dialogClass);
     dialogOverlay.classList.add('dialog__overlay');
-    dialogOverlay.addEventListener('click', () =>
-      this.closeDialog(null, this.dialogClassName),
-    );
+    dialogOverlay.addEventListener('click', () => {
+      this.closeDialog(null, this.dialogClassName);
+
+      // Call reset function.
+    });
 
     dialog.appendChild(dialogOverlay);
     dialog.appendChild(node);
