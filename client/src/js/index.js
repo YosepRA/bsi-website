@@ -7,27 +7,33 @@ import {
   fetchPriceOnInterval,
 } from './live-price.js';
 // import startSocket from './socket.js';
+import DreamConcertPosterDialog from './dialogs/dream-concert-poster-dialog.js';
 
 const navbar = document.querySelector('.navbar');
 const floatingButton = document.querySelector('.fb');
 
 async function start() {
   // Scroll feature.
-  const scroll = new ScrollControl([
-    navbarScroll(navbar),
-    floatingButtonScroll(floatingButton),
-  ]);
+  // const scroll = new ScrollControl([
+  //   navbarScroll(navbar),
+  //   floatingButtonScroll(floatingButton),
+  // ]);
 
   // Live price feature.
-  const data = await fetchLatestPrice();
-  const delay = 120000;
-
-  await updatePriceData(data);
-
-  fetchPriceOnInterval(delay);
+  // const data = await fetchLatestPrice();
+  // const delay = 120000;
+  // await updatePriceData(data);
+  // fetchPriceOnInterval(delay);
 
   // Socket will be disabled on Demo server, or Cyclic.sh server.
   // startSocket();
+
+  // Dream Concert poster popup.
+  const dreamConcertPosterDialog = new DreamConcertPosterDialog(
+    'dialog--dream-concert-poster',
+  );
+
+  dreamConcertPosterDialog.showPosterDialog();
 }
 
-// ready(start);
+ready(start);

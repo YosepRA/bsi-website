@@ -1040,392 +1040,392 @@ body {
       text-align: center;
     }
   }
-}
 
-.dialog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-
-  .form-control {
-    &.invalid ~ .invalid-feedback {
-      display: block;
-    }
-  }
-
-  &__overlay {
-    position: absolute;
+  .dialog {
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1000;
     width: 100%;
     height: 100%;
-    background-color: rgba(#000, 0.3);
-  }
 
-  &__window {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    width: 95%;
-    max-width: 527px;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    border-radius: 40px;
-  }
-
-  &__body {
-    @include flex-center();
-    flex-direction: column;
-    padding: 40px 16px 26px;
-
-    &-icon {
-      width: 126px;
-      height: 126px;
-      margin-bottom: 1rem;
+    .form-control {
+      &.invalid ~ .invalid-feedback {
+        display: block;
+      }
     }
 
-    &-title {
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    &-info {
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
       width: 100%;
-      margin-bottom: 0;
-      text-align: center;
+      height: 100%;
+      background-color: rgba(#000, 0.3);
     }
 
-    &-input {
-      width: 60%;
-      padding: 6px 10px;
-      border-radius: 10px;
+    &__window {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      width: 95%;
+      max-width: 527px;
+      background-color: #fff;
+      transform: translate(-50%, -50%);
+      border-radius: 40px;
+    }
 
-      &.invalid {
-        border-color: $error-color;
+    &__body {
+      @include flex-center();
+      flex-direction: column;
+      padding: 40px 16px 26px;
 
-        & ~ .invalid-feedback {
-          display: block;
-          text-align: center;
-        }
+      &-icon {
+        width: 126px;
+        height: 126px;
+        margin-bottom: 1rem;
       }
-    }
-  }
 
-  &__input {
-    &-help {
-      @include input-help();
-
-      &:hover {
-        .dialog__input-help-caution {
-          display: block;
-        }
+      &-title {
+        font-size: 24px;
+        font-weight: 600;
       }
-    }
-  }
 
-  &__actions {
-    @include flex-center();
-    background-color: $background-03;
-    padding: 32px 16px;
-    border-radius: 0 0 40px 40px;
+      &-info {
+        width: 100%;
+        margin-bottom: 0;
+        text-align: center;
+      }
 
-    &-btn {
-      width: 192.5px;
-      text-align: center;
-      margin: 0 0.5rem;
-    }
+      &-input {
+        width: 60%;
+        padding: 6px 10px;
+        border-radius: 10px;
 
-    &-close {
-      @include primary-button();
-      font-size: 18px;
-    }
-  }
+        &.invalid {
+          border-color: $error-color;
 
-  &--success {
-    .dialog {
-      &__actions {
-        align-items: stretch;
-
-        &-btn {
-          padding: 9px 0;
-          line-height: 18px;
-        }
-
-        &-close {
-          @include secondary-button();
-        }
-
-        &-transmission {
-          @include primary-button();
-          padding: 9px 0;
-          font-size: 18px;
+          & ~ .invalid-feedback {
+            display: block;
+            text-align: center;
+          }
         }
       }
     }
-  }
 
-  &--success-confirmation {
-    .dialog {
-      &__body {
-        &-title {
-          color: $primary-color;
-        }
-      }
+    &__input {
+      &-help {
+        @include input-help();
 
-      &__actions {
-        &-close {
-          @include primary-button();
+        &:hover {
+          .dialog__input-help-caution {
+            display: block;
+          }
         }
       }
     }
-  }
 
-  &--insufficient {
-    .dialog {
-      &__body {
-        &-title {
-          color: $error-color;
-        }
+    &__actions {
+      @include flex-center();
+      background-color: $background-03;
+      padding: 32px 16px;
+      border-radius: 0 0 40px 40px;
+
+      &-btn {
+        width: 192.5px;
+        text-align: center;
+        margin: 0 0.5rem;
       }
 
-      &__actions {
-        &-close {
-          @include secondary-button();
-        }
-
-        &-buy {
-          @include primary-button();
-          text-decoration: none;
-        }
+      &-close {
+        @include primary-button();
+        font-size: 18px;
       }
     }
-  }
 
-  &--submitted {
-    .dialog {
-      &__body {
-        &-title {
-          color: $error-color;
-        }
-      }
-
-      &__actions {
-        &-close {
-          @include primary-button();
-        }
-      }
-    }
-  }
-
-  &--otp {
-    .dialog {
-      &__body {
-        &-title {
-          color: $primary-color;
-        }
-
-        &-info {
-          margin-bottom: 1rem;
-        }
-
-        &-input {
-          margin-left: 0;
-          font-size: 18px;
-          text-align: center;
-        }
-      }
-
-      &__actions {
-        flex-direction: column;
-
-        &-otp {
-          @include primary-button();
-        }
-
-        &-resend {
-          margin-top: 8px;
-          margin-bottom: 0;
+    &--success {
+      .dialog {
+        &__actions {
+          align-items: stretch;
 
           &-btn {
-            border: none;
-            padding: 0;
-            color: $primary-color;
-          }
-        }
-      }
-    }
-  }
-
-  &--pin {
-    .dialog {
-      &__body {
-        &-info {
-          margin-bottom: 1rem;
-        }
-
-        &-input {
-          margin-left: 0;
-          text-align: center;
-        }
-      }
-
-      &__actions {
-        &-pin {
-          @include primary-button();
-        }
-      }
-    }
-  }
-
-  &--uid {
-    .dialog {
-      &__body {
-        padding-right: 0;
-        padding-left: 0;
-
-        &-title {
-          margin-bottom: 24px;
-          color: $primary-color;
-          text-align: center;
-          font-size: 20px;
-        }
-
-        &-uid {
-          &-image--01 {
-            display: block;
-            margin: auto;
-            width: auto;
-            height: 275px;
+            padding: 9px 0;
+            line-height: 18px;
           }
 
-          &-image--02 {
-            width: 100%;
-            height: auto;
-          }
-        }
-      }
-
-      &__actions {
-        &-uid {
-          @include primary-button();
-        }
-      }
-    }
-  }
-
-  &--payee {
-    .dialog {
-      &__body {
-        .carousel {
-          @include guide-carousel();
-        }
-      }
-
-      &__actions {
-        &-payee {
-          @include primary-button();
-        }
-      }
-    }
-  }
-
-  &--txid {
-    .dialog {
-      &__body {
-        .carousel {
-          @include guide-carousel();
-        }
-      }
-
-      &__actions {
-        &-txid {
-          @include primary-button();
-        }
-      }
-    }
-  }
-
-  &--check-ticket {
-    .dialog {
-      &__body {
-        &-title {
-          margin-bottom: 24px;
-          font-size: 20px;
-        }
-      }
-
-      &__actions {
-        &-check-ticket {
-          @include primary-button();
-        }
-      }
-    }
-
-    .form {
-      &-section {
-        width: 90%;
-        margin-bottom: 16px;
-      }
-
-      &-label {
-        margin-bottom: 2px;
-
-        &__guide-btn {
-          @include form-label-guide-btn();
-          margin-left: 0;
-        }
-      }
-
-      &-control {
-        margin-left: 0;
-        width: 100%;
-      }
-    }
-  }
-
-  &--check-ticket-result {
-    .dialog {
-      &__body {
-        &-title {
-          margin-bottom: 24px;
-          font-size: 20px;
-        }
-
-        &-ticket-result {
-          padding: 12px 16px;
-          background-color: $background-02;
-          font-size: 24px;
-          color: $primary-color;
-          font-weight: 600;
-          border: 1px solid #ddd;
-          border-radius: 12px;
-        }
-      }
-
-      &__actions {
-        &-check-ticket-result {
-          &--close {
+          &-close {
             @include secondary-button();
           }
 
-          &--copy {
+          &-transmission {
+            @include primary-button();
+            padding: 9px 0;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    &--success-confirmation {
+      .dialog {
+        &__body {
+          &-title {
+            color: $primary-color;
+          }
+        }
+
+        &__actions {
+          &-close {
             @include primary-button();
           }
         }
       }
     }
-  }
 
-  &--no-ticket-history {
-    .dialog {
-      &__body {
-        &-title {
-          color: $error-color;
+    &--insufficient {
+      .dialog {
+        &__body {
+          &-title {
+            color: $error-color;
+          }
+        }
+
+        &__actions {
+          &-close {
+            @include secondary-button();
+          }
+
+          &-buy {
+            @include primary-button();
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &--submitted {
+      .dialog {
+        &__body {
+          &-title {
+            color: $error-color;
+          }
+        }
+
+        &__actions {
+          &-close {
+            @include primary-button();
+          }
+        }
+      }
+    }
+
+    &--otp {
+      .dialog {
+        &__body {
+          &-title {
+            color: $primary-color;
+          }
+
+          &-info {
+            margin-bottom: 1rem;
+          }
+
+          &-input {
+            margin-left: 0;
+            font-size: 18px;
+            text-align: center;
+          }
+        }
+
+        &__actions {
+          flex-direction: column;
+
+          &-otp {
+            @include primary-button();
+          }
+
+          &-resend {
+            margin-top: 8px;
+            margin-bottom: 0;
+
+            &-btn {
+              border: none;
+              padding: 0;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    &--pin {
+      .dialog {
+        &__body {
+          &-info {
+            margin-bottom: 1rem;
+          }
+
+          &-input {
+            margin-left: 0;
+            text-align: center;
+          }
+        }
+
+        &__actions {
+          &-pin {
+            @include primary-button();
+          }
+        }
+      }
+    }
+
+    &--uid {
+      .dialog {
+        &__body {
+          padding-right: 0;
+          padding-left: 0;
+
+          &-title {
+            margin-bottom: 24px;
+            color: $primary-color;
+            text-align: center;
+            font-size: 20px;
+          }
+
+          &-uid {
+            &-image--01 {
+              display: block;
+              margin: auto;
+              width: auto;
+              height: 275px;
+            }
+
+            &-image--02 {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+
+        &__actions {
+          &-uid {
+            @include primary-button();
+          }
+        }
+      }
+    }
+
+    &--payee {
+      .dialog {
+        &__body {
+          .carousel {
+            @include guide-carousel();
+          }
+        }
+
+        &__actions {
+          &-payee {
+            @include primary-button();
+          }
+        }
+      }
+    }
+
+    &--txid {
+      .dialog {
+        &__body {
+          .carousel {
+            @include guide-carousel();
+          }
+        }
+
+        &__actions {
+          &-txid {
+            @include primary-button();
+          }
+        }
+      }
+    }
+
+    &--check-ticket {
+      .dialog {
+        &__body {
+          &-title {
+            margin-bottom: 24px;
+            font-size: 20px;
+          }
+        }
+
+        &__actions {
+          &-check-ticket {
+            @include primary-button();
+          }
+        }
+      }
+
+      .form {
+        &-section {
+          width: 90%;
+          margin-bottom: 16px;
+        }
+
+        &-label {
+          margin-bottom: 2px;
+
+          &__guide-btn {
+            @include form-label-guide-btn();
+            margin-left: 0;
+          }
+        }
+
+        &-control {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    &--check-ticket-result {
+      .dialog {
+        &__body {
+          &-title {
+            margin-bottom: 24px;
+            font-size: 20px;
+          }
+
+          &-ticket-result {
+            padding: 12px 16px;
+            background-color: $background-02;
+            font-size: 24px;
+            color: $primary-color;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+          }
+        }
+
+        &__actions {
+          &-check-ticket-result {
+            &--close {
+              @include secondary-button();
+            }
+
+            &--copy {
+              @include primary-button();
+            }
+          }
+        }
+      }
+    }
+
+    &--no-ticket-history {
+      .dialog {
+        &__body {
+          &-title {
+            color: $error-color;
+          }
         }
       }
     }
@@ -2589,65 +2589,65 @@ body {
         font-size: 16px;
       }
     }
-  }
 
-  .dialog {
-    &__body {
-      &-info {
-        width: 80%;
+    .dialog {
+      &__body {
+        &-info {
+          width: 80%;
+        }
       }
-    }
 
-    &--uid {
-      .dialog {
-        &__body {
-          &-title {
-            font-size: 24px;
-          }
-
-          &-uid {
-            &-image--01 {
-              height: 275px;
+      &--uid {
+        .dialog {
+          &__body {
+            &-title {
+              font-size: 24px;
             }
 
-            &-image--02 {
-              width: 90%;
+            &-uid {
+              &-image--01 {
+                height: 275px;
+              }
+
+              &-image--02 {
+                width: 90%;
+              }
             }
           }
         }
       }
-    }
 
-    &--check-ticket {
-      .dialog {
-        &__body {
-          &-title {
-            font-size: 24px;
+      &--check-ticket {
+        .dialog {
+          &__body {
+            &-title {
+              font-size: 24px;
+            }
+          }
+        }
+
+        .form {
+          &-section {
+            width: initial;
+          }
+
+          &-control {
+            width: 338px;
           }
         }
       }
 
-      .form {
-        &-section {
-          width: initial;
-        }
+      &--check-ticket-result {
+        .dialog {
+          &__body {
+            &-title {
+              font-size: 24px;
+            }
 
-        &-control {
-          width: 338px;
-        }
-      }
-    }
-
-    &--check-ticket-result {
-      .dialog {
-        &__body {
-          &-title {
-            font-size: 24px;
-          }
-
-          &-ticket-result {
-            padding: 12px 16px;
-            font-size: 32px;
+            &-ticket-result {
+              padding: 12px 16px;
+              font-size: 32px;
+            }
           }
         }
       }
