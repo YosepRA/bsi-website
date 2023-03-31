@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@600&display=swap');
 
 $primary-color: #00008c;
 $secondary-color: #00fe80;
@@ -19,6 +19,10 @@ $animation-ease: ease-out;
 
 @mixin arial {
   font-family: 'Arial', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@mixin Inter {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @mixin page-gradient {

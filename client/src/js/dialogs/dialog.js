@@ -1,8 +1,9 @@
 class Dialog {
-  constructor(dialogClassName = 'dialog') {
+  constructor(dialogClassName = 'dialog', cleanFn = () => {}) {
     this.show = false;
     this.node = null; // Full node.
     this.dialogClassName = dialogClassName;
+    this.cleanFn = cleanFn;
   }
 
   render(node, dialogClass = 'dialog') {
@@ -18,9 +19,10 @@ class Dialog {
 
     dialog.classList.add('dialog', dialogClass);
     dialogOverlay.classList.add('dialog__overlay');
-    dialogOverlay.addEventListener('click', () =>
-      this.closeDialog(null, this.dialogClassName),
-    );
+    dialogOverlay.addEventListener('click', () => {
+      this.closeDialog(null, this.dialogClassName);
+      this.cleanFn();
+    });
 
     dialog.appendChild(dialogOverlay);
     dialog.appendChild(node);
