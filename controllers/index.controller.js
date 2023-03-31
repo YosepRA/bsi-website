@@ -42,4 +42,12 @@ module.exports = {
       currentPage: 'dream-concert-event',
     });
   },
+  bsiDreamConcertEvent(req, res) {
+    const { lang } = req.data;
+
+    res.render('dream-concert-event-v2', {
+      ...lang,
+      currentPage: 'dream-concert-event',
+    });
+  },
 };

@@ -23,7 +23,7 @@
 %>
 
 <%- include('partials/header.ejs') %>
-  <body class="dream-concert-event <%= lang %>">
+  <body class="dream-concert-event">
       <section class="ticket__metaverse ">
         <div class="container metaverse_wrap">
           <div class="row">
@@ -31,40 +31,119 @@
               <img src="/img/digifinex.svg" alt="" class="image-banner">
             </div>
           </div>
-          <div class="row ">
-            <!-- <div class="backround__white">
-            </div> -->
-            <div class="col-md-12 ticket_card ">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">29TH DREAM CONCERT IN BUSAN</h5>
-                  <p class="card-text">METAVERSE TICKET.</p>
-                  <p class="card-text">May 27 th, 2023.</p>
-                  <div class="row">
-                    <div class="col-xl-12">
-                      <div class="text__small">
-                        <p class="card_small_text">Purchasing BSI at</p>
-                        <img src="/img/digifinex.svg" alt="" class="text-image">
-                        <p class="discount__text">50% Discount</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="input__ticket">
-                        <p class="ml-2 text__input">Your email</p>
-                        <input  type="text"  class="form-control" placeholder="Enter your email">
 
+          <section class="card__ticket__metaverse">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="box-left" style="background-color: #E9DECB;">
+                    <!-- konten kotak kiri -->
+                    <h5 class="card-title">29TH DREAM CONCERT IN BUSAN</h5>
+                    <p class="card-text">METAVERSE TICKET.</p>
+                    <p class="card-text">May 27 th, 2023.</p>
+                    <div class="row">
+                      <div class="col-xl-12">
+                        <div class="row">
+                          <div class="col-md-10 side__ticket">
+                            <div class="input__ticket">
+                              <p class="ml-2">Purchasing BSI at</p>
+                              <img src="/img/digifinex.svg" alt="" class="text-image">
+                              <div class="discount__custom">
+                                <p class="d-inline">50% Discount</p>
+                              </div>
+                              <p>(Worth $2.5)</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="text__small">
+                          <p class="card_small_text">Purchasing BSI at</p>
+                          <img src="/img/digifinex.svg" alt="" class="text-image">
+                          <p class="discount__text">50% Discount</p>
+                        </div> -->
+                        <div class="row">
+                          <div class="col-md-10 side__ticket">
+                            <div class="input__ticket">
+                              <p class="ml-2">Ticket per unit price</p> <br>
+                              <p>current price> BSI</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="current__price">
+                          <p>Ticket per unit price</p>
+                          <p>  < current price > BSI</p>
+                        </div> -->
+                        <div class="row">
+                          <div class="col-md-8 side__ticket">
+                            <div class="input__ticket">
+                              <p class="ml-2 text__input">Your email</p>
+                              <input  type="text"  class="form-control" placeholder="Enter your email">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-6 text-left">
+                              <div class="input__ticket">
+                          <p>Add the number of tickets</p>
+                        </div>
+                        <div class="iput__number__count">
+                          <div class="input-group">
+                            <button id="minus-btn" class="btn btn-outline-secondary" type="button">-</button>
+                            <input id="quantity" type="number" class="form-control" value="1">
+                            <button id="plus-btn" class="btn btn-outline-secondary" type="button">+</button>
+                          </div>
+                        </div> 
+                            </div>
+                            <div class="col-md-6 text-right" style="margin-top: 0rem;">
+                              <p class="input__ticket" style="font-size: 0.76rem;">total</p>
+                              <p class="input__ticket" style="font-size:1rem ;"> amount> BSI </p>
+                              <p class="input__ticket">$2.5</p>
+                            </div>
+                          </div>
+                          <!-- <div class="row">
+                            <div class="col-md-12">
+                              <div class="card mt-4">
+                                <div class="card-body">
+                                  <p>Isi konten tulisan di dalam kotak.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                        </div>
+                        
+                        <!-- <div class="input__ticket">
+                          <p>Add the number of tickets</p>
+                        </div>
+                        <div class="iput__number__count">
+                          <div class="input-group">
+                            <button id="minus-btn" class="btn btn-outline-secondary" type="button">-</button>
+                            <input id="quantity" type="number" class="form-control" value="1">
+                            <button id="plus-btn" class="btn btn-outline-secondary" type="button">+</button>
+                          </div>
+                        </div> -->
+                        
+                        
                       </div>
                     </div>
                   </div>
-                  
-                  
+                </div>
+                <div class="col-md-2">
+                  <div class="box-right" style="background-color: #E9DECB;">
+                    <div class="content_">
+                        <!-- konten kotak kanan -->
+                        <h5 class="card-title">29TH DREAM CONCERT IN BUSAN</h5>
+                        <p class="card-text">METAVERSE TICKET.</p>
+                        <p class="card-text">May 27 th, 2023.</p>
+                    </div>
+                    
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+            
+          </section>
+         
+          
           <div class="button mt-4">
             <div class="row button__exchange">
                 <div class="col ">
@@ -83,80 +162,134 @@
       
     
      <section class="powered">
+      <div class="container-fluid">
         <div class="row">
-        
-          <div class="col-14 col-lg-6 logo__custom">
-            <div class="text__powered">
-              <h2 class="text__powered_by">POWERED BY</h2>
-            </div>
-            <div class="logo__custom">
-              <img src="/img/Digifinex Logo.svg" alt="" class="logo__digifinex">
-              <img src="/img/Viaje Logo.svg" alt="" class="logo__partner">
-              <img src="/img/Bsi Logo.svg" alt="" class="logo__partner">
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6 concert__start">
-            <div class="text__start">
-              <h1>Concert Starts in</h1>
-            </div>
-            <div class="date__concert">
-              <p>May 27th, 2023</p>
-            </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="date__reminder d-inline">
-                      <p class="d-inline">124<p>
-                      <p class="d-inline">:</p>
-                      <p class="d-inline">08</p>
-                      <p class="d-inline">:</p>
-                      <p class="d-inline">24</p>
-                      <p class="d-inline">:</p>
-                      <p class="d-inline">43</p>
-                  </div>
-                </div>
+          <div class="col-md-8">
+            <div class="left__content">
+              <!-- konten kotak kiri -->
+              <div class="text__powered">
+                <h1 class="text__powered__by">POWERED BY</h1>
+              </div>
+              <div class="logo__custom">
+                <!-- <img src="/img/Digifinex Logo.svg" alt="" class="logo__digifinex"> -->
+                <img src="/img/Viaje Logo.svg" alt="" class="logo__partner">
+                <img src="/img/Bsi Logo.svg" alt="" class="logo__partner">
               </div>
             </div>
           </div>
-        </div>
-     </section>
-
-     <section class="page__number">
-      <div class="container">
-        <div class="row tex__1">
-          <div class="col-lg-7 col-12 number__tag">
-            <div class="number__1">
-              <p class="custom__number">1</p>
-            </div>
-            <div class="text__number">
-             <p class="custom__text">Purchase according to the fluctuating BSI Price</p> 
+          <div class="col-md-4">
+            <div class="right__content">
+              <!-- konten kotak kanan -->
+              <div class="header__custom">
+                <h1 class="big__text__start">Concert Starts in</h1>
+                <p class="text__date__start">May 27th, 2023</p>
+              </div>
+               
+              <div class="header__custom">
+                <div class="number__custom">
+                  <p class="d-inline">124<p>
+                </div>
+                <div class="space__line">
+                  <p>:</p>
+                </div>
+                  
+                  <div class="number__custom">
+                    <p class="d-inline">08</p>
+                  </div>
+                  
+                  <div class="space__line">
+                    <p>:</p>
+                  </div>
+                  <div class="number__custom">
+                    <p class="d-inline">24</p>
+                  </div>
+                 
+                  <div class="space__line">
+                    <p>:</p>
+                  </div>
+                  <div class="number__custom">
+                    <p class="d-inline">43</p>
+                  </div>
+                  
+              
             </div>
           </div>
-        </div>
-
-        <div class="row text__2">
-          <div class="col-lg-8 col-12 number__tag">
-            <div class="number__1">
-              <p class="custom__number">2</p>
-            </div>
-            <div class="text__number">
-             <p class="custom__text">Digifinex Event Scheduled on March 24th - April 25th</p> 
-            </div>
-          </div>
-        </div>
-
-        <div class="row text__3">
-          <div class="col-lg-12 col-12 number__tag">
-            <div class="number__1">
-              <p class="custom__number">3</p>
-            </div>
-            <div class="text__number">
-             <p class="custom__text">Event tickets would be sent weekly after the participation</p> 
+          <div class="col-md-3">
+            <div class="count__custom">
+              <!-- konten kotak kanan -->
+              <div class="day__custom__count">
+                <div class="day__custom__ready__1">
+                  <p class="d-inline">Days<p>
+                </div>
+                <!-- <div class="space__line">
+                  <p>:</p>
+                </div> -->
+                  
+                  <div class="day__custom__ready">
+                    <p class="d-inline">hours</p>
+                  </div>
+                  
+                  <!-- <div class="space__line">
+                    <p>:</p>
+                  </div> -->
+                  <div class="day__custom__ready">
+                    <p class="d-inline">Minutes</p>
+                  </div>
+                 
+                  <!-- <div class="space__line">
+                    <p>:</p>
+                  </div> -->
+                  <div class="day__custom__ready">
+                    <p class="d-inline">Second</p>
+                  </div>
+                  
+              
             </div>
           </div>
         </div>
       </div>
       
+     </section>
+
+     <section class="page__number">
+      <div class="container">
+        <div class="row number__tag">
+          <!-- // Konten Anda di sini -->
+          <div class="col-md-6">
+            <!-- // Konten Anda di sini -->
+            <div class="header__custom">
+              <div class="number__custom__1">
+                <h1>1</h1>
+              </div>
+              <div class="text__number__custom">
+                <p style="font-weight: 600;" class="number__custom__text">Purchase according to the fluctuating BSI Price</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="row page__line">
+            <div class="col-md-10 d-flex justify-content-center">
+              <div class="number__custom__2">
+                <h1>2</h1>
+              </div>
+              <div class="text__number__custom__2">
+                <p style="font-weight: 600;" class="number__custom__text__2">Digifinex Event Scheduled on March 24th - April 25th</p>
+              </div>
+            </div>
+        </div>
+        <div class="row page__line">
+          <div class="col-md-12 d-flex justify-content-center">
+            <div class="number__custom__2">
+              <h1>3</h1>
+            </div>
+            <div class="text__number__custom__2">
+              <p style="font-weight: 600;" class="number__custom__text__2">Event tickets will be sent weekly after the participation</p>
+            </div>
+          </div>
+      </div>
+        </div>
+      </div>
+    
      </section>
 
      <section class="intro-video">
@@ -173,10 +306,7 @@
       >
     </iframe>
       </div>
-      <!-- <video autoplay loop muted>
-        <source src="/video/DreamConcert.mp4" type="video/mp4" />
-      </video> -->
-
+    
       
     </section>
 
@@ -219,48 +349,88 @@
       </div>
     </section>
 
-    <section class=" page__reminder container ">
-      <div class="reminder">
-        <div class="text">
-          <h1 class="text__notice">NOTICE</h1>
-          <p class="text__small__notice">Ticket Redemption Procedure</p>
-        </div>
-        
-        <div class="col-12 col-lg-2">
-          <img src="/img/Frame 32.png" alt="BSI company profile" class="custom_Frame1" />
-        </div>
+    <section class=" page__reminder">
 
-        <div class="col-12 col-lg-7">
-          <div class="">
-            <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore tenetur ipsa quo, id unde odio reprehenderit enim dolores quasi impedit, necessitatibus incidunt blanditiis. Dicta et soluta ab minima, quisquam unde.</h2>
-            
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="text__before__image">
+              <h1 style="font-weight: 600;">NOTICE</h1>
+              <p>Ticket Redemption Procedure</p>
+            </div>
+           
+            <img src="/img/Frame 32.png" class="img-fluid" alt="gambar">
+          </div>
+          <div class="col-md-6">
+            <div class="rules__to__buy">
+              <div class="content__1">
+                <div class="title__of__content">
+                  <h2 class="title__of__content">New users of DIGIFINEX</h2>
+                </div>
+                <div class="rules__">
+                  <p>1. Click Buy BSI</p>
+                <p>2. Register in DIGIFINEX</p>
+                <p>3. Buy BSI (amount of BSI should be equal to the</p>
+                <p>number of tickets you purchase</p>
+                <p>4. Come back to the Event page</p>
+                <p>5. Click Exchange</p>
+                </div>
+                
+              </div>
+  
+              <div class="content__2">
+                <div class="title__of__content">
+                  <h2 class="title__of__content_2">Existing Users of DIGIFINEX</h2>
+                </div>
+                <div class="rules__">
+                  <p>1. Click Buy BSI</p>
+                  <p>2. Buy the amount of BSI according to your needs</p>
+                  <p>3. Comeback to the Event Page</p>
+                  <p>number of tickets you purchase</p>
+                  <p>4. Click Exchange</p>
+                </div>
+              
+              </div>
+            </div>
+            <div class="rules__to__buy__1">
+              <div class="content__3">
+                <div class="title__of__content">
+                  <h2 class="title__of__content_2">NOTE</h2>
+                </div>
+                <div class="rules__">
+                  <p style="font-size: 0.89rem;">There might be a fluctuation in the amount</p>
+                  <p style="font-size: 0.89rem;">of BSI according to the real-time rate</p>
+              </div>
+            </div>
+        
           </div>
         </div>
       </div>
+      
+      
+    
     </section>
 
-     <!-- <section id="" class="company-profile page-section container">
-      <div class="row company-profile__row">
-        <div class="col-12 col-lg-4 company-profile__col">
-          <img src="/img/bsi-company-profile.png" alt="BSI company profile" class="company-profile__image" />
-        </div>
-
-        <div class="col-12 col-lg-8 company-profile__col">
-          <div class="company-profile__info">
-            <h2 class="company-profile__info-title page-section__title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore tenetur ipsa quo, id unde odio reprehenderit enim dolores quasi impedit, necessitatibus incidunt blanditiis. Dicta et soluta ab minima, quisquam unde.</h2>
-              <p class="company-profile__info-body">Lorem, ipsum dolor.</p>  
+    <section class="page__footer">
+      <div class="container">
+        <div class="row page__line">
+          <div class="col d-flex justify-content-center">
+            
+            <div class="footer__custom">
+              <p class="text__footer">Copyright @ 2023 BSI Bali Social Integrated. All right Reserved</p>
+            </div>
           </div>
-        </div>
       </div>
-    </section> -->
+      </div>
+    </section>
 
     <!-- <script type="module" src="/src/main.ts"></script> -->
     
     <!-- <%- include('partials/floating-buttons.ejs') %> -->
     <!-- <%- include('partials/footer.ejs') %> -->
-    <%- include('partials/js-libraries.ejs')%>
+    <!-- <%- include('partials/js-libraries.ejs')%> -->
 
-    <!-- <script src="/javascripts/global.js"></script> -->
-    <!-- <script src="/javascripts/index.js"></script> -->
+    <script src="/js/button-count.js"></script>
+    <script src="/js/transaction.js"></script>
   </body>
 </html>
