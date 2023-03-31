@@ -84,7 +84,7 @@ class Ticket {
         .email('Please enter a valid email'),
       uid: string().required('Fill your UID'),
       txId: string().required('Fill your TxID'),
-      payeeCode: string().required('Fill your payee code'),
+      payeeCode: string(),
     });
 
     this.checkTicketErrors = {
@@ -135,6 +135,29 @@ class Ticket {
     totalPriceTwo.textContent = `$${this.totalPrice}`;
     unitPriceBSI.textContent = `${this.unitPriceBSI} BSI`;
     totalBSI.textContent = this.totalBSI;
+  }
+
+  resetState() {
+    // Inputs.
+    this.uid = '';
+    this.email = '';
+    this.password = '';
+    this.payeeCode = '';
+    this.ticketAmount = 1;
+    this.otp = '';
+    this.pin = '';
+    // this.pinCheck = '';
+    // this.pinStep = 'first';
+
+    // Check ticket form states.
+    this.checkTicketEmail = '';
+    this.checkTicketUID = '';
+    this.checkTicketPayeeCode = '';
+    this.checkTicketTxID = '';
+
+    // Render front page inputs.
+
+    // Reset ticket price calculation and render it.
   }
 
   async getPrice() {
@@ -473,7 +496,7 @@ class Ticket {
       data.append('mobile_auth_key', this.otp);
       data.append('pw', this.password);
       data.append('pw2', this.password);
-      data.append('pin', this.pin);
+      data.append('pin', ''); // Pin is optional.
 
       data.append('country_dial', '1');
       data.append('mobile_num', '01000000000');
@@ -507,6 +530,8 @@ class Ticket {
         this.showSuccessTransactionDialog();
       } else if (result.code === '502') {
         this.showSubmittedIDDialog();
+      } else {
+        alert('Server error. Please try again later.');
       }
     } catch (error) {
       alert('Server error. Please try again later.');
@@ -876,8 +901,7 @@ class Ticket {
         .then((res) => {
           if (res.status === 200) {
             this.dialog.closeDialog();
-            // Create pin number.
-            this.showPinDialog();
+            this.userRegistration();
           }
         })
         .catch((error) => {
@@ -887,7 +911,7 @@ class Ticket {
 
           if (data.status === 400) {
             resetOTPInput();
-            alert('Wrong email verification code.');
+            alert('Incorrect email verification code.');
           } else {
             resetOTPInput();
             alert('Server error. Please try again.');
@@ -1268,6 +1292,22 @@ class Ticket {
     const bodyPayeeLabelGuideImage = document.createElement('img');
     const bodyPayeeInput = document.createElement('input');
     const bodyPayeeError = document.createElement('div');
+    const bodyPayeeHelp = `
+      <div id="payeeHelp" class="form-text dialog__input-help">
+        <span class="dialog__input-help-icon">
+          <img src="/img/dream-concert/Icon S Information.png" alt="" />
+        </span> 
+
+        <span class="dialog__input-help-text">
+          See more information
+        </span>
+
+        <div class="dialog__input-help-caution">
+          <p class="dialog__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
+          <p class="dialog__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
+        </div>
+      </div>
+    `;
 
     bodyPayeeInputSection.classList.add('form-section');
 
@@ -1300,6 +1340,25 @@ class Ticket {
     bodyPayeeInputSection.appendChild(bodyPayeeLabel);
     bodyPayeeInputSection.appendChild(bodyPayeeInput);
     bodyPayeeInputSection.appendChild(bodyPayeeError);
+    bodyPayeeInputSection.insertAdjacentHTML(
+      'beforeend',
+      `
+        <div id="payeeHelp" class="form-text dialog__input-help">
+          <span class="dialog__input-help-icon">
+            <img src="/img/dream-concert/Icon S Information.png" alt="" />
+          </span> 
+
+          <span class="dialog__input-help-text">
+            See more information
+          </span>
+
+          <div class="dialog__input-help-caution">
+            <p class="dialog__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
+            <p class="dialog__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
+          </div>
+        </div>
+      `,
+    );
 
     body.appendChild(bodyTitle);
     body.appendChild(bodyEmailInputSection);
@@ -1395,8 +1454,6 @@ class Ticket {
 
     this.dialog.showDialog(dialogWindow, 'dialog--check-ticket-result');
   }
-
-  resetState() {}
 }
 
 export default Ticket;
