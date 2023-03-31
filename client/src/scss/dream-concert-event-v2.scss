@@ -1146,6 +1146,45 @@ body {
     }
   }
 
+  &--success {
+    .dialog {
+      &__actions {
+        align-items: stretch;
+
+        &-btn {
+          padding: 9px 0;
+          line-height: 18px;
+        }
+
+        &-close {
+          @include secondary-button();
+        }
+
+        &-transmission {
+          @include primary-button();
+          padding: 9px 0;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  &--success-confirmation {
+    .dialog {
+      &__body {
+        &-title {
+          color: $primary-color;
+        }
+      }
+
+      &__actions {
+        &-close {
+          @include primary-button();
+        }
+      }
+    }
+  }
+
   &--insufficient {
     .dialog {
       &__body {
@@ -1377,6 +1416,16 @@ body {
           &--copy {
             @include primary-button();
           }
+        }
+      }
+    }
+  }
+
+  &--no-ticket-history {
+    .dialog {
+      &__body {
+        &-title {
+          color: $error-color;
         }
       }
     }

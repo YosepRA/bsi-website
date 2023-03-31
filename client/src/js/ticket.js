@@ -50,14 +50,11 @@ class Ticket {
     this.unitPriceBSI = null;
     this.totalPrice = 2.5;
 
-    this.dialog = new Dialog();
-    this.uidDialog = new UIDDialog('dialog--uid');
-    this.payeeDialog = new PayeeDialog('dialog--payee');
-    this.txIdDialog = new TxIDDialog('dialog--txid');
-
     // Validation system.
     this.ticketSchema = object({
-      uid: string().required('Fill your UID'),
+      uid: string()
+        .required('Fill your UID')
+        .matches(/^\d+$/, 'UID should only contains numbers'),
       email: string()
         .required('Fill your email')
         .email('Please enter a valid email'),
@@ -119,6 +116,11 @@ class Ticket {
     this.resetState = this.resetState.bind(this);
 
     // Initialize.
+    this.dialog = new Dialog('dialog', this.resetState);
+    this.uidDialog = new UIDDialog('dialog--uid');
+    this.payeeDialog = new PayeeDialog('dialog--payee');
+    this.txIdDialog = new TxIDDialog('dialog--txid');
+
     this.render();
     this.getPrice().then(() => {
       this.calculate();
@@ -302,7 +304,7 @@ class Ticket {
       input?.classList.remove('invalid');
       // Empty error box.
       const errorBox = input?.nextElementSibling;
-      errorBox.textContent = '';
+      if (errorBox !== undefined) errorBox.textContent = '';
     });
 
     this.errors = reset;
@@ -374,7 +376,7 @@ class Ticket {
       input?.classList.remove('invalid');
       // Empty error box.
       const errorBox = input?.nextElementSibling;
-      errorBox.textContent = '';
+      if (errorBox !== undefined) errorBox.textContent = '';
     });
 
     this.checkTicketErrors = reset;
@@ -559,7 +561,6 @@ class Ticket {
   }
 
   async handleExchange() {
-    // console.log(await this.validate());
     const validateResult = await this.validate();
     if (!validateResult) return undefined;
 
@@ -600,18 +601,34 @@ class Ticket {
     // Dialog actions.
     const actions = document.createElement('div');
     const actionsClose = document.createElement('button');
+    const actionsTransmission = document.createElement('button');
 
-    const handleActionsClick = () => {
+    const handleActionsClose = () => {
       this.dialog.closeDialog();
+    };
+
+    const handleActionsTransmission = () => {
+      this.dialog.closeDialog();
+      this.showCheckTicket();
     };
 
     actions.classList.add('dialog__actions');
 
     actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
     actionsClose.textContent = 'Close';
-    actionsClose.addEventListener('click', () => handleActionsClick());
+    actionsClose.addEventListener('click', () => handleActionsClose());
+
+    actionsTransmission.classList.add(
+      'dialog__actions-btn',
+      'dialog__actions-transmission',
+    );
+    actionsTransmission.textContent = 'Transmission Confirmation';
+    actionsTransmission.addEventListener('click', () =>
+      handleActionsTransmission(),
+    );
 
     actions.appendChild(actionsClose);
+    actions.appendChild(actionsTransmission);
 
     // Show dialog.
     dialogWindow.appendChild(body);
@@ -667,7 +684,7 @@ class Ticket {
     dialogWindow.appendChild(body);
     dialogWindow.appendChild(actions);
 
-    this.dialog.showDialog(dialogWindow, 'dialog--success');
+    this.dialog.showDialog(dialogWindow, 'dialog--success-confirmation');
   }
 
   showInsufficientTokenDialog() {
