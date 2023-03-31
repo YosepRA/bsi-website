@@ -161,14 +161,11 @@ class Ticket {
   }
 
   async getPrice() {
-    // const result = await axios.get(
-    //   'https://openapi.digifinex.com/v3/ticker?symbol=bsi_usdt',
-    // );
     const result = await tokenAPI.getPrice();
 
     this.bsiPrice = result.data.price;
 
-    this.render();
+    this.calculate();
   }
 
   calculate() {
