@@ -79,8 +79,12 @@ class Ticket {
       email: string()
         .required('Fill your email')
         .email('Please enter a valid email'),
-      uid: string().required('Fill your UID'),
-      txId: string().required('Fill your TxID'),
+      uid: string()
+        .matches(/^\d+$/, 'UID should only contains numbers')
+        .required('Fill your UID'),
+      txId: string()
+        .matches(/^\d+$/, 'TxID should only contains numbers')
+        .required('Fill your TxID'),
       payeeCode: string(),
     });
 
