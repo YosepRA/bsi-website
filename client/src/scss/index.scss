@@ -92,11 +92,7 @@
   }
 
   .dc {
-    margin-top: 6rem;
-
-    &__title {
-      color: $primary-color;
-    }
+    margin: 3rem 0;
 
     &__banner {
       position: relative;
@@ -111,8 +107,11 @@
       &-poster {
         width: 100%;
         height: auto;
-        // object-fit: cover;
         border-radius: $border-radius;
+
+        &--desktop {
+          display: none;
+        }
       }
 
       &-info {
@@ -120,7 +119,7 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        padding: 1.8rem;
+        padding: 16px 20px 16px 20px;
         background-color: rgba(black, 0.6);
         color: white;
         border-radius: 0 0 $border-radius $border-radius;
@@ -128,13 +127,15 @@
       }
 
       &-excerpt {
-        margin-bottom: 0;
+        margin-bottom: 16px;
         font-weight: 600;
         font-size: 16px;
       }
 
       &-btn {
-        width: 220px;
+        display: block;
+        // width: 220px;
+        width: 100%;
         padding: 16px;
         color: #fff;
         font-size: 18px;
@@ -142,6 +143,11 @@
         text-decoration: none;
         background-color: #51b2aa;
         border-radius: 16px;
+
+        i {
+          display: inline-block;
+          margin-left: 8px;
+        }
       }
     }
   }
@@ -274,6 +280,39 @@
         }
       }
     }
+
+    .dc {
+      &__banner {
+        &-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 24px;
+        }
+
+        &-excerpt {
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+
+        &-btn {
+          width: 180px;
+          padding: 12px;
+          color: #fff;
+          font-size: 16px;
+        }
+
+        &-poster {
+          &--mobile {
+            display: none;
+          }
+
+          &--desktop {
+            display: block;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -315,9 +354,6 @@
         max-width: 1200px;
 
         &-info {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
           padding: 34px 60px;
         }
 
@@ -330,6 +366,16 @@
           padding: 16px;
           color: #fff;
           font-size: 18px;
+        }
+
+        &-poster {
+          &--mobile {
+            display: none;
+          }
+
+          &--desktop {
+            display: block;
+          }
         }
       }
     }
