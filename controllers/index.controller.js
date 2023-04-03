@@ -45,7 +45,7 @@ module.exports = {
   bsiDreamConcertEvent(req, res) {
     const { lang } = req.data;
 
-    res.render('dream-concert-event-v2', {
+    res.render('dream-concert-event', {
       ...lang,
       currentPage: 'dream-concert-event',
     });
