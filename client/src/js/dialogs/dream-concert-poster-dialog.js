@@ -18,7 +18,7 @@ class DreamConcertPosterDialog extends Dialog {
     const body = document.createElement('div');
     const bodyCloseButton = document.createElement('button');
     const bodyContent = `
-      <a href="/en/bsi-dream-concert-event">
+      <a href="/en/bsi-dream-concert-event" target="_blank" rel="noreferrer">
         <img src="/img/dream-concert-poster.png" alt="29th Dream Concert with Digifinex" class="dialog__body-poster" />
       </a>
     `;
