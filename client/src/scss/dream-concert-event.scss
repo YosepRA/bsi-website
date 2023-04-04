@@ -695,6 +695,33 @@ $background-04: rgba(#eeeeee, 0.8);
         flex: 1;
         height: auto;
       }
+
+      .splide {
+        &__slide {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      &--main {
+        margin-bottom: 10px;
+      }
+
+      &--thumbnail {
+        .splide {
+          &__slide {
+            opacity: 0.6;
+            transition: all 200ms ease-out;
+
+            &.is-active {
+              opacity: 1;
+              border: none !important;
+            }
+          }
+        }
+      }
     }
   }
 

@@ -1,6 +1,10 @@
+import Splide from '@splidejs/splide';
+
 import Ticket from './ticket.js';
 import Countdown from './countdown.js';
 import { ready } from './helpers.js';
+
+import '@splidejs/splide/css';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
@@ -74,6 +78,37 @@ function start() {
   const countDown = new Countdown(countDownDate);
 
   countDown.startTimer();
+
+  // About Dream Concert image gallery.
+  const dreamConcertMainSlider = new Splide('.dream-concert__slider--main', {
+    type: 'loop',
+    pagination: false,
+  });
+
+  const dreamConcertThumbnailSlider = new Splide(
+    '.dream-concert__slider--thumbnail',
+    {
+      fixedWidth: 80,
+      gap: 10,
+      rewind: true,
+      pagination: false,
+      isNavigation: true,
+      arrows: false,
+      focus: 'center',
+      breakpoints: {
+        768: {
+          fixedWidth: 120,
+        },
+        576: {
+          fixedWidth: 80,
+        },
+      },
+    },
+  );
+
+  dreamConcertMainSlider.sync(dreamConcertThumbnailSlider);
+  dreamConcertMainSlider.mount();
+  dreamConcertThumbnailSlider.mount();
 }
 
 ready(start);
