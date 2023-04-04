@@ -53,8 +53,8 @@ class Ticket {
     // Validation system.
     this.ticketSchema = object({
       uid: string()
-        .required('Fill your UID')
-        .matches(/^\d+$/, 'UID should only contains numbers'),
+        .matches(/^\d+$/, 'UID should only contains numbers')
+        .required('Fill your UID'),
       email: string()
         .required('Fill your email')
         .email('Please enter a valid email'),
