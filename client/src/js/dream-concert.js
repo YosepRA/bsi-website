@@ -81,12 +81,15 @@ function start() {
 
   // Artist slider.
   const artistSlider = new Splide('.artist__slider', {
+    type: 'loop',
     perPage: 3,
     rewind: true,
     gap: 10,
     breakpoints: {
+      768: {
+        perPage: 2,
+      },
       576: {
-        type: 'loop',
         perPage: 1,
         rewind: false,
       },
