@@ -64,7 +64,7 @@ function start() {
   exchangeButton.addEventListener('click', ticket.handleExchange);
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
   checkTicketButton.addEventListener('click', ticket.showCheckTicket);
-  uidInputGuide.addEventListener('click', ticket.showUIDGuide);
+  uidInputGuide.addEventListener('click', ticket.uidDialog.showUIDDialog);
   // payeeInputGuide.addEventListener('click', ticket.showPayeeCodeGuide);
   aboutBSIShortBtn.addEventListener('click', () => handleAboutBSIToggle(true));
   aboutBSILongBtn.addEventListener('click', () => handleAboutBSIToggle(false));
