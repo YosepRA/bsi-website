@@ -11,6 +11,12 @@ const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
 const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
+const amountInputPlus = document.querySelector(
+  '.banner__ticket-form__form-amount__btn--plus',
+);
+const amountInputMinus = document.querySelector(
+  '.banner__ticket-form__form-amount__btn--minus',
+);
 const exchangeButton = document.querySelector(
   '.banner__footer-actions-exchange',
 );
@@ -61,6 +67,12 @@ function start() {
   // payeeInput.addEventListener('input', ticket.handlePayeeChange);
   amountInput.addEventListener('input', ticket.handleAmountChange);
   amountInput.addEventListener('focus', ticket.resetErrors);
+  amountInputPlus.addEventListener('click', () => {
+    ticket.handleAmountButton(1);
+  });
+  amountInputMinus.addEventListener('click', () => {
+    ticket.handleAmountButton(-1);
+  });
   exchangeButton.addEventListener('click', ticket.handleExchange);
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
   checkTicketButton.addEventListener('click', ticket.showCheckTicket);

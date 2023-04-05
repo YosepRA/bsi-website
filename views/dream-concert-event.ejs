@@ -172,8 +172,19 @@
                   <div class="col-12 col-md-8 col-lg-4">
                     <div class="banner__ticket-form__form-section banner__ticket-form__form-amount">
                       <label for="amountInput" class="form-label">Add the number of tickets</label>
-                      <input type="number" min="1" class="form-control banner__ticket-form__input banner__ticket-form__input--amount" id="amountInput"" />
-                      <div class="invalid-feedback"></div>
+
+                      <div class="banner__ticket-form__form-amount__wrapper">
+                        <input type="number" min="1" class="form-control banner__ticket-form__input banner__ticket-form__input--amount" id="amountInput" />
+                        <div class="invalid-feedback"></div>
+  
+                        <button class="banner__ticket-form__form-amount__btn banner__ticket-form__form-amount__btn--plus">
+                          <i class="fa-solid fa-plus"></i>
+                        </button>
+  
+                        <button class="banner__ticket-form__form-amount__btn banner__ticket-form__form-amount__btn--minus">
+                          <i class="fa-solid fa-minus"></i>
+                        </button>                        
+                      </div>
                     </div>
                   </div>
   

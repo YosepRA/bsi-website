@@ -31,6 +31,7 @@ $background-04: rgba(#eeeeee, 0.8);
   border: none;
   border-radius: 16px;
   font-weight: 600;
+  transition: all 200ms ease-out;
 }
 
 @mixin primary-button {
@@ -336,6 +337,32 @@ $background-04: rgba(#eeeeee, 0.8);
 
           &-amount {
             margin-bottom: 7px;
+
+            &__wrapper {
+              position: relative;
+              width: 146px;
+            }
+
+            &__btn {
+              @include button();
+              position: absolute;
+              top: 50%;
+              width: 36px;
+              height: 36px;
+              padding: 0;
+              background-color: #dadada;
+              border: none;
+              border-radius: 8px;
+              transform: translateY(-50%);
+
+              &--minus {
+                left: 4px;
+              }
+
+              &--plus {
+                right: 4px;
+              }
+            }
           }
         }
 
@@ -347,10 +374,16 @@ $background-04: rgba(#eeeeee, 0.8);
           background-color: rgba(#fff, 0.7);
 
           &--amount {
-            width: 146px;
+            width: 100%;
             padding: 4px;
             text-align: center;
             font-size: 28px;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
           }
 
           &-help {
@@ -2126,6 +2159,17 @@ $background-04: rgba(#eeeeee, 0.8);
             &-section {
               margin-bottom: 0;
             }
+
+            &-amount {
+              &__wrapper {
+                width: 172px;
+              }
+
+              &__btn {
+                width: 40px;
+                height: 40px;
+              }
+            }
           }
 
           &__input {
@@ -2134,9 +2178,7 @@ $background-04: rgba(#eeeeee, 0.8);
             }
 
             &--amount {
-              width: 180px;
-              text-align: center;
-              font-size: 1.8rem;
+              font-size: 32px;
             }
           }
 
