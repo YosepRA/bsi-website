@@ -7,6 +7,7 @@
 $primary-color: #51b2aa;
 $primary-hover-color: #2a938a;
 $primary-pressed-color: #117067;
+$primary-focused-color: rgba(81, 178, 170, 0.2);
 $error-color: #ec4545;
 $text-primary: #333333;
 $text-secondary: #888888;
@@ -31,12 +32,21 @@ $background-04: rgba(#eeeeee, 0.8);
   border: none;
   border-radius: 16px;
   font-weight: 600;
+  @include allTransition();
 }
 
 @mixin primary-button {
   @include button();
   background-color: $primary-color;
   color: $text-button;
+
+  &:hover {
+    background-color: $primary-hover-color;
+  }
+
+  &:active {
+    background-color: $primary-pressed-color;
+  }
 }
 
 @mixin secondary-button {
@@ -44,6 +54,14 @@ $background-04: rgba(#eeeeee, 0.8);
   background-color: #fff;
   color: $primary-color;
   border: 1px solid $primary-color;
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  &:active {
+    background-color: #ddd;
+  }
 }
 
 @mixin form-label-guide-btn {
@@ -336,6 +354,41 @@ $background-04: rgba(#eeeeee, 0.8);
 
           &-amount {
             margin-bottom: 7px;
+
+            &__wrapper {
+              position: relative;
+              width: 146px;
+            }
+
+            &__btn {
+              @include button();
+              position: absolute;
+              top: 50%;
+              width: 36px;
+              height: 36px;
+              padding: 0;
+              background-color: #dadada;
+              border: none;
+              border-radius: 8px;
+              transform: translateY(-50%);
+              @include allTransition();
+
+              &--minus {
+                left: 4px;
+              }
+
+              &--plus {
+                right: 4px;
+              }
+
+              &:hover {
+                background-color: darken(#dadada, 5);
+              }
+
+              &:active {
+                background-color: darken(#dadada, 15);
+              }
+            }
           }
         }
 
@@ -347,10 +400,54 @@ $background-04: rgba(#eeeeee, 0.8);
           background-color: rgba(#fff, 0.7);
 
           &--amount {
-            width: 146px;
+            width: 100%;
             padding: 4px;
             text-align: center;
             font-size: 28px;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+
+          &-wrapper {
+            position: relative;
+          }
+
+          &-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            border: none;
+            background-color: transparent;
+            color: #888888;
+
+            .icon {
+              &-hide {
+                display: block;
+              }
+
+              &-show {
+                display: none;
+              }
+            }
+
+            &.show {
+              right: 11px;
+
+              .icon {
+                &-hide {
+                  display: none;
+                }
+
+                &-show {
+                  display: block;
+                }
+              }
+            }
           }
 
           &-help {
@@ -617,6 +714,51 @@ $background-04: rgba(#eeeeee, 0.8);
       font-weight: 700;
       text-align: center;
     }
+
+    // &__slider {
+    //   &-slide {
+    //     &__item {
+    //       @include flex-center();
+    //       flex-direction: column;
+
+    //       &-box {
+    //         @include flex-center();
+    //         width: 100%;
+    //         height: 360px;
+    //         background-color: #888;
+    //         font-size: 115px;
+    //         font-weight: 700;
+    //         color: #fff;
+    //         border-radius: 32px;
+    //       }
+
+    //       &-name {
+    //         margin-top: 16px;
+    //         font-size: 20px;
+    //         font-weight: 700;
+    //       }
+    //     }
+    //   }
+    // }
+
+    // .splide {
+    //   &__pagination {
+    //     position: static;
+
+    //     &__page {
+    //       width: 20px;
+    //       height: 20px;
+    //       background-color: #ddd;
+    //       border-radius: 0;
+    //       opacity: 1;
+    //       transition: all 200ms ease-out;
+
+    //       &.is-active {
+    //         background-color: $ticket-outer;
+    //       }
+    //     }
+    //   }
+    // }
 
     &__item {
       @include flex-center();
@@ -1030,6 +1172,10 @@ $background-04: rgba(#eeeeee, 0.8);
         font-weight: 600;
         font-size: 14px;
         @include allTransition();
+
+        &:hover {
+          background-color: darken($primary-pressed-color, 5);
+        }
 
         &--initial {
           display: none;
@@ -2081,6 +2227,17 @@ $background-04: rgba(#eeeeee, 0.8);
             &-section {
               margin-bottom: 0;
             }
+
+            &-amount {
+              &__wrapper {
+                width: 172px;
+              }
+
+              &__btn {
+                width: 40px;
+                height: 40px;
+              }
+            }
           }
 
           &__input {
@@ -2089,9 +2246,7 @@ $background-04: rgba(#eeeeee, 0.8);
             }
 
             &--amount {
-              width: 180px;
-              text-align: center;
-              font-size: 1.8rem;
+              font-size: 32px;
             }
           }
 
@@ -2686,5 +2841,11 @@ $background-04: rgba(#eeeeee, 0.8);
         }
       }
     }
+  }
+}
+
+@include media-breakpoint-xxxl {
+  .dream-concert-event {
+    font-size: 1.1rem;
   }
 }
