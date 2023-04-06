@@ -139,8 +139,14 @@
                   <div class="col-12 col-md-4 col-lg-4">
                     <div class="banner__ticket-form__form-section">
                       <label for="passwordInput" class="form-label">Your password</label>
-                      <input type="password" class="form-control banner__ticket-form__input" id="passwordInput" placeholder="Enter your password" />
-                      <div class="invalid-feedback"></div>
+                      <div class="banner__ticket-form__input-wrapper">
+                        <button class="banner__ticket-form__input-icon banner__ticket-form__input-icon--password">
+                          <i class="fa-solid fa-eye-slash icon-hide"></i>
+                          <i class="fa-solid fa-eye icon-show"></i>
+                        </button>
+                        <input type="password" class="form-control banner__ticket-form__input" id="passwordInput" placeholder="Enter your password" />
+                        <div class="invalid-feedback"></div>
+                      </div>
                     </div>
                   </div>
   

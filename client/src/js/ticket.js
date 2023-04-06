@@ -11,6 +11,9 @@ import TxIDDialog from './dialogs/txid-guide-dialog.js';
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
+const passwordInputEye = document.querySelector(
+  '.banner__ticket-form__input-icon--password',
+);
 const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
 const totalPriceOne = document.querySelector(
@@ -31,6 +34,7 @@ class Ticket {
     this.uid = '';
     this.email = '';
     this.password = '';
+    this.showPassword = false;
     this.payeeCode = '';
     this.ticketAmount = 1;
     this.otp = '';
@@ -102,6 +106,7 @@ class Ticket {
     this.handleUIDChange = this.handleUIDChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handlePasswordShowToggle = this.handlePasswordShowToggle.bind(this);
     // this.handlePayeeChange = this.handlePayeeChange.bind(this);
     this.handleAmountChange = this.handleAmountChange.bind(this);
     this.handleAmountButton = this.handleAmountButton.bind(this);
@@ -405,6 +410,16 @@ class Ticket {
     const { value } = event.target;
 
     this.password = value;
+  }
+
+  handlePasswordShowToggle() {
+    passwordInputEye.classList.toggle('show');
+
+    const next = !this.showPassword;
+
+    passwordInput.type = next ? 'text' : 'password';
+
+    this.showPassword = next;
   }
 
   // handlePayeeChange(event) {

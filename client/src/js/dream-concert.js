@@ -9,6 +9,9 @@ import '@splidejs/splide/css';
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
+const passwordInputEye = document.querySelector(
+  '.banner__ticket-form__input-icon--password',
+);
 const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
 const amountInputPlus = document.querySelector(
@@ -64,6 +67,7 @@ function start() {
   emailInput.addEventListener('focus', ticket.resetErrors);
   passwordInput.addEventListener('input', ticket.handlePasswordChange);
   passwordInput.addEventListener('focus', ticket.resetErrors);
+  passwordInputEye.addEventListener('click', ticket.handlePasswordShowToggle);
   // payeeInput.addEventListener('input', ticket.handlePayeeChange);
   amountInput.addEventListener('input', ticket.handleAmountChange);
   amountInput.addEventListener('focus', ticket.resetErrors);
