@@ -252,32 +252,14 @@ module.exports = {
           ],
           img: 'portrait-danniel.png',
         },
-        // {
-        //   id: 'irfan',
-        //   name: 'Irfan Mulia',
-        //   title: 'Advisor',
-        //   profile: [
-        //     'Irfan Mulia memulai pendidikan S1 dan S2 Administrasi Dalam Negeri dan bekerja sebagai Pegawai Negeri Sipil Eselon IV di Kementerian Dalam Negeri. Pernah bekerja sebagai Direktur di beberapa perusahaan bursa di Indonesia. Dengan pengalamannya di politik pemerintahan, pengamat blockchain, dan traders, ia telah bekerjasama dengan banyak pihak untuk melegalkan Cryptocurrency di Indonesia. Saat ini beliau membantu Kadin Kota Bandung dalam menginkubasi developer crypto yang tergabung dalam Singapore Coinstore Global Exchange dan bekerja sebagai Businness Development Executive di Singapore Coinstore Global Exchange serta menjabat sebagai penasihat BSI Foundation.',
-        //   ],
-        //   img: 'portrait-irfan.png',
-        // },
         {
-          id: 'kelvin',
-          name: 'Kelvin Chandra',
-          title: 'Media Contents and Illustrator Manager',
+          id: 'herofi',
+          name: 'Herofi Azhar',
+          title: 'UI/UX Designer',
           profile: [
-            'Kelvin, yang selama ini telah aktif di bidang Desain Grafis, Illustrator, dan Kreator Konten melalui berbagai kanal media online dan sosial. Ia telah menunjukkan hasil dengan memanfaatkan marketing viral di berbagai bidang melalui konten yang Ia produksi. Saat ini, Ia menjabat sebagai kepala tim desain global yang memproduksi konten untuk berbagai proyek ramah lingkungan.',
+            'Herofi dikenal dari keahliannya sebagai desainer produk untuk platform digital. Ia memulai karirnya pada tahun 2019 sebagai desainer produk untuk media cetak dan memperluas keahliannya di bidang desain UI/UX, komunikasi visual, dan desain berorientasi terhadap pengguna. Ia juga berpengalaman dalam perencanan dan desain konten media sosial. Saat ini, ia bertanggung jawab sebagai desainer produk dan konten SNS untuk proyek ramah lingkungan.',
           ],
-          img: 'portrait-kelvin.png',
-        },
-        {
-          id: 'riswanton',
-          name: 'Riswanton Ramudin',
-          title: 'Front-end Developer',
-          profile: [
-            'Riswanton, telah bertanggung jawab atas dukungan teknis dan perencanaan IT sebagai pengembang Front-end Developer. Saat ini, Ia bertanggung jawab atas aktivitas Front-end dan perencanaan website maupun aplikasi BSI untuk menjalankan proyek dan bisnis ramah lingkungan perusahaan.',
-          ],
-          img: 'portrait-riswanton.png',
+          img: 'portrait-herofi.png',
         },
         {
           id: 'yosep',
