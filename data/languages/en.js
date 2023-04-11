@@ -251,32 +251,14 @@ module.exports = {
           ],
           img: 'portrait-danniel.png',
         },
-        // {
-        //   id: 'irfan',
-        //   name: 'Irfan Mulia',
-        //   title: 'Advisor',
-        //   profile: [
-        //     'Irfan Mulia started undergraduate and postgraduate education in Domestic Administration and worked as an Echelon IV Civil Servant at the Ministry of Home Affairs. He has worked as a Director for several exchange companies in Indonesia. With his experiences in the Government Politics, Blockchain Observers, and Traders, he has worked with many parties to legalize Cryptocurrency in Indonesia. He is currently assisting the Bandung City Kadin in incubating Crypto developers who are members of the Singapore Coinstore Global Exchange and working as a business development executive at the Singapore Coinstore Global Exchange and he serves as advisor of BSI Foundation.',
-        //   ],
-        //   img: 'portrait-irfan.png',
-        // },
         {
-          id: 'kelvin',
-          name: 'Kelvin Chandra',
-          title: 'Media Contents and Illustrator Manager',
+          id: 'herofi',
+          name: 'Herofi Azhar',
+          title: 'UI/UX Designer',
           profile: [
-            'Kelvin, who has been active in the field of Graphic Design, Illustrator, and Content Creator through various online and social media channels. He has shown results by taking advantage of viral marketing in various fields through the content he produces. Currently, he serves as the head of a global design team that produces content for various eco-friendly projects.',
+            'Herofi, is known for his expertise as product designer for digital platforms. He started his career at 2019 as product designer for printed media and expanding his knowledge in UX/UI designing, visual communication and user oriented design. He also experienced in planning and designing the social media content. Currently, he is responsible in product designing and SNS content design for eco-friendly project.',
           ],
-          img: 'portrait-kelvin.png',
-        },
-        {
-          id: 'riswanton',
-          name: 'Riswanton Ramudin',
-          title: 'Front-end Developer',
-          profile: [
-            'Riswanton, has been responsible for technical support and IT planning as a Front-end Developer. Currently, he is responsible for Front-end activities and BSI Website and Application planning to run the company&apos;s eco-friendly projects and business.',
-          ],
-          img: 'portrait-riswanton.png',
+          img: 'portrait-herofi.png',
         },
         {
           id: 'yosep',

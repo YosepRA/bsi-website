@@ -247,32 +247,14 @@ module.exports = {
           ],
           img: 'portrait-danniel.png',
         },
-        // {
-        //   id: 'irfan',
-        //   name: 'Irfan Mulia',
-        //   title: 'Advisor',
-        //   profile: [
-        //     'Irfan Mulia는 학부 및 대학원에서 교육을 시작, 내무부에서 제4급 공무원으로 일했습니다. 그는 인도네시아의코인 거래소에서 이사로 일을 해왔으며 정부 정치, 블록체인 조사기관 및 거래유저간 경험을 바탕으로 인도네시아에서암호화폐를 합법화하기 위해 많은 파트너들과 협력해 왔습니다. 그는 현재 반둥시 Kadin을 보좌해 싱가포르 코인스토어 글로벌 거래소 회원인 암호화폐 개발자들을 육성하고 있으며 싱가포르 코인스토어 글로벌거래소에서사업개발 임원으로 활동하고 있고 현재 BSI재단의 고문을 맡고 있습니다.',
-        //   ],
-        //   img: 'portrait-irfan.png',
-        // },
         {
-          id: 'kelvin',
-          name: 'Kelvin Chandra',
-          title: 'Media Contents and Illustrator Manager',
+          id: 'herofi',
+          name: 'Herofi Azhar',
+          title: 'UI/UX Designer',
           profile: [
-            '다양한 온라인 및 SNS를 통해 그래픽 디자인, 일러스트레이터및 콘텐츠 크리에이터 로 활약해온 Kelvin은 자체 제작한 콘텐츠를 통해 다양한 분야에 바이럴 마케팅으로 활용하여 성과를 나타냈습니다. 현재 다양한 친환경 사업을 콘텐츠로 제작하는 글로벌 디자인팀 부서장을 맞고 있습니다',
+            'Herofi는 디지털 플랫폼을 위한 제품 디자이너로서의 전문 지식으로 유명합니다. 2019년 인쇄 매체 제품 디자이너로 경력을 시작했으며 UX/UI 디자인, 비주얼 커뮤니케이션 및 사용자 지향 디자인에 대한 지식을 확장했습니다. SNS 콘텐츠 기획 및 디자인 경험도 있다. 현재 친환경 프로젝트를 위한 제품 디자인과 SNS 콘텐츠 디자인을 담당하고 있다.',
           ],
-          img: 'portrait-kelvin.png',
-        },
-        {
-          id: 'riswanton',
-          name: 'Riswanton Ramudin',
-          title: 'Front-end Developer',
-          profile: [
-            'Riswanton는 대학에서 학사 졸업 후 프론트 엔드 개발자로 2년간 IT 기술지원 및 기획을 맡아 왔으며 현재는 친환경 기업 프론트 엔드 개발자로서 웹사이트 / 앱 기획 및 프론트 개발을 맞고 있습니다.',
-          ],
-          img: 'portrait-riswanton.png',
+          img: 'portrait-herofi.png',
         },
         {
           id: 'yosep',
