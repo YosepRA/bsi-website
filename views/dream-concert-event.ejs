@@ -139,8 +139,14 @@
                   <div class="col-12 col-md-4 col-lg-4">
                     <div class="banner__ticket-form__form-section">
                       <label for="passwordInput" class="form-label">Your password</label>
-                      <input type="password" class="form-control banner__ticket-form__input" id="passwordInput" placeholder="Enter your password" />
-                      <div class="invalid-feedback"></div>
+                      <div class="banner__ticket-form__input-wrapper">
+                        <button class="banner__ticket-form__input-icon banner__ticket-form__input-icon--password">
+                          <i class="fa-solid fa-eye-slash icon-hide"></i>
+                          <i class="fa-solid fa-eye icon-show"></i>
+                        </button>
+                        <input type="password" class="form-control banner__ticket-form__input" id="passwordInput" placeholder="Enter your password" />
+                        <div class="invalid-feedback"></div>
+                      </div>
                     </div>
                   </div>
   
@@ -172,8 +178,19 @@
                   <div class="col-12 col-md-8 col-lg-4">
                     <div class="banner__ticket-form__form-section banner__ticket-form__form-amount">
                       <label for="amountInput" class="form-label">Add the number of tickets</label>
-                      <input type="number" min="1" class="form-control banner__ticket-form__input banner__ticket-form__input--amount" id="amountInput"" />
-                      <div class="invalid-feedback"></div>
+
+                      <div class="banner__ticket-form__form-amount__wrapper">
+                        <input type="number" min="1" class="form-control banner__ticket-form__input banner__ticket-form__input--amount" id="amountInput" />
+                        <div class="invalid-feedback"></div>
+  
+                        <button class="banner__ticket-form__form-amount__btn banner__ticket-form__form-amount__btn--plus">
+                          <i class="fa-solid fa-plus"></i>
+                        </button>
+  
+                        <button class="banner__ticket-form__form-amount__btn banner__ticket-form__form-amount__btn--minus">
+                          <i class="fa-solid fa-minus"></i>
+                        </button>                        
+                      </div>
                     </div>
                   </div>
   
@@ -316,7 +333,7 @@
           </div>
 
           <div class="row artist__row artist__row-items">
-            <!-- <div class="col-12 col-md-6 col-lg-4 artist__col" >
+            <div class="col-12 col-md-6 col-lg-4 artist__col" >
               <div class="artist__item">?</div>
             </div>
 
@@ -326,9 +343,9 @@
 
             <div class="col-12 col-md-6 col-lg-4 artist__col">
               <div class="artist__item">?</div>
-            </div> -->
+            </div>
 
-            <div class="col">
+            <!-- <div class="col">
               <section class="splide artist__slider" aria-label="Dream Concert Artists">
                 <div class="splide__track artist__slider-track">
                   <ul class="splide__list artist__slider-list">
@@ -381,7 +398,7 @@
                   </ul>
                 </div>
               </section>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -704,25 +721,25 @@
           <!-- =============== Partners Desktop Version =============== -->
 
           <div class="row gx-lg-5 justify-content-center partners__row partners__row-items partners__row-items--desktop">
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-6 col-md-3 col-lg-3">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Viaje.png" alt="Viaje" class="partners__item-logo partners__item-logo--viaje" />
               </div>
             </div>
 
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-6 col-md-3 col-lg-3">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Chabot Planet.png" alt="Chatbot Planet" class="partners__item-logo partners__item-logo--chatbot" />
               </div>
             </div>
 
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-6 col-md-3 col-lg-3">
               <div class="partners__item">
                 <img src="/img/dream-concert/Logo Lavata.png" alt="Lavata" class="partners__item-logo partners__item-logo--lavata" />
               </div>
             </div>
 
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="col-6 col-md-3 col-lg-3">
               <div class="partners__item">
                 <img src="/img/dream-concert/Digifinex-logo-color.svg" alt="Digifinex" class="partners__item-logo partners__item-logo--digifinex" />
               </div>
