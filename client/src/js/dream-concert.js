@@ -96,20 +96,23 @@ function start() {
   countDown.startTimer();
 
   // Artist slider.
-  // const artistSlider = new Splide('.artist__slider', {
-  //   perPage: 3,
-  //   rewind: true,
-  //   gap: 10,
-  //   breakpoints: {
-  //     576: {
-  //       type: 'loop',
-  //       perPage: 1,
-  //       rewind: false,
-  //     },
-  //   },
-  // });
+  const artistSlider = new Splide('.artist__slider', {
+    type: 'loop',
+    perPage: 3,
+    speed: 800,
+    gap: 10,
+    breakpoints: {
+      768: {
+        perPage: 2,
+        rewind: false,
+      },
+      576: {
+        perPage: 1,
+      },
+    },
+  });
 
-  // artistSlider.mount();
+  artistSlider.mount();
 
   // About Dream Concert image gallery.
   const dreamConcertMainSlider = new Splide('.dream-concert__slider--main', {
