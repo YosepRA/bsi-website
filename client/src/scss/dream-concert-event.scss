@@ -1225,7 +1225,7 @@ $background-04: rgba(#eeeeee, 0.8);
           background-color: darken($primary-pressed-color, 5);
         }
 
-        &--initial {
+        &--inquiries {
           display: none;
         }
 
@@ -1235,7 +1235,7 @@ $background-04: rgba(#eeeeee, 0.8);
           width: fit-content;
           z-index: 1;
           padding: 14px 18px;
-          font-size: 18px;
+          font-size: 14px;
           text-decoration: none;
           text-align: center;
           transform: translateX(8px);
@@ -2764,7 +2764,7 @@ $background-04: rgba(#eeeeee, 0.8);
         &-btn {
           padding: 16px 24px;
 
-          &--initial {
+          &--inquiries {
             @include flex-center();
             position: absolute;
             right: -3px;
@@ -2785,36 +2785,51 @@ $background-04: rgba(#eeeeee, 0.8);
           }
 
           &--telegram {
-            display: block;
-            width: 275px;
+            @include flex-center();
+            // display: block;
+            // width: 275px;
+            position: absolute;
+            right: -3px;
+            width: 145px;
             z-index: 1;
-            font-size: 18px;
+            padding: 0 16px 0 16px;
+            font-size: 14px;
             text-decoration: none;
             text-align: center;
-            transform: translateX(100%);
-          }
-        }
+            transform: translateX(58%);
 
-        &-text {
-          display: inline;
-          flex: 1;
-        }
-
-        &:hover {
-          .fb {
-            &__inquiries {
-              &-btn {
-                &--initial {
-                  transform: translateX(100%);
-                }
-
-                &--telegram {
-                  transform: translateX(0);
-                }
-              }
+            &:hover {
+              transform: translateX(0);
             }
           }
         }
+
+        &-icon {
+          display: inline-block;
+        }
+
+        &-text {
+          display: inline-block;
+          flex: 1;
+          margin-left: 8px;
+          text-align: left;
+        }
+
+        // &:hover {
+        //   .fb {
+        //     &__inquiries {
+        //       &-btn {
+        //         &--inquiries {
+        //           transform: translateX(100%);
+        //         }
+
+        //         &--telegram {
+        //           transform: translateX(0);
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
 
