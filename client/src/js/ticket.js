@@ -11,6 +11,9 @@ import TxIDDialog from './dialogs/txid-guide-dialog.js';
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
+const passwordInputEye = document.querySelector(
+  '.banner__ticket-form__input-icon--password',
+);
 const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
 const totalPriceOne = document.querySelector(
@@ -31,6 +34,7 @@ class Ticket {
     this.uid = '';
     this.email = '';
     this.password = '';
+    this.showPassword = false;
     this.payeeCode = '';
     this.ticketAmount = 1;
     this.otp = '';
@@ -102,8 +106,10 @@ class Ticket {
     this.handleUIDChange = this.handleUIDChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handlePayeeChange = this.handlePayeeChange.bind(this);
+    this.handlePasswordShowToggle = this.handlePasswordShowToggle.bind(this);
+    // this.handlePayeeChange = this.handlePayeeChange.bind(this);
     this.handleAmountChange = this.handleAmountChange.bind(this);
+    this.handleAmountButton = this.handleAmountButton.bind(this);
     this.handleExchange = this.handleExchange.bind(this);
     this.handleOTPChange = this.handleOTPChange.bind(this);
     this.handlePinChange = this.handlePinChange.bind(this);
@@ -406,11 +412,21 @@ class Ticket {
     this.password = value;
   }
 
-  handlePayeeChange(event) {
-    const { value } = event.target;
+  handlePasswordShowToggle() {
+    passwordInputEye.classList.toggle('show');
 
-    this.payeeCode = value;
+    const next = !this.showPassword;
+
+    passwordInput.type = next ? 'text' : 'password';
+
+    this.showPassword = next;
   }
+
+  // handlePayeeChange(event) {
+  //   const { value } = event.target;
+
+  //   this.payeeCode = value;
+  // }
 
   handleAmountChange(event) {
     const { value } = event.target;
@@ -419,6 +435,22 @@ class Ticket {
     this.ticketAmount = valueNum;
 
     this.calculate();
+  }
+
+  handleAmountButton(change) {
+    if (change === -1 && this.ticketAmount === 1) {
+      return undefined;
+    }
+
+    if (change === 1) {
+      this.ticketAmount = this.ticketAmount + 1;
+    } else {
+      this.ticketAmount = this.ticketAmount - 1;
+    }
+
+    this.calculate();
+
+    return undefined;
   }
 
   handleOTPChange(event) {

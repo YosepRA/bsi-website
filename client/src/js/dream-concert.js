@@ -9,8 +9,17 @@ import '@splidejs/splide/css';
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
+const passwordInputEye = document.querySelector(
+  '.banner__ticket-form__input-icon--password',
+);
 const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
+const amountInputPlus = document.querySelector(
+  '.banner__ticket-form__form-amount__btn--plus',
+);
+const amountInputMinus = document.querySelector(
+  '.banner__ticket-form__form-amount__btn--minus',
+);
 const exchangeButton = document.querySelector(
   '.banner__footer-actions-exchange',
 );
@@ -58,9 +67,16 @@ function start() {
   emailInput.addEventListener('focus', ticket.resetErrors);
   passwordInput.addEventListener('input', ticket.handlePasswordChange);
   passwordInput.addEventListener('focus', ticket.resetErrors);
+  passwordInputEye.addEventListener('click', ticket.handlePasswordShowToggle);
   // payeeInput.addEventListener('input', ticket.handlePayeeChange);
   amountInput.addEventListener('input', ticket.handleAmountChange);
   amountInput.addEventListener('focus', ticket.resetErrors);
+  amountInputPlus.addEventListener('click', () => {
+    ticket.handleAmountButton(1);
+  });
+  amountInputMinus.addEventListener('click', () => {
+    ticket.handleAmountButton(-1);
+  });
   exchangeButton.addEventListener('click', ticket.handleExchange);
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
   checkTicketButton.addEventListener('click', ticket.showCheckTicket);
@@ -78,6 +94,25 @@ function start() {
   const countDown = new Countdown(countDownDate);
 
   countDown.startTimer();
+
+  // Artist slider.
+  const artistSlider = new Splide('.artist__slider', {
+    type: 'loop',
+    perPage: 3,
+    speed: 800,
+    gap: 10,
+    breakpoints: {
+      768: {
+        perPage: 2,
+        rewind: false,
+      },
+      576: {
+        perPage: 1,
+      },
+    },
+  });
+
+  artistSlider.mount();
 
   // About Dream Concert image gallery.
   const dreamConcertMainSlider = new Splide('.dream-concert__slider--main', {
