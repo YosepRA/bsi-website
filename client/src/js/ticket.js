@@ -7,6 +7,7 @@ import Dialog from './dialogs/dialog.js';
 import UIDDialog from './dialogs/uid-guide-dialog.js';
 import PayeeDialog from './dialogs/payee-guide-dialog.js';
 import TxIDDialog from './dialogs/txid-guide-dialog.js';
+import OTPDialog from './dialogs/otp-dialog.js';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
@@ -130,6 +131,7 @@ class Ticket {
     this.uidDialog = new UIDDialog('dialog--uid');
     this.payeeDialog = new PayeeDialog('dialog--payee');
     this.txIdDialog = new TxIDDialog('dialog--txid');
+    this.otpDialog = new OTPDialog('dialog--otp');
 
     this.render();
     this.getPrice().then(() => {
@@ -529,7 +531,8 @@ class Ticket {
 
       data.append('name', this.email);
       data.append('id', this.email);
-      data.append('mobile_auth_key', this.otp);
+      // data.append('mobile_auth_key', this.otp);
+      data.append('mobile_auth_key', this.otpDialog.otp);
       data.append('pw', this.password);
       data.append('pw2', this.password);
       data.append('pin', ''); // Pin is optional.
@@ -546,7 +549,8 @@ class Ticket {
 
       const res = await walletAPI.signup(data);
 
-      this.sendTicketInformation();
+      return true;
+      // this.sendTicketInformation();
     } catch (error) {}
   }
 
@@ -601,14 +605,19 @@ class Ticket {
     if (!validateResult) return undefined;
 
     // Verify Email using OTP.
-    await this.requestOTP();
-    this.showOTPDialog();
+    // await this.requestOTP();
+    // this.showOTPDialog();
+
+    /* ======================= Experiment ======================= */
 
     // 1. Verify OTP.
+    const otpResult = await this.otpDialog.start(this.email);
 
     // 2. User registration.
+    const registrationResult = await this.userRegistration();
 
     // 3. Send ticket information.
+    await this.sendTicketInformation();
 
     // ===== Catch any error ===== //
 
@@ -649,10 +658,12 @@ class Ticket {
 
     const handleActionsClose = () => {
       this.dialog.closeDialog();
+      this.resetState();
     };
 
     const handleActionsTransmission = () => {
       this.dialog.closeDialog();
+      this.resetState();
       this.showCheckTicket();
     };
 
@@ -823,6 +834,7 @@ class Ticket {
 
     const handleActionsClick = () => {
       this.dialog.closeDialog();
+      this.resetState();
     };
 
     actions.classList.add('dialog__actions');

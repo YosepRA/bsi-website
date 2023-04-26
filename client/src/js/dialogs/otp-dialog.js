@@ -13,6 +13,8 @@ class OTPDialog extends Dialog {
     this.errors = {
       otp: { status: false, message: '', inputId: 'otpInput' },
     };
+
+    this.handleOTPChange = this.handleOTPChange.bind(this);
   }
 
   handleOTPChange(event) {
@@ -104,7 +106,9 @@ class OTPDialog extends Dialog {
     });
   }
 
-  closeOTPDialog() {}
+  closeOTPDialog() {
+    this.closeDialog(null, this.dialogClassName);
+  }
 
   showOTPDialog(resolve) {
     // Dialog window.
@@ -177,7 +181,8 @@ class OTPDialog extends Dialog {
         .then((res) => {
           if (res.status === 200) {
             this.closeOTPDialog();
-            this.userRegistration();
+            // Go back to Ticket 'handleExchange' function.
+            resolve(true);
           }
         })
         .catch((error) => {
