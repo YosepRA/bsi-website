@@ -29,11 +29,16 @@ async function start() {
   // startSocket();
 
   // Dream Concert poster popup.
-  const dreamConcertPosterDialog = new DreamConcertPosterDialog(
-    'dialog--dream-concert-poster',
-  );
+  // Only show in home page.
+  const homePathPattern = /^\/\w{2}\/home$/;
 
-  dreamConcertPosterDialog.showPosterDialog();
+  if (window.location.pathname.match(homePathPattern)) {
+    const dreamConcertPosterDialog = new DreamConcertPosterDialog(
+      'dialog--dream-concert-poster',
+    );
+
+    dreamConcertPosterDialog.showPosterDialog();
+  }
 }
 
 ready(start);
