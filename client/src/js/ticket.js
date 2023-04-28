@@ -1375,7 +1375,7 @@ class Ticket {
     bodyPayeeInput.name = 'checkTicketPayeeCode';
     bodyPayeeInput.id = 'checkTicketPayeeCode';
     bodyPayeeInput.classList.add('form-control');
-    bodyPayeeInput.placeholder = '(Optional) Enter your Payee Code';
+    bodyPayeeInput.placeholder = '(Optional)';
     bodyPayeeInput.addEventListener('input', this.handleCheckTicketPayee);
     bodyPayeeInput.addEventListener('focus', this.resetCheckTicketError);
 
