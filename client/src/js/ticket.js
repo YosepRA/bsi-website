@@ -595,6 +595,9 @@ class Ticket {
   }
 
   async handleExchange() {
+    this.showSuccessExchange();
+    return undefined;
+
     const validateResult = await this.validate();
     if (!validateResult) return undefined;
 
@@ -669,6 +672,81 @@ class Ticket {
     dialogWindow.appendChild(actions);
 
     this.dialog.showDialog(dialogWindow, 'dialog--success');
+  }
+
+  showSuccessExchange() {
+    // Dialog window.
+    const dialogWindow = document.createElement('div');
+    dialogWindow.classList.add('dialog__window');
+
+    const bodyContent = `
+      <div class="dialog__body">
+        <img src="/img/dream-concert/success-icon.png" alt="" class="dialog__body-icon" />
+
+        <h2 class="dialog__body-title">Success!</h2>
+
+        <p class="dialog__body-info">Please complete the withdrawal process in <a href="https://www.digifinex.com/en-ww/" target="_blank" rel="noreferrer">Digifinex page.</a></p>
+
+        <div class="dialog__body__withdraw">
+          <p class="dialog__body__withdraw-title">Your withdrawal amount</p>
+
+          <div class="dialog__body__withdraw-amount">
+            <div class="dialog__body__withdraw-amount__number">${this.totalBSI}</div>
+
+            <button type="button" class="dialog__body__withdraw-amount__copy">Copy</button>
+          </div>
+
+          <p class="dialog__body__withdraw-time">
+            &#42;Please complete the withdrawal process within 12 hours
+          </p>
+
+          <div class="form-check dialog__body__withdraw-copy-check">
+            <input class="form-check-input" type="checkbox" value="" id="withdrawAmountCopyCheck">
+            <label class="form-check-label" for="withdrawAmountCopyCheck">
+              I have copied the withdrawal amount for Digifinex
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dialog__actions">
+        <button class="dialog__actions-btn dialog__actions-close disabled" disabled>Close</button>
+        <a href="https://www.digifinex.com/en-ww/" target="_blank" rel="noreferrer" class="dialog__actions-btn dialog__actions-go-digifinex">Continue to Digifinex</a>
+      </div>
+    `;
+
+    dialogWindow.innerHTML = bodyContent;
+
+    /* ======================= Assign Event Handlers ======================= */
+
+    const copyBtn = dialogWindow.querySelector(
+      '.dialog__body__withdraw-amount__copy',
+    );
+    const closeCheckbox = dialogWindow.querySelector(
+      '.dialog__body__withdraw-copy-check .form-check-input',
+    );
+    const closeBtn = dialogWindow.querySelector('.dialog__actions-close');
+
+    const handleCopy = () => {
+      navigator.clipboard.writeText(this.totalBSI).then(() => alert('Copied!'));
+    };
+
+    const handleCloseCheckbox = (event) => {
+      const { checked } = event.target;
+
+      if (checked) {
+        closeBtn.classList.remove('disabled');
+        closeBtn.disabled = false;
+      } else {
+        closeBtn.classList.add('disabled');
+        closeBtn.disabled = true;
+      }
+    };
+
+    copyBtn.addEventListener('click', () => handleCopy());
+    closeCheckbox.addEventListener('change', handleCloseCheckbox);
+
+    this.dialog.showDialog(dialogWindow, 'dialog--exchange-success');
   }
 
   showSuccessTicketConfirmation() {
