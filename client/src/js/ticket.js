@@ -561,14 +561,13 @@ class Ticket {
       const { data: result } = await ticketAPI.sendTicketInformation(data);
 
       if (result.code === '200') {
-        this.showSuccessTransactionDialog();
+        // this.showSuccessTransactionDialog();
+        this.showSuccessExchange();
       } else if (result.code === '502') {
         this.showSubmittedIDDialog();
-      } else {
-        alert('Server error. Please try again later.');
       }
     } catch (error) {
-      alert('Server error. Please try again later.');
+      this.showServerError();
     }
   }
 
@@ -590,13 +589,22 @@ class Ticket {
         this.showNoTicketHistory();
       }
     } catch (error) {
-      alert('Server error. Please try again later.');
+      this.showServerError();
     }
   }
 
   async handleExchange() {
-    this.showSuccessExchange();
-    return undefined;
+    // this.showSuccessExchange();
+    // this.showSubmittedIDDialog();
+    // this.showNoTicketHistory();
+    // this.showSuccessTicketConfirmation();
+    // this.showCheckTicket();
+    // this.showGeneralError(
+    //   'Server Error',
+    //   'There seem to be a server error coming from us. Please try again.',
+    // );
+
+    // return undefined;
 
     const validateResult = await this.validate();
     if (!validateResult) return undefined;
@@ -685,7 +693,7 @@ class Ticket {
 
         <h2 class="dialog__body-title">Success!</h2>
 
-        <p class="dialog__body-info">Please complete the withdrawal process in <a href="https://www.digifinex.com/en-ww/" target="_blank" rel="noreferrer">Digifinex page.</a></p>
+        <p class="dialog__body-info">Please continue with transferring BSI to our Event Account UID <b>(691265286)</b> in <a href="https://www.digifinex.com/en-ww/" target="_blank" rel="noreferrer">Digifinex page.</a></p>
 
         <div class="dialog__body__withdraw">
           <p class="dialog__body__withdraw-title">Your withdrawal amount</p>
@@ -728,7 +736,17 @@ class Ticket {
     const closeBtn = dialogWindow.querySelector('.dialog__actions-close');
 
     const handleCopy = () => {
-      navigator.clipboard.writeText(this.totalBSI).then(() => alert('Copied!'));
+      navigator.clipboard.writeText(this.totalBSI).then(() => {
+        copyBtn.textContent = 'Copied!';
+        copyBtn.disabled = true;
+
+        const disableTime = 1000;
+
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy';
+          copyBtn.disabled = false;
+        }, disableTime);
+      });
     };
 
     const handleCloseCheckbox = (event) => {
@@ -749,52 +767,93 @@ class Ticket {
     this.dialog.showDialog(dialogWindow, 'dialog--exchange-success');
   }
 
+  // showSuccessTicketConfirmation() {
+  //   // Dialog window.
+  //   const dialogWindow = document.createElement('div');
+  //   dialogWindow.classList.add('dialog__window');
+
+  //   // Dialog body.
+  //   const body = document.createElement('div');
+  //   const bodyIcon = document.createElement('img');
+  //   const bodyTitle = document.createElement('h2');
+  //   const bodyInfo = document.createElement('p');
+
+  //   body.classList.add('dialog__body');
+
+  //   bodyIcon.classList.add('dialog__body-icon');
+  //   bodyIcon.src = '/img/dream-concert/success-icon.png';
+
+  //   bodyTitle.classList.add('dialog__body-title');
+  //   bodyTitle.textContent = 'Successful!';
+
+  //   bodyInfo.classList.add('dialog__body-info');
+  //   bodyInfo.textContent =
+  //     'Token transfer confirmation request has been completed.';
+
+  //   body.appendChild(bodyIcon);
+  //   body.appendChild(bodyTitle);
+  //   body.appendChild(bodyInfo);
+
+  //   // Dialog actions.
+  //   const actions = document.createElement('div');
+  //   const actionsClose = document.createElement('button');
+
+  //   const handleActionsClick = () => {
+  //     this.dialog.closeDialog();
+  //   };
+
+  //   actions.classList.add('dialog__actions');
+
+  //   actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
+  //   actionsClose.textContent = 'Close';
+  //   actionsClose.addEventListener('click', () => handleActionsClick());
+
+  //   actions.appendChild(actionsClose);
+
+  //   // Show dialog.
+  //   dialogWindow.appendChild(body);
+  //   dialogWindow.appendChild(actions);
+
+  //   this.dialog.showDialog(dialogWindow, 'dialog--success-confirmation');
+  // }
+
   showSuccessTicketConfirmation() {
-    // Dialog window.
     const dialogWindow = document.createElement('div');
     dialogWindow.classList.add('dialog__window');
 
-    // Dialog body.
-    const body = document.createElement('div');
-    const bodyIcon = document.createElement('img');
-    const bodyTitle = document.createElement('h2');
-    const bodyInfo = document.createElement('p');
+    const bodyContent = `
+      <div class="dialog dialog--success-confirmation">
+        <div class="dialog__overlay"></div>
 
-    body.classList.add('dialog__body');
+        <div class="dialog__window">
+          <div class="dialog__body">
+            <img src="/img/dream-concert/success-icon.png" alt="" class="dialog__body-icon" />
 
-    bodyIcon.classList.add('dialog__body-icon');
-    bodyIcon.src = '/img/dream-concert/success-icon.png';
+            <h2 class="dialog__body-title">Successful!</h2>
 
-    bodyTitle.classList.add('dialog__body-title');
-    bodyTitle.textContent = 'Successful!';
+            <p class="dialog__body-info">Transmission confirmation request has been completed.</p>
+            <p class="dialog__body-info dialog__body-info--note">Your ticket will be sent to your email after we have confirmed its validity.</p>
+          </div>
+          
+          <div class="dialog__actions">
+            <button class="dialog__actions-btn dialog__actions-close">Close</button>
+          </div>
+        </div>
+      </div>
+    `;
 
-    bodyInfo.classList.add('dialog__body-info');
-    bodyInfo.textContent =
-      'Token transfer confirmation request has been completed.';
+    dialogWindow.innerHTML = bodyContent;
 
-    body.appendChild(bodyIcon);
-    body.appendChild(bodyTitle);
-    body.appendChild(bodyInfo);
+    /* ======================= Event Handler Assignment ======================= */
 
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsClose = document.createElement('button');
+    const closeBtn = dialogWindow.querySelector('.dialog__actions-close');
 
-    const handleActionsClick = () => {
+    const handleClose = () => {
       this.dialog.closeDialog();
+      this.resetState();
     };
 
-    actions.classList.add('dialog__actions');
-
-    actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
-    actionsClose.textContent = 'Close';
-    actionsClose.addEventListener('click', () => handleActionsClick());
-
-    actions.appendChild(actionsClose);
-
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
+    closeBtn.addEventListener('click', () => handleClose());
 
     this.dialog.showDialog(dialogWindow, 'dialog--success-confirmation');
   }
@@ -858,101 +917,176 @@ class Ticket {
     this.dialog.showDialog(dialogWindow, 'dialog--insufficient');
   }
 
+  // showSubmittedIDDialog() {
+  //   // Dialog window.
+  //   const dialogWindow = document.createElement('div');
+  //   dialogWindow.classList.add('dialog__window');
+
+  //   // Dialog body.
+  //   const body = document.createElement('div');
+  //   const bodyIcon = document.createElement('img');
+  //   const bodyTitle = document.createElement('h2');
+  //   const bodyInfo = document.createElement('p');
+
+  //   body.classList.add('dialog__body');
+
+  //   bodyIcon.classList.add('dialog__body-icon');
+  //   bodyIcon.src = '/img/dream-concert/fail-icon.png';
+
+  //   bodyTitle.classList.add('dialog__body-title');
+  //   bodyTitle.textContent = 'Submitted';
+
+  //   bodyInfo.classList.add('dialog__body-info');
+  //   bodyInfo.textContent =
+  //     'You have submitted your exchange request using this ID.';
+
+  //   body.appendChild(bodyIcon);
+  //   body.appendChild(bodyTitle);
+  //   body.appendChild(bodyInfo);
+
+  //   // Dialog actions.
+  //   const actions = document.createElement('div');
+  //   const actionsClose = document.createElement('button');
+
+  //   const handleActionsClick = () => {
+  //     this.dialog.closeDialog();
+  //   };
+
+  //   actions.classList.add('dialog__actions');
+
+  //   actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
+  //   actionsClose.textContent = 'Close';
+  //   actionsClose.addEventListener('click', () => handleActionsClick());
+
+  //   actions.appendChild(actionsClose);
+
+  //   // Show dialog.
+  //   dialogWindow.appendChild(body);
+  //   dialogWindow.appendChild(actions);
+
+  //   this.dialog.showDialog(dialogWindow, 'dialog--submitted');
+  // }
+
   showSubmittedIDDialog() {
-    // Dialog window.
     const dialogWindow = document.createElement('div');
     dialogWindow.classList.add('dialog__window');
 
-    // Dialog body.
-    const body = document.createElement('div');
-    const bodyIcon = document.createElement('img');
-    const bodyTitle = document.createElement('h2');
-    const bodyInfo = document.createElement('p');
+    const bodyContent = `
+      <div class="dialog__body">
+        <img src="/img/dream-concert/fail-icon.png" alt="" class="dialog__body-icon" />
 
-    body.classList.add('dialog__body');
+        <h2 class="dialog__body-title">Request Submitted</h2>
 
-    bodyIcon.classList.add('dialog__body-icon');
-    bodyIcon.src = '/img/dream-concert/fail-icon.png';
+        <p class="dialog__body-info">You have submitted your exchange request using this email address.</p>
+      </div>
+      
+      <div class="dialog__actions">
+        <button class="dialog__actions-btn dialog__actions-close">Close</button>
+      </div>
+    `;
 
-    bodyTitle.classList.add('dialog__body-title');
-    bodyTitle.textContent = 'Submitted';
+    dialogWindow.innerHTML = bodyContent;
 
-    bodyInfo.classList.add('dialog__body-info');
-    bodyInfo.textContent =
-      'You have submitted your exchange request using this ID.';
+    /* ======================= Event Handler Assignment ======================= */
 
-    body.appendChild(bodyIcon);
-    body.appendChild(bodyTitle);
-    body.appendChild(bodyInfo);
+    const closeBtn = dialogWindow.querySelector('.dialog__actions-close');
 
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsClose = document.createElement('button');
-
-    const handleActionsClick = () => {
+    const handleClose = () => {
       this.dialog.closeDialog();
+      this.resetState();
     };
 
-    actions.classList.add('dialog__actions');
-
-    actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
-    actionsClose.textContent = 'Close';
-    actionsClose.addEventListener('click', () => handleActionsClick());
-
-    actions.appendChild(actionsClose);
-
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
+    closeBtn.addEventListener('click', () => handleClose());
 
     this.dialog.showDialog(dialogWindow, 'dialog--submitted');
   }
 
+  // showNoTicketHistory() {
+  //   // Dialog window.
+  //   const dialogWindow = document.createElement('div');
+  //   dialogWindow.classList.add('dialog__window');
+
+  //   // Dialog body.
+  //   const body = document.createElement('div');
+  //   const bodyIcon = document.createElement('img');
+  //   const bodyTitle = document.createElement('h2');
+  //   const bodyInfo = document.createElement('p');
+
+  //   body.classList.add('dialog__body');
+
+  //   bodyIcon.classList.add('dialog__body-icon');
+  //   bodyIcon.src = '/img/dream-concert/fail-icon.png';
+
+  //   bodyTitle.classList.add('dialog__body-title');
+  //   bodyTitle.textContent = 'Something is wrong';
+
+  //   bodyInfo.classList.add('dialog__body-info');
+  //   bodyInfo.textContent = 'Ticket request history is not found.';
+
+  //   body.appendChild(bodyIcon);
+  //   body.appendChild(bodyTitle);
+  //   body.appendChild(bodyInfo);
+
+  //   // Dialog actions.
+  //   const actions = document.createElement('div');
+  //   const actionsClose = document.createElement('button');
+
+  //   const handleActionsClick = () => {
+  //     this.dialog.closeDialog();
+  //   };
+
+  //   actions.classList.add('dialog__actions');
+
+  //   actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
+  //   actionsClose.textContent = 'Close';
+  //   actionsClose.addEventListener('click', () => handleActionsClick());
+
+  //   actions.appendChild(actionsClose);
+
+  //   // Show dialog.
+  //   dialogWindow.appendChild(body);
+  //   dialogWindow.appendChild(actions);
+
+  //   this.dialog.showDialog(dialogWindow, 'dialog--no-ticket-history');
+  // }
+
   showNoTicketHistory() {
-    // Dialog window.
     const dialogWindow = document.createElement('div');
     dialogWindow.classList.add('dialog__window');
 
-    // Dialog body.
-    const body = document.createElement('div');
-    const bodyIcon = document.createElement('img');
-    const bodyTitle = document.createElement('h2');
-    const bodyInfo = document.createElement('p');
+    const bodyContent = `
+      <div class="dialog dialog--no-ticket-history">
+        <div class="dialog__overlay"></div>
 
-    body.classList.add('dialog__body');
+        <div class="dialog__window">
+          <div class="dialog__body">
+            <img src="/img/dream-concert/fail-icon.png" alt="" class="dialog__body-icon" />
 
-    bodyIcon.classList.add('dialog__body-icon');
-    bodyIcon.src = '/img/dream-concert/fail-icon.png';
+            <h2 class="dialog__body-title">Not Found</h2>
 
-    bodyTitle.classList.add('dialog__body-title');
-    bodyTitle.textContent = 'Something is wrong';
+            <p class="dialog__body-info">Ticket exchange request is not found.</p>
+            <p class="dialog__body-info dialog__body-info--note">Please make sure you have entered the correct data, and you have submitted your ticket exchange request.</p>
+          </div>
+          
+          <div class="dialog__actions">
+            <button class="dialog__actions-btn dialog__actions-close">Close</button>
+          </div>
+        </div>
+      </div>      
+    `;
 
-    bodyInfo.classList.add('dialog__body-info');
-    bodyInfo.textContent = 'Ticket request history is not found.';
+    dialogWindow.innerHTML = bodyContent;
 
-    body.appendChild(bodyIcon);
-    body.appendChild(bodyTitle);
-    body.appendChild(bodyInfo);
+    /* ======================= Event Handler Assignment ======================= */
 
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsClose = document.createElement('button');
+    const closeBtn = dialogWindow.querySelector('.dialog__actions-close');
 
-    const handleActionsClick = () => {
+    const handleClose = () => {
       this.dialog.closeDialog();
+      this.resetState();
     };
 
-    actions.classList.add('dialog__actions');
-
-    actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
-    actionsClose.textContent = 'Close';
-    actionsClose.addEventListener('click', () => handleActionsClick());
-
-    actions.appendChild(actionsClose);
-
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
+    closeBtn.addEventListener('click', () => handleClose());
 
     this.dialog.showDialog(dialogWindow, 'dialog--no-ticket-history');
   }
@@ -1289,212 +1423,336 @@ class Ticket {
     this.dialog.showDialog(dialogWindow, 'dialog--payee');
   }
 
+  // showCheckTicket() {
+  //   // Dialog window.
+  //   const dialogWindow = document.createElement('div');
+  //   dialogWindow.classList.add('dialog__window');
+
+  //   // Dialog body.
+  //   const body = document.createElement('div');
+  //   const bodyTitle = document.createElement('h2');
+
+  //   body.classList.add('dialog__body');
+
+  //   bodyTitle.classList.add('dialog__body-title');
+  //   bodyTitle.textContent = 'Request your ticket number';
+
+  //   // Email input.
+  //   const bodyEmailInputSection = document.createElement('div');
+  //   const bodyEmailLabel = document.createElement('label');
+  //   const bodyEmailInput = document.createElement('input');
+  //   const bodyEmailError = document.createElement('div');
+
+  //   bodyEmailInputSection.classList.add('form-section');
+
+  //   bodyEmailLabel.htmlFor = 'checkTicketEmail';
+  //   bodyEmailLabel.textContent = 'Email';
+  //   bodyEmailLabel.classList.add('form-label');
+
+  //   bodyEmailInput.type = 'email';
+  //   bodyEmailInput.name = 'checkTicketEmail';
+  //   bodyEmailInput.id = 'checkTicketEmail';
+  //   bodyEmailInput.classList.add('form-control');
+  //   bodyEmailInput.placeholder = 'Enter your email';
+  //   bodyEmailInput.addEventListener('input', this.handleCheckTicketEmail);
+  //   bodyEmailInput.addEventListener('focus', this.resetCheckTicketError);
+
+  //   bodyEmailError.classList.add('invalid-feedback');
+
+  //   bodyEmailInputSection.appendChild(bodyEmailLabel);
+  //   bodyEmailInputSection.appendChild(bodyEmailInput);
+  //   bodyEmailInputSection.appendChild(bodyEmailError);
+
+  //   // UID input.
+  //   const bodyUIDInputSection = document.createElement('div');
+  //   const bodyUIDLabel = document.createElement('label');
+  //   const bodyUIDLabelGuideBtn = document.createElement('button');
+  //   const bodyUIDLabelGuideImage = document.createElement('img');
+  //   const bodyUIDInput = document.createElement('input');
+  //   const bodyUIDError = document.createElement('div');
+
+  //   bodyUIDInputSection.classList.add('form-section');
+
+  //   bodyUIDLabel.htmlFor = 'checkTicketUID';
+  //   bodyUIDLabel.textContent = 'User UID';
+  //   bodyUIDLabel.classList.add('form-label');
+
+  //   bodyUIDLabelGuideBtn.classList.add(
+  //     'form-label__guide-btn',
+  //     'form-label__guide-btn--check-ticket-uid',
+  //   );
+  //   bodyUIDLabelGuideBtn.addEventListener('click', () =>
+  //     this.uidDialog.showUIDDialog(),
+  //   );
+  //   bodyUIDLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
+  //   bodyUIDLabelGuideImage.alt = 'Help';
+
+  //   bodyUIDInput.type = 'text';
+  //   bodyUIDInput.name = 'checkTicketUID';
+  //   bodyUIDInput.id = 'checkTicketUID';
+  //   bodyUIDInput.classList.add('form-control');
+  //   bodyUIDInput.placeholder = 'Enter your UID';
+  //   bodyUIDInput.addEventListener('input', this.handleCheckTicketUID);
+  //   bodyUIDInput.addEventListener('focus', this.resetCheckTicketError);
+
+  //   bodyUIDError.classList.add('invalid-feedback');
+
+  //   bodyUIDLabelGuideBtn.appendChild(bodyUIDLabelGuideImage);
+  //   bodyUIDLabel.appendChild(bodyUIDLabelGuideBtn);
+  //   bodyUIDInputSection.appendChild(bodyUIDLabel);
+  //   bodyUIDInputSection.appendChild(bodyUIDInput);
+  //   bodyUIDInputSection.appendChild(bodyUIDError);
+
+  //   // TxID input.
+  //   const bodyTxIDInputSection = document.createElement('div');
+  //   const bodyTxIDLabel = document.createElement('label');
+  //   const bodyTxIDLabelGuideBtn = document.createElement('button');
+  //   const bodyTxIDLabelGuideImage = document.createElement('img');
+  //   const bodyTxIDInput = document.createElement('input');
+  //   const bodyTxIDError = document.createElement('div');
+
+  //   bodyTxIDInputSection.classList.add('form-section');
+
+  //   bodyTxIDLabel.htmlFor = 'checkTicketTxID';
+  //   bodyTxIDLabel.textContent = 'TxID';
+  //   bodyTxIDLabel.classList.add('form-label');
+
+  //   bodyTxIDLabelGuideBtn.classList.add(
+  //     'form-label__guide-btn',
+  //     'form-label__guide-btn--check-ticket-txid',
+  //   );
+  //   bodyTxIDLabelGuideBtn.addEventListener('click', () =>
+  //     this.txIdDialog.showTxIDDialog(),
+  //   );
+  //   bodyTxIDLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
+  //   bodyTxIDLabelGuideImage.alt = 'Help';
+
+  //   bodyTxIDInput.type = 'text';
+  //   bodyTxIDInput.name = 'checkTicketTxID';
+  //   bodyTxIDInput.id = 'checkTicketTxID';
+  //   bodyTxIDInput.classList.add('form-control');
+  //   bodyTxIDInput.placeholder = 'Enter your TxID';
+  //   bodyTxIDInput.addEventListener('input', this.handleCheckTicketTxID);
+  //   bodyTxIDInput.addEventListener('focus', this.resetCheckTicketError);
+
+  //   bodyTxIDError.classList.add('invalid-feedback');
+
+  //   bodyTxIDLabelGuideBtn.appendChild(bodyTxIDLabelGuideImage);
+  //   bodyTxIDLabel.appendChild(bodyTxIDLabelGuideBtn);
+  //   bodyTxIDInputSection.appendChild(bodyTxIDLabel);
+  //   bodyTxIDInputSection.appendChild(bodyTxIDInput);
+  //   bodyTxIDInputSection.appendChild(bodyTxIDError);
+
+  //   // Payee code input.
+  //   const bodyPayeeInputSection = document.createElement('div');
+  //   const bodyPayeeLabel = document.createElement('label');
+  //   const bodyPayeeLabelGuideBtn = document.createElement('button');
+  //   const bodyPayeeLabelGuideImage = document.createElement('img');
+  //   const bodyPayeeInput = document.createElement('input');
+  //   const bodyPayeeError = document.createElement('div');
+  //   const bodyPayeeHelp = `
+  //     <div id="payeeHelp" class="form-text dialog__input-help">
+  //       <span class="dialog__input-help-icon">
+  //         <img src="/img/dream-concert/Icon S Information.png" alt="" />
+  //       </span>
+
+  //       <span class="dialog__input-help-text">
+  //         See more information
+  //       </span>
+
+  //       <div class="dialog__input-help-caution">
+  //         <p class="dialog__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
+  //         <p class="dialog__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
+  //       </div>
+  //     </div>
+  //   `;
+
+  //   bodyPayeeInputSection.classList.add('form-section');
+
+  //   bodyPayeeLabel.htmlFor = 'checkTicketPayeeCode';
+  //   bodyPayeeLabel.textContent = 'Payee Code';
+  //   bodyPayeeLabel.classList.add('form-label');
+
+  //   bodyPayeeLabelGuideBtn.classList.add(
+  //     'form-label__guide-btn',
+  //     'form-label__guide-btn--check-ticket-payee',
+  //   );
+  //   bodyPayeeLabelGuideBtn.addEventListener('click', () =>
+  //     this.payeeDialog.showPayeeDialog(),
+  //   );
+  //   bodyPayeeLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
+  //   bodyPayeeLabelGuideImage.alt = 'Help';
+
+  //   bodyPayeeInput.type = 'text';
+  //   bodyPayeeInput.name = 'checkTicketPayeeCode';
+  //   bodyPayeeInput.id = 'checkTicketPayeeCode';
+  //   bodyPayeeInput.classList.add('form-control');
+  //   bodyPayeeInput.placeholder = '(Optional)';
+  //   bodyPayeeInput.addEventListener('input', this.handleCheckTicketPayee);
+  //   bodyPayeeInput.addEventListener('focus', this.resetCheckTicketError);
+
+  //   bodyPayeeError.classList.add('invalid-feedback');
+
+  //   bodyPayeeLabelGuideBtn.appendChild(bodyPayeeLabelGuideImage);
+  //   bodyPayeeLabel.appendChild(bodyPayeeLabelGuideBtn);
+  //   bodyPayeeInputSection.appendChild(bodyPayeeLabel);
+  //   bodyPayeeInputSection.appendChild(bodyPayeeInput);
+  //   bodyPayeeInputSection.appendChild(bodyPayeeError);
+  //   bodyPayeeInputSection.insertAdjacentHTML(
+  //     'beforeend',
+  //     `
+  //       <div id="payeeHelp" class="form-text dialog__input-help">
+  //         <span class="dialog__input-help-icon">
+  //           <img src="/img/dream-concert/Icon S Information.png" alt="" />
+  //         </span>
+
+  //         <span class="dialog__input-help-text">
+  //           See more information
+  //         </span>
+
+  //         <div class="dialog__input-help-caution">
+  //           <p class="dialog__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
+  //           <p class="dialog__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
+  //         </div>
+  //       </div>
+  //     `,
+  //   );
+
+  //   body.appendChild(bodyTitle);
+  //   body.appendChild(bodyEmailInputSection);
+  //   body.appendChild(bodyUIDInputSection);
+  //   body.appendChild(bodyTxIDInputSection);
+  //   body.appendChild(bodyPayeeInputSection);
+
+  //   // Dialog actions.
+  //   const actions = document.createElement('div');
+  //   const actionsCheckTicket = document.createElement('button');
+
+  //   const handleCheckTicket = async () => {
+  //     const validateResult = await this.validateCheckTicket();
+  //     if (!validateResult) return undefined;
+
+  //     this.dialog.closeDialog();
+  //     this.sendTicketConfirmation();
+
+  //     return undefined;
+  //   };
+
+  //   actions.classList.add('dialog__actions');
+
+  //   actionsCheckTicket.classList.add(
+  //     'dialog__actions-btn',
+  //     'dialog__actions-check-ticket',
+  //   );
+  //   actionsCheckTicket.textContent = 'Check your ticket';
+  //   actionsCheckTicket.addEventListener('click', () => handleCheckTicket());
+
+  //   actions.appendChild(actionsCheckTicket);
+
+  //   // Show dialog.
+  //   dialogWindow.appendChild(body);
+  //   dialogWindow.appendChild(actions);
+
+  //   this.dialog.showDialog(dialogWindow, 'dialog--check-ticket');
+  // }
+
   showCheckTicket() {
-    // Dialog window.
     const dialogWindow = document.createElement('div');
     dialogWindow.classList.add('dialog__window');
 
-    // Dialog body.
-    const body = document.createElement('div');
-    const bodyTitle = document.createElement('h2');
+    const bodyContent = `
+      <div class="dialog dialog--check-ticket">
+        <div class="dialog__overlay"></div>
 
-    body.classList.add('dialog__body');
+        <div class="dialog__window">
+          <div class="dialog__body">
+            <h2 class="dialog__body-title">Transmission Confirmation</h2>
 
-    bodyTitle.classList.add('dialog__body-title');
-    bodyTitle.textContent = 'Request your ticket number';
+            <div class="form-section">
+              <label for="checkTicketEmail" class="form-label">
+                Email
+              </label>
+              <input type="text" class="form-control" id="checkTicketEmail" placeholder="Enter your email" />
+              <div class="invalid-feedback"></div>
+            </div>
 
-    // Email input.
-    const bodyEmailInputSection = document.createElement('div');
-    const bodyEmailLabel = document.createElement('label');
-    const bodyEmailInput = document.createElement('input');
-    const bodyEmailError = document.createElement('div');
+            <div class="form-section">
+              <label for="checkTicketUID" class="form-label">
+                UID
+                <button class="form-label__guide-btn form-label__guide-btn--check-ticket-uid"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button>
+              </label>
+              <input type="text" class="form-control" id="checkTicketUID" placeholder="Enter your UID" />
+              <div class="invalid-feedback"></div>
+            </div>
 
-    bodyEmailInputSection.classList.add('form-section');
+            <div class="form-section">
+              <label for="checkTicketTxID" class="form-label">
+                TxID
+                <button class="form-label__guide-btn form-label__guide-btn--check-ticket-txid"><img src="/img/dream-concert/Icon S Help.png" alt="Help" /></button>
+              </label>
+              <input type="text" class="form-control" id="checkTicketTxID" placeholder="Enter your TxID" />
+              <div class="invalid-feedback"></div>
+            </div>
 
-    bodyEmailLabel.htmlFor = 'checkTicketEmail';
-    bodyEmailLabel.textContent = 'Email';
-    bodyEmailLabel.classList.add('form-label');
+            <div class="form-section">
+              <label for="checkTicketPayeeCode" class="form-label">
+                Payee code
+                <button class="form-label__guide-btn form-label__guide-btn--check-ticket-payee">
+                  <img src="/img/dream-concert/Icon S Help.png" alt="Help" />
+                </button>
+              </label>
+              <input type="text" class="form-control" id="checkTicketPayeeCode" placeholder="(Optional)" />
 
-    bodyEmailInput.type = 'email';
-    bodyEmailInput.name = 'checkTicketEmail';
-    bodyEmailInput.id = 'checkTicketEmail';
-    bodyEmailInput.classList.add('form-control');
-    bodyEmailInput.placeholder = 'Enter your email';
-    bodyEmailInput.addEventListener('input', this.handleCheckTicketEmail);
-    bodyEmailInput.addEventListener('focus', this.resetCheckTicketError);
+              <div class="invalid-feedback"></div>
 
-    bodyEmailError.classList.add('invalid-feedback');
+              <div id="payeeHelp" class="form-text dialog__input-help">
+                <span class="dialog__input-help-icon">
+                  <img src="/img/dream-concert/Icon S Information.png" alt="" />
+                </span> 
 
-    bodyEmailInputSection.appendChild(bodyEmailLabel);
-    bodyEmailInputSection.appendChild(bodyEmailInput);
-    bodyEmailInputSection.appendChild(bodyEmailError);
+                <span class="dialog__input-help-text">
+                  See more information
+                </span>
 
-    // UID input.
-    const bodyUIDInputSection = document.createElement('div');
-    const bodyUIDLabel = document.createElement('label');
-    const bodyUIDLabelGuideBtn = document.createElement('button');
-    const bodyUIDLabelGuideImage = document.createElement('img');
-    const bodyUIDInput = document.createElement('input');
-    const bodyUIDError = document.createElement('div');
-
-    bodyUIDInputSection.classList.add('form-section');
-
-    bodyUIDLabel.htmlFor = 'checkTicketUID';
-    bodyUIDLabel.textContent = 'User UID';
-    bodyUIDLabel.classList.add('form-label');
-
-    bodyUIDLabelGuideBtn.classList.add(
-      'form-label__guide-btn',
-      'form-label__guide-btn--check-ticket-uid',
-    );
-    bodyUIDLabelGuideBtn.addEventListener('click', () =>
-      this.uidDialog.showUIDDialog(),
-    );
-    bodyUIDLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
-    bodyUIDLabelGuideImage.alt = 'Help';
-
-    bodyUIDInput.type = 'text';
-    bodyUIDInput.name = 'checkTicketUID';
-    bodyUIDInput.id = 'checkTicketUID';
-    bodyUIDInput.classList.add('form-control');
-    bodyUIDInput.placeholder = 'Enter your UID';
-    bodyUIDInput.addEventListener('input', this.handleCheckTicketUID);
-    bodyUIDInput.addEventListener('focus', this.resetCheckTicketError);
-
-    bodyUIDError.classList.add('invalid-feedback');
-
-    bodyUIDLabelGuideBtn.appendChild(bodyUIDLabelGuideImage);
-    bodyUIDLabel.appendChild(bodyUIDLabelGuideBtn);
-    bodyUIDInputSection.appendChild(bodyUIDLabel);
-    bodyUIDInputSection.appendChild(bodyUIDInput);
-    bodyUIDInputSection.appendChild(bodyUIDError);
-
-    // TxID input.
-    const bodyTxIDInputSection = document.createElement('div');
-    const bodyTxIDLabel = document.createElement('label');
-    const bodyTxIDLabelGuideBtn = document.createElement('button');
-    const bodyTxIDLabelGuideImage = document.createElement('img');
-    const bodyTxIDInput = document.createElement('input');
-    const bodyTxIDError = document.createElement('div');
-
-    bodyTxIDInputSection.classList.add('form-section');
-
-    bodyTxIDLabel.htmlFor = 'checkTicketTxID';
-    bodyTxIDLabel.textContent = 'TxID';
-    bodyTxIDLabel.classList.add('form-label');
-
-    bodyTxIDLabelGuideBtn.classList.add(
-      'form-label__guide-btn',
-      'form-label__guide-btn--check-ticket-txid',
-    );
-    bodyTxIDLabelGuideBtn.addEventListener('click', () =>
-      this.txIdDialog.showTxIDDialog(),
-    );
-    bodyTxIDLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
-    bodyTxIDLabelGuideImage.alt = 'Help';
-
-    bodyTxIDInput.type = 'text';
-    bodyTxIDInput.name = 'checkTicketTxID';
-    bodyTxIDInput.id = 'checkTicketTxID';
-    bodyTxIDInput.classList.add('form-control');
-    bodyTxIDInput.placeholder = 'Enter your TxID';
-    bodyTxIDInput.addEventListener('input', this.handleCheckTicketTxID);
-    bodyTxIDInput.addEventListener('focus', this.resetCheckTicketError);
-
-    bodyTxIDError.classList.add('invalid-feedback');
-
-    bodyTxIDLabelGuideBtn.appendChild(bodyTxIDLabelGuideImage);
-    bodyTxIDLabel.appendChild(bodyTxIDLabelGuideBtn);
-    bodyTxIDInputSection.appendChild(bodyTxIDLabel);
-    bodyTxIDInputSection.appendChild(bodyTxIDInput);
-    bodyTxIDInputSection.appendChild(bodyTxIDError);
-
-    // Payee code input.
-    const bodyPayeeInputSection = document.createElement('div');
-    const bodyPayeeLabel = document.createElement('label');
-    const bodyPayeeLabelGuideBtn = document.createElement('button');
-    const bodyPayeeLabelGuideImage = document.createElement('img');
-    const bodyPayeeInput = document.createElement('input');
-    const bodyPayeeError = document.createElement('div');
-    const bodyPayeeHelp = `
-      <div id="payeeHelp" class="form-text dialog__input-help">
-        <span class="dialog__input-help-icon">
-          <img src="/img/dream-concert/Icon S Information.png" alt="" />
-        </span> 
-
-        <span class="dialog__input-help-text">
-          See more information
-        </span>
-
-        <div class="dialog__input-help-caution">
-          <p class="dialog__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
-          <p class="dialog__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
+                <div class="dialog__input-help-caution">
+                  <p class="dialog__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
+                  <p class="dialog__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="dialog__actions">
+            <button class="dialog__actions-btn dialog__actions-check-ticket">Submit</button>
+          </div>
         </div>
       </div>
     `;
 
-    bodyPayeeInputSection.classList.add('form-section');
+    dialogWindow.innerHTML = bodyContent;
 
-    bodyPayeeLabel.htmlFor = 'checkTicketPayeeCode';
-    bodyPayeeLabel.textContent = 'Payee Code';
-    bodyPayeeLabel.classList.add('form-label');
+    /* ======================= Event Handler Assignment ======================= */
 
-    bodyPayeeLabelGuideBtn.classList.add(
-      'form-label__guide-btn',
-      'form-label__guide-btn--check-ticket-payee',
+    const emailInput = dialogWindow.querySelector('#checkTicketEmail');
+    const uidInput = dialogWindow.querySelector('#checkTicketUID');
+    const txidInput = dialogWindow.querySelector('#checkTicketTxID');
+    const payeeCodeInput = dialogWindow.querySelector('#checkTicketPayeeCode');
+    const uidHelpBtn = dialogWindow.querySelector(
+      '.form-label__guide-btn--check-ticket-uid',
     );
-    bodyPayeeLabelGuideBtn.addEventListener('click', () =>
-      this.payeeDialog.showPayeeDialog(),
+    const txidHelpBtn = dialogWindow.querySelector(
+      '.form-label__guide-btn--check-ticket-txid',
     );
-    bodyPayeeLabelGuideImage.src = '/img/dream-concert/Icon S Help.png';
-    bodyPayeeLabelGuideImage.alt = 'Help';
-
-    bodyPayeeInput.type = 'text';
-    bodyPayeeInput.name = 'checkTicketPayeeCode';
-    bodyPayeeInput.id = 'checkTicketPayeeCode';
-    bodyPayeeInput.classList.add('form-control');
-    bodyPayeeInput.placeholder = '(Optional)';
-    bodyPayeeInput.addEventListener('input', this.handleCheckTicketPayee);
-    bodyPayeeInput.addEventListener('focus', this.resetCheckTicketError);
-
-    bodyPayeeError.classList.add('invalid-feedback');
-
-    bodyPayeeLabelGuideBtn.appendChild(bodyPayeeLabelGuideImage);
-    bodyPayeeLabel.appendChild(bodyPayeeLabelGuideBtn);
-    bodyPayeeInputSection.appendChild(bodyPayeeLabel);
-    bodyPayeeInputSection.appendChild(bodyPayeeInput);
-    bodyPayeeInputSection.appendChild(bodyPayeeError);
-    bodyPayeeInputSection.insertAdjacentHTML(
-      'beforeend',
-      `
-        <div id="payeeHelp" class="form-text dialog__input-help">
-          <span class="dialog__input-help-icon">
-            <img src="/img/dream-concert/Icon S Information.png" alt="" />
-          </span> 
-
-          <span class="dialog__input-help-text">
-            See more information
-          </span>
-
-          <div class="dialog__input-help-caution">
-            <p class="dialog__input-help-caution__text">&ast; Only to users who set-up to receive the code.</p>
-            <p class="dialog__input-help-caution__text">&ast;&ast; Time is required to check this stage. This may delay the time of sending the ticket.</p>
-          </div>
-        </div>
-      `,
+    const payeeHelpBtn = dialogWindow.querySelector(
+      '.form-label__guide-btn--check-ticket-payee',
+    );
+    const submitBtn = dialogWindow.querySelector(
+      '.dialog__actions-check-ticket',
     );
 
-    body.appendChild(bodyTitle);
-    body.appendChild(bodyEmailInputSection);
-    body.appendChild(bodyUIDInputSection);
-    body.appendChild(bodyTxIDInputSection);
-    body.appendChild(bodyPayeeInputSection);
+    const inputs = [emailInput, uidInput, txidInput, payeeCodeInput];
 
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsCheckTicket = document.createElement('button');
-
-    const handleCheckTicket = async () => {
+    const handleSubmit = async () => {
       const validateResult = await this.validateCheckTicket();
       if (!validateResult) return undefined;
 
@@ -1504,79 +1762,125 @@ class Ticket {
       return undefined;
     };
 
-    actions.classList.add('dialog__actions');
+    emailInput.addEventListener('input', this.handleCheckTicketEmail);
+    uidInput.addEventListener('input', this.handleCheckTicketUID);
+    txidInput.addEventListener('input', this.handleCheckTicketTxID);
+    payeeCodeInput.addEventListener('input', this.handleCheckTicketPayee);
 
-    actionsCheckTicket.classList.add(
-      'dialog__actions-btn',
-      'dialog__actions-check-ticket',
-    );
-    actionsCheckTicket.textContent = 'Check your ticket';
-    actionsCheckTicket.addEventListener('click', () => handleCheckTicket());
+    uidHelpBtn.addEventListener('click', () => {
+      this.uidDialog.showUIDDialog();
+    });
+    txidHelpBtn.addEventListener('click', () => {
+      this.txIdDialog.showTxIDDialog();
+    });
+    payeeHelpBtn.addEventListener('click', () => {
+      this.payeeDialog.showPayeeDialog();
+    });
 
-    actions.appendChild(actionsCheckTicket);
+    submitBtn.addEventListener('click', () => handleSubmit());
 
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
+    inputs.forEach((input) => {
+      input.addEventListener('focus', this.resetCheckTicketError);
+    });
 
     this.dialog.showDialog(dialogWindow, 'dialog--check-ticket');
   }
 
-  showCheckTicketResult(code) {
-    // Dialog window.
+  // showCheckTicketResult(code) {
+  //   const dialogWindow = document.createElement('div');
+  //   dialogWindow.classList.add('dialog__window');
+
+  //   // Dialog body.
+  //   const body = document.createElement('div');
+  //   const bodyContent = `
+  //     <h2 class="dialog__body-title">Your Ticket Number</h2>
+
+  //     <p class="dialog__body-ticket-result">${code}</p>
+  //   `;
+  //   body.innerHTML = bodyContent;
+
+  //   // Dialog actions.
+  //   const actions = document.createElement('div');
+  //   const actionsCheckTicketClose = document.createElement('button');
+  //   const actionsCheckTicketCopy = document.createElement('button');
+
+  //   const handleClose = () => {
+  //     this.dialog.closeDialog();
+  //   };
+
+  //   const handleCopy = () => {
+  //     this.dialog.closeDialog();
+
+  //     // Handle code copy...
+  //   };
+
+  //   actions.classList.add('dialog__actions');
+
+  //   actionsCheckTicketClose.classList.add(
+  //     'dialog__actions-btn',
+  //     'dialog__actions-check-ticket-result',
+  //     'dialog__actions-check-ticket-result--close',
+  //   );
+  //   actionsCheckTicketClose.textContent = 'Close';
+  //   actionsCheckTicketClose.addEventListener('click', () => handleClose());
+
+  //   actionsCheckTicketCopy.classList.add(
+  //     'dialog__actions-btn',
+  //     'dialog__actions-check-ticket-result',
+  //     'dialog__actions-check-ticket-result--close',
+  //   );
+  //   actionsCheckTicketCopy.textContent = 'Copy';
+  //   actionsCheckTicketCopy.addEventListener('click', () => handleCopy());
+
+  //   actions.appendChild(actionsCheckTicketClose);
+  //   actions.appendChild(actionsCheckTicketCopy);
+
+  //   // Show dialog.
+  //   dialogWindow.appendChild(body);
+  //   dialogWindow.appendChild(actions);
+
+  //   this.dialog.showDialog(dialogWindow, 'dialog--check-ticket-result');
+  // }
+
+  showGeneralError(title, message) {
     const dialogWindow = document.createElement('div');
     dialogWindow.classList.add('dialog__window');
 
-    // Dialog body.
-    const body = document.createElement('div');
     const bodyContent = `
-      <h2 class="dialog__body-title">Your Ticket Number</h2>
+        <div class="dialog__body">
+          <img src="/img/dream-concert/fail-icon.png" alt="" class="dialog__body-icon" />
 
-      <p class="dialog__body-ticket-result">${code}</p>
-    `;
-    body.innerHTML = bodyContent;
+          <h2 class="dialog__body-title dialog__body-title--error">${title}</h2>
 
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsCheckTicketClose = document.createElement('button');
-    const actionsCheckTicketCopy = document.createElement('button');
+          <p class="dialog__body-info">${message}</p>
+        </div>
+        
+        <div class="dialog__actions">
+          <button class="dialog__actions-btn dialog__actions-close">Close</button>
+        </div>
+      `;
+
+    dialogWindow.innerHTML = bodyContent;
+
+    /* ======================= Event Handler Assignment ======================= */
+
+    const closeBtn = dialogWindow.querySelector('.dialog__actions-close');
 
     const handleClose = () => {
-      this.dialog.closeDialog();
+      this.dialog.closeDialog(null, 'dialog--general-error');
+      this.resetState();
     };
 
-    const handleCopy = () => {
-      this.dialog.closeDialog();
+    closeBtn.addEventListener('click', () => handleClose());
 
-      // Handle code copy...
-    };
+    this.dialog.showDialog(dialogWindow, 'dialog--general-error');
+  }
 
-    actions.classList.add('dialog__actions');
-
-    actionsCheckTicketClose.classList.add(
-      'dialog__actions-btn',
-      'dialog__actions-check-ticket-result',
-      'dialog__actions-check-ticket-result--close',
+  showServerError() {
+    this.showGeneralError(
+      'Server Error',
+      'There seem to be a server error coming from us. Please try again.',
     );
-    actionsCheckTicketClose.textContent = 'Close';
-    actionsCheckTicketClose.addEventListener('click', () => handleClose());
-
-    actionsCheckTicketCopy.classList.add(
-      'dialog__actions-btn',
-      'dialog__actions-check-ticket-result',
-      'dialog__actions-check-ticket-result--close',
-    );
-    actionsCheckTicketCopy.textContent = 'Copy';
-    actionsCheckTicketCopy.addEventListener('click', () => handleCopy());
-
-    actions.appendChild(actionsCheckTicketClose);
-    actions.appendChild(actionsCheckTicketCopy);
-
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
-
-    this.dialog.showDialog(dialogWindow, 'dialog--check-ticket-result');
   }
 }
 
