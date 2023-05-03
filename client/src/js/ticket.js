@@ -87,9 +87,7 @@ class Ticket {
       uid: string()
         .matches(/^\d+$/, 'UID should only contains numbers')
         .required('Fill your UID'),
-      txId: string()
-        .matches(/^\d+$/, 'TxID should only contains numbers')
-        .required('Fill your TxID'),
+      txId: string().required('Fill your TxID'),
       payeeCode: string(),
     });
 
@@ -1341,7 +1339,7 @@ class Ticket {
     bodyTxIDInput.name = 'checkTicketTxID';
     bodyTxIDInput.id = 'checkTicketTxID';
     bodyTxIDInput.classList.add('form-control');
-    bodyTxIDInput.placeholder = '0000-0000';
+    bodyTxIDInput.placeholder = 'Enter your TxID';
     bodyTxIDInput.addEventListener('input', this.handleCheckTicketTxID);
     bodyTxIDInput.addEventListener('focus', this.resetCheckTicketError);
 
@@ -1397,7 +1395,7 @@ class Ticket {
     bodyPayeeInput.name = 'checkTicketPayeeCode';
     bodyPayeeInput.id = 'checkTicketPayeeCode';
     bodyPayeeInput.classList.add('form-control');
-    bodyPayeeInput.placeholder = '000-000';
+    bodyPayeeInput.placeholder = '(Optional)';
     bodyPayeeInput.addEventListener('input', this.handleCheckTicketPayee);
     bodyPayeeInput.addEventListener('focus', this.resetCheckTicketError);
 

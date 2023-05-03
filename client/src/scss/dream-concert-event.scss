@@ -1234,8 +1234,7 @@ $background-04: rgba(#eeeeee, 0.8);
         }
 
         &--telegram {
-          display: block;
-          // width: 275px;
+          @include flex-center();
           width: fit-content;
           z-index: 1;
           padding: 14px 18px;
@@ -1247,9 +1246,15 @@ $background-04: rgba(#eeeeee, 0.8);
 
           .fb {
             &__inquiries {
+              // PNG headphone icon.
               &-icon-image {
                 width: auto;
                 height: 100%;
+              }
+
+              // FontAwesome SVG icon.
+              &-icon--headphone {
+                font-size: 30px;
               }
             }
           }
@@ -2789,9 +2794,6 @@ $background-04: rgba(#eeeeee, 0.8);
           }
 
           &--telegram {
-            @include flex-center();
-            // display: block;
-            // width: 275px;
             position: absolute;
             right: -3px;
             width: 145px;
@@ -2815,25 +2817,9 @@ $background-04: rgba(#eeeeee, 0.8);
         &-text {
           display: inline-block;
           flex: 1;
-          margin-left: 8px;
+          margin-left: 10px;
           text-align: left;
         }
-
-        // &:hover {
-        //   .fb {
-        //     &__inquiries {
-        //       &-btn {
-        //         &--inquiries {
-        //           transform: translateX(100%);
-        //         }
-
-        //         &--telegram {
-        //           transform: translateX(0);
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
       }
     }
 
