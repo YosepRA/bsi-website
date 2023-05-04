@@ -28,6 +28,8 @@ class Dialog {
     dialog.appendChild(node);
 
     document.body.appendChild(dialog);
+
+    return undefined;
   }
 
   showDialog(node, dialogClass) {

@@ -7,6 +7,8 @@ import Dialog from './dialogs/dialog.js';
 import UIDDialog from './dialogs/uid-guide-dialog.js';
 import PayeeDialog from './dialogs/payee-guide-dialog.js';
 import TxIDDialog from './dialogs/txid-guide-dialog.js';
+import OTPDialog from './dialogs/otp-dialog.js';
+import { promiseResolver } from './helpers.js';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
@@ -113,7 +115,7 @@ class Ticket {
     this.handlePinChange = this.handlePinChange.bind(this);
     this.getPrice = this.getPrice.bind(this);
     this.resetErrors = this.resetErrors.bind(this);
-    this.showUIDGuide = this.showUIDGuide.bind(this);
+    // this.showUIDGuide = this.showUIDGuide.bind(this);
     this.showPayeeCodeGuide = this.showPayeeCodeGuide.bind(this);
     this.showCheckTicket = this.showCheckTicket.bind(this);
     this.handleCheckTicketEmail = this.handleCheckTicketEmail.bind(this);
@@ -128,6 +130,7 @@ class Ticket {
     this.uidDialog = new UIDDialog('dialog--uid');
     this.payeeDialog = new PayeeDialog('dialog--payee');
     this.txIdDialog = new TxIDDialog('dialog--txid');
+    this.otpDialog = new OTPDialog('dialog--otp', this.resetState);
 
     this.render();
     this.getPrice().then(() => {
@@ -527,7 +530,8 @@ class Ticket {
 
       data.append('name', this.email);
       data.append('id', this.email);
-      data.append('mobile_auth_key', this.otp);
+      // data.append('mobile_auth_key', this.otp);
+      data.append('mobile_auth_key', this.otpDialog.otp);
       data.append('pw', this.password);
       data.append('pw2', this.password);
       data.append('pin', ''); // Pin is optional.
@@ -544,7 +548,7 @@ class Ticket {
 
       const res = await walletAPI.signup(data);
 
-      this.sendTicketInformation();
+      return true;
     } catch (error) {}
   }
 
@@ -599,8 +603,30 @@ class Ticket {
     if (!validateResult) return undefined;
 
     // Verify Email using OTP.
-    await this.requestOTP();
-    this.showOTPDialog();
+    // await this.requestOTP();
+    // this.showOTPDialog();
+
+    /* ======================= Experiment ======================= */
+
+    // 1. Verify OTP.
+    const [otpResult, error] = await promiseResolver(
+      this.otpDialog.start(this.email),
+    );
+
+    if (error) {
+      alert('Server error. Please try again later.');
+      this.resetState();
+
+      return undefined;
+    }
+
+    // 2. User registration.
+    await this.userRegistration();
+
+    // 3. Send ticket information.
+    await this.sendTicketInformation();
+
+    // ===== Catch any error ===== //
 
     return undefined;
   }
@@ -639,10 +665,12 @@ class Ticket {
 
     const handleActionsClose = () => {
       this.dialog.closeDialog();
+      this.resetState();
     };
 
     const handleActionsTransmission = () => {
       this.dialog.closeDialog();
+      this.resetState();
       this.showCheckTicket();
     };
 
@@ -813,6 +841,7 @@ class Ticket {
 
     const handleActionsClick = () => {
       this.dialog.closeDialog();
+      this.resetState();
     };
 
     actions.classList.add('dialog__actions');
@@ -1079,62 +1108,62 @@ class Ticket {
     this.dialog.showDialog(dialogWindow, 'dialog--pin');
   }
 
-  showUIDGuide() {
-    // Dialog window.
-    const dialogWindow = document.createElement('div');
-    dialogWindow.classList.add('dialog__window');
+  // showUIDGuide() {
+  //   // Dialog window.
+  //   const dialogWindow = document.createElement('div');
+  //   dialogWindow.classList.add('dialog__window');
 
-    // Dialog body.
-    const body = document.createElement('div');
-    const bodyContent = `
-      <h2 class="dialog__body-title">How to find your UID number?</h2>
+  //   // Dialog body.
+  //   const body = document.createElement('div');
+  //   const bodyContent = `
+  //     <h2 class="dialog__body-title">How to find your UID number?</h2>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-5">
-            <div class="dialog__body-left">
-              <img src="/img/dream-concert/uid-guide-01.png" alt="UID guide 01" class="dialog__body-uid-image dialog__body-uid-image--01" />
-            </div>
-          </div>
-          <div class="col-7">
-            <div class="dialog__body-right">
-              <ol class="dialog__body-steps">
-                <li class="dialog__body-steps-item">Login to Digifinex</li>
-                <li class="dialog__body-steps-item">Go to My Page</li>
-                <li class="dialog__body-steps-item">Your user UID will be below your Username</li>
-              </ol>
-  
-              <img src="/img/dream-concert/uid-guide-02.png" alt="UID guide 02" class="dialog__body-uid-image dialog__body-uid-image--02" />
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-    body.classList.add('dialog__body');
-    body.innerHTML = bodyContent;
+  //     <div class="container">
+  //       <div class="row">
+  //         <div class="col-5">
+  //           <div class="dialog__body-left">
+  //             <img src="/img/dream-concert/uid-guide-01.png" alt="UID guide 01" class="dialog__body-uid-image dialog__body-uid-image--01" />
+  //           </div>
+  //         </div>
+  //         <div class="col-7">
+  //           <div class="dialog__body-right">
+  //             <ol class="dialog__body-steps">
+  //               <li class="dialog__body-steps-item">Login to Digifinex</li>
+  //               <li class="dialog__body-steps-item">Go to My Page</li>
+  //               <li class="dialog__body-steps-item">Your user UID will be below your Username</li>
+  //             </ol>
 
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsUIDGuide = document.createElement('button');
+  //             <img src="/img/dream-concert/uid-guide-02.png" alt="UID guide 02" class="dialog__body-uid-image dialog__body-uid-image--02" />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   `;
+  //   body.classList.add('dialog__body');
+  //   body.innerHTML = bodyContent;
 
-    const handleUIDClose = () => {
-      this.dialog.closeDialog();
-    };
+  //   // Dialog actions.
+  //   const actions = document.createElement('div');
+  //   const actionsUIDGuide = document.createElement('button');
 
-    actions.classList.add('dialog__actions');
+  //   const handleUIDClose = () => {
+  //     this.dialog.closeDialog();
+  //   };
 
-    actionsUIDGuide.classList.add('dialog__actions-btn', 'dialog__actions-uid');
-    actionsUIDGuide.textContent = 'Done';
-    actionsUIDGuide.addEventListener('click', () => handleUIDClose());
+  //   actions.classList.add('dialog__actions');
 
-    actions.appendChild(actionsUIDGuide);
+  //   actionsUIDGuide.classList.add('dialog__actions-btn', 'dialog__actions-uid');
+  //   actionsUIDGuide.textContent = 'Done';
+  //   actionsUIDGuide.addEventListener('click', () => handleUIDClose());
 
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
+  //   actions.appendChild(actionsUIDGuide);
 
-    this.dialog.showDialog(dialogWindow, 'dialog--uid');
-  }
+  //   // Show dialog.
+  //   dialogWindow.appendChild(body);
+  //   dialogWindow.appendChild(actions);
+
+  //   this.dialog.showDialog(dialogWindow, 'dialog--uid');
+  // }
 
   showPayeeCodeGuide() {
     // Dialog window.

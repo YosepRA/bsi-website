@@ -20,4 +20,13 @@ function throttle(fn, delay) {
   };
 }
 
-export { ready, throttle };
+async function promiseResolver(promise) {
+  try {
+    const data = await promise;
+    return [data, null];
+  } catch (err) {
+    return [null, err];
+  }
+}
+
+export { ready, throttle, promiseResolver };
