@@ -18,26 +18,35 @@ class OTPDialog extends Dialog {
   }
 
   handleOTPChange(event) {
-    const {
-      target: { value },
-    } = event;
+    const { value } = event.target;
+    const otpCharacterLimit = 6;
+
+    if (value.length > otpCharacterLimit) {
+      event.target.value = value.substring(0, otpCharacterLimit);
+
+      return undefined;
+    }
 
     this.otp = value;
+
+    return undefined;
   }
 
   resetOTPInput() {
     const otpInput = document.getElementById('otpInput');
-    // If it's wrong OTP, reset everything and show error.
+    // If it's a wrong OTP, reset everything and show error.
     this.otp = '';
     otpInput.value = '';
   }
 
-  async requestOTP() {
+  async requestOTP(reject) {
     try {
       const data = { email: this.email };
 
       await walletAPI.requestOTP(data);
-    } catch (error) {}
+    } catch (error) {
+      // Server or CORS errors, show general error dialog.
+    }
   }
 
   async verifyOTP() {
@@ -51,58 +60,12 @@ class OTPDialog extends Dialog {
     return res.data;
   }
 
-  // async verifyOTP() {
-  //   const data = {
-  //     email: this.email,
-  //     otp: this.otp,
-  //   };
-  //   const [
-  //     {
-  //       data: { status },
-  //     },
-  //     otpError,
-  //   ] = await promiseResolver(walletAPI.verifyOTP(data));
-
-  //   if (otpError) {
-  //     const {
-  //       response: { data },
-  //     } = otpError;
-
-  //     if (data.status === 400) {
-  //       this.resetOTPInput();
-  //       alert('Incorrect email verification code.');
-
-  //       return {
-  //         status: false,
-  //         code: 400,
-  //         message: 'Incorrect email verification code.',
-  //       };
-  //     } else {
-  //       this.resetOTPInput();
-  //       alert('Server error. Please try again.');
-
-  //       return {
-  //         status: false,
-  //         code: null,
-  //         message: 'Server error.',
-  //       };
-  //     }
-  //   }
-
-  //   if (status === 200) {
-  //     return {
-  //       status: true,
-  //       code: 200,
-  //     };
-  //   }
-  // }
-
   start(email) {
     return new Promise((resolve, reject) => {
       this.email = email;
 
-      this.requestOTP();
-      this.showOTPDialog(resolve);
+      this.requestOTP(reject);
+      this.showOTPDialog(resolve, reject);
     });
   }
 
@@ -110,50 +73,29 @@ class OTPDialog extends Dialog {
     this.closeDialog(null, this.dialogClassName);
   }
 
-  showOTPDialog(resolve) {
+  showOTPDialog(resolve, reject) {
     // Dialog window.
     const dialogWindow = document.createElement('div');
     dialogWindow.classList.add('dialog__window');
 
-    // Dialog body.
-    const body = document.createElement('div');
-    const bodyIcon = document.createElement('img');
-    const bodyTitle = document.createElement('h2');
-    const bodyInfo = document.createElement('p');
-    const bodyInput = document.createElement('input');
-    const bodyError = document.createElement('div');
+    const bodyContent = `
+      <div class="dialog__body">
+        <img src="/img/dream-concert/Icon Verification.png" alt="" class="dialog__body-icon" />
 
-    body.classList.add('dialog__body');
+        <h2 class="dialog__body-title">Verification</h2>
 
-    bodyIcon.src = '/img/dream-concert/Icon Verification.png';
-    bodyIcon.classList.add('dialog__body-icon');
+        <p class="dialog__body-info">Please enter the verification code that was sent to <b>${this.email}</b></p>
 
-    bodyTitle.classList.add('dialog__body-title');
-    bodyTitle.textContent = 'Verification';
+        <input type="text" name="otp" id="otpInput" class="form-control dialog__body-input" placeholder="000-000" />
+        <div class="invalid-feedback"></div>
+      </div>
+      
+      <div class="dialog__actions">
+        <button class="dialog__actions-btn dialog__actions-otp">Verify</button>
 
-    bodyInfo.classList.add('dialog__body-info');
-    bodyInfo.innerHTML = `Please enter the verification code that was sent to <b>${this.email}</b>`;
-
-    bodyInput.type = 'text';
-    bodyInput.name = 'otp';
-    bodyInput.id = 'otpInput';
-    bodyInput.classList.add('form-control', 'dialog__body-input');
-    bodyInput.placeholder = '000-000';
-    bodyInput.addEventListener('input', this.handleOTPChange);
-
-    bodyError.classList.add('invalid-feedback');
-
-    body.appendChild(bodyIcon);
-    body.appendChild(bodyTitle);
-    body.appendChild(bodyInfo);
-    body.appendChild(bodyInput);
-    body.appendChild(bodyError);
-
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsOtp = document.createElement('button');
-    const actionsResend = document.createElement('p');
-    const actionsResendBtn = document.createElement('button');
+        <p class="dialog__actions-resend">Didn&apos;t receive the email? <button class="dialog__actions-resend-btn">Resend</button></p>
+      </div>
+    `;
 
     const resetOTPInput = () => {
       const otpInput = document.getElementById('otpInput');
@@ -210,27 +152,17 @@ class OTPDialog extends Dialog {
       resetOTPInput();
     };
 
-    actions.classList.add('dialog__actions');
+    dialogWindow.innerHTML = bodyContent;
 
-    actionsOtp.classList.add('dialog__actions-btn', 'dialog__actions-otp');
-    actionsOtp.textContent = 'Verify';
-    actionsOtp.addEventListener('click', () => handleOTPVerify());
+    /* ======================= Event Handler Assignment ======================= */
 
-    actionsResend.classList.add('dialog__actions-resend');
-    actionsResend.innerHTML = 'Didn&apos;t receive the email? ';
+    const otpInput = dialogWindow.querySelector('#otpInput');
+    const verifyBtn = dialogWindow.querySelector('.dialog__actions-otp');
+    const resendBtn = dialogWindow.querySelector('.dialog__actions-resend');
 
-    actionsResendBtn.classList.add('dialog__actions-resend-btn');
-    actionsResendBtn.textContent = 'Resend';
-    actionsResendBtn.addEventListener('click', handleOTPResend);
-
-    actionsResend.appendChild(actionsResendBtn);
-
-    actions.appendChild(actionsOtp);
-    actions.appendChild(actionsResend);
-
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
+    otpInput.addEventListener('input', this.handleOTPChange);
+    verifyBtn.addEventListener('click', handleOTPVerify);
+    resendBtn.addEventListener('click', handleOTPResend);
 
     this.showDialog(dialogWindow, this.dialogClassName);
   }
