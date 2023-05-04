@@ -5,8 +5,8 @@ import walletAPI from '../api/wallet-api.js';
 import { promiseResolver } from '../helpers.js';
 
 class OTPDialog extends Dialog {
-  constructor(dialogClassName = 'dialog--otp') {
-    super(dialogClassName);
+  constructor(dialogClassName = 'dialog--otp', cleanFn = () => {}) {
+    super(dialogClassName, cleanFn);
     this.otp = '';
     this.email = '';
 
@@ -34,19 +34,15 @@ class OTPDialog extends Dialog {
 
   resetOTPInput() {
     const otpInput = document.getElementById('otpInput');
-    // If it's a wrong OTP, reset everything and show error.
+    // If it's an incorrect OTP, reset everything and show error.
     this.otp = '';
     otpInput.value = '';
   }
 
-  async requestOTP(reject) {
-    try {
-      const data = { email: this.email };
+  async requestOTP() {
+    const data = { email: this.email };
 
-      await walletAPI.requestOTP(data);
-    } catch (error) {
-      // Server or CORS errors, show general error dialog.
-    }
+    await walletAPI.requestOTP(data);
   }
 
   async verifyOTP() {
@@ -64,8 +60,9 @@ class OTPDialog extends Dialog {
     return new Promise((resolve, reject) => {
       this.email = email;
 
-      this.requestOTP(reject);
-      this.showOTPDialog(resolve, reject);
+      this.requestOTP()
+        .then(() => this.showOTPDialog(resolve, reject))
+        .catch(reject);
     });
   }
 

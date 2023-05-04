@@ -8,6 +8,7 @@ import UIDDialog from './dialogs/uid-guide-dialog.js';
 import PayeeDialog from './dialogs/payee-guide-dialog.js';
 import TxIDDialog from './dialogs/txid-guide-dialog.js';
 import OTPDialog from './dialogs/otp-dialog.js';
+import { promiseResolver } from './helpers.js';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
@@ -129,7 +130,7 @@ class Ticket {
     this.uidDialog = new UIDDialog('dialog--uid');
     this.payeeDialog = new PayeeDialog('dialog--payee');
     this.txIdDialog = new TxIDDialog('dialog--txid');
-    this.otpDialog = new OTPDialog('dialog--otp');
+    this.otpDialog = new OTPDialog('dialog--otp', this.resetState);
 
     this.render();
     this.getPrice().then(() => {
@@ -548,7 +549,6 @@ class Ticket {
       const res = await walletAPI.signup(data);
 
       return true;
-      // this.sendTicketInformation();
     } catch (error) {}
   }
 
@@ -609,10 +609,19 @@ class Ticket {
     /* ======================= Experiment ======================= */
 
     // 1. Verify OTP.
-    const otpResult = await this.otpDialog.start(this.email);
+    const [otpResult, error] = await promiseResolver(
+      this.otpDialog.start(this.email),
+    );
+
+    if (error) {
+      alert('Server error. Please try again later.');
+      this.resetState();
+
+      return undefined;
+    }
 
     // 2. User registration.
-    const registrationResult = await this.userRegistration();
+    await this.userRegistration();
 
     // 3. Send ticket information.
     await this.sendTicketInformation();
