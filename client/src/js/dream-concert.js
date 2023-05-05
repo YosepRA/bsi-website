@@ -12,7 +12,6 @@ const passwordInput = document.getElementById('passwordInput');
 const passwordInputEye = document.querySelector(
   '.banner__ticket-form__input-icon--password',
 );
-const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
 const amountInputPlus = document.querySelector(
   '.banner__ticket-form__form-amount__btn--plus',
@@ -28,7 +27,6 @@ const checkTicketButton = document.querySelector(
   '.banner__footer-actions-check-ticket',
 );
 const uidInputGuide = document.querySelector('.form-label__guide-btn--uid');
-const payeeInputGuide = document.querySelector('.form-label__guide-btn--payee');
 const aboutBSI = document.querySelector('.about-bsi');
 const aboutBSIShortBtn = document.querySelector(
   '.about-bsi__col--info-short button',
@@ -68,7 +66,6 @@ function start() {
   passwordInput.addEventListener('input', ticket.handlePasswordChange);
   passwordInput.addEventListener('focus', ticket.resetErrors);
   passwordInputEye.addEventListener('click', ticket.handlePasswordShowToggle);
-  // payeeInput.addEventListener('input', ticket.handlePayeeChange);
   amountInput.addEventListener('input', ticket.handleAmountChange);
   amountInput.addEventListener('focus', ticket.resetErrors);
   amountInputPlus.addEventListener('click', () => {
@@ -81,7 +78,6 @@ function start() {
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
   checkTicketButton.addEventListener('click', ticket.showCheckTicket);
   uidInputGuide.addEventListener('click', ticket.uidDialog.showUIDDialog);
-  // payeeInputGuide.addEventListener('click', ticket.showPayeeCodeGuide);
   aboutBSIShortBtn.addEventListener('click', () => handleAboutBSIToggle(true));
   aboutBSILongBtn.addEventListener('click', () => handleAboutBSIToggle(false));
 
