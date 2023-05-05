@@ -3,6 +3,8 @@ import Dialog from './dialog.js';
 class UIDDialog extends Dialog {
   constructor(dialogClassName) {
     super(dialogClassName);
+
+    this.showUIDDialog = this.showUIDDialog.bind(this);
   }
 
   closeUIDDialog() {
