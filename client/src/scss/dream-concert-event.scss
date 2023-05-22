@@ -296,6 +296,7 @@ $background-04: rgba(#eeeeee, 0.8);
           }
 
           &-box {
+            display: inline-block;
             position: relative;
             padding: 4px 12px;
             background-color: $text-primary;
@@ -501,8 +502,12 @@ $background-04: rgba(#eeeeee, 0.8);
           &.invalid {
             border-color: $error-color;
 
-            & ~ .invalid-feedback {
+            & + .invalid-feedback {
               display: block;
+            }
+
+            & ~ .banner__ticket-form__input-icon {
+              top: 34%;
             }
           }
         }
@@ -1689,6 +1694,16 @@ $background-04: rgba(#eeeeee, 0.8);
           }
         }
       }
+
+      &.started {
+        .panel {
+          &__datetime {
+            &-info {
+              justify-content: center;
+            }
+          }
+        }
+      }
     }
 
     .artist {
@@ -2192,6 +2207,18 @@ $background-04: rgba(#eeeeee, 0.8);
       &__datetime {
         &-timer__digit {
           width: 70px;
+        }
+      }
+
+      &.started {
+        .container {
+          justify-content: center;
+        }
+
+        .panel {
+          &__info {
+            display: none;
+          }
         }
       }
     }
