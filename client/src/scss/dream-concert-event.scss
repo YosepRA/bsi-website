@@ -33,6 +33,20 @@ $background-04: rgba(#eeeeee, 0.8);
   border-radius: 16px;
   font-weight: 600;
   @include allTransition();
+
+  &.disabled,
+  &:disabled {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    cursor: not-allowed;
+
+    &:hover,
+    &:active {
+      background-color: #ccc;
+      color: #fff;
+    }
+  }
 }
 
 @mixin primary-button {
@@ -282,6 +296,7 @@ $background-04: rgba(#eeeeee, 0.8);
           }
 
           &-box {
+            display: inline-block;
             position: relative;
             padding: 4px 12px;
             background-color: $text-primary;
@@ -399,6 +414,12 @@ $background-04: rgba(#eeeeee, 0.8);
           border-radius: 14px;
           background-color: rgba(#fff, 0.7);
 
+          &.disabled,
+          &:disabled {
+            background-color: #eee;
+            cursor: not-allowed;
+          }
+
           &--amount {
             width: 100%;
             padding: 4px;
@@ -481,8 +502,12 @@ $background-04: rgba(#eeeeee, 0.8);
           &.invalid {
             border-color: $error-color;
 
-            & ~ .invalid-feedback {
+            & + .invalid-feedback {
               display: block;
+            }
+
+            & ~ .banner__ticket-form__input-icon {
+              top: 34%;
             }
           }
         }
@@ -640,6 +665,16 @@ $background-04: rgba(#eeeeee, 0.8);
           top: -10px;
           font-size: 24px;
           font-weight: 700;
+        }
+      }
+    }
+
+    &.started {
+      .panel {
+        &__datetime-timer {
+          &__digit {
+            background-color: #ccc;
+          }
         }
       }
     }
@@ -1659,6 +1694,16 @@ $background-04: rgba(#eeeeee, 0.8);
           }
         }
       }
+
+      &.started {
+        .panel {
+          &__datetime {
+            &-info {
+              justify-content: center;
+            }
+          }
+        }
+      }
     }
 
     .artist {
@@ -2162,6 +2207,18 @@ $background-04: rgba(#eeeeee, 0.8);
       &__datetime {
         &-timer__digit {
           width: 70px;
+        }
+      }
+
+      &.started {
+        .container {
+          justify-content: center;
+        }
+
+        .panel {
+          &__info {
+            display: none;
+          }
         }
       }
     }
