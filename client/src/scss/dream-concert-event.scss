@@ -37,17 +37,15 @@ $border-color-01: #dddddd;
 
   &.disabled,
   &:disabled {
-    background-color: $background-02;
-    color: $text-secondary;
+    background-color: #ccc;
+    color: #fff;
+    border: none;
     cursor: not-allowed;
-    border-color: $border-color-01;
 
-    &:hover {
-      background-color: #eee;
-    }
-
+    &:hover,
     &:active {
-      background-color: $background-02;
+      background-color: #ccc;
+      color: #fff;
     }
   }
 }
@@ -488,6 +486,12 @@ $border-color-01: #dddddd;
           border-radius: 14px;
           background-color: rgba(#fff, 0.7);
 
+          &.disabled,
+          &:disabled {
+            background-color: #eee;
+            cursor: not-allowed;
+          }
+
           &--amount {
             width: 100%;
             padding: 4px;
@@ -570,8 +574,12 @@ $border-color-01: #dddddd;
           &.invalid {
             border-color: $error-color;
 
-            & ~ .invalid-feedback {
+            & + .invalid-feedback {
               display: block;
+            }
+
+            & ~ .banner__ticket-form__input-icon {
+              top: 34%;
             }
           }
         }
@@ -732,53 +740,17 @@ $border-color-01: #dddddd;
         }
       }
     }
+
+    &.started {
+      .panel {
+        &__datetime-timer {
+          &__digit {
+            background-color: #ccc;
+          }
+        }
+      }
+    }
   }
-
-  // .notes {
-  //   padding: 32px 0;
-
-  //   &__title {
-  //     margin-bottom: 1.4rem;
-  //     font-weight: 700;
-  //     text-align: center;
-  //   }
-
-  //   &__content {
-  //     position: relative;
-  //     display: flex;
-
-  //     &:not(:last-child) {
-  //       margin-bottom: 1rem;
-  //     }
-
-  //     p {
-  //       margin-bottom: 0;
-  //     }
-
-  //     &-number {
-  //       position: absolute;
-  //       top: 0;
-  //       left: 0;
-  //       @include flex-center();
-  //       width: 40px;
-  //       height: 40px;
-  //       background-color: $primary-color;
-  //       color: white;
-  //       font-size: 32px;
-  //       font-weight: 700;
-  //       border-radius: 50%;
-  //     }
-
-  //     &-text {
-  //       width: 100%;
-  //       padding: 0.4rem;
-  //       padding-left: 50px;
-  //       background-color: $background-02;
-  //       border-radius: 50px;
-  //       font-weight: 500;
-  //     }
-  //   }
-  // }
 
   .artist {
     background-color: $background-02;
@@ -873,51 +845,7 @@ $border-color-01: #dddddd;
       font-weight: 700;
       color: #fff;
       border-radius: 32px;
-
-      // &:first-of-type {
-      //   width: 288px;
-      //   height: 288px;
-      //   margin: auto;
-      //   background-color: #333;
-      // }
     }
-
-    // .splide {
-    //   &__pagination {
-    //     position: static;
-
-    //     &__page {
-    //       width: 20px;
-    //       height: 20px;
-    //       background-color: #ddd;
-    //       border-radius: 0;
-    //       opacity: 1;
-    //       transition: all 200ms ease-out;
-
-    //       &.is-active {
-    //         background-color: $ticket-outer;
-    //       }
-    //     }
-    //   }
-    // }
-
-    // &__item {
-    //   @include flex-center();
-    //   width: 100%;
-    //   height: 360px;
-    //   background-color: #888;
-    //   font-size: 115px;
-    //   font-weight: 700;
-    //   color: #fff;
-    //   border-radius: 32px;
-
-    //   &:first-of-type {
-    //     width: 288px;
-    //     height: 288px;
-    //     margin: auto;
-    //     background-color: #333;
-    //   }
-    // }
   }
 
   .video {
@@ -1086,21 +1014,6 @@ $border-color-01: #dddddd;
           }
         }
       }
-    }
-
-    // &__ticket-procedure {
-    //   padding-bottom: 2rem;
-
-    //   &__image {
-    //     width: 100%;
-    //     max-width: 300px;
-    //     height: auto;
-    //   }
-    // }
-
-    &__procedure {
-      // padding-top: 2rem;
-      // background-color: $background-02;
     }
 
     &__new-user {
@@ -1335,13 +1248,6 @@ $border-color-01: #dddddd;
 
           .fb {
             &__inquiries {
-              // PNG headphone icon.
-              &-icon-image {
-                width: auto;
-                height: 100%;
-              }
-
-              // FontAwesome SVG icon.
               &-icon--headphone {
                 font-size: 30px;
               }
@@ -1610,27 +1516,6 @@ $border-color-01: #dddddd;
       }
     }
 
-    &--insufficient {
-      .dialog {
-        &__body {
-          &-title {
-            color: $error-color;
-          }
-        }
-
-        &__actions {
-          &-close {
-            @include secondary-button();
-          }
-
-          &-buy {
-            @include primary-button();
-            text-decoration: none;
-          }
-        }
-      }
-    }
-
     &--submitted {
       .dialog {
         &__body {
@@ -1681,27 +1566,6 @@ $border-color-01: #dddddd;
               padding: 0;
               color: $primary-color;
             }
-          }
-        }
-      }
-    }
-
-    &--pin {
-      .dialog {
-        &__body {
-          &-info {
-            margin-bottom: 1rem;
-          }
-
-          &-input {
-            margin-left: 0;
-            text-align: center;
-          }
-        }
-
-        &__actions {
-          &-pin {
-            @include primary-button();
           }
         }
       }
@@ -1809,39 +1673,6 @@ $border-color-01: #dddddd;
         &-control {
           margin-left: 0;
           width: 100%;
-        }
-      }
-    }
-
-    &--check-ticket-result {
-      .dialog {
-        &__body {
-          &-title {
-            margin-bottom: 24px;
-            font-size: 20px;
-          }
-
-          &-ticket-result {
-            padding: 12px 16px;
-            background-color: $background-02;
-            font-size: 24px;
-            color: $primary-color;
-            font-weight: 600;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-          }
-        }
-
-        &__actions {
-          &-check-ticket-result {
-            &--close {
-              @include secondary-button();
-            }
-
-            &--copy {
-              @include primary-button();
-            }
-          }
         }
       }
     }
@@ -2033,66 +1864,17 @@ $border-color-01: #dddddd;
           }
         }
       }
+
+      &.started {
+        .panel {
+          &__datetime {
+            &-info {
+              justify-content: center;
+            }
+          }
+        }
+      }
     }
-
-    // .notes {
-    //   padding: 64px 0;
-
-    //   &__title {
-    //     font-size: 40px;
-    //   }
-
-    //   &__content {
-    //     position: relative;
-    //     // &:not(:last-child) {
-    //     //   margin-bottom: 1rem;
-    //     // }
-
-    //     &:nth-of-type(2) {
-    //       padding-left: 50px;
-
-    //       .notes {
-    //         &__content {
-    //           &-number {
-    //             left: 50px;
-    //           }
-    //         }
-    //       }
-    //     }
-
-    //     &:nth-of-type(3) {
-    //       padding-left: 100px;
-
-    //       .notes {
-    //         &__content {
-    //           &-number {
-    //             left: 100px;
-    //           }
-    //         }
-    //       }
-    //     }
-
-    //     &-number {
-    //       width: 100px;
-    //       height: 100px;
-    //       font-size: 48px;
-    //     }
-
-    //     &-text {
-    //       display: flex;
-    //       justify-content: start;
-    //       align-items: center;
-    //       width: 600px;
-    //       height: 100px;
-    //       padding: 16px 32px 16px 56px;
-    //       padding-left: 120px;
-    //       font-size: 24px;
-    //       line-height: 28px;
-    //       font-weight: 600;
-    //       border-radius: 50px;
-    //     }
-    //   }
-    // }
 
     .artist {
       background-color: $background-02;
@@ -2527,7 +2309,6 @@ $border-color-01: #dddddd;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            // width: 180px;
             margin-left: 0.5rem;
             padding: 9px 0;
             line-height: 18px;
@@ -2599,127 +2380,18 @@ $border-color-01: #dddddd;
         }
       }
 
-      // &__datetime {
-      //   flex-direction: column;
+      &.started {
+        .container {
+          justify-content: center;
+        }
 
-      //   &-info {
-      //     display: flex;
-      //     justify-content: space-between;
-      //     align-items: center;
-
-      //     &__title {
-      //       font-size: 24px;
-      //       font-weight: 600;
-      //     }
-
-      //     &__date {
-      //       font-weight: 500;
-      //       font-size: 16px;
-      //     }
-      //   }
-
-      //   &-timer {
-      //     display: flex;
-      //     justify-content: space-between;
-      //     align-items: center;
-
-      //     p {
-      //       margin-bottom: 0;
-      //     }
-
-      //     &__item {
-      //       @include flex-center();
-      //       flex-direction: column;
-
-      //       &:not(:first-of-type) {
-      //         margin-left: 14px;
-      //       }
-      //     }
-
-      //     &__digit {
-      //       width: 70px;
-      //       padding: 8px 16px;
-      //       background-color: $primary-color;
-      //       font-size: 28px;
-      //       color: #fff;
-      //       font-weight: 700;
-      //       border-radius: 12px;
-      //     }
-
-      //     &__name {
-      //       font-size: 14px;
-      //     }
-
-      //     &__colon {
-      //       position: relative;
-      //       top: -16px;
-      //       font-size: 32px;
-      //       font-weight: 700;
-      //     }
-      //   }
-      // }
+        .panel {
+          &__info {
+            display: none;
+          }
+        }
+      }
     }
-
-    // .notes {
-    //   padding: 80px 0;
-
-    //   .row {
-    //     justify-content: center;
-    //     align-items: center;
-    //   }
-
-    //   &__title {
-    //     margin-bottom: 0;
-    //   }
-
-    //   &__content {
-    //     position: relative;
-
-    //     &:not(:last-child) {
-    //       margin-bottom: 38px;
-    //     }
-
-    //     &:nth-of-type(2) {
-    //       padding-left: 160px;
-
-    //       .notes {
-    //         &__content {
-    //           &-number {
-    //             left: 160px;
-    //           }
-    //         }
-    //       }
-    //     }
-
-    //     &:nth-of-type(3) {
-    //       padding-left: 320px;
-
-    //       .notes {
-    //         &__content {
-    //           &-number {
-    //             left: 320px;
-    //           }
-    //         }
-    //       }
-    //     }
-
-    //     &-number {
-    //       width: 100px;
-    //       height: 100px;
-    //       font-size: 48px;
-    //     }
-
-    //     &-text {
-    //       @include flex-center();
-    //       width: initial;
-    //       height: 100px;
-    //       padding: 0 48px 0 120px;
-    //       font-size: 20px;
-    //       font-weight: 600;
-    //       line-height: 28px;
-    //     }
-    //   }
-    // }
 
     .artist {
       padding: 80px 0;
@@ -2746,10 +2418,6 @@ $border-color-01: #dddddd;
         &-title {
           margin-bottom: 1rem;
           font-size: 40px;
-        }
-
-        &-text {
-          // margin-bottom: 42px;
         }
 
         &-buy {
@@ -3085,21 +2753,6 @@ $border-color-01: #dddddd;
 
           &-control {
             width: 338px;
-          }
-        }
-      }
-
-      &--check-ticket-result {
-        .dialog {
-          &__body {
-            &-title {
-              font-size: 24px;
-            }
-
-            &-ticket-result {
-              padding: 12px 16px;
-              font-size: 32px;
-            }
           }
         }
       }

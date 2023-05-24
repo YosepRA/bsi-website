@@ -1,0 +1,164 @@
+<% 
+  const artists = [
+    {
+      img: 'BTOB.png',
+      name: {
+        ko: '비투비',
+        en: 'BTOB',
+      }
+    },
+    {
+      img: '★있지(ITZY).png',
+      name: {
+        ko: '있지',
+        en: 'ITZY',
+      }
+    },
+    {
+      img: '★NMIXX.png',
+      name: {
+        ko: '엔믹스',
+        en: 'NMIXX',
+      }
+    },
+    {
+      img: '★오마이걸.png',
+      name: {
+        ko: '오마이걸',
+        en: 'OH MY GIRL',
+      }
+    },
+    {
+      img: 'Kim Tae Woo.png',
+      name: {
+        ko: '김태우',
+        en: 'Kim Tae-woo',
+      }
+    },
+    {
+      img: 'BB Girls.png',
+      name: {
+        ko: '브브걸',
+        en: 'BB Girls',
+      }
+    },
+    {
+      img: 'Mirae.png',
+      name: {
+        ko: '미래소년',
+        en: 'MIRAE',
+      }
+    },
+    {
+      img: '★김재환.png',
+      name: {
+        ko: '김재환',
+        en: 'Kim Jae-hwan',
+      }
+    },
+    {
+      img: '★드림캐쳐.png',
+      name: {
+        ko: '드림캐쳐',
+        en: 'DREAMCATCHER',
+      }
+    },
+    {
+      img: '★에버글로우.png',
+      name: {
+        ko: '에버글로우',
+        en: 'EVERGLOW',
+      }
+    },
+    {
+      img: '★JO1.png',
+      name: {
+        ko: 'JO1',
+        en: 'JO1',
+      }
+    },
+    {
+      img: '★ONEUS.png',
+      name: {
+        ko: 'ONEUS',
+        en: 'ONEUS',
+      }
+    },
+    {
+      img: '★템페스트.png',
+      name: {
+        ko: '템페스트',
+        en: 'TEMPEST',
+      }
+    },
+    {
+      img: 'NINE.i.png',
+      name: {
+        ko: '나인아이',
+        en: 'NINE.i',
+      }
+    },
+    {
+      img: 'Lapillus.png',
+      name: {
+        ko: '라필루스',
+        en: 'Lapillus',
+      }
+    },
+    {
+      img: 'JUST B.png',
+      name: {
+        ko: '저스트비',
+        en: 'JUST B',
+      }
+    },
+    {
+      img: 'TAN.png',
+      name: {
+        ko: '티에이엔',
+        en: 'TAN',
+      }
+    },
+    {
+      img: 'Golden Child.png',
+      name: {
+        ko: '골든차일드',
+        en: 'Golden Child',
+      }
+    },
+    {
+      img: 'DRIPPIN.png',
+      name: {
+        ko: '드리핀',
+        en: 'DRIPPIN',
+      }
+    },
+    {
+      img: 'Yubin.png',
+      name: {
+        ko: '유빈',
+        en: 'Yubin',
+      }
+    },
+    {
+      img: 'Jo Jeong-sik.png',
+      name: {
+        ko: '조정식',
+        en: 'Jo Jeong-sik',
+      }
+    },
+  ];
+%>
+
+<% for( let i = 0; i < artists.length; i++ ) { %>
+  <% const { img, name } = artists[i]; %>
+
+  <li class="splide__slide artist__slider-slide">
+    <div class="artist__slider-slide__item">
+      <div class="artist__slider-slide__item-wrapper">
+        <img src="/img/dream-concert/artists/<%= img %>" alt="<%= name.en %>" class="artist__slider-slide__item-image" />
+      </div>
+      <p class="artist__slider-slide__item-name"><%= name.en %></p>
+    </div>
+  </li> 
+<% } %>

@@ -12,7 +12,6 @@ const passwordInput = document.getElementById('passwordInput');
 const passwordInputEye = document.querySelector(
   '.banner__ticket-form__input-icon--password',
 );
-const payeeInput = document.getElementById('payeeInput');
 const amountInput = document.getElementById('amountInput');
 const amountInputPlus = document.querySelector(
   '.banner__ticket-form__form-amount__btn--plus',
@@ -28,7 +27,6 @@ const checkTicketButton = document.querySelector(
   '.banner__footer-actions-check-ticket',
 );
 const uidInputGuide = document.querySelector('.form-label__guide-btn--uid');
-const payeeInputGuide = document.querySelector('.form-label__guide-btn--payee');
 const aboutBSI = document.querySelector('.about-bsi');
 const aboutBSIShortBtn = document.querySelector(
   '.about-bsi__col--info-short button',
@@ -36,6 +34,11 @@ const aboutBSIShortBtn = document.querySelector(
 const aboutBSILongBtn = document.querySelector(
   '.about-bsi__col--info-long button',
 );
+const panelSection = document.querySelector('.panel');
+const panelDatetimeTitle = document.querySelector(
+  '.panel__datetime-info__title',
+);
+const panelDatetimeDate = document.querySelector('.panel__datetime-info__date');
 
 function handleDreamConcertBuy() {
   window.scroll({ top: 0, left: 0, behavior: 'smooth' });
@@ -59,6 +62,10 @@ function pricePoll(interval, ticket) {
 }
 
 function start() {
+  const startDate = new Date('May 27, 2023 00:00:00');
+  const now = new Date();
+  const isEventStarted = now.getTime() > startDate.getTime();
+  // const isEventStarted = true;
   const ticket = new Ticket();
 
   uidInput.addEventListener('input', ticket.handleUIDChange);
@@ -68,7 +75,6 @@ function start() {
   passwordInput.addEventListener('input', ticket.handlePasswordChange);
   passwordInput.addEventListener('focus', ticket.resetErrors);
   passwordInputEye.addEventListener('click', ticket.handlePasswordShowToggle);
-  // payeeInput.addEventListener('input', ticket.handlePayeeChange);
   amountInput.addEventListener('input', ticket.handleAmountChange);
   amountInput.addEventListener('focus', ticket.resetErrors);
   amountInputPlus.addEventListener('click', () => {
@@ -80,20 +86,60 @@ function start() {
   exchangeButton.addEventListener('click', ticket.handleExchange);
   dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
   checkTicketButton.addEventListener('click', ticket.showCheckTicket);
-  uidInputGuide.addEventListener('click', ticket.showUIDGuide);
-  // payeeInputGuide.addEventListener('click', ticket.showPayeeCodeGuide);
-  aboutBSIShortBtn.addEventListener('click', () => handleAboutBSIToggle(true));
-  aboutBSILongBtn.addEventListener('click', () => handleAboutBSIToggle(false));
+  uidInputGuide.addEventListener('click', ticket.uidDialog.showUIDDialog);
 
   // BSI price polling.
   const pollInterval = 60000;
   const pricePollInterval = pricePoll(pollInterval, ticket);
 
   // Countdown.
-  const countDownDate = new Date('May 27, 2023 00:00:00').getTime();
-  const countDown = new Countdown(countDownDate);
+  if (!isEventStarted) {
+    // Only perform countdown before May 27.
+    const countDownDate = new Date('May 27, 2023 00:00:00').getTime();
+    const countDown = new Countdown(countDownDate);
 
-  countDown.startTimer();
+    countDown.startTimer();
+  } else {
+    // Else, show 00:00:00:00 and grey it out.
+    panelDatetimeTitle.textContent = 'Dream Concert has started!';
+    panelDatetimeDate.style.display = 'none';
+    panelSection.classList.add('started');
+  }
+
+  // if (!isEventStarted) {
+  //   // If event has not started yet, activate ticket.
+  // } else {
+  //   // Otherwise, disable ticket and show "Event has started" layout.
+
+  //   const ticketInputs = [uidInput, emailInput, passwordInput, amountInput];
+  //   const actionButtons = [
+  //     exchangeButton,
+  //     checkTicketButton,
+  //     amountInputPlus,
+  //     amountInputMinus,
+  //   ];
+
+  //   ticketInputs.forEach((input) => {
+  //     input.classList.add('disabled');
+  //     input.disabled = true;
+  //     input.placeholder = 'Input disabled';
+  //   });
+
+  //   actionButtons.forEach((btn) => {
+  //     btn.classList.add('disabled');
+  //     btn.disabled = true;
+  //   });
+
+  //   panelDatetimeTitle.textContent = 'Dream Concert has started!';
+  //   panelDatetimeDate.style.display = 'none';
+
+  //   panelSection.classList.add('started');
+  // }
+
+  /* ===================================================================== */
+
+  aboutBSIShortBtn.addEventListener('click', () => handleAboutBSIToggle(true));
+  aboutBSILongBtn.addEventListener('click', () => handleAboutBSIToggle(false));
 
   // Artist slider.
   const artistSlider = new Splide('.artist__slider', {
@@ -108,6 +154,7 @@ function start() {
       },
       576: {
         perPage: 1,
+        pagination: false,
       },
     },
   });
