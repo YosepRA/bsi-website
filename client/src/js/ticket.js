@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+
 import { object, string, number } from 'yup';
 
 import walletAPI from './api/wallet-api.js';
@@ -435,7 +437,6 @@ class Ticket {
       const { data: result } = await ticketAPI.sendTicketInformation(data);
 
       if (result.code === '200') {
-        // this.showSuccessTransactionDialog();
         this.showSuccessExchange(data);
       } else if (result.code === '502') {
         this.showSubmittedIDDialog();
@@ -468,21 +469,6 @@ class Ticket {
   }
 
   async handleExchange() {
-    // const data = new FormData();
-    // data.append('bsi_amount', this.totalBSI);
-    // this.showSuccessExchange(data);
-    // this.showSubmittedIDDialog();
-    // this.showNoTicketHistory();
-    // this.showSuccessTicketConfirmation();
-    // this.showCheckTicket();
-    // this.showGeneralError(
-    //   'Server Error',
-    //   'There seem to be a server error coming from us. Please try again.',
-    // );
-    // this.showServerError();
-
-    // return undefined;
-
     const validateResult = await this.validate();
     if (!validateResult) return undefined;
 
@@ -505,74 +491,6 @@ class Ticket {
     await this.sendTicketInformation();
 
     return undefined;
-  }
-
-  showSuccessTransactionDialog() {
-    // Dialog window.
-    const dialogWindow = document.createElement('div');
-    dialogWindow.classList.add('dialog__window');
-
-    // Dialog body.
-    const body = document.createElement('div');
-    const bodyIcon = document.createElement('img');
-    const bodyTitle = document.createElement('h2');
-    const bodyInfo = document.createElement('p');
-
-    body.classList.add('dialog__body');
-
-    bodyIcon.classList.add('dialog__body-icon');
-    bodyIcon.src = '/img/dream-concert/success-icon.png';
-
-    bodyTitle.classList.add('dialog__body-title');
-    bodyTitle.textContent = 'Transaction Success!';
-
-    bodyInfo.classList.add('dialog__body-info');
-    bodyInfo.textContent =
-      'Tickets will be distributed sequentially from the 1st of April.';
-
-    body.appendChild(bodyIcon);
-    body.appendChild(bodyTitle);
-    body.appendChild(bodyInfo);
-
-    // Dialog actions.
-    const actions = document.createElement('div');
-    const actionsClose = document.createElement('button');
-    const actionsTransmission = document.createElement('button');
-
-    const handleActionsClose = () => {
-      this.dialog.closeDialog();
-      this.resetState();
-    };
-
-    const handleActionsTransmission = () => {
-      this.dialog.closeDialog();
-      this.resetState();
-      this.showCheckTicket();
-    };
-
-    actions.classList.add('dialog__actions');
-
-    actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
-    actionsClose.textContent = 'Close';
-    actionsClose.addEventListener('click', () => handleActionsClose());
-
-    actionsTransmission.classList.add(
-      'dialog__actions-btn',
-      'dialog__actions-transmission',
-    );
-    actionsTransmission.textContent = 'Transmission Confirmation';
-    actionsTransmission.addEventListener('click', () =>
-      handleActionsTransmission(),
-    );
-
-    actions.appendChild(actionsClose);
-    actions.appendChild(actionsTransmission);
-
-    // Show dialog.
-    dialogWindow.appendChild(body);
-    dialogWindow.appendChild(actions);
-
-    this.dialog.showDialog(dialogWindow, 'dialog--success');
   }
 
   showSuccessExchange(data) {
@@ -668,56 +586,6 @@ class Ticket {
     this.dialog.showDialog(dialogWindow, 'dialog--exchange-success');
   }
 
-  // showSuccessTicketConfirmation() {
-  //   // Dialog window.
-  //   const dialogWindow = document.createElement('div');
-  //   dialogWindow.classList.add('dialog__window');
-
-  //   // Dialog body.
-  //   const body = document.createElement('div');
-  //   const bodyIcon = document.createElement('img');
-  //   const bodyTitle = document.createElement('h2');
-  //   const bodyInfo = document.createElement('p');
-
-  //   body.classList.add('dialog__body');
-
-  //   bodyIcon.classList.add('dialog__body-icon');
-  //   bodyIcon.src = '/img/dream-concert/success-icon.png';
-
-  //   bodyTitle.classList.add('dialog__body-title');
-  //   bodyTitle.textContent = 'Successful!';
-
-  //   bodyInfo.classList.add('dialog__body-info');
-  //   bodyInfo.textContent =
-  //     'Token transfer confirmation request has been completed.';
-
-  //   body.appendChild(bodyIcon);
-  //   body.appendChild(bodyTitle);
-  //   body.appendChild(bodyInfo);
-
-  //   // Dialog actions.
-  //   const actions = document.createElement('div');
-  //   const actionsClose = document.createElement('button');
-
-  //   const handleActionsClick = () => {
-  //     this.dialog.closeDialog();
-  //   };
-
-  //   actions.classList.add('dialog__actions');
-
-  //   actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
-  //   actionsClose.textContent = 'Close';
-  //   actionsClose.addEventListener('click', () => handleActionsClick());
-
-  //   actions.appendChild(actionsClose);
-
-  //   // Show dialog.
-  //   dialogWindow.appendChild(body);
-  //   dialogWindow.appendChild(actions);
-
-  //   this.dialog.showDialog(dialogWindow, 'dialog--success-confirmation');
-  // }
-
   showSuccessTicketConfirmation() {
     const dialogWindow = document.createElement('div');
     dialogWindow.classList.add('dialog__window');
@@ -792,55 +660,6 @@ class Ticket {
 
     this.dialog.showDialog(dialogWindow, 'dialog--submitted');
   }
-
-  // showNoTicketHistory() {
-  //   // Dialog window.
-  //   const dialogWindow = document.createElement('div');
-  //   dialogWindow.classList.add('dialog__window');
-
-  //   // Dialog body.
-  //   const body = document.createElement('div');
-  //   const bodyIcon = document.createElement('img');
-  //   const bodyTitle = document.createElement('h2');
-  //   const bodyInfo = document.createElement('p');
-
-  //   body.classList.add('dialog__body');
-
-  //   bodyIcon.classList.add('dialog__body-icon');
-  //   bodyIcon.src = '/img/dream-concert/fail-icon.png';
-
-  //   bodyTitle.classList.add('dialog__body-title');
-  //   bodyTitle.textContent = 'Something is wrong';
-
-  //   bodyInfo.classList.add('dialog__body-info');
-  //   bodyInfo.textContent = 'Ticket request history is not found.';
-
-  //   body.appendChild(bodyIcon);
-  //   body.appendChild(bodyTitle);
-  //   body.appendChild(bodyInfo);
-
-  //   // Dialog actions.
-  //   const actions = document.createElement('div');
-  //   const actionsClose = document.createElement('button');
-
-  //   const handleActionsClick = () => {
-  //     this.dialog.closeDialog();
-  //   };
-
-  //   actions.classList.add('dialog__actions');
-
-  //   actionsClose.classList.add('dialog__actions-btn', 'dialog__actions-close');
-  //   actionsClose.textContent = 'Close';
-  //   actionsClose.addEventListener('click', () => handleActionsClick());
-
-  //   actions.appendChild(actionsClose);
-
-  //   // Show dialog.
-  //   dialogWindow.appendChild(body);
-  //   dialogWindow.appendChild(actions);
-
-  //   this.dialog.showDialog(dialogWindow, 'dialog--no-ticket-history');
-  // }
 
   showNoTicketHistory() {
     const dialogWindow = document.createElement('div');
