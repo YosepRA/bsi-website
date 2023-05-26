@@ -73,10 +73,10 @@ module.exports = {
           id: 'digifinex',
           name: 'Digifinex',
         },
-        {
-          id: 'hotbit',
-          name: 'Hotbit',
-        },
+        // {
+        //   id: 'hotbit',
+        //   name: 'Hotbit',
+        // },
         {
           id: 'coinsbit',
           name: 'Coinsbit',
@@ -309,21 +309,21 @@ module.exports = {
         accordionButton: 'More Info',
         actionButton: 'Buy BSI',
       },
-      {
-        id: 'hotbitPlatform',
-        image: {
-          name: 'hotbit-white.png',
-          alt: 'Hotbit',
-        },
-        body: [
-          'Hotbit팀은 블록체인 산업에서 아마존을 구축하는 것을 목표로 합니다.',
-          '코인마켓캡에 따르면 핫비트는 총 2,000개 이상의 트레이딩 페어를 상장했으며, 상장된 암호화폐 프로젝트 유형 수와 관련해 전체 거래소 중 1위에 올랐습니다. Hotbit은 전 세계 210개 이상의 국가와 지역에서 700만 명 이상의 등록 사용자를 보유하고 있습니다. Hotbit은 사용자들을 위해 현재 예금 이자를 분배하기 시작했으며, 이는 Hotbit가 토큰 잠금이나 동결없이 사용자들에게 일일 유동 예금 이자를 제공하는 세계 최초의 암호화폐 거래소라는것을 의미합니다.',
-        ],
-        isExchange: true,
-        url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
-        accordionButton: 'More Info',
-        actionButton: 'Buy BSI',
-      },
+      // {
+      //   id: 'hotbitPlatform',
+      //   image: {
+      //     name: 'hotbit-white.png',
+      //     alt: 'Hotbit',
+      //   },
+      //   body: [
+      //     'Hotbit팀은 블록체인 산업에서 아마존을 구축하는 것을 목표로 합니다.',
+      //     '코인마켓캡에 따르면 핫비트는 총 2,000개 이상의 트레이딩 페어를 상장했으며, 상장된 암호화폐 프로젝트 유형 수와 관련해 전체 거래소 중 1위에 올랐습니다. Hotbit은 전 세계 210개 이상의 국가와 지역에서 700만 명 이상의 등록 사용자를 보유하고 있습니다. Hotbit은 사용자들을 위해 현재 예금 이자를 분배하기 시작했으며, 이는 Hotbit가 토큰 잠금이나 동결없이 사용자들에게 일일 유동 예금 이자를 제공하는 세계 최초의 암호화폐 거래소라는것을 의미합니다.',
+      //   ],
+      //   isExchange: true,
+      //   url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
+      //   accordionButton: 'More Info',
+      //   actionButton: 'Buy BSI',
+      // },
       {
         id: 'coinsbitPlatform',
         image: {

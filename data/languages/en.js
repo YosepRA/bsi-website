@@ -73,10 +73,10 @@ module.exports = {
           id: 'digifinex',
           name: 'Digifinex',
         },
-        {
-          id: 'hotbit',
-          name: 'Hotbit',
-        },
+        // {
+        //   id: 'hotbit',
+        //   name: 'Hotbit',
+        // },
         {
           id: 'coinsbit',
           name: 'Coinsbit',
@@ -313,21 +313,21 @@ module.exports = {
         accordionButton: 'More Info',
         actionButton: 'Buy BSI',
       },
-      {
-        id: 'hotbitPlatform',
-        image: {
-          name: 'hotbit-white.png',
-          alt: 'Hotbit',
-        },
-        body: [
-          'The Hotbit team&apos;s aim is to create the Amazon of the blockchain industry.',
-          'According to CoinMarketCap, Hotbit had listed 2,000+ trading pairs in total and was ranked No. 1 among all exchanges regarding the number of types of cryptocurrency projects listed. Hotbit has accumulated 7,000,000+ registered users from more than 210 countries and areas all over the world. Hotbit started to distribute current deposit interests for its users, which means that Hotbit was the first cryptocurrency exchange in the world to offer daily current deposit interests to its users with no token lockup or freeze required.',
-        ],
-        isExchange: true,
-        url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
-        accordionButton: 'More Info',
-        actionButton: 'Buy BSI',
-      },
+      // {
+      //   id: 'hotbitPlatform',
+      //   image: {
+      //     name: 'hotbit-white.png',
+      //     alt: 'Hotbit',
+      //   },
+      //   body: [
+      //     'The Hotbit team&apos;s aim is to create the Amazon of the blockchain industry.',
+      //     'According to CoinMarketCap, Hotbit had listed 2,000+ trading pairs in total and was ranked No. 1 among all exchanges regarding the number of types of cryptocurrency projects listed. Hotbit has accumulated 7,000,000+ registered users from more than 210 countries and areas all over the world. Hotbit started to distribute current deposit interests for its users, which means that Hotbit was the first cryptocurrency exchange in the world to offer daily current deposit interests to its users with no token lockup or freeze required.',
+      //   ],
+      //   isExchange: true,
+      //   url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
+      //   accordionButton: 'More Info',
+      //   actionButton: 'Buy BSI',
+      // },
       {
         id: 'coinsbitPlatform',
         image: {

@@ -73,10 +73,10 @@ module.exports = {
           id: 'digifinex',
           name: 'Digifinex',
         },
-        {
-          id: 'hotbit',
-          name: 'Hotbit',
-        },
+        // {
+        //   id: 'hotbit',
+        //   name: 'Hotbit',
+        // },
         {
           id: 'coinsbit',
           name: 'Coinsbit',
@@ -314,21 +314,21 @@ module.exports = {
         accordionButton: 'Detail',
         actionButton: 'Beli BSI',
       },
-      {
-        id: 'hotbitPlatform',
-        image: {
-          name: 'hotbit-white.png',
-          alt: 'Hotbit',
-        },
-        body: [
-          'Tim Hotbit bertujuan untuk membangun Amazon di industri blockchain.',
-          'Menurut CoinMarketCap, Hotbit telah mendaftarkan 2.000+ pasar perdagangan secara total dan menempati peringkat No. 1 di antara semua bursa mengenai jumlah jenis proyek cryptocurrency yang terdaftar. Hotbit telah mengumpulkan 7.000.000+ pengguna terdaftar dari lebih dari 210 negara dan wilayah di seluruh dunia. Hotbit mulai mendistribusikan bunga deposito saat ini untuk penggunanya, yang berarti bahwa Hotbit adalah pertukaran mata uang kripto pertama di dunia yang menawarkan bunga deposito harian saat ini kepada penggunanya tanpa perlu mengunci atau membekukan token.',
-        ],
-        isExchange: true,
-        url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
-        accordionButton: 'Detail',
-        actionButton: 'Beli BSI',
-      },
+      // {
+      //   id: 'hotbitPlatform',
+      //   image: {
+      //     name: 'hotbit-white.png',
+      //     alt: 'Hotbit',
+      //   },
+      //   body: [
+      //     'Tim Hotbit bertujuan untuk membangun Amazon di industri blockchain.',
+      //     'Menurut CoinMarketCap, Hotbit telah mendaftarkan 2.000+ pasar perdagangan secara total dan menempati peringkat No. 1 di antara semua bursa mengenai jumlah jenis proyek cryptocurrency yang terdaftar. Hotbit telah mengumpulkan 7.000.000+ pengguna terdaftar dari lebih dari 210 negara dan wilayah di seluruh dunia. Hotbit mulai mendistribusikan bunga deposito saat ini untuk penggunanya, yang berarti bahwa Hotbit adalah pertukaran mata uang kripto pertama di dunia yang menawarkan bunga deposito harian saat ini kepada penggunanya tanpa perlu mengunci atau membekukan token.',
+      //   ],
+      //   isExchange: true,
+      //   url: 'https://www.hotbit.io/exchange?symbol=BSI_USDT',
+      //   accordionButton: 'Detail',
+      //   actionButton: 'Beli BSI',
+      // },
       {
         id: 'coinsbitPlatform',
         image: {

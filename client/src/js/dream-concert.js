@@ -68,75 +68,65 @@ function start() {
   // const isEventStarted = true;
   const ticket = new Ticket();
 
-  uidInput.addEventListener('input', ticket.handleUIDChange);
-  uidInput.addEventListener('focus', ticket.resetErrors);
-  emailInput.addEventListener('input', ticket.handleEmailChange);
-  emailInput.addEventListener('focus', ticket.resetErrors);
-  passwordInput.addEventListener('input', ticket.handlePasswordChange);
-  passwordInput.addEventListener('focus', ticket.resetErrors);
-  passwordInputEye.addEventListener('click', ticket.handlePasswordShowToggle);
-  amountInput.addEventListener('input', ticket.handleAmountChange);
-  amountInput.addEventListener('focus', ticket.resetErrors);
-  amountInputPlus.addEventListener('click', () => {
-    ticket.handleAmountButton(1);
-  });
-  amountInputMinus.addEventListener('click', () => {
-    ticket.handleAmountButton(-1);
-  });
-  exchangeButton.addEventListener('click', ticket.handleExchange);
-  dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
-  checkTicketButton.addEventListener('click', ticket.showCheckTicket);
-  uidInputGuide.addEventListener('click', ticket.uidDialog.showUIDDialog);
-
-  // BSI price polling.
-  const pollInterval = 60000;
-  const pricePollInterval = pricePoll(pollInterval, ticket);
-
-  // Countdown.
   if (!isEventStarted) {
-    // Only perform countdown before May 27.
+    // If event has not started yet, activate ticket.
+    uidInput.addEventListener('input', ticket.handleUIDChange);
+    uidInput.addEventListener('focus', ticket.resetErrors);
+    emailInput.addEventListener('input', ticket.handleEmailChange);
+    emailInput.addEventListener('focus', ticket.resetErrors);
+    passwordInput.addEventListener('input', ticket.handlePasswordChange);
+    passwordInput.addEventListener('focus', ticket.resetErrors);
+    passwordInputEye.addEventListener('click', ticket.handlePasswordShowToggle);
+    amountInput.addEventListener('input', ticket.handleAmountChange);
+    amountInput.addEventListener('focus', ticket.resetErrors);
+    amountInputPlus.addEventListener('click', () => {
+      ticket.handleAmountButton(1);
+    });
+    amountInputMinus.addEventListener('click', () => {
+      ticket.handleAmountButton(-1);
+    });
+    exchangeButton.addEventListener('click', ticket.handleExchange);
+    dreamConcertBuy.addEventListener('click', handleDreamConcertBuy);
+    checkTicketButton.addEventListener('click', ticket.showCheckTicket);
+    uidInputGuide.addEventListener('click', ticket.uidDialog.showUIDDialog);
+
+    // Countdown.
     const countDownDate = new Date('May 27, 2023 00:00:00').getTime();
     const countDown = new Countdown(countDownDate);
 
     countDown.startTimer();
   } else {
-    // Else, show 00:00:00:00 and grey it out.
+    // Otherwise, disable ticket and show "Event has started" layout.
+    const ticketInputs = [uidInput, emailInput, passwordInput, amountInput];
+    const actionButtons = [
+      exchangeButton,
+      checkTicketButton,
+      amountInputPlus,
+      amountInputMinus,
+    ];
+
+    ticketInputs.forEach((input) => {
+      input.classList.add('disabled');
+      input.disabled = true;
+      input.placeholder = 'Input disabled';
+    });
+
+    actionButtons.forEach((btn) => {
+      btn.classList.add('disabled');
+      btn.disabled = true;
+    });
+
     panelDatetimeTitle.textContent = 'Dream Concert has started!';
     panelDatetimeDate.style.display = 'none';
+
     panelSection.classList.add('started');
   }
 
-  // if (!isEventStarted) {
-  //   // If event has not started yet, activate ticket.
-  // } else {
-  //   // Otherwise, disable ticket and show "Event has started" layout.
-
-  //   const ticketInputs = [uidInput, emailInput, passwordInput, amountInput];
-  //   const actionButtons = [
-  //     exchangeButton,
-  //     checkTicketButton,
-  //     amountInputPlus,
-  //     amountInputMinus,
-  //   ];
-
-  //   ticketInputs.forEach((input) => {
-  //     input.classList.add('disabled');
-  //     input.disabled = true;
-  //     input.placeholder = 'Input disabled';
-  //   });
-
-  //   actionButtons.forEach((btn) => {
-  //     btn.classList.add('disabled');
-  //     btn.disabled = true;
-  //   });
-
-  //   panelDatetimeTitle.textContent = 'Dream Concert has started!';
-  //   panelDatetimeDate.style.display = 'none';
-
-  //   panelSection.classList.add('started');
-  // }
-
   /* ===================================================================== */
+
+  // BSI price polling.
+  const pollInterval = 60000;
+  const pricePollInterval = pricePoll(pollInterval, ticket);
 
   aboutBSIShortBtn.addEventListener('click', () => handleAboutBSIToggle(true));
   aboutBSILongBtn.addEventListener('click', () => handleAboutBSIToggle(false));
