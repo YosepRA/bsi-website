@@ -1,8 +1,8 @@
 import Splide from '@splidejs/splide';
 
-import Ticket from './ticket.js';
-import Countdown from './countdown.js';
-import { ready } from './helpers.js';
+import Ticket from 'dream-concert/ticket.js';
+import Countdown from 'dream-concert/countdown.js';
+import { ready } from 'helpers.js';
 
 import '@splidejs/splide/css';
 
