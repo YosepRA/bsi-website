@@ -19,10 +19,6 @@ router.get('/contact', lang, controller.contact);
 
 router.get('/exchange', lang, controller.exchange);
 
-// router.get('/dream-concert-event', lang, controller.dreamConcertEvent);
-
-router.get('/bsi-dream-concert-event', lang, controller.bsiDreamConcertEvent);
-
-// router.get('/dream-concert', lang, controller.dreamConcert);
+// router.get('/bsi-dream-concert-event', lang, controller.bsiDreamConcertEvent);
 
 module.exports = router;

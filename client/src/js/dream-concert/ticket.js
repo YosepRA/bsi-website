@@ -2,15 +2,15 @@
 
 import { object, string, number } from 'yup';
 
-import walletAPI from './api/wallet-api.js';
-import ticketAPI from './api/ticket-api.js';
-import tokenAPI from './api/token-api.js';
-import Dialog from './dialogs/dialog.js';
-import UIDDialog from './dialogs/uid-guide-dialog.js';
-import PayeeDialog from './dialogs/payee-guide-dialog.js';
-import TxIDDialog from './dialogs/txid-guide-dialog.js';
-import OTPDialog from './dialogs/otp-dialog.js';
-import { promiseResolver } from './helpers.js';
+import walletAPI from 'api/wallet-api.js';
+import ticketAPI from 'api/ticket-api.js';
+import tokenAPI from 'api/token-api.js';
+import Dialog from 'dialogs/dialog.js';
+import UIDDialog from 'dialogs/uid-guide-dialog.js';
+import PayeeDialog from 'dialogs/payee-guide-dialog.js';
+import TxIDDialog from 'dialogs/txid-guide-dialog.js';
+import OTPDialog from 'dialogs/otp-dialog.js';
+import { promiseResolver } from 'helpers.js';
 
 const uidInput = document.getElementById('uidInput');
 const emailInput = document.getElementById('emailInput');
