@@ -64,12 +64,6 @@
         margin-bottom: 1.4rem;
       }
 
-      &-image {
-        width: 160px;
-        height: auto;
-        margin-bottom: 1rem;
-      }
-
       &-metadata {
         width: 100%;
         text-align: center;
@@ -167,11 +161,6 @@
 
         &-metadata {
           text-align: left;
-        }
-
-        &-image {
-          margin-bottom: 0;
-          margin-right: 2rem;
         }
       }
     }

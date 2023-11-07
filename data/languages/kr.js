@@ -247,33 +247,6 @@ module.exports = {
           ],
           img: 'portrait-danniel.png',
         },
-        {
-          id: 'herofi',
-          name: 'Herofi Azhar',
-          title: 'UI/UX Designer',
-          profile: [
-            'Herofi는 디지털 플랫폼을 위한 제품 디자이너로서의 전문 지식으로 유명합니다. 2019년 인쇄 매체 제품 디자이너로 경력을 시작했으며 UX/UI 디자인, 비주얼 커뮤니케이션 및 사용자 지향 디자인에 대한 지식을 확장했습니다. SNS 콘텐츠 기획 및 디자인 경험도 있다. 현재 친환경 프로젝트를 위한 제품 디자인과 SNS 콘텐츠 디자인을 담당하고 있다.',
-          ],
-          img: 'portrait-herofi.png',
-        },
-        {
-          id: 'yosep',
-          name: 'Yosep Ryan Agusta',
-          title: 'Back-end Developer',
-          profile: [
-            'Yosep은 웹 애플리케이션솔루션 개발 및 백 엔드 서버를 구축 해 왔으며 이를 기반으로 다양한 분야의 많은 기업들의 서버 문제 해결 및 웹 어플리케이션의효율적 운영을 맡아 왔습니다. 현재 친환경 플랫폼 및 서비스 백 엔드 개발을 진행하고 있습니다.',
-          ],
-          img: 'portrait-yosep.png',
-        },
-        {
-          id: 'theresa',
-          name: 'Theresa',
-          title: 'Management Support',
-          profile: [
-            'Theresa는 고객 서비스 및 백 오피스, DB관련 부서에서 일해왔으며 DB처리부서에서실력을 인정받아 총괄 관리자로 4년간 근무했습니다.현재 친환경 기업 경영 지원팀 소속으로 광고 컨텐츠 및 재무 파트를 맡아 진행하고 있습니다.',
-          ],
-          img: 'portrait-theresa.png',
-        },
       ],
     },
     partnership: {

@@ -252,33 +252,6 @@ module.exports = {
           ],
           img: 'portrait-danniel.png',
         },
-        {
-          id: 'herofi',
-          name: 'Herofi Azhar',
-          title: 'UI/UX Designer',
-          profile: [
-            'Herofi dikenal dari keahliannya sebagai desainer produk untuk platform digital. Ia memulai karirnya pada tahun 2019 sebagai desainer produk untuk media cetak dan memperluas keahliannya di bidang desain UI/UX, komunikasi visual, dan desain berorientasi terhadap pengguna. Ia juga berpengalaman dalam perencanan dan desain konten media sosial. Saat ini, ia bertanggung jawab sebagai desainer produk dan konten SNS untuk proyek ramah lingkungan.',
-          ],
-          img: 'portrait-herofi.png',
-        },
-        {
-          id: 'yosep',
-          name: 'Yosep Ryan Agusta',
-          title: 'Back-end Developer',
-          profile: [
-            'Yosep, telah mengembangkan solusi aplikasi website dan membangun server back-end. Berdasarkan ini, Ia telah bertanggung jawab untuk memecahkan masalah internal server dan mengoperasikan aplikasi website secara efisien untuk membantu perusahaan di berbagai bidang server. Saat ini, Ia mengembangkan platform ramah lingkungan dalam sistem Back-end.',
-          ],
-          img: 'portrait-yosep.png',
-        },
-        {
-          id: 'theresa',
-          name: 'Theresa',
-          title: 'Management Support',
-          profile: [
-            'Theresa, telah bergerak dan menguasai bidang Back-office database dan finansial. Ia dikenal keahlian-nya dalam proses Database dimana Ia bekerja sebagai Manajer selama 4 tahun. Saat ini, Ia bertanggung jawab sebagai Management support manager yang akan membantu jalannya proyek atas konten periklanan dan urusan keuangan.',
-          ],
-          img: 'portrait-theresa.png',
-        },
       ],
     },
     partnership: {

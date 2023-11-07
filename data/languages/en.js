@@ -251,33 +251,6 @@ module.exports = {
           ],
           img: 'portrait-danniel.png',
         },
-        {
-          id: 'herofi',
-          name: 'Herofi Azhar',
-          title: 'UI/UX Designer',
-          profile: [
-            'Herofi, is known for his expertise as product designer for digital platforms. He started his career at 2019 as product designer for printed media and expanding his knowledge in UX/UI designing, visual communication and user oriented design. He also experienced in planning and designing the social media content. Currently, he is responsible in product designing and SNS content design for eco-friendly project.',
-          ],
-          img: 'portrait-herofi.png',
-        },
-        {
-          id: 'yosep',
-          name: 'Yosep Ryan Agusta',
-          title: 'Back-end Developer',
-          profile: [
-            'Yosep, has developed a website application solution and built a back-end server. Based on this, has been responsible for troubleshooting internal server issues and operating the website application efficiently to help companies in various fields of servers. Currently, He developed an eco-friendly platform in the back-end system.',
-          ],
-          img: 'portrait-yosep.png',
-        },
-        {
-          id: 'theresa',
-          name: 'Theresa',
-          title: 'Management Support',
-          profile: [
-            'Theresa, has worked and mastered the field of Back-office database and finance. She is known for her expertise in Database processes, where she worked as a Manager for 4 years. Currently, she is responsible as a Management support manager who will help run projects on advertising content and financial matters.',
-          ],
-          img: 'portrait-theresa.png',
-        },
       ],
     },
     partnership: {
